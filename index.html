@@ -3,12 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free Health Calculators — BMI, Calories, Ideal Weight & More</title>
-  <meta name="description" content="Free online health calculators. Calculate your BMI, daily calorie needs, ideal weight, body fat percentage, and water intake. Instant results, no sign-up needed.">
-  <meta name="keywords" content="health calculators, BMI calculator, calorie calculator, ideal weight calculator, body fat calculator, water intake calculator">
+  <title>BMI Calculator & Health Tools — Free Body Mass Index Check</title>
+  <meta name="description" content="Calculate your BMI, daily calorie needs, and ideal weight with our free, accurate health tools. Get instant results for BMI, body fat, and water intake. No sign-up needed.">
+  <meta name="keywords" content="BMI calculator, calculate BMI, health calculators, body mass index, calorie calculator, ideal weight, body fat percentage">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Healthy BMI Check Tools",
+    "url": "https://healthybmicheck.com/",
+    "description": "A suite of free health calculators including BMI, Calorie, and Body Fat estimators.",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
+    /* ... 保持你原有的 CSS 不变 ... */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --bg: #F7F4EF;
@@ -55,6 +74,28 @@
     }
     .hero h1 em { font-style: italic; color: var(--accent); }
     .hero p { color: var(--ink2); font-size: 1rem; line-height: 1.7; }
+
+    /* 新增 FAQ 样式 */
+    .faq-section {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    .faq-item {
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+    }
+    .faq-item h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+    .faq-item p {
+      color: var(--ink2);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
 
     .tools-grid {
       max-width: 960px;
@@ -129,10 +170,6 @@
       margin-left: 8px;
       vertical-align: middle;
     }
-    .badge.soon {
-      background: #F1EFE8;
-      color: var(--ink3);
-    }
 
     .section-label {
       max-width: 960px;
@@ -188,7 +225,7 @@
     footer a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 8px; }
     footer a:hover { color: #fff; }
   </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7723301737736770" crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7723301737736770" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -208,96 +245,102 @@
 </div>
 
 <div class="hero">
-  <h1>Free <em>Health</em> Calculators</h1>
-  <p>Simple, accurate tools to help you understand your body. No sign-up. No fees. Instant results.</p>
+  <h1>Free <em>Health</em> Calculators & Tools</h1>
+  <p>Accurate, data-backed tools to monitor your fitness. Calculate BMI, body fat, and daily nutrition needs instantly.</p>
 </div>
 
 <div class="section-label">✨ Start Here</div>
-
 <div style="max-width:960px;margin:0 auto 16px;padding:0 20px;">
   <a href="health-profile.html" style="display:block;background:#1A1714;border-radius:16px;padding:28px 32px;text-decoration:none;color:#fff;position:relative;overflow:hidden;">
     <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(126,200,164,0.15),transparent);pointer-events:none;"></div>
     <div style="font-size:1.5rem;margin-bottom:8px;">⚡</div>
     <div style="font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:6px;">Complete Health Profile</div>
-    <div style="color:rgba(255,255,255,0.55);font-size:0.9rem;margin-bottom:16px;">Fill in your details <em>once</em> — instantly get your BMI, calories, ideal weight, body fat, and water intake all on one page.</div>
+    <div style="color:rgba(255,255,255,0.55);font-size:0.9rem;margin-bottom:16px;">One assessment for your BMI, calorie needs, and more.</div>
     <div style="display:inline-block;background:#7EC8A4;color:#1A1714;padding:10px 20px;border-radius:10px;font-weight:600;font-size:0.9rem;">Get My Full Health Profile →</div>
   </a>
 </div>
 
 <div class="section-label">Individual Calculators</div>
-
 <div class="tools-grid">
-
   <a href="bmi-calculator.html" class="tool-card" style="--card-color:#2D6A4F; --card-bg:#D8EFE4;">
     <div class="tool-icon">⚖️</div>
     <h2>BMI Calculator <span class="badge">Popular</span></h2>
-    <p>Find out your Body Mass Index and whether your weight is in a healthy range for your height.</p>
+    <p>Determine your Body Mass Index and see where you fall on the official health categories.</p>
     <div class="tool-link">Calculate BMI →</div>
   </a>
-
   <a href="calorie-calculator.html" class="tool-card" style="--card-color:#C17B2A; --card-bg:#FBF0DC;">
     <div class="tool-icon">🔥</div>
     <h2>Calorie Calculator</h2>
-    <p>Calculate how many calories your body needs daily based on your age, weight, height, and activity level.</p>
+    <p>Estimate your Basal Metabolic Rate (BMR) and daily energy expenditure based on activity.</p>
     <div class="tool-link">Calculate Calories →</div>
   </a>
-
   <a href="ideal-weight.html" class="tool-card" style="--card-color:#3A7BBF; --card-bg:#DCE9F8;">
     <div class="tool-icon">🎯</div>
     <h2>Ideal Weight Calculator</h2>
-    <p>Find your ideal body weight range based on your height and frame size using multiple scientific formulas.</p>
+    <p>Find your recommended weight range based on scientific height-to-weight formulas.</p>
     <div class="tool-link">Find Ideal Weight →</div>
   </a>
-
   <a href="water-intake.html" class="tool-card" style="--card-color:#0E7490; --card-bg:#E0F2FE;">
     <div class="tool-icon">💧</div>
     <h2>Water Intake Calculator</h2>
-    <p>Discover how much water you should drink daily based on your body weight and activity level.</p>
+    <p>Calculate your optimal hydration levels based on weight and exercise intensity.</p>
     <div class="tool-link">Calculate Water Intake →</div>
   </a>
-
   <a href="body-fat.html" class="tool-card" style="--card-color:#7C3AED; --card-bg:#EDE9FE;">
     <div class="tool-icon">📊</div>
     <h2>Body Fat Calculator</h2>
-    <p>Estimate your body fat percentage using the U.S. Navy method based on simple body measurements.</p>
+    <p>Estimate your body fat percentage using the U.S. Navy Method for body composition.</p>
     <div class="tool-link">Calculate Body Fat →</div>
   </a>
-
-  <a href="what-is-bmi.html" class="tool-card" style="--card-color:#6B6560; --card-bg:#F1EFE8;">
-    <div class="tool-icon">📖</div>
-    <h2>What is BMI?</h2>
-    <p>Learn how BMI works, what the categories mean, and the limitations of using it as a health indicator.</p>
-    <div class="tool-link" style="color:#6B6560">Read the guide →</div>
-  </a>
-
 </div>
 
+<section class="faq-section">
+  <div class="section-label">Common Questions</div>
+  <div class="faq-item">
+    <h3>Is the BMI Calculator accurate?</h3>
+    <p>While BMI is a useful screening tool to see if you are in a healthy weight range, it doesn't directly measure body fat. It's a general indicator and may not be accurate for athletes or individuals with high muscle mass.</p>
+  </div>
+  <div class="faq-item">
+    <h3>How many calories should I eat a day?</h3>
+    <p>Daily calorie needs vary based on age, sex, weight, and activity level. Our Calorie Calculator uses the Mifflin-St Jeor Equation to provide a highly accurate estimate for your daily maintenance calories.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Is this health tool free?</h3>
+    <p>Yes, all tools on HealthyBMICheck.com are 100% free to use. We do not store your personal health data; all calculations are performed locally in your web browser for maximum privacy.</p>
+  </div>
+</section>
+
 <div class="why-section">
-  <h2>Why use our calculators?</h2>
-  <p>Built for accuracy, designed for everyone.</p>
+  <h2>Why use our health tools?</h2>
+  <p>Built for accuracy, designed for privacy.</p>
   <div class="why-grid">
     <div class="why-item">
       <span class="num">100%</span>
-      <p>Free, always. No hidden fees or subscriptions.</p>
+      <p>Free to use. No subscriptions or paywalls.</p>
     </div>
     <div class="why-item">
-      <span class="num">0</span>
-      <p>Data stored. All calculations happen in your browser.</p>
+      <span class="num">🔒</span>
+      <p>Privacy first. No health data is ever saved.</p>
     </div>
     <div class="why-item">
       <span class="num">2</span>
-      <p>Unit systems. Metric and imperial both supported.</p>
+      <p>Metric & Imperial units supported.</p>
     </div>
   </div>
 </div>
 
 <footer>
-  <div>© 2025 HealthyBMICheck.com — Free Health Calculators</div>
+  <div>© 2025 HealthyBMICheck.com — Reliable Health Calculators</div>
   <div style="margin-top:8px">
     <a href="privacy.html">Privacy Policy</a>
     <a href="contact.html">Contact</a>
-    <a href="what-is-bmi.html">What is BMI?</a>
+    <a href="what-is-bmi.html">About BMI</a>
   </div>
+  <div style="margin-top:8px; font-size:0.72rem">Disclaimer: This website provides informational tools only. It is not a substitute for professional medical advice, diagnosis, or treatment.</div>
+</footer>
+
+</body>
+</html>
   <div style="margin-top:8px; font-size:0.72rem">For informational purposes only. Not medical advice. Consult a healthcare professional for personalised guidance.</div>
 </footer>
 
