@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What is BMI? Body Mass Index Explained — HealthyBMICheck</title>
+  <meta name="description" content="Learn what BMI (Body Mass Index) is, how it is calculated, what the ranges mean, and the limitations of using BMI as a health indicator.">
+  <meta name="keywords" content="what is BMI, body mass index explained, BMI ranges, healthy BMI, how to calculate BMI">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #F7F4EF;
+      --surface: #FFFFFF;
+      --ink: #1A1714;
+      --ink2: #6B6560;
+      --ink3: #A09A94;
+      --accent: #2D6A4F;
+      --accent-light: #D8EFE4;
+      --border: #E5E0D8;
+      --radius: 16px;
+      --shadow: 0 2px 16px rgba(26,23,20,0.07);
+    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); }
+    header {
+      background: var(--ink); color: #fff;
+      padding: 18px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
+    .logo span { color: #7EC8A4; }
+    nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; margin-left: 20px; }
+    nav a:hover { color: #fff; }
+
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .breadcrumb {
+      font-size: 0.8rem;
+      color: var(--ink3);
+      margin-bottom: 24px;
+    }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+    .meta {
+      color: var(--ink3);
+      font-size: 0.85rem;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      margin: 40px 0 12px;
+      letter-spacing: -0.02em;
+    }
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 24px 0 8px;
+    }
+    p {
+      color: #3D3A36;
+      line-height: 1.8;
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+    ul, ol {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+    li {
+      color: #3D3A36;
+      line-height: 1.8;
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .formula-box {
+      background: var(--ink);
+      color: #fff;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 20px 0;
+      font-family: monospace;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+    .formula-box span { color: #7EC8A4; }
+
+    .bmi-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      margin: 20px 0 32px;
+    }
+    .bmi-table thead tr { background: var(--ink); color: #fff; }
+    .bmi-table th { padding: 12px 16px; text-align: left; font-size: 0.8rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+    .bmi-table td { padding: 13px 16px; font-size: 0.9rem; border-bottom: 1px solid var(--border); }
+    .bmi-table tbody tr:last-child td { border-bottom: none; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 8px; vertical-align: middle; }
+
+    .callout {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      margin: 24px 0;
+    }
+    .callout p { color: #1A3D2B; margin-bottom: 0; }
+
+    .warning-callout {
+      background: #FBF0DC;
+      border-left: 3px solid #C17B2A;
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      margin: 24px 0;
+    }
+    .warning-callout p { color: #5A3A10; margin-bottom: 0; }
+
+    .cta-box {
+      background: var(--ink);
+      border-radius: var(--radius);
+      padding: 32px;
+      text-align: center;
+      margin-top: 48px;
+    }
+    .cta-box h2 { color: #fff; margin-top: 0; }
+    .cta-box p { color: rgba(255,255,255,0.6); margin-bottom: 20px; }
+    .cta-btn {
+      display: inline-block;
+      background: #7EC8A4;
+      color: var(--ink);
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 12px;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+    }
+
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 24px;
+      font-size: 0.8rem;
+      line-height: 1.8;
+    }
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 8px; }
+  </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7723301737736770" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+  <div class="logo"><a href="index.html" style="color:#fff;text-decoration:none">healthy<span>bmicheck</span>.com</a></div>
+  <nav>
+    <a href="index.html">BMI Calculator</a>
+    <a href="what-is-bmi.html">What is BMI?</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="article-wrap">
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> › What is BMI?
+  </div>
+
+  <h1>What is BMI? Body Mass Index Fully Explained</h1>
+  <div class="meta">Last updated: May 2025 &nbsp;·&nbsp; 6 min read &nbsp;·&nbsp; Reviewed for accuracy</div>
+
+  <p>BMI, or Body Mass Index, is one of the most widely used tools in the world for assessing whether a person has a healthy body weight relative to their height. Doctors, health organisations, and researchers use it daily — yet many people are unsure exactly what it measures and what its limitations are.</p>
+
+  <p>This guide explains what BMI is, how it is calculated, what the different ranges mean, and when BMI may not tell the full picture.</p>
+
+  <h2>What Does BMI Measure?</h2>
+  <p>BMI is a simple numerical value derived from a person's weight and height. It does not directly measure body fat, but it serves as a useful screening indicator to identify individuals who may be underweight, at a healthy weight, overweight, or obese.</p>
+  <p>The concept was developed in the 1830s by Belgian mathematician Adolphe Quetelet and later adopted by the World Health Organization (WHO) as a standard population health metric. Today, it remains one of the most practical tools available for initial weight assessment because it requires only two easily measured values: weight and height.</p>
+
+  <h2>How is BMI Calculated?</h2>
+  <p>The formula is straightforward and the same for both men and women:</p>
+
+  <div class="formula-box">
+    <span>Metric:</span> BMI = weight (kg) ÷ height (m)²<br>
+    <span>Imperial:</span> BMI = [weight (lb) ÷ height (in)²] × 703
+  </div>
+
+  <h3>Worked example (metric)</h3>
+  <p>A person who weighs <strong>70 kg</strong> and is <strong>1.75 m</strong> tall:</p>
+  <div class="formula-box">
+    BMI = 70 ÷ (1.75 × 1.75)<br>
+    BMI = 70 ÷ 3.0625<br>
+    <span>BMI = 22.9</span>
+  </div>
+  <p>A BMI of 22.9 falls within the normal weight range.</p>
+
+  <h2>BMI Categories (WHO Standard)</h2>
+  <p>The World Health Organization classifies BMI into the following categories for adults aged 18 and over:</p>
+
+  <table class="bmi-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>BMI Range</th>
+        <th>Health Implication</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="dot" style="background:#3A7BBF"></span>Underweight</td>
+        <td>Below 18.5</td>
+        <td>Possible nutritional deficiency</td>
+      </tr>
+      <tr>
+        <td><span class="dot" style="background:#2D6A4F"></span>Normal weight</td>
+        <td>18.5 – 24.9</td>
+        <td>Generally associated with good health</td>
+      </tr>
+      <tr>
+        <td><span class="dot" style="background:#C17B2A"></span>Overweight</td>
+        <td>25.0 – 29.9</td>
+        <td>Increased risk of some conditions</td>
+      </tr>
+      <tr>
+        <td><span class="dot" style="background:#B83232"></span>Obese (Class I)</td>
+        <td>30.0 – 34.9</td>
+        <td>High risk of chronic disease</td>
+      </tr>
+      <tr>
+        <td><span class="dot" style="background:#8B1A1A"></span>Obese (Class II)</td>
+        <td>35.0 – 39.9</td>
+        <td>Very high risk</td>
+      </tr>
+      <tr>
+        <td><span class="dot" style="background:#5C0F0F"></span>Obese (Class III)</td>
+        <td>40.0 and above</td>
+        <td>Extremely high risk</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <p><strong>Note:</strong> These ranges apply to adults aged 18 and over. Children and teenagers use age- and sex-specific BMI percentile charts, as body composition changes significantly during growth.</p>
+  </div>
+
+  <h2>What Health Risks Are Associated with High BMI?</h2>
+  <p>A higher BMI, particularly in the overweight and obese ranges, is associated with an increased risk of several serious health conditions, including:</p>
+  <ul>
+    <li>Type 2 diabetes</li>
+    <li>High blood pressure (hypertension)</li>
+    <li>Cardiovascular disease and stroke</li>
+    <li>Certain types of cancer</li>
+    <li>Sleep apnoea</li>
+    <li>Osteoarthritis</li>
+    <li>Non-alcoholic fatty liver disease</li>
+  </ul>
+  <p>It is important to understand that BMI is a risk indicator, not a diagnosis. Many other factors — such as diet, physical activity, genetics, and where body fat is stored — also influence health outcomes.</p>
+
+  <h2>What Are the Limitations of BMI?</h2>
+  <p>While BMI is a useful population-level screening tool, it has well-recognised limitations when applied to individuals:</p>
+
+  <h3>It does not distinguish between muscle and fat</h3>
+  <p>BMI cannot tell the difference between lean muscle mass and body fat. A professional athlete or bodybuilder may have a BMI in the overweight range despite having very low body fat. Conversely, an older person with low muscle mass may have a "normal" BMI but carry a higher proportion of body fat than is healthy.</p>
+
+  <h3>It does not account for fat distribution</h3>
+  <p>Where fat is stored in the body matters significantly for health risk. Abdominal (visceral) fat — stored around the waist and organs — carries a higher health risk than fat stored in the hips and thighs. BMI gives no information about fat distribution. Waist circumference measurements can complement BMI for a more complete picture.</p>
+
+  <h3>It varies by ethnicity</h3>
+  <p>Research shows that people of Asian descent tend to have higher levels of body fat at lower BMI values compared to people of European descent. Many health organisations now recommend lower BMI thresholds for Asian populations — for example, a BMI of 23 or above may be considered overweight for people of East or South Asian heritage.</p>
+
+  <h3>It does not apply to children in the same way</h3>
+  <p>For those under 18, BMI must be interpreted using age- and sex-specific growth charts, as normal body composition changes considerably during childhood and adolescence.</p>
+
+  <div class="warning-callout">
+    <p><strong>Important:</strong> BMI is a screening tool, not a diagnostic instrument. Always consult a qualified healthcare professional for a complete and personalised health assessment.</p>
+  </div>
+
+  <h2>Is a Normal BMI Always Healthy?</h2>
+  <p>Not necessarily. A person can have a BMI within the normal range and still have metabolic risk factors such as high blood pressure, elevated blood sugar, or unfavourable cholesterol levels. This is sometimes referred to as "metabolically obese, normal weight" (MONW).</p>
+  <p>On the other hand, some people with a BMI slightly above the normal range may have excellent metabolic health, particularly if they are physically active and have healthy blood markers.</p>
+  <p>BMI works best as one data point among many, not as a standalone measure of health.</p>
+
+  <h2>How to Improve Your BMI</h2>
+  <p>If your BMI falls outside the healthy range, there are evidence-based strategies that can help:</p>
+
+  <h3>For those who are overweight or obese</h3>
+  <ul>
+    <li>Reduce portion sizes and focus on nutrient-dense whole foods</li>
+    <li>Increase daily physical activity — aim for at least 150 minutes of moderate exercise per week</li>
+    <li>Limit ultra-processed foods, sugary drinks, and alcohol</li>
+    <li>Prioritise sleep — poor sleep is linked to weight gain</li>
+    <li>Seek support from a dietitian or healthcare professional for personalised guidance</li>
+  </ul>
+
+  <h3>For those who are underweight</h3>
+  <ul>
+    <li>Increase caloric intake with nutritious, energy-dense foods</li>
+    <li>Include strength training to build lean muscle mass</li>
+    <li>Rule out underlying medical conditions with a doctor</li>
+    <li>Eat regular meals and consider healthy snacks between meals</li>
+  </ul>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Is BMI the same for men and women?</h3>
+  <p>Yes — the BMI formula and the standard WHO category ranges are the same for adult men and women. However, women naturally tend to have a higher percentage of body fat than men at the same BMI, which is worth bearing in mind when interpreting results.</p>
+
+  <h3>How often should I check my BMI?</h3>
+  <p>For most adults, checking BMI once or twice a year is sufficient unless you are actively managing your weight, in which case monthly tracking may be more useful. Daily fluctuations in weight are normal and largely reflect water retention rather than true changes in body composition.</p>
+
+  <h3>Can BMI be used during pregnancy?</h3>
+  <p>BMI is not an appropriate measure during pregnancy, as weight gain is expected and necessary. Pregnant women should follow the guidance of their midwife or doctor regarding healthy weight gain during pregnancy.</p>
+
+  <h3>What is a good BMI for my age?</h3>
+  <p>For adults aged 18 to 65, the standard WHO healthy BMI range of 18.5 to 24.9 applies. For adults over 65, some research suggests that a slightly higher BMI (around 22 to 27) may be associated with better health outcomes, as lower BMI in older adults can sometimes indicate muscle loss or underlying illness.</p>
+
+  <div class="cta-box">
+    <h2>Calculate Your BMI Now</h2>
+    <p>Use our free calculator to find your BMI instantly — metric and imperial units supported.</p>
+    <a href="index.html" class="cta-btn">Go to BMI Calculator →</a>
+  </div>
+
+</div>
+
+<footer>
+  <div>© 2025 HealthyBMICheck.com — Free BMI Calculator</div>
+  <div style="margin-top:8px">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="contact.html">Contact</a>
+    <a href="index.html">BMI Calculator</a>
+  </div>
+  <div style="margin-top:8px; font-size:0.72rem">This content is for informational purposes only and does not constitute medical advice. Always consult a qualified healthcare professional.</div>
+</footer>
+
+</body>
+</html>

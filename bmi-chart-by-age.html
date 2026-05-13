@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Chart by Age — Healthy BMI Ranges for Adults</title>
+  <meta name="description" content="Understand how healthy BMI ranges change with age. Includes BMI charts for men and women by age group, plus guidance on interpreting your result.">
+  <meta name="keywords" content="BMI chart by age, healthy BMI by age, BMI for age, BMI ranges adults, BMI chart men women age">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg: #F7F4EF; --surface: #FFFFFF; --ink: #1A1714; --ink2: #6B6560; --ink3: #A09A94; --accent: #2D6A4F; --accent-light: #D8EFE4; --border: #E5E0D8; --radius: 16px; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); }
+    header { background: var(--ink); color: #fff; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
+    .logo span { color: #7EC8A4; }
+    nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; margin-left: 20px; }
+    nav a:hover { color: #fff; }
+    .article-wrap { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .breadcrumb { font-size: 0.8rem; color: var(--ink3); margin-bottom: 24px; }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.2; letter-spacing: -0.03em; margin-bottom: 12px; }
+    .meta { color: var(--ink3); font-size: 0.85rem; margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+    h2 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin: 40px 0 12px; }
+    h3 { font-size: 1.05rem; font-weight: 600; margin: 24px 0 8px; }
+    p { color: #3D3A36; line-height: 1.8; font-size: 1rem; margin-bottom: 16px; }
+    ul { padding-left: 20px; margin-bottom: 16px; }
+    li { color: #3D3A36; line-height: 1.8; font-size: 1rem; margin-bottom: 6px; }
+    .callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 24px 0; }
+    .callout p { color: #1A3D2B; margin-bottom: 0; }
+    table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); margin: 20px 0; font-size: 0.9rem; }
+    thead tr { background: var(--ink); color: #fff; }
+    th { padding: 12px 16px; text-align: left; font-size: 0.78rem; font-weight: 600; text-transform: uppercase; }
+    td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:nth-child(even) { background: #FAFAF8; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 6px; vertical-align: middle; }
+    .cta-box { background: var(--ink); border-radius: var(--radius); padding: 32px; text-align: center; margin-top: 48px; }
+    .cta-box h2 { color: #fff; margin-top: 0; font-size: 1.5rem; }
+    .cta-box p { color: rgba(255,255,255,0.6); margin-bottom: 20px; }
+    .cta-btn { display: inline-block; background: #7EC8A4; color: var(--ink); text-decoration: none; padding: 14px 28px; border-radius: 12px; font-family: 'DM Serif Display', serif; font-size: 1rem; margin: 6px; }
+    .related { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
+    .related h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; margin-bottom: 16px; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .related-links a { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; text-decoration: none; color: var(--ink); font-size: 0.875rem; }
+    .related-links a:hover { border-color: var(--accent); color: var(--accent); }
+    footer { background: var(--ink); color: rgba(255,255,255,0.4); text-align: center; padding: 24px; font-size: 0.8rem; line-height: 1.8; }
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 8px; }
+  </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7723301737736770" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+  <div class="logo"><a href="index.html" style="color:#fff;text-decoration:none">healthy<span>bmicheck</span>.com</a></div>
+  <nav>
+    <a href="health-profile.html">Health Profile</a>
+    <a href="bmi-calculator.html">BMI</a>
+    <a href="calorie-calculator.html">Calories</a>
+    <a href="index.html">All Tools</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+</header>
+<div class="article-wrap">
+  <div class="breadcrumb"><a href="index.html">Home</a> › BMI Chart by Age</div>
+  <h1>BMI Chart by Age — Healthy BMI Ranges for Adults</h1>
+  <div class="meta">Last updated: May 2025 &nbsp;·&nbsp; 6 min read</div>
+
+  <p>While the standard WHO BMI categories apply to all adults, research increasingly suggests that the health implications of a given BMI value shift as we age. A BMI of 27 carries different health risks for a 25-year-old than for a 70-year-old. This guide explains how BMI relates to age and what ranges are generally considered healthy across different life stages.</p>
+
+  <h2>Standard WHO BMI Categories (All Adults)</h2>
+  <p>The World Health Organization's standard classification applies to adults aged 18 and over, regardless of age or sex:</p>
+
+  <table>
+    <thead><tr><th>Category</th><th>BMI Range</th><th>Health Risk</th></tr></thead>
+    <tbody>
+      <tr><td><span class="dot" style="background:#3A7BBF"></span>Underweight</td><td>Below 18.5</td><td>Malnutrition, bone density loss</td></tr>
+      <tr><td><span class="dot" style="background:#2D6A4F"></span>Normal weight</td><td>18.5 – 24.9</td><td>Lowest risk</td></tr>
+      <tr><td><span class="dot" style="background:#C17B2A"></span>Overweight</td><td>25.0 – 29.9</td><td>Moderate increased risk</td></tr>
+      <tr><td><span class="dot" style="background:#B83232"></span>Obese (Class I)</td><td>30.0 – 34.9</td><td>High risk</td></tr>
+      <tr><td><span class="dot" style="background:#8B1A1A"></span>Obese (Class II)</td><td>35.0 – 39.9</td><td>Very high risk</td></tr>
+      <tr><td><span class="dot" style="background:#5C0F0F"></span>Obese (Class III)</td><td>40 and above</td><td>Extremely high risk</td></tr>
+    </tbody>
+  </table>
+
+  <h2>How Age Affects Healthy BMI Ranges</h2>
+  <p>The standard BMI categories were developed primarily from studies of younger and middle-aged adults. As research on older populations has grown, several important patterns have emerged.</p>
+
+  <h3>Young adults (18–35)</h3>
+  <p>For young adults, the standard BMI categories are generally well-calibrated. The normal range of 18.5–24.9 is associated with the lowest risk of metabolic disease, cardiovascular disease, and premature mortality in this age group. Young adults with a BMI above 25 face elevated long-term risks even if they feel healthy currently.</p>
+
+  <h3>Middle-aged adults (35–60)</h3>
+  <p>The standard categories remain useful for middle-aged adults. However, BMI becomes a slightly less reliable indicator during this period as body composition naturally shifts — muscle mass tends to decrease while body fat increases with age, even without weight change. Two people of the same age, weight, and height can have very different body compositions.</p>
+
+  <h3>Older adults (60 and above)</h3>
+  <p>Research suggests that a slightly higher BMI may actually be protective in adults over 65. Several large studies have found that older adults with a BMI in the 22–27 range have better health outcomes than those with a BMI in the 18.5–21.9 range. A lower BMI in older adults often reflects sarcopenia (muscle loss), which is independently associated with higher mortality.</p>
+
+  <div class="callout"><p><strong>For older adults:</strong> If your BMI is in the 22–27 range and you are over 65, this is generally not a cause for concern. Muscle mass, physical strength, and functional fitness are arguably more important health indicators than BMI at this life stage.</p></div>
+
+  <h2>BMI Reference Chart by Age Group</h2>
+  <p>The following table shows generally recommended BMI ranges by age group, reflecting current research on optimal ranges across the lifespan. These are broader than the strict WHO categories and account for age-related changes in body composition.</p>
+
+  <table>
+    <thead><tr><th>Age Group</th><th>Suggested Healthy BMI Range</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>18 – 24 years</td><td>18.5 – 24.9</td><td>Standard WHO range applies</td></tr>
+      <tr><td>25 – 34 years</td><td>18.5 – 24.9</td><td>Standard WHO range applies</td></tr>
+      <tr><td>35 – 44 years</td><td>19.0 – 26.0</td><td>Upper end slightly more acceptable</td></tr>
+      <tr><td>45 – 54 years</td><td>19.0 – 27.0</td><td>Some increase in body fat is normal</td></tr>
+      <tr><td>55 – 64 years</td><td>20.0 – 27.0</td><td>Lower BMI may reflect muscle loss</td></tr>
+      <tr><td>65 years and over</td><td>22.0 – 27.0</td><td>Higher end protective; focus on muscle mass</td></tr>
+    </tbody>
+  </table>
+
+  <h2>BMI Differences Between Men and Women</h2>
+  <p>The BMI formula is the same for men and women, and the standard WHO categories apply to both. However, at the same BMI, women typically have a higher body fat percentage than men due to physiological differences in fat distribution and muscle mass. This means that a woman with a BMI of 24 may carry proportionally more body fat than a man with the same BMI, though both are within a healthy range by WHO standards.</p>
+
+  <h2>BMI and Ethnicity — Important Adjustments</h2>
+  <p>Standard WHO BMI categories were developed from predominantly European population data. Research has since shown that people of East and South Asian descent tend to have higher body fat percentages at lower BMI values compared to people of European descent. As a result, several health organisations recommend lower BMI thresholds for Asian populations:</p>
+  <ul>
+    <li>Overweight: BMI ≥ 23 (instead of 25)</li>
+    <li>Obese: BMI ≥ 27.5 (instead of 30)</li>
+  </ul>
+  <p>This is particularly relevant in Malaysia, Singapore, and other parts of Southeast and East Asia, where the standard BMI categories may underestimate health risks in the local population.</p>
+
+  <h2>When BMI Is Less Useful</h2>
+  <p>BMI becomes a less reliable indicator in several situations:</p>
+  <ul>
+    <li><strong>Athletes and highly muscular individuals</strong> — high muscle mass can push BMI into the overweight range despite excellent health and low body fat.</li>
+    <li><strong>Older adults with sarcopenia</strong> — low BMI may reflect dangerous muscle loss rather than a lean, healthy physique.</li>
+    <li><strong>During pregnancy</strong> — weight gain is expected and healthy; standard BMI categories do not apply.</li>
+    <li><strong>Very short or very tall individuals</strong> — BMI can slightly over or underestimate health risk at the extremes of height.</li>
+  </ul>
+
+  <div class="cta-box">
+    <h2>Calculate Your BMI Now</h2>
+    <p>Use our free BMI calculator to find your result instantly, with metric and imperial units supported.</p>
+    <a href="bmi-calculator.html" class="cta-btn">Calculate BMI →</a>
+    <a href="health-profile.html" class="cta-btn">Full Health Profile →</a>
+  </div>
+
+  <div class="related">
+    <h3>Related Articles & Tools</h3>
+    <div class="related-links">
+      <a href="what-is-bmi.html">What is BMI?</a>
+      <a href="how-to-lower-bmi.html">How to Lower Your BMI</a>
+      <a href="healthy-bmi-for-women.html">Healthy BMI for Women</a>
+      <a href="ideal-weight.html">Ideal Weight Calculator</a>
+    </div>
+  </div>
+</div>
+<footer>
+  <div>© 2025 HealthyBMICheck.com — Free Health Calculators</div>
+  <div style="margin-top:8px"><a href="index.html">Home</a><a href="privacy.html">Privacy Policy</a><a href="contact.html">Contact</a></div>
+  <div style="margin-top:8px; font-size:0.72rem">For informational purposes only. Not medical advice.</div>
+</footer>
+</body>
+</html>
