@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <meta name="google-adsense-account" content="ca-pub-7723301737736770">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7723301737736770" crossorigin="anonymous"></script>
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HNT40MVZPK"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-HNT40MVZPK');
   </script>
 
@@ -42,43 +42,14 @@
       --accent: #2D6A4F; --accent-light: #D8EFE4; --border: #E5E0D8; --radius: 16px;
       --shadow: 0 2px 16px rgba(26,23,20,0.07);
     }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); }
+    header { background: var(--ink); color: #fff; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
+    .logo span { color: #7EC8A4; }
+    nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; margin-left: 20px; transition: color .2s; }
+    nav a:hover { color: #fff; }
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-    }
-
-    header {
-      background: var(--ink);
-      color: #fff;
-      padding: 18px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.25rem;
-    }
-
-    .logo span {
-      color: #7EC8A4;
-    }
-
-    nav a {
-      color: rgba(255,255,255,0.6);
-      text-decoration: none;
-      font-size: 0.85rem;
-      margin-left: 20px;
-      transition: color .2s;
-    }
-
-    nav a:hover {
-      color: #fff;
-    }
-
+    /* 优化广告位：如果没广告，就先不显示那个大框框 */
     .ad-slot {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
@@ -88,48 +59,28 @@
       padding: 10px;
       font-size: 0.75rem;
       color: var(--ink3);
-      min-height: 60px;
+      min-height: 20px; /* 缩小最小高度，等有广告了再撑开 */
     }
 
-    .hero {
-      text-align: center;
-      padding: 64px 24px 40px;
-      max-width: 640px;
-      margin: 0 auto;
+    /* 自动隐藏 Google 还没填充内容的广告块 */
+    ins.adsbygoogle[data-ad-status="unfilled"] {
+        display: none !important;
     }
 
-    .hero h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(2rem, 5vw, 3rem);
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      margin-bottom: 14px;
-    }
-
-    .hero h1 em {
-      font-style: italic;
-      color: var(--accent);
-    }
-
-    .hero p {
-      color: var(--ink2);
-      font-size: 1rem;
-      line-height: 1.7;
-    }
+    .hero { text-align: center; padding: 64px 24px 40px; max-width: 640px; margin: 0 auto; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 14px; }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero p { color: var(--ink2); font-size: 1rem; line-height: 1.7; }
   </style>
-
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7723301737736770" crossorigin="anonymous"></script>
 </head>
 
 <body>
-
 <header>
   <div class="logo">
     <a href="index.html" style="color:#fff;text-decoration:none">
       healthy<span>bmicheck</span>.com
     </a>
   </div>
-
   <nav>
     <a href="health-profile.html">Health Profile</a>
     <a href="bmi-calculator.html">BMI</a>
@@ -143,10 +94,7 @@
 
 <div class="hero">
   <h1>Free <em>Health</em> Tools</h1>
-  <p>
-    Accurate calculators to help you understand your body.
-    Instant results. No sign-up required.
-  </p>
+  <p>Accurate calculators to help you understand your body. Instant results. No sign-up required.</p>
 </div>
 
 </body>
