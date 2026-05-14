@@ -86,6 +86,7 @@
       padding: 64px 24px 48px;
       max-width: 640px;
       margin: 0 auto;
+      animation: fadeUp 0.4s ease both;
     }
     .hero h1 {
       font-family: 'DM Serif Display', serif;
@@ -97,19 +98,188 @@
     .hero h1 em { font-style: italic; color: var(--accent); }
     .hero p { color: var(--ink2); font-size: 1.1rem; line-height: 1.6; }
 
-    /* ── Tool Grid ── */
-    .tools-section {
+    /* ── Sections ── */
+    .section {
       max-width: 1080px;
       margin: 0 auto;
-      padding: 0 24px 80px;
+      padding: 0 24px 64px;
+    }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.75rem;
+      color: var(--ink);
+      margin-bottom: 28px;
     }
 
+    /* ── Featured Health Profile Card ── */
+    .featured-section {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px 40px;
+      animation: fadeUp 0.5s ease both;
+      animation-delay: 0.05s;
+    }
+
+    .featured-card {
+      background: var(--accent);
+      border-radius: 24px;
+      padding: 48px 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      text-decoration: none;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 8px 40px rgba(45,106,79,0.25);
+    }
+    .featured-card::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      pointer-events: none;
+    }
+    .featured-card::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; right: 120px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+    .featured-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 56px rgba(45,106,79,0.35);
+    }
+
+    .featured-left { flex: 1; position: relative; z-index: 1; }
+
+    .featured-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 20px;
+    }
+    .featured-badge span { font-size: 0.85rem; }
+
+    .featured-card h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+      color: #fff;
+    }
+    .featured-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.8);
+      max-width: 480px;
+      margin-bottom: 28px;
+    }
+
+    .featured-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .pill {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px;
+      padding: 4px 12px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .featured-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 12px 24px;
+      border-radius: 100px;
+      transition: gap 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    }
+    .featured-card:hover .featured-cta {
+      gap: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+    }
+    .featured-cta svg { transition: transform 0.2s; }
+    .featured-card:hover .featured-cta svg { transform: translateX(2px); }
+
+    .featured-right {
+      position: relative;
+      z-index: 1;
+      flex-shrink: 0;
+    }
+    .featured-visual {
+      width: 200px;
+      height: 200px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      backdrop-filter: blur(4px);
+    }
+    .featured-visual .big-icon { font-size: 3.5rem; line-height: 1; }
+    .featured-visual .visual-label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.7);
+      font-weight: 500;
+    }
+    .featured-visual .visual-metrics {
+      display: flex;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .metric-chip {
+      background: rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 4px 10px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    /* ── Tool Cards ── */
     .tools-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 20px;
     }
-
     .tool-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -124,7 +294,13 @@
       transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
       position: relative;
       overflow: hidden;
+      animation: fadeUp 0.5s ease both;
     }
+    .tool-card:nth-child(1) { animation-delay: 0.08s; }
+    .tool-card:nth-child(2) { animation-delay: 0.13s; }
+    .tool-card:nth-child(3) { animation-delay: 0.18s; }
+    .tool-card:nth-child(4) { animation-delay: 0.23s; }
+    .tool-card:nth-child(5) { animation-delay: 0.28s; }
     .tool-card::before {
       content: '';
       position: absolute;
@@ -140,10 +316,7 @@
       box-shadow: 0 8px 32px rgba(26,23,20,0.12);
       border-color: var(--accent-light);
     }
-    .tool-card:hover::before {
-      transform: scaleX(1);
-    }
-
+    .tool-card:hover::before { transform: scaleX(1); }
     .tool-icon {
       width: 48px;
       height: 48px;
@@ -155,21 +328,18 @@
       font-size: 1.5rem;
       flex-shrink: 0;
     }
-
     .tool-card h2 {
       font-family: 'DM Serif Display', serif;
       font-size: 1.25rem;
       color: var(--ink);
       line-height: 1.2;
     }
-
     .tool-card p {
       font-size: 0.9rem;
       color: var(--ink2);
       line-height: 1.55;
       flex: 1;
     }
-
     .tool-link {
       display: inline-flex;
       align-items: center;
@@ -179,11 +349,80 @@
       color: var(--accent);
       margin-top: 4px;
     }
-    .tool-link svg {
-      transition: transform 0.2s;
+    .tool-link svg { transition: transform 0.2s; }
+    .tool-card:hover .tool-link svg { transform: translateX(4px); }
+
+    /* ── Divider ── */
+    .divider {
+      max-width: 1080px;
+      margin: 0 auto 48px;
+      padding: 0 24px;
+      border: none;
+      border-top: 1px solid var(--border);
     }
-    .tool-card:hover .tool-link svg {
-      transform: translateX(4px);
+
+    /* ── Article Cards ── */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }
+    .article-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      animation: fadeUp 0.5s ease both;
+    }
+    .article-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(26,23,20,0.10);
+      border-color: var(--accent-light);
+    }
+    .article-card:nth-child(1)  { animation-delay: 0.05s; }
+    .article-card:nth-child(2)  { animation-delay: 0.08s; }
+    .article-card:nth-child(3)  { animation-delay: 0.11s; }
+    .article-card:nth-child(4)  { animation-delay: 0.14s; }
+    .article-card:nth-child(5)  { animation-delay: 0.17s; }
+    .article-card:nth-child(6)  { animation-delay: 0.20s; }
+    .article-card:nth-child(7)  { animation-delay: 0.23s; }
+    .article-card:nth-child(8)  { animation-delay: 0.26s; }
+    .article-card:nth-child(9)  { animation-delay: 0.29s; }
+    .article-card:nth-child(10) { animation-delay: 0.32s; }
+    .article-card:nth-child(11) { animation-delay: 0.35s; }
+    .article-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--bg);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+    }
+    .article-content { flex: 1; }
+    .article-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .article-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.35;
     }
 
     /* ── Footer ── */
@@ -196,7 +435,7 @@
     }
     footer a { color: var(--ink3); text-decoration: underline; }
 
-    /* ── Ad hidden fix ── */
+    /* ── Ad fix ── */
     ins.adsbygoogle[data-ad-status="unfilled"],
     ins.adsbygoogle:empty {
       display: none !important;
@@ -205,27 +444,26 @@
       padding: 0 !important;
     }
 
-    /* ── Animations ── */
+    /* ── Animation ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    .hero {
-      animation: fadeUp 0.5s ease both;
-    }
-    .tool-card {
-      animation: fadeUp 0.5s ease both;
-    }
-    .tool-card:nth-child(1) { animation-delay: 0.05s; }
-    .tool-card:nth-child(2) { animation-delay: 0.10s; }
-    .tool-card:nth-child(3) { animation-delay: 0.15s; }
-    .tool-card:nth-child(4) { animation-delay: 0.20s; }
-    .tool-card:nth-child(5) { animation-delay: 0.25s; }
 
     /* ── Mobile ── */
-    @media (max-width: 480px) {
-      .tools-grid { grid-template-columns: 1fr; }
+    @media (max-width: 720px) {
+      .featured-card {
+        flex-direction: column;
+        padding: 36px 28px;
+        gap: 28px;
+      }
+      .featured-right { display: none; }
+      .featured-card h2 { font-size: 1.8rem; }
+    }
+    @media (max-width: 600px) {
+      .tools-grid, .articles-grid { grid-template-columns: 1fr; }
       .hero { padding: 40px 20px 36px; }
+      nav a { margin-left: 12px; font-size: 0.8rem; }
     }
   </style>
 </head>
@@ -246,85 +484,209 @@
 </header>
 
 <main>
+
+  <!-- Hero -->
   <div class="hero">
     <h1>Free <em>Health</em> Tools</h1>
     <p>Accurate calculators to help you understand your body.<br>Instant results. No sign-up required.</p>
   </div>
 
-  <section class="tools-section">
+  <!-- Featured: Health Profile -->
+  <div class="featured-section">
+    <a class="featured-card" href="health-profile.html">
+      <div class="featured-left">
+        <div class="featured-badge">
+          <span>⭐</span> Start Here
+        </div>
+        <h2>Your Complete<br>Health Profile</h2>
+        <p>Answer a few simple questions and get a full picture of your body — BMI, ideal weight, daily calories, hydration needs and more, all in one place.</p>
+        <div class="featured-pills">
+          <span class="pill">⚖️ BMI</span>
+          <span class="pill">🔥 Calories</span>
+          <span class="pill">🎯 Ideal Weight</span>
+          <span class="pill">📊 Body Fat</span>
+          <span class="pill">💧 Hydration</span>
+        </div>
+        <span class="featured-cta">
+          Build My Profile
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="#2D6A4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </div>
+      <div class="featured-right">
+        <div class="featured-visual">
+          <div class="big-icon">👤</div>
+          <div class="visual-label">Your Profile</div>
+          <div class="visual-metrics">
+            <span class="metric-chip">BMI</span>
+            <span class="metric-chip">TDEE</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Calculators -->
+  <section class="section">
+    <p class="section-label">Free Calculators</p>
+    <h2 class="section-title">Know Your Numbers</h2>
     <div class="tools-grid">
 
-      <!-- BMI Calculator -->
       <a class="tool-card" href="bmi-calculator.html">
         <div class="tool-icon">⚖️</div>
         <h2>BMI Calculator</h2>
         <p>Find out if your weight is in a healthy range for your height. Get your Body Mass Index instantly.</p>
         <span class="tool-link">
           Calculate BMI
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </span>
       </a>
 
-      <!-- Calorie Calculator -->
       <a class="tool-card" href="calorie-calculator.html">
         <div class="tool-icon">🔥</div>
         <h2>Calorie Calculator</h2>
         <p>Estimate your daily calorie needs based on your age, weight, height, and activity level.</p>
         <span class="tool-link">
           Calculate Calories
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </span>
       </a>
 
-      <!-- Ideal Weight Calculator -->
-      <a class="tool-card" href="ideal-weight-calculator.html">
+      <a class="tool-card" href="ideal-weight.html">
         <div class="tool-icon">🎯</div>
         <h2>Ideal Weight Calculator</h2>
-        <p>Discover your ideal weight range based on your height and body frame. Supports multiple formulas.</p>
+        <p>Discover your ideal weight range based on your height and body frame using multiple formulas.</p>
         <span class="tool-link">
           Find Ideal Weight
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </span>
       </a>
 
-      <!-- Body Fat Calculator -->
-      <a class="tool-card" href="body-fat-calculator.html">
+      <a class="tool-card" href="body-fat.html">
         <div class="tool-icon">📊</div>
         <h2>Body Fat Calculator</h2>
-        <p>Estimate your body fat percentage using measurements. Understand your lean mass vs. fat mass.</p>
+        <p>Estimate your body fat percentage using body measurements. Understand your lean mass vs. fat mass.</p>
         <span class="tool-link">
           Calculate Body Fat
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </span>
       </a>
 
-      <!-- Water Intake Calculator -->
-      <a class="tool-card" href="water-intake-calculator.html">
+      <a class="tool-card" href="water-intake.html">
         <div class="tool-icon">💧</div>
         <h2>Water Intake Calculator</h2>
         <p>Find out how much water you should drink daily based on your weight, activity, and climate.</p>
         <span class="tool-link">
           Calculate Water Intake
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </span>
       </a>
 
     </div>
   </section>
+
+  <hr class="divider">
+
+  <!-- Articles -->
+  <section class="section">
+    <p class="section-label">Health Guides</p>
+    <h2 class="section-title">Learn & Understand</h2>
+    <div class="articles-grid">
+
+      <a class="article-card" href="what-is-bmi.html">
+        <div class="article-icon">📖</div>
+        <div class="article-content">
+          <p class="article-tag">BMI</p>
+          <h3>What Is BMI?</h3>
+        </div>
+      </a>
+
+      <a class="article-card" href="healthy-bmi-for-women.html">
+        <div class="article-icon">👩</div>
+        <div class="article-content">
+          <p class="article-tag">BMI</p>
+          <h3>Healthy BMI for Women</h3>
+        </div>
+      </a>
+
+      <a class="article-card" href="normal-bmi-for-men.html">
+        <div class="article-icon">👨</div>
+        <div class="article-content">
+          <p class="article-tag">BMI</p>
+          <h3>Normal BMI for Men</h3>
+        </div>
+      </a>
+
+      <a class="article-card" href="bmi-chart-by-age.html">
+        <div class="article-icon">📈</div>
+        <div class="article-content">
+          <p class="article-tag">BMI</p>
+          <h3>BMI Chart by Age</h3>
+        </div>
+      </a>
+
+      <a class="article-card" href="how-to-lower-bmi.html">
+        <div class="article-icon">⬇️</div>
+        <div class="article-content">
+          <p class="article-tag">BMI</p>
+          <h3>How to Lower Your BMI</h3>
+        </div>
+      </a>
+
+      <a class="article-card" href="how-many-calories-per-day.html">
+        <div class="article-icon">🍽️</div>
+        <div class="article-content">
+          <p class="article-tag">Calories</p>
+          <h3>How Many Calories Per Day?</h3>
+        </div>
+      </a>
+
+      <a class="article-card" href="calories-to-lose-weight.html">
+        <div class="article-icon">🔥</div>
+        <div class="article-content">
+          <p class="article-tag">Calories</p>
+          <h3>Calories to Lose Weight</h3>
+        </div>
+      </a>
+
+      <a class="article-card" href="how-much-water-per-day.html">
+        <div class="article-icon">💧</div>
+        <div class="article-content">
+          <p class="article-tag">Hydration</p>
+          <h3>How Much Water Per Day?</h3>
+        </div>
+      </a>
+
+      <a class="article-card" href="best-exercises-to-lose-weight.html">
+        <div class="article-icon">🏃</div>
+        <div class="article-content">
+          <p class="article-tag">Exercise</p>
+          <h3>Best Exercises to Lose Weight</h3>
+        </div>
+      </a>
+
+      <a class="article-card" href="how-to-lose-belly-fat.html">
+        <div class="article-icon">💪</div>
+        <div class="article-content">
+          <p class="article-tag">Exercise</p>
+          <h3>How to Lose Belly Fat</h3>
+        </div>
+      </a>
+
+      <a class="article-card" href="high-protein-foods.html">
+        <div class="article-icon">🥩</div>
+        <div class="article-content">
+          <p class="article-tag">Nutrition</p>
+          <h3>High Protein Foods List</h3>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
 </main>
 
 <footer>
-  <p>© 2025 healthybmicheck.com · <a href="privacy.html">Privacy Policy</a> · For informational purposes only. Not medical advice.</p>
+  <p>© 2025 healthybmicheck.com · <a href="privacy.html">Privacy Policy</a> · <a href="contact.html">Contact</a> · For informational purposes only. Not medical advice.</p>
 </footer>
 
 </body>
