@@ -49,28 +49,15 @@
     nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; margin-left: 20px; transition: color .2s; }
     nav a:hover { color: #fff; }
 
-    /* 优化广告位：如果没广告，就先不显示那个大框框 */
-    .ad-slot {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px;
-      font-size: 0.75rem;
-      color: var(--ink3);
-      min-height: 20px; /* 缩小最小高度，等有广告了再撑开 */
-    }
-
     /* 自动隐藏 Google 还没填充内容的广告块 */
     ins.adsbygoogle[data-ad-status="unfilled"] {
         display: none !important;
     }
 
-    .hero { text-align: center; padding: 64px 24px 40px; max-width: 640px; margin: 0 auto; }
-    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 14px; }
+    .hero { text-align: center; padding: 80px 24px 60px; max-width: 640px; margin: 0 auto; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.5rem, 6vw, 3.5rem); line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 20px; }
     .hero h1 em { font-style: italic; color: var(--accent); }
-    .hero p { color: var(--ink2); font-size: 1rem; line-height: 1.7; }
+    .hero p { color: var(--ink2); font-size: 1.1rem; line-height: 1.6; }
   </style>
 </head>
 
@@ -88,14 +75,10 @@
   </nav>
 </header>
 
-<div class="ad-slot">
-  <span>Advertisement</span>
-</div>
-
-<div class="hero">
+<main class="hero">
   <h1>Free <em>Health</em> Tools</h1>
-  <p>Accurate calculators to help you understand your body. Instant results. No sign-up required.</p>
-</div>
+  <p>Accurate calculators to help you understand your body. <br>Instant results. No sign-up required.</p>
+</main>
 
 </body>
 </html>
