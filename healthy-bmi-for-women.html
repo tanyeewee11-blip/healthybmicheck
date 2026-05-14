@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
+    /* 核心样式定义 */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { 
       --bg: #F7F4EF; 
@@ -16,73 +17,82 @@
       --ink: #1A1714; 
       --ink2: #6B6560; 
       --ink3: #A09A94; 
-      --accent: #7C3AED; 
+      --accent: #7C3AED; /* 女性专题紫色 */
       --accent-light: #EDE9FE; 
       --border: #E5E0D8; 
       --radius: 16px; 
-      --shadow: 0 4px 20px rgba(124, 58, 237, 0.08);
+      --shadow: 0 2px 16px rgba(26,23,20,0.07);
     }
-    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); scroll-behavior: smooth; }
-    header { background: var(--ink); color: #fff; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; }
+    
+    /* 导航栏 */
+    header { background: var(--ink); color: #fff; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
     .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
     .logo a { color: #fff; text-decoration: none; }
     .logo span { color: #7EC8A4; }
-    nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; margin-left: 20px; transition: color 0.2s; }
+    nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; margin-left: 20px; }
     nav a:hover { color: #fff; }
 
-    .article-wrap { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+    /* 文章容器 */
+    .article-wrap { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
     .breadcrumb { font-size: 0.8rem; color: var(--ink3); margin-bottom: 24px; }
     .breadcrumb a { color: var(--accent); text-decoration: none; }
     
-    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 16px; }
-    .meta { color: var(--ink3); font-size: 0.85rem; margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--border); display: flex; gap: 15px; }
+    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.2; letter-spacing: -0.03em; margin-bottom: 12px; }
+    .meta { color: var(--ink3); font-size: 0.85rem; margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
 
-    /* Table of Contents */
-    .toc { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 32px; }
-    .toc h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; color: var(--ink2); }
-    .toc ul { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr; gap: 8px; }
-    .toc a { color: var(--ink); text-decoration: none; font-size: 0.95rem; font-weight: 500; border-bottom: 1px solid transparent; }
-    .toc a:hover { border-bottom-color: var(--accent); color: var(--accent); }
+    /* 目录 */
+    .toc { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 32px 0; }
+    .toc h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; color: var(--ink2); }
+    .toc ul { list-style: none; padding: 0; }
+    .toc li { margin-bottom: 8px; font-size: 0.95rem; }
+    .toc a { color: var(--ink); text-decoration: none; font-weight: 500; }
+    .toc a:hover { color: var(--accent); text-decoration: underline; }
 
-    h2 { font-family: 'DM Serif Display', serif; font-size: 1.75rem; margin: 48px 0 16px; line-height: 1.2; }
-    h3 { font-size: 1.2rem; font-weight: 600; margin: 32px 0 12px; color: var(--ink); }
-    p { color: #3D3A36; line-height: 1.8; font-size: 1.05rem; margin-bottom: 20px; }
-    
-    ul, ol { padding-left: 24px; margin-bottom: 20px; }
-    li { color: #3D3A36; line-height: 1.8; font-size: 1.05rem; margin-bottom: 8px; }
+    /* 正文元素 */
+    h2 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin: 40px 0 12px; }
+    h3 { font-size: 1.1rem; font-weight: 600; margin: 24px 0 8px; }
+    p { color: #3D3A36; line-height: 1.8; font-size: 1.05rem; margin-bottom: 16px; }
+    ul, ol { padding-left: 20px; margin-bottom: 16px; }
+    li { color: #3D3A36; line-height: 1.8; font-size: 1rem; margin-bottom: 6px; }
 
-    .callout { background: var(--accent-light); border-left: 4px solid var(--accent); border-radius: 4px 12px 12px 4px; padding: 20px; margin: 32px 0; }
+    /* 提示色块 */
+    .callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 24px 0; }
     .callout p { color: #3B1A8A; margin-bottom: 0; font-weight: 500; }
 
-    .warning-callout { background: #FBF0DC; border-left: 4px solid #C17B2A; border-radius: 4px 12px 12px 4px; padding: 20px; margin: 32px 0; }
+    .warning-callout { background: #FBF0DC; border-left: 3px solid #C17B2A; border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 24px 0; }
     .warning-callout p { color: #5A3A10; margin-bottom: 0; }
 
-    .table-container { overflow-x: auto; margin: 24px 0; border-radius: 12px; box-shadow: var(--shadow); }
-    table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); }
+    /* 表格 */
+    .table-container { overflow-x: auto; margin: 24px 0; border-radius: var(--radius); box-shadow: var(--shadow); }
+    table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); min-width: 500px; }
     thead tr { background: var(--ink); color: #fff; }
-    th { padding: 14px 16px; text-align: left; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
-    td { padding: 14px 16px; font-size: 0.95rem; border-bottom: 1px solid var(--border); }
-    tbody tr:nth-child(even) { background: #FAFAF8; }
+    th { padding: 12px 16px; text-align: left; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
+    td { padding: 13px 16px; font-size: 0.95rem; border-bottom: 1px solid var(--border); }
 
-    .cta-box { background: var(--ink); border-radius: var(--radius); padding: 40px; text-align: center; margin-top: 56px; }
-    .cta-box h2 { color: #fff; margin-top: 0; font-size: 1.8rem; }
-    .cta-box p { color: rgba(255,255,255,0.7); margin-bottom: 24px; }
-    .cta-btn { display: inline-block; background: #7EC8A4; color: var(--ink); text-decoration: none; padding: 16px 32px; border-radius: 12px; font-family: 'DM Serif Display', serif; font-size: 1.1rem; transition: transform 0.2s; }
-    .cta-btn:hover { transform: translateY(-2px); }
+    /* 广告位样式 (同步第一篇) */
+    .ad-unit { margin: 36px 0; text-align: center; min-height: 90px; }
+    .ad-label { font-size: 0.7rem; color: var(--ink3); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px; }
 
-    .related { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border); }
-    .related h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; margin-bottom: 20px; }
-    .related-links { display: flex; flex-wrap: wrap; gap: 12px; }
-    .related-links a { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 18px; text-decoration: none; color: var(--ink); font-size: 0.9rem; font-weight: 500; transition: all 0.2s; }
-    .related-links a:hover { border-color: var(--accent); background: var(--accent-light); color: var(--accent); }
+    /* CTA 盒子 */
+    .cta-box { background: var(--ink); border-radius: var(--radius); padding: 32px; text-align: center; margin-top: 48px; }
+    .cta-box h2 { color: #fff; margin-top: 0; }
+    .cta-box p { color: rgba(255,255,255,0.6); margin-bottom: 20px; }
+    .cta-btn { display: inline-block; background: #7EC8A4; color: var(--ink); text-decoration: none; padding: 14px 32px; border-radius: 12px; font-family: 'DM Serif Display', serif; font-size: 1.05rem; }
 
-    footer { background: var(--ink); color: rgba(255,255,255,0.4); text-align: center; padding: 40px 24px; font-size: 0.85rem; line-height: 1.8; }
-    footer a { color: rgba(255,255,255,0.6); text-decoration: none; margin: 0 10px; }
-    footer a:hover { color: #fff; }
+    /* 相关文章 */
+    .related { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
+    .related h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; margin-bottom: 16px; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .related-links a { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; text-decoration: none; color: var(--ink); font-size: 0.875rem; transition: 0.2s; }
+    .related-links a:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* 页脚 */
+    footer { background: var(--ink); color: rgba(255,255,255,0.4); text-align: center; padding: 24px; font-size: 0.8rem; }
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 8px; }
 
     @media (max-width: 600px) {
       .article-wrap { padding: 32px 20px; }
-      .meta { flex-direction: column; gap: 5px; }
     }
   </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7723301737736770" crossorigin="anonymous"></script>
@@ -99,129 +109,120 @@
 </header>
 
 <div class="article-wrap">
-  <div class="breadcrumb"><a href="index.html">Home</a> › <a href="what-is-bmi.html">BMI Guide</a> › Healthy BMI for Women</div>
+  <div class="breadcrumb"><a href="index.html">Home</a> › Healthy BMI for Women</div>
   
-  <h1>Healthy BMI for Women: A Complete Age-Specific Guide</h1>
-  
-  <div class="meta">
-    <span>📅 Last updated: May 2025</span>
-    <span>⏱️ 7 min read</span>
-    <span>✅ Medically Reviewed</span>
-  </div>
+  <h1>Healthy BMI for Women: An Age-Specific Guide</h1>
+  <div class="meta">Last updated: May 2025 &nbsp;·&nbsp; 7 min read &nbsp;·&nbsp; Medically Reviewed</div>
 
-  <p>While the formula for Body Mass Index (BMI) remains constant across all genders, the way we interpret those numbers for women requires a nuanced approach. Biological factors—such as higher essential fat requirements, hormonal shifts during menopause, and changes in bone density—mean that a "healthy" number can evolve throughout a woman's life.</p>
+  <p>While the BMI formula is universal, a healthy range for women involves unique biological considerations. Factors like higher essential fat requirements, hormonal changes, and age-related bone density loss all play a role in how women should interpret their Body Mass Index.</p>
+
+  <!-- Ad Unit 1: Below Intro (Synced with First Article) -->
+  <div class="ad-unit">
+    <div class="ad-label">Advertisement</div>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7723301737736770" data-ad-slot="AUTO" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
 
   <div class="toc">
     <h4>In this guide</h4>
     <ul>
-      <li><a href="#ranges">1. Healthy BMI Ranges by Age</a></li>
+      <li><a href="#ranges">1. BMI Ranges by Age</a></li>
       <li><a href="#body-fat">2. Why Women Carry More Fat</a></li>
-      <li><a href="#hormones">3. Hormones, Menopause & Weight</a></li>
-      <li><a href="#waist">4. The Importance of Waist Circumference</a></li>
-      <li><a href="#beyond">5. Beyond the Scale: Health Indicators</a></li>
+      <li><a href="#hormones">3. Hormones and Menopause</a></li>
+      <li><a href="#waist">4. Waist Circumference Importance</a></li>
     </ul>
   </div>
 
   <h2 id="ranges">What Is a Healthy BMI for Women?</h2>
-  <p>For most adult women, the World Health Organization (WHO) defines a healthy BMI as being between <strong>18.5 and 24.9</strong>. However, this is a broad population-level metric. For individuals, "healthy" often depends on age and ethnicity.</p>
+  <p>The standard WHO healthy BMI range for adult women is <strong>18.5 to 24.9</strong>. However, clinical evidence suggests that this "one-size-fits-all" number may not be ideal for every stage of life or every ethnicity.</p>
 
   <div class="callout">
-    <p><strong>Note for Asian Women:</strong> Clinical research suggests that women of East and South Asian descent may face higher health risks (like Type 2 diabetes) at lower BMI levels. For these groups, a BMI of 23 or higher is often considered "overweight."</p>
+    <p><strong>Note for Asian Women:</strong> Many health organizations recommend a lower overweight threshold of BMI 23.0 for women of South or East Asian heritage due to higher visceral fat risks.</p>
   </div>
 
-  <h3>Age-Specific BMI Recommendations</h3>
-  <p>As women age, maintaining a slightly higher BMI may actually offer protection against osteoporosis and frailty.</p>
-  
+  <h3>Healthy BMI Targets by Age</h3>
   <div class="table-container">
     <table>
       <thead>
         <tr>
-          <th>Age Range</th>
-          <th>Healthy BMI Target</th>
-          <th>Primary Focus</th>
+          <th>Age Group</th>
+          <th>Suggested BMI</th>
+          <th>Health Focus</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>18 – 39</td>
           <td>18.5 – 24.9</td>
-          <td>Maintaining metabolic flexibility</td>
+          <td>Metabolic health & Lifestyle</td>
         </tr>
         <tr>
           <td>40 – 59</td>
           <td>19.0 – 25.9</td>
-          <td>Managing hormonal fat redistribution</td>
+          <td>Hormonal balance</td>
         </tr>
         <tr>
           <td>60+</td>
           <td>22.0 – 27.0</td>
-          <td>Preserving muscle mass & bone density</td>
+          <td>Bone density & Muscle mass</td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <h2 id="body-fat">Why Women Carry More Fat at the Same BMI</h2>
-  <p>It is a biological fact: women naturally require more body fat than men. This "essential fat" is critical for reproductive health, oestrogen production, and vitamin absorption. While a man might be considered healthy at 15% body fat, a woman at that same level might experience hormonal disruptions or the loss of her menstrual cycle (amenorrhea).</p>
-  <p>This is why a woman and a man can have the exact same BMI of 22, but the woman will typically have about 10-12% more body fat. This is not a lack of fitness—it is healthy physiology.</p>
+  <!-- Ad Unit 2: Mid Article (Synced with First Article) -->
+  <div class="ad-unit">
+    <div class="ad-label">Advertisement</div>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7723301737736770" data-ad-slot="AUTO" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
 
-  <h2 id="hormones">Hormonal Transitions & Body Composition</h2>
-  
-  <h3>The "Menopause Shift"</h3>
-  <p>During perimenopause and menopause, declining oestrogen levels often cause a shift in where the body stores fat. Many women notice an increase in visceral (abdominal) fat, even if their total weight stays the same. <strong>This is why your BMI might remain stable while your clothes fit differently.</strong></p>
+  <h2 id="body-fat">Why Women Naturally Have Higher Body Fat</h2>
+  <p>Women are biologically programmed to carry more essential fat than men to support reproductive functions and oestrogen production. A healthy woman may have 21–33% body fat, whereas a healthy man might have 8–24%, even if they share the same BMI.</p>
 
-  <h3>Pregnancy & Postpartum</h3>
-  <p>BMI is not a valid tool during pregnancy. Focus instead on the weight gain targets recommended by your healthcare provider based on your <em>pre-pregnancy</em> BMI. Postpartum, it can take 6–12 months for body composition to stabilize.</p>
+  <h2 id="hormones">How Hormones Affect Your BMI</h2>
+  <h3>Menopause and Body Composition</h3>
+  <p>During menopause, declining oestrogen often leads to fat redistribution from the hips and thighs to the abdomen. This can increase health risks even if your total BMI remains stable. During this time, muscle preservation through strength training is crucial.</p>
 
-  <h2 id="waist">The Importance of Waist Circumference</h2>
-  <p>Because BMI cannot distinguish between muscle and fat, or where fat is located, many doctors now use <strong>waist circumference</strong> as a vital companion metric.</p>
-  <ul>
-    <li><strong>Low Risk:</strong> Under 80 cm (31.5 inches)</li>
-    <li><strong>Increased Risk:</strong> 80 cm – 88 cm</li>
-    <li><strong>High Risk:</strong> Over 88 cm (34.5 inches)</li>
-  </ul>
-  <p>If your BMI is in the "overweight" category but your waist circumference is healthy, your clinical health risk may be lower than someone with a "normal" BMI but high abdominal fat.</p>
-
-  <h2 id="beyond">Beyond BMI: 5 Metrics to Track</h2>
-  <p>To get a 360-degree view of your health, consider these markers alongside your BMI:</p>
-  <ol>
-    <li><strong>Resting Heart Rate:</strong> An indicator of cardiovascular efficiency.</li>
-    <li><strong>Muscle Mass:</strong> Essential for metabolic health as you age.</li>
-    <li><strong>Blood Pressure:</strong> Ideally below 120/80 mmHg.</li>
-    <li><strong>HbA1c:</strong> A measure of your average blood sugar over 3 months.</li>
-    <li><strong>Bone Density:</strong> Especially important for women over 50.</li>
-  </ol>
+  <h2 id="waist">Waist Circumference: The Vital Companion</h2>
+  <p>BMI doesn't tell us where fat is stored. For women, a waist measurement over <strong>80cm (31.5 inches)</strong> indicates an increased risk of chronic disease, regardless of your BMI score.</p>
 
   <div class="warning-callout">
-    <p><strong>Disclaimer:</strong> This guide is for informational purposes only. BMI is a screening tool, not a diagnostic one. Always discuss your weight and health goals with a qualified medical professional.</p>
+    <p><strong>Important:</strong> BMI is a screening tool, not a diagnostic one. Always consult your doctor for a personalized health assessment.</p>
+  </div>
+
+  <!-- Ad Unit 3: Before CTA (Synced with First Article) -->
+  <div class="ad-unit">
+    <div class="ad-label">Advertisement</div>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7723301737736770" data-ad-slot="AUTO" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
 
   <div class="cta-box">
-    <h2>Check Your Health Stats</h2>
-    <p>Get an instant breakdown of your BMI and what it means for your age and height.</p>
-    <a href="bmi-calculator.html" class="cta-btn">Start BMI Calculation →</a>
+    <h2>Calculate Your BMI Instantly</h2>
+    <p>Use our free tool to find your score and see how it compares to age-specific averages.</p>
+    <a href="bmi-calculator.html" class="cta-btn">Check Your BMI Now →</a>
   </div>
 
   <div class="related">
-    <h3>Deeper Reading</h3>
+    <h3>Related Articles & Tools</h3>
     <div class="related-links">
-      <a href="body-fat.html">Body Fat % Guide</a>
-      <a href="bmi-chart-by-age.html">Full BMI Age Charts</a>
-      <a href="how-to-lower-bmi.html">Safe Ways to Lower BMI</a>
-      <a href="calorie-calculator.html">Daily Calorie Needs</a>
+      <a href="what-is-bmi.html">What is BMI?</a>
+      <a href="bmi-chart-by-age.html">BMI Chart by Age</a>
+      <a href="body-fat.html">Body Fat Calculator</a>
+      <a href="calorie-calculator.html">Calorie Calculator</a>
     </div>
   </div>
 </div>
 
 <footer>
-  <div>© 2025 HealthyBMICheck.com — Empowering Better Health Decisions</div>
-  <div style="margin: 15px 0;">
+  <div>© 2025 HealthyBMICheck.com — Free Health Tools</div>
+  <div style="margin-top:8px">
     <a href="index.html">Home</a>
-    <a href="bmi-calculator.html">Calculators</a>
     <a href="privacy.html">Privacy</a>
     <a href="contact.html">Contact</a>
   </div>
-  <p style="font-size: 0.75rem; color: rgba(255,255,255,0.3);">Information provided is not intended to replace professional medical advice, diagnosis, or treatment.</p>
+  <div style="margin-top:8px; font-size:0.72rem; opacity: 0.6;">Informational purposes only. Not medical advice.</div>
 </footer>
 
 </body>
