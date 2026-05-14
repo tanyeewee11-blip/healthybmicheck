@@ -3,18 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Healthy BMI for Women — What You Need to Know | HealthyBMICheck</title>
-
   <meta name="description" content="What is a healthy BMI for women? Discover age-specific BMI ranges, how hormones affect body fat, and why waist circumference matters for female health.">
   <meta name="keywords" content="healthy BMI for women, BMI for women by age, normal BMI women, female body composition, BMI for menopause">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --bg: #F7F4EF;
       --surface: #FFFFFF;
@@ -27,39 +22,15 @@
       --radius: 16px;
       --shadow: 0 2px 16px rgba(26,23,20,0.07);
     }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.6;
-    }
-
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); }
     header {
-      background: var(--ink);
-      color: #fff;
+      background: var(--ink); color: #fff;
       padding: 18px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; align-items: center; justify-content: space-between;
     }
-
-    .logo a {
-      color: #fff;
-      text-decoration: none;
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.25rem;
-    }
-
+    .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
     .logo span { color: #7EC8A4; }
-
-    nav a {
-      color: rgba(255,255,255,0.6);
-      text-decoration: none;
-      margin-left: 18px;
-      font-size: 0.85rem;
-    }
-
+    nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; margin-left: 20px; }
     nav a:hover { color: #fff; }
 
     .article-wrap {
@@ -71,186 +42,199 @@
     .breadcrumb {
       font-size: 0.8rem;
       color: var(--ink3);
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
-
-    .breadcrumb a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
 
     h1 {
       font-family: 'DM Serif Display', serif;
       font-size: clamp(1.8rem, 4vw, 2.6rem);
       line-height: 1.2;
-      margin-bottom: 10px;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
     }
-
     .meta {
       color: var(--ink3);
       font-size: 0.85rem;
-      margin-bottom: 28px;
-      padding-bottom: 20px;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
       border-bottom: 1px solid var(--border);
     }
 
     h2 {
       font-family: 'DM Serif Display', serif;
-      margin: 36px 0 10px;
       font-size: 1.5rem;
+      margin: 40px 0 12px;
+      letter-spacing: -0.02em;
     }
-
     h3 {
-      margin: 20px 0 8px;
       font-size: 1.05rem;
+      font-weight: 600;
+      margin: 24px 0 8px;
     }
-
     p {
-      margin-bottom: 14px;
       color: #3D3A36;
       line-height: 1.8;
+      font-size: 1rem;
+      margin-bottom: 16px;
     }
+    ul, ol {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+    li {
+      color: #3D3A36;
+      line-height: 1.8;
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .article-wrap a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: var(--accent-light);
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.2s;
+    }
+    .article-wrap a:hover { text-decoration-color: var(--accent); }
+
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin: 28px 0;
+    }
+    .toc h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink3);
+      margin-bottom: 12px;
+    }
+    .toc ol {
+      padding-left: 18px;
+      margin: 0;
+    }
+    .toc li { margin-bottom: 6px; }
+    .toc a {
+      color: var(--ink2);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .toc a:hover { color: var(--accent); }
 
     .callout {
       background: var(--accent-light);
       border-left: 3px solid var(--accent);
-      padding: 16px 20px;
       border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
       margin: 24px 0;
     }
+    .callout p { color: #3B1F7A; margin-bottom: 0; }
 
     .warning-callout {
       background: #FBF0DC;
       border-left: 3px solid #C17B2A;
-      padding: 16px 20px;
       border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
       margin: 24px 0;
     }
+    .warning-callout p { color: #5A3A10; margin-bottom: 0; }
 
-    /* TOC */
-    .toc {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 18px;
-      border-radius: 12px;
-      margin: 28px 0;
-      position: sticky;
-      top: 20px;
-    }
-
-    .toc h4 {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      color: var(--ink2);
-    }
-
-    .toc a {
-      color: var(--ink);
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-
-    .toc a:hover {
-      color: var(--accent);
-    }
-
-    .ad-unit {
-      margin: 36px 0;
-      text-align: center;
-      min-height: 90px;
-    }
-
-    .ad-label {
-      font-size: 0.7rem;
-      color: var(--ink3);
-      margin-bottom: 6px;
-      text-transform: uppercase;
-    }
-
-    .table-container {
-      overflow-x: auto;
-      margin: 24px 0;
-    }
-
-    table {
+    .bmi-table {
       width: 100%;
       border-collapse: collapse;
-      background: white;
+      background: var(--surface);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
       border: 1px solid var(--border);
-      min-width: 500px;
+      margin: 20px 0 32px;
     }
+    .bmi-table thead tr { background: var(--ink); color: #fff; }
+    .bmi-table th { padding: 12px 16px; text-align: left; font-size: 0.8rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+    .bmi-table td { padding: 13px 16px; font-size: 0.9rem; border-bottom: 1px solid var(--border); }
+    .bmi-table tbody tr:last-child td { border-bottom: none; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 8px; vertical-align: middle; }
 
-    th {
-      background: var(--ink);
-      color: white;
-      padding: 12px;
-      text-align: left;
-      font-size: 0.8rem;
+    .related-articles {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin: 40px 0;
+      box-shadow: var(--shadow);
     }
-
-    td {
-      padding: 12px;
-      border-bottom: 1px solid var(--border);
+    .related-articles h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin: 0 0 16px;
+      color: var(--ink);
     }
+    .related-list {
+      list-style: none;
+      padding: 0; margin: 0;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .related-list li { margin: 0; }
+    .related-list a {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none !important;
+      color: var(--ink) !important;
+      font-size: 0.9rem; font-weight: 500;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .related-list a:hover { border-color: var(--accent); background: var(--accent-light); }
+    .related-list .icon { font-size: 1.1rem; flex-shrink: 0; }
 
     .cta-box {
       background: var(--ink);
-      color: white;
-      padding: 32px;
       border-radius: var(--radius);
+      padding: 32px;
       text-align: center;
       margin-top: 48px;
     }
-
+    .cta-box h2 { color: #fff; margin-top: 0; }
+    .cta-box p { color: rgba(255,255,255,0.6); margin-bottom: 20px; }
     .cta-btn {
       display: inline-block;
-      margin-top: 14px;
-      padding: 12px 26px;
       background: #7EC8A4;
       color: var(--ink);
-      text-decoration: none;
-      border-radius: 10px;
+      text-decoration: none !important;
+      padding: 14px 32px;
+      border-radius: 12px;
       font-family: 'DM Serif Display', serif;
+      font-size: 1.05rem;
     }
-
-    .related {
-      margin-top: 40px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-    }
-
-    .related a {
-      display: inline-block;
-      margin: 6px;
-      padding: 8px 12px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      text-decoration: none;
-      color: var(--ink);
-      font-size: 0.85rem;
-    }
+    .cta-btn:hover { opacity: 0.9; }
 
     footer {
       background: var(--ink);
-      color: rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.4);
       text-align: center;
       padding: 24px;
       font-size: 0.8rem;
+      line-height: 1.8;
     }
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 8px; }
   </style>
-
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7723301737736770" crossorigin="anonymous"></script>
 </head>
-
 <body>
 
 <header>
-  <div class="logo"><a href="index.html">healthy<span>bmicheck</span>.com</a></div>
+  <div class="logo"><a href="index.html" style="color:#fff;text-decoration:none">healthy<span>bmicheck</span>.com</a></div>
   <nav>
-    <a href="bmi-calculator.html">Calculator</a>
-    <a href="health-profile.html">Profile</a>
     <a href="index.html">Home</a>
+    <a href="bmi-calculator.html">BMI Calculator</a>
+    <a href="health-profile.html">Health Profile</a>
+    <a href="privacy.html">Privacy</a>
   </nav>
 </header>
 
@@ -261,103 +245,224 @@
   </div>
 
   <h1>Healthy BMI for Women: An Age-Specific Guide</h1>
+  <div class="meta">Last updated: May 2025 &nbsp;·&nbsp; 7 min read &nbsp;·&nbsp; Reviewed for accuracy</div>
 
-  <div class="meta">
-    Last updated: May 2025 · 7 min read · Reviewed
-  </div>
+  <p>BMI is calculated the same way for everyone, but what counts as a healthy result is more nuanced for women. Hormones, reproductive stages, body composition, and ethnicity all influence how BMI should be interpreted in a female context. This guide breaks down what healthy BMI looks like for women at different life stages — and what other measurements matter just as much.</p>
 
-  <p>While BMI is universal, women have unique biological factors that affect how it should be interpreted.</p>
+  <p>You can also use our <a href="bmi-calculator.html">free BMI Calculator</a> to find your own number instantly.</p>
 
-  <!-- AD 1 -->
-  <div class="ad-unit">
-    <div class="ad-label">Advertisement</div>
-    <ins class="adsbygoogle" style="display:block"
-      data-ad-client="ca-pub-7723301737736770"
-      data-ad-slot="AUTO"
-      data-ad-format="auto"
-      data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
-
-  <!-- TOC -->
   <div class="toc">
     <h4>Contents</h4>
-    <a href="#range">BMI Range</a><br>
-    <a href="#fat">Body Fat</a><br>
-    <a href="#hormones">Hormones</a><br>
-    <a href="#waist">Waist Size</a>
+    <ol>
+      <li><a href="#range">Standard BMI ranges for women</a></li>
+      <li><a href="#age">BMI by age group</a></li>
+      <li><a href="#fat">Why women carry more body fat</a></li>
+      <li><a href="#hormones">Hormones, pregnancy and menopause</a></li>
+      <li><a href="#ethnicity">Ethnicity and BMI thresholds</a></li>
+      <li><a href="#waist">Waist circumference</a></li>
+      <li><a href="#limitations">Limitations of BMI for women</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol>
   </div>
 
-  <h2 id="range">What is a Healthy BMI for Women?</h2>
-  <p>Healthy BMI range is 18.5–24.9 for most women.</p>
+  <h2 id="range">Standard BMI Ranges for Women</h2>
+  <p>The World Health Organization uses the same BMI categories for both men and women. For adult women aged 18 and over, the standard ranges are:</p>
+
+  <table class="bmi-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>BMI Range</th>
+        <th>Health Implication</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="dot" style="background:#3A7BBF"></span>Underweight</td>
+        <td>Below 18.5</td>
+        <td>Risk of nutritional deficiency, bone loss</td>
+      </tr>
+      <tr>
+        <td><span class="dot" style="background:#2D6A4F"></span>Normal weight</td>
+        <td>18.5 – 24.9</td>
+        <td>Generally associated with good health</td>
+      </tr>
+      <tr>
+        <td><span class="dot" style="background:#C17B2A"></span>Overweight</td>
+        <td>25.0 – 29.9</td>
+        <td>Increased risk of some conditions</td>
+      </tr>
+      <tr>
+        <td><span class="dot" style="background:#B83232"></span>Obese (Class I)</td>
+        <td>30.0 – 34.9</td>
+        <td>High risk of chronic disease</td>
+      </tr>
+      <tr>
+        <td><span class="dot" style="background:#8B1A1A"></span>Obese (Class II+)</td>
+        <td>35.0 and above</td>
+        <td>Very high to extremely high risk</td>
+      </tr>
+    </tbody>
+  </table>
 
   <div class="callout">
-    <p><strong>Note:</strong> Asian women may have higher risk at BMI 23+</p>
+    <p><strong>Note:</strong> Women of East or South Asian heritage may face increased health risks at a BMI of 23 or above. See the <a href="#ethnicity">ethnicity section</a> below for details.</p>
   </div>
 
-  <h2 id="fat">Why Women Have Higher Body Fat</h2>
-  <p>Women naturally store more essential fat for hormonal function.</p>
+  <h2 id="age">BMI by Age Group for Women</h2>
+  <p>While the WHO thresholds are the same across age groups, research suggests that the health implications of a given BMI shift as women age. This is largely due to changes in muscle mass, bone density, and fat distribution over time.</p>
 
-  <h2 id="hormones">Hormones & Menopause</h2>
-  <p>Hormonal changes shift fat distribution to the abdomen.</p>
+  <table class="bmi-table">
+    <thead>
+      <tr>
+        <th>Age Group</th>
+        <th>Suggested Healthy BMI Range</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>18 – 34</td>
+        <td>18.5 – 24.9</td>
+        <td>Standard WHO range applies</td>
+      </tr>
+      <tr>
+        <td>35 – 49</td>
+        <td>18.5 – 24.9</td>
+        <td>Watch for abdominal fat increase</td>
+      </tr>
+      <tr>
+        <td>50 – 64</td>
+        <td>20.0 – 25.9</td>
+        <td>Slightly higher BMI may protect bone health</td>
+      </tr>
+      <tr>
+        <td>65 and over</td>
+        <td>22.0 – 27.0</td>
+        <td>Lower BMI in older women can indicate muscle loss</td>
+      </tr>
+    </tbody>
+  </table>
 
-  <h2 id="waist">Waist Circumference</h2>
-  <p>Over 80cm indicates higher risk regardless of BMI.</p>
+  <p>For older women, being underweight is often a greater health concern than being slightly overweight, as low BMI in this group is associated with reduced muscle mass (sarcopenia), increased fall risk, and poorer recovery from illness. For a full breakdown, see our <a href="bmi-chart-by-age.html">BMI Chart by Age</a>.</p>
+
+  <h2 id="fat">Why Women Naturally Carry More Body Fat</h2>
+  <p>At the same BMI, women typically have a higher percentage of body fat than men. This is not a health problem — it is a biological reality shaped by reproductive function. Women need a certain level of essential body fat to support hormonal regulation, fertility, and pregnancy.</p>
+
+  <p>As a general guide, healthy body fat percentages for women are considerably higher than for men:</p>
+
+  <ul>
+    <li><strong>Women aged 20–39:</strong> 21–32% body fat is considered healthy</li>
+    <li><strong>Women aged 40–59:</strong> 23–33% body fat is considered healthy</li>
+    <li><strong>Women aged 60–79:</strong> 24–35% body fat is considered healthy</li>
+  </ul>
+
+  <p>Because BMI does not measure body fat directly, it can sometimes underestimate health risk in women who have a normal BMI but a high body fat percentage. For a more precise measurement, our <a href="body-fat.html">Body Fat Calculator</a> provides a better estimate based on additional inputs.</p>
+
+  <h2 id="hormones">Hormones, Pregnancy, and Menopause</h2>
+
+  <h3>Reproductive years</h3>
+  <p>During the reproductive years, oestrogen promotes fat storage in the hips, thighs, and buttocks — a pattern associated with lower cardiovascular risk compared to abdominal fat storage. This is one reason why premenopausal women generally have lower rates of heart disease than men of the same age.</p>
+
+  <h3>Pregnancy</h3>
+  <p>BMI is not an appropriate measure during pregnancy. Weight gain during pregnancy is expected, necessary, and healthy. The amount recommended varies depending on your pre-pregnancy BMI. Always follow guidance from your midwife or doctor regarding healthy weight gain during this period — do not use a standard BMI calculator to assess your weight when pregnant.</p>
+
+  <h3>Perimenopause and menopause</h3>
+  <p>As oestrogen levels decline during perimenopause and menopause (typically between ages 45 and 55), fat distribution often shifts from the hips and thighs toward the abdomen. This change in fat patterning increases cardiovascular and metabolic risk — even if the number on the scale stays the same and BMI appears unchanged.</p>
+  <p>This is why waist circumference becomes an especially important measurement for women in this life stage. A BMI within the normal range does not rule out increased abdominal fat accumulation after menopause.</p>
+
+  <h2 id="ethnicity">Ethnicity and BMI Thresholds</h2>
+  <p>Research consistently shows that women of East Asian and South Asian heritage tend to have higher levels of body fat and greater cardiometabolic risk at lower BMI values compared to women of European descent. As a result, several health organisations — including the World Health Organization — recommend lower action thresholds for these populations:</p>
+
+  <ul>
+    <li><strong>Overweight threshold:</strong> BMI ≥ 23 (instead of 25)</li>
+    <li><strong>Obese threshold:</strong> BMI ≥ 27.5 (instead of 30)</li>
+  </ul>
+
+  <p>If you are of East or South Asian heritage, it is worth discussing these adjusted thresholds with your doctor, even if your BMI appears within the standard healthy range.</p>
+
+  <div class="callout">
+    <p><strong>Tip:</strong> For women of Asian heritage, pairing BMI with a waist circumference measurement gives a more accurate picture of health risk than BMI alone.</p>
+  </div>
+
+  <h2 id="waist">Waist Circumference: The Other Number That Matters</h2>
+  <p>Waist circumference is one of the most important measurements for assessing health risk in women, particularly because it reflects abdominal (visceral) fat — the type of fat stored around the organs that is most strongly linked to heart disease, type 2 diabetes, and metabolic syndrome.</p>
+
+  <p>For women, the general guidelines are:</p>
+
+  <ul>
+    <li><strong>Low risk:</strong> Below 80 cm (31.5 inches)</li>
+    <li><strong>Increased risk:</strong> 80–88 cm (31.5–34.6 inches)</li>
+    <li><strong>High risk:</strong> Above 88 cm (34.6 inches)</li>
+  </ul>
+
+  <p>To measure correctly, use a flexible tape measure at the midpoint between your lowest rib and the top of your hip bone, usually at the level of the navel. Measure after breathing out normally, and do not pull the tape tight.</p>
+
+  <p>A woman can have a BMI within the healthy range and still have a waist circumference that indicates elevated risk — particularly after menopause. Using both measurements together gives a much more useful picture of health than BMI alone.</p>
+
+  <h2 id="limitations">Limitations of BMI for Women</h2>
+  <p>BMI has several limitations that are particularly relevant for women:</p>
+
+  <h3>It does not reflect fat distribution</h3>
+  <p>Two women with identical BMIs can have very different fat distributions and therefore very different health profiles. A woman who stores fat primarily in her abdomen faces higher cardiovascular risk than one who stores it in her hips and thighs, even at the same BMI.</p>
+
+  <h3>It does not account for muscle mass</h3>
+  <p>A woman who is very physically active and has high muscle mass may be classified as overweight by BMI despite having excellent metabolic health and low body fat. Our <a href="body-fat.html">Body Fat Calculator</a> can help provide a more complete picture in this case.</p>
+
+  <h3>It does not adjust for life stage</h3>
+  <p>BMI does not account for the significant changes in body composition that occur through puberty, pregnancy, breastfeeding, perimenopause, and menopause. A static number cannot capture the complexity of a woman's body across a lifetime.</p>
 
   <div class="warning-callout">
-    <p><strong>Important:</strong> BMI is only a screening tool.</p>
+    <p><strong>Important:</strong> BMI is a useful starting point, not a complete health assessment. Always consult a qualified healthcare professional for personalised guidance.</p>
   </div>
 
-  <!-- AD 2 -->
-  <div class="ad-unit">
-    <div class="ad-label">Advertisement</div>
-    <ins class="adsbygoogle" style="display:block"
-      data-ad-client="ca-pub-7723301737736770"
-      data-ad-slot="AUTO"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  <div class="related-articles">
+    <h3>Related Articles & Tools</h3>
+    <ul class="related-list">
+      <li><a href="bmi-calculator.html"><span class="icon">⚖️</span> Free BMI Calculator — Get your result instantly</a></li>
+      <li><a href="what-is-bmi.html"><span class="icon">📖</span> What is BMI? Full Explanation</a></li>
+      <li><a href="normal-bmi-for-men.html"><span class="icon">👨</span> Normal BMI for Men</a></li>
+      <li><a href="bmi-chart-by-age.html"><span class="icon">📈</span> BMI Chart by Age</a></li>
+      <li><a href="body-fat.html"><span class="icon">📊</span> Body Fat Calculator</a></li>
+      <li><a href="how-to-lower-bmi.html"><span class="icon">⬇️</span> How to Lower Your BMI</a></li>
+      <li><a href="calorie-calculator.html"><span class="icon">🔥</span> Calorie Calculator</a></li>
+    </ul>
   </div>
 
-  <!-- FAQ SEO BOOST -->
-  <h2>Frequently Asked Questions</h2>
+  <h2 id="faq">Frequently Asked Questions</h2>
 
-  <h3>What is a healthy BMI for women?</h3>
-  <p>18.5–24.9 is considered healthy.</p>
+  <h3>What is a healthy BMI for a woman?</h3>
+  <p>For most adult women, a BMI between 18.5 and 24.9 is considered healthy by WHO standards. However, women of Asian heritage may face increased health risks at BMI 23 or above, and older women may benefit from a slightly higher BMI (around 22–27) to protect bone and muscle health.</p>
 
   <h3>Is BMI accurate for women?</h3>
-  <p>It is a screening tool, not a diagnostic tool.</p>
+  <p>BMI is a useful screening tool but has known limitations for women specifically. It does not distinguish between muscle and fat, does not reflect fat distribution, and does not adjust for hormonal changes across life stages. For a more accurate measure, pairing BMI with waist circumference and body fat percentage gives a more complete picture.</p>
 
-  <h3>Does BMI change with age?</h3>
-  <p>Yes, body composition changes with age.</p>
+  <h3>Does BMI change with age for women?</h3>
+  <p>The standard BMI formula does not change, but the health implications of a given BMI shift with age. Older women may have a higher proportion of body fat at the same BMI due to loss of muscle mass over time, and a slightly higher BMI (up to 27) may actually be protective in women over 65.</p>
 
-  <h3>What is healthy waist size?</h3>
-  <p>Below 80cm is generally recommended.</p>
+  <h3>What waist size is healthy for women?</h3>
+  <p>A waist circumference below 80 cm (31.5 inches) is generally considered low risk. Above 88 cm (34.6 inches) is associated with significantly increased cardiovascular and metabolic risk. For women of Asian heritage, the lower threshold of 80 cm is especially important to monitor.</p>
 
-  <!-- AD 3 (HIGH RPM ZONE) -->
-  <div class="ad-unit">
-    <div class="ad-label">Advertisement</div>
-    <ins class="adsbygoogle" style="display:block"
-      data-ad-client="ca-pub-7723301737736770"
-      data-ad-slot="AUTO"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
+  <h3>Can I use BMI during pregnancy?</h3>
+  <p>No — BMI is not an appropriate measure during pregnancy. Weight gain is expected and necessary for a healthy pregnancy. Always follow your midwife or doctor's guidance on healthy weight gain during this period.</p>
 
   <div class="cta-box">
-    <h2>Calculate Your BMI</h2>
-    <p>Use our free calculator now</p>
-    <a class="cta-btn" href="bmi-calculator.html">Start Now</a>
-  </div>
-
-  <div class="related">
-    <a href="what-is-bmi.html">What is BMI</a>
-    <a href="bmi-chart-by-age.html">BMI Chart</a>
-    <a href="body-fat.html">Body Fat</a>
-    <a href="calorie-calculator.html">Calories</a>
+    <h2>Calculate Your BMI Now</h2>
+    <p>Use our free calculator to find your BMI instantly — metric and imperial units supported.</p>
+    <a href="bmi-calculator.html" class="cta-btn">Go to BMI Calculator →</a>
   </div>
 
 </div>
 
 <footer>
-  © 2025 HealthyBMICheck.com
+  <div>© 2025 HealthyBMICheck.com — Free BMI Calculator</div>
+  <div style="margin-top:8px">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="contact.html">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="bmi-calculator.html">BMI Calculator</a>
+  </div>
+  <div style="margin-top:8px; font-size:0.72rem">This content is for informational purposes only and does not constitute medical advice. Always consult a qualified healthcare professional.</div>
 </footer>
 
 </body>
