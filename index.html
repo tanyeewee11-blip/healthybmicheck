@@ -49,12 +49,32 @@
     nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; margin-left: 20px; transition: color .2s; }
     nav a:hover { color: #fff; }
 
-    /* 自动隐藏 Google 还没填充内容的广告块 */
-    ins.adsbygoogle[data-ad-status="unfilled"] {
+    /* --- 暴力隐藏空广告位开始 --- */
+    /* 1. 隐藏 Google 动态注入但未填充的容器 */
+    ins.adsbygoogle[data-ad-status="unfilled"], 
+    ins.adsbygoogle:empty {
+        display: none !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* 2. 移除可能存在的广告框架间距 */
+    iframe[name^="google_ads"], 
+    #google_ads_frame,
+    .google-auto-placed {
         display: none !important;
     }
 
-    .hero { text-align: center; padding: 80px 24px 60px; max-width: 640px; margin: 0 auto; }
+    /* 3. 强制 Hero 区域紧凑，防止脚本撑开顶部 */
+    .hero { 
+        text-align: center; 
+        padding: 40px 24px 60px !important; /* 缩小了顶部内边距 */
+        max-width: 640px; 
+        margin: 0 auto; 
+    }
+    /* --- 暴力隐藏空广告位结束 --- */
+
     .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.5rem, 6vw, 3.5rem); line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 20px; }
     .hero h1 em { font-style: italic; color: var(--accent); }
     .hero p { color: var(--ink2); font-size: 1.1rem; line-height: 1.6; }
