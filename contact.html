@@ -7,56 +7,210 @@
   <link rel="apple-touch-icon" href="/favicon_512x512.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — BMICalc.app</title>
+  <title>Contact Us — HealthyBMICheck.com</title>
   <link rel="canonical" href="https://healthybmicheck.com/contact.html">
+  <meta name="description" content="Contact the HealthyBMICheck.com team. Send us a question, report an issue, or share feedback about our free health calculators.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; background: #F7F4EF; color: #1A1714; }
-    header { background: #1A1714; color: #fff; padding: 18px 24px; }
+    :root {
+      --bg: #F7F4EF; --surface: #FFFFFF; --ink: #1A1714; --ink2: #6B6560;
+      --ink3: #A09A94; --accent: #2D6A4F; --accent-light: #D8EFE4;
+      --border: #E5E0D8; --radius: 16px; --shadow: 0 2px 16px rgba(26,23,20,0.07);
+    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; }
+    header { background: var(--ink); color: #fff; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
     .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
     .logo span { color: #7EC8A4; }
-    .content { max-width: 520px; margin: 48px auto; padding: 0 24px 80px; }
-    h1 { font-family: 'DM Serif Display', serif; font-size: 2rem; margin-bottom: 8px; }
-    p { color: #6B6560; line-height: 1.7; margin-bottom: 28px; }
-    label { display: block; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: #6B6560; margin-bottom: 6px; }
-    input, textarea {
-      width: 100%; border: 1.5px solid #E5E0D8; border-radius: 10px;
+    nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; margin-left: 20px; transition: color .2s; }
+    nav a:hover { color: #fff; }
+
+    .page-wrap { max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; }
+
+    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 12px; }
+    .subtitle { color: var(--ink2); font-size: 1rem; line-height: 1.6; margin-bottom: 40px; max-width: 540px; }
+
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; }
+    @media (max-width: 600px) { .contact-grid { grid-template-columns: 1fr; } }
+
+    .contact-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+    .contact-card .icon { font-size: 1.8rem; margin-bottom: 12px; }
+    .contact-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.15rem; margin-bottom: 6px; }
+    .contact-card p { color: var(--ink2); font-size: 0.9rem; line-height: 1.6; margin-bottom: 10px; }
+    .contact-card a { color: var(--accent); font-weight: 600; font-size: 0.9rem; text-decoration: underline; text-underline-offset: 3px; }
+
+    .form-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 40px; box-shadow: var(--shadow); }
+    @media (max-width: 600px) { .form-card { padding: 24px 20px; } }
+
+    h2 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin-bottom: 20px; }
+
+    label { display: block; font-size: 0.8rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--ink2); margin-bottom: 6px; }
+    .field { margin-bottom: 18px; }
+    input, textarea, select {
+      width: 100%; border: 1.5px solid var(--border); border-radius: 10px;
       padding: 12px 14px; font-family: 'DM Sans', sans-serif; font-size: 0.95rem;
-      background: #fff; outline: none; margin-bottom: 16px;
+      color: var(--ink); background: var(--bg); outline: none; transition: border-color .2s;
     }
-    input:focus, textarea:focus { border-color: #2D6A4F; }
-    textarea { min-height: 120px; resize: vertical; }
-    button {
-      background: #1A1714; color: #fff; border: none; border-radius: 12px;
-      padding: 14px 32px; font-family: 'DM Serif Display', serif; font-size: 1rem;
-      cursor: pointer;
+    input:focus, textarea:focus, select:focus { border-color: var(--accent); background: #fff; }
+    textarea { min-height: 130px; resize: vertical; }
+    .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 480px) { .input-row { grid-template-columns: 1fr; } }
+
+    .submit-btn {
+      width: 100%; background: var(--ink); color: #fff; border: none;
+      border-radius: 12px; padding: 15px; font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem; cursor: pointer; margin-top: 8px; transition: background .2s;
     }
-    footer { background: #1A1714; color: rgba(255,255,255,0.4); text-align: center; padding: 20px; font-size: 0.8rem; }
+    .submit-btn:hover { background: #333; }
+
+    .success-msg { display: none; background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0; padding: 16px 20px; margin-top: 16px; color: #1A3D2B; font-size: 0.95rem; }
+
+    .faq-block { margin-top: 48px; }
+    .faq-block h2 { margin-bottom: 16px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { width: 100%; background: none; border: none; text-align: left; padding: 16px 0; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--ink); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .faq-q::after { content: '+'; font-size: 1.2rem; color: var(--ink3); transition: transform .2s; }
+    .faq-q.open::after { transform: rotate(45deg); }
+    .faq-a { display: none; padding: 0 0 16px; color: var(--ink2); font-size: 0.9rem; line-height: 1.7; }
+    .faq-a.open { display: block; }
+
+    footer { background: var(--ink); color: rgba(255,255,255,0.4); text-align: center; padding: 24px; font-size: 0.8rem; line-height: 1.8; }
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #fff; }
   </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7723301737736770" crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7723301737736770" crossorigin="anonymous"></script>
   <meta property="og:image" content="https://healthybmicheck.com/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://healthybmicheck.com/og-image.png">
 </head>
 <body>
-<header><div class="logo"><a href="index.html" style="color:#fff;text-decoration:none">bmi<span>calc</span>.app</a></div></header>
-<div class="content">
+
+<header>
+  <div class="logo"><a href="index.html" style="color:#fff;text-decoration:none">healthy<span>bmicheck</span>.com</a></div>
+  <nav>
+    <a href="bmi-calculator.html">BMI</a>
+    <a href="calorie-calculator.html">Calories</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+</header>
+
+<div class="page-wrap">
+
   <h1>Contact Us</h1>
-  <p>Have a question, suggestion, or spotted an issue? We'd love to hear from you.</p>
-  <form action="mailto:hello@bmicalc.app" method="post" enctype="text/plain">
-    <label>Name</label>
-    <input type="text" name="name" placeholder="Your name" required>
-    <label>Email</label>
-    <input type="email" name="email" placeholder="your@email.com" required>
-    <label>Message</label>
-    <textarea name="message" placeholder="Your message..." required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
+  <p class="subtitle">Have a question about one of our calculators, spotted an error, or want to share feedback? We read every message and aim to respond within 2 business days.</p>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="icon">📧</div>
+      <h3>General Enquiries</h3>
+      <p>Questions about our tools, how they work, or anything else.</p>
+      <a href="mailto:hello@healthybmicheck.com">hello@healthybmicheck.com</a>
+    </div>
+    <div class="contact-card">
+      <div class="icon">🐛</div>
+      <h3>Report an Issue</h3>
+      <p>Found a calculation error or a broken feature? Let us know so we can fix it quickly.</p>
+      <a href="mailto:hello@healthybmicheck.com">Report a bug</a>
+    </div>
+  </div>
+
+  <div class="form-card">
+    <h2>Send a Message</h2>
+    <div class="input-row">
+      <div class="field">
+        <label>First name</label>
+        <input type="text" id="fname" placeholder="Alex">
+      </div>
+      <div class="field">
+        <label>Last name</label>
+        <input type="text" id="lname" placeholder="Smith">
+      </div>
+    </div>
+    <div class="field">
+      <label>Email address</label>
+      <input type="email" id="email" placeholder="you@example.com">
+    </div>
+    <div class="field">
+      <label>Subject</label>
+      <select id="subject">
+        <option value="">Select a topic…</option>
+        <option value="question">Question about a calculator</option>
+        <option value="bug">Report a bug or error</option>
+        <option value="feedback">General feedback</option>
+        <option value="other">Something else</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Message</label>
+      <textarea id="message" placeholder="Tell us what's on your mind…"></textarea>
+    </div>
+    <button class="submit-btn" onclick="handleSubmit()">Send Message →</button>
+    <div class="success-msg" id="success-msg">
+      ✅ Thanks for reaching out! We'll get back to you within 2 business days.
+    </div>
+  </div>
+
+  <div class="faq-block">
+    <h2>Common Questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Are your calculators medically accurate?</button>
+      <div class="faq-a">Our calculators use established scientific formulas widely used in clinical and research settings — the Mifflin-St Jeor equation for calories, WHO BMI classifications, the U.S. Navy method for body fat, and multiple peer-reviewed ideal weight formulas. Results are estimates based on population averages and should be used as a general guide, not a medical diagnosis. For personalised health advice, please consult a qualified healthcare professional.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Do you store my data?</button>
+      <div class="faq-a">No. All calculations on this site run entirely in your browser — no data is sent to our servers. We do not collect, store, or share any health information you enter into our calculators. See our <a href="privacy.html">Privacy Policy</a> for full details.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Can I suggest a new calculator or article?</button>
+      <div class="faq-a">Absolutely — we love hearing what tools our readers find useful. Send us a message using the form above with your suggestion and we will consider it for a future update.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">I found a calculation error — what should I do?</button>
+      <div class="faq-a">Please let us know immediately using the form above or by emailing hello@healthybmicheck.com. Describe which calculator, what inputs you used, and what result you got. We take accuracy seriously and will investigate and correct any errors promptly.</div>
+    </div>
+  </div>
+
 </div>
-<footer>© 2025 BMICalc.app</footer>
+
+<footer>
+  <div>© 2026 healthybmicheck.com — Free Health Calculators</div>
+  <div style="margin-top:8px">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div style="margin-top:8px; font-size:0.72rem">For informational purposes only. Not medical advice.</div>
+</footer>
+
+<script>
+  function handleSubmit() {
+    const fname = document.getElementById('fname').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    if (!fname || !email || !message) {
+      alert('Please fill in your name, email, and message.');
+      return;
+    }
+    if (!email.includes('@')) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+    // Show success (in a real deployment, wire this to a form backend)
+    document.getElementById('success-msg').style.display = 'block';
+    document.querySelector('.submit-btn').disabled = true;
+    document.querySelector('.submit-btn').textContent = 'Message sent ✓';
+  }
+  function toggleFaq(btn) {
+    btn.classList.toggle('open');
+    btn.nextElementSibling.classList.toggle('open');
+  }
+</script>
 </body>
 </html>

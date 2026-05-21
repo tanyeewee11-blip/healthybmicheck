@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon_32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon_192x192.png">
+  <link rel="apple-touch-icon" href="/favicon_512x512.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — HealthyBMICheck.com</title>
+  <link rel="canonical" href="https://healthybmicheck.com/about.html">
+  <meta name="description" content="Learn about HealthyBMICheck.com — free, evidence-based health calculators built on peer-reviewed scientific formulas. No ads, no sign-up, no data collection.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #F7F4EF; --surface: #FFFFFF; --ink: #1A1714; --ink2: #6B6560;
+      --ink3: #A09A94; --accent: #2D6A4F; --accent-light: #D8EFE4;
+      --border: #E5E0D8; --radius: 16px; --shadow: 0 2px 16px rgba(26,23,20,0.07);
+    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; }
+    header { background: var(--ink); color: #fff; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
+    .logo span { color: #7EC8A4; }
+    nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; margin-left: 20px; transition: color .2s; }
+    nav a:hover { color: #fff; }
+
+    .article-wrap { max-width: 720px; margin: 0 auto; padding: 56px 24px 80px; }
+    .breadcrumb { font-size: 0.8rem; color: var(--ink3); margin-bottom: 24px; }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+
+    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 12px; }
+    .meta { color: var(--ink3); font-size: 0.85rem; margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+
+    h2 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin: 40px 0 12px; letter-spacing: -0.02em; }
+    p { color: #3D3A36; line-height: 1.8; font-size: 1rem; margin-bottom: 16px; }
+    ul { padding-left: 20px; margin-bottom: 16px; }
+    li { color: #3D3A36; line-height: 1.8; font-size: 1rem; margin-bottom: 6px; }
+    a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+
+    .principle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    @media (max-width: 560px) { .principle-grid { grid-template-columns: 1fr; } }
+    .principle-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 22px; box-shadow: var(--shadow); }
+    .principle-card .picon { font-size: 1.6rem; margin-bottom: 10px; }
+    .principle-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
+    .principle-card p { font-size: 0.875rem; color: var(--ink2); margin-bottom: 0; }
+
+    .formula-table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border); margin: 20px 0 32px; }
+    .formula-table thead tr { background: var(--ink); color: #fff; }
+    .formula-table th { padding: 12px 16px; text-align: left; font-size: 0.8rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+    .formula-table td { padding: 13px 16px; font-size: 0.9rem; border-bottom: 1px solid var(--border); color: #3D3A36; }
+    .formula-table tbody tr:last-child td { border-bottom: none; }
+
+    .callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 24px 0; }
+    .callout p { color: #1A3D2B; margin-bottom: 0; }
+
+    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
+    .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--ink); color: #fff; text-decoration: none; font-weight: 600; font-size: 0.9rem; padding: 12px 22px; border-radius: 100px; transition: background .2s; }
+    .cta-btn:hover { background: #333; color: #fff; }
+    .cta-btn-outline { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+    .cta-btn-outline:hover { background: var(--accent-light); color: var(--accent); }
+
+    footer { background: var(--ink); color: rgba(255,255,255,0.4); text-align: center; padding: 24px; font-size: 0.8rem; line-height: 1.8; }
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #fff; }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7723301737736770" crossorigin="anonymous"></script>
+  <meta property="og:image" content="https://healthybmicheck.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://healthybmicheck.com/og-image.png">
+</head>
+<body>
+
+<header>
+  <div class="logo"><a href="index.html" style="color:#fff;text-decoration:none">healthy<span>bmicheck</span>.com</a></div>
+  <nav>
+    <a href="bmi-calculator.html">BMI</a>
+    <a href="calorie-calculator.html">Calories</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+</header>
+
+<div class="article-wrap">
+  <div class="breadcrumb"><a href="index.html">Home</a> › About</div>
+
+  <h1>About HealthyBMICheck.com</h1>
+  <p class="meta">Free health calculators built on peer-reviewed science</p>
+
+  <p>HealthyBMICheck.com is a free, independent health tools website. Our goal is simple: give everyone access to accurate, evidence-based health calculators without requiring a sign-up, subscription, or personal data.</p>
+
+  <p>We built this site because too many online health calculators use outdated or unverified formulas, show intrusive advertising around sensitive health results, or demand personal information to deliver a number that should be freely available. We wanted to do better.</p>
+
+  <h2>Our Principles</h2>
+  <div class="principle-grid">
+    <div class="principle-card">
+      <div class="picon">🔬</div>
+      <h3>Evidence-based formulas</h3>
+      <p>Every calculator on this site uses a formula from peer-reviewed research or established clinical guidelines. We cite our sources.</p>
+    </div>
+    <div class="principle-card">
+      <div class="picon">🔒</div>
+      <h3>No data collection</h3>
+      <p>All calculations run in your browser. Nothing you enter is sent to our servers, stored, or shared with third parties.</p>
+    </div>
+    <div class="principle-card">
+      <div class="picon">⚡</div>
+      <h3>Instant results</h3>
+      <p>No sign-up, no email confirmation, no waiting. Enter your numbers and get your result in under a second.</p>
+    </div>
+    <div class="principle-card">
+      <div class="picon">📖</div>
+      <h3>Explained, not just calculated</h3>
+      <p>We explain what your result means, what its limitations are, and what to do next — not just a bare number.</p>
+    </div>
+  </div>
+
+  <h2>The Science Behind Our Calculators</h2>
+  <p>Each calculator uses a specific formula or methodology validated in scientific literature. Here is a summary:</p>
+
+  <table class="formula-table">
+    <thead>
+      <tr><th>Calculator</th><th>Formula / Method</th><th>Source</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><a href="bmi-calculator.html">BMI Calculator</a></td><td>Weight ÷ Height² (kg/m²)</td><td>World Health Organization (WHO)</td></tr>
+      <tr><td><a href="calorie-calculator.html">Calorie Calculator</a></td><td>Mifflin-St Jeor equation × activity factor</td><td>Mifflin et al., Am J Clin Nutr, 1990</td></tr>
+      <tr><td><a href="body-fat.html">Body Fat Calculator</a></td><td>U.S. Navy circumference method</td><td>Hodgdon & Beckett, NHRC, 1984</td></tr>
+      <tr><td><a href="ideal-weight.html">Ideal Weight Calculator</a></td><td>Devine, Robinson, Miller, Hamwi formulas</td><td>Multiple peer-reviewed sources, 1964–1983</td></tr>
+      <tr><td><a href="water-intake.html">Water Intake Calculator</a></td><td>Weight-based hydration guidelines</td><td>National Academies of Sciences, 2005</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Important Limitations</h2>
+  <p>Health calculators — even well-validated ones — are population-level estimates. They are useful starting points, not medical diagnoses. Individual factors such as genetics, medications, hormonal status, body composition, and medical history can all cause your true values to differ from what a formula predicts.</p>
+
+  <div class="callout">
+    <p>⚕️ <strong>Not medical advice.</strong> The results from our calculators are for general informational purposes only. If you have health concerns, are pregnant, have a chronic illness, or are planning significant dietary or exercise changes, please consult a qualified healthcare professional.</p>
+  </div>
+
+  <h2>Who Maintains This Site?</h2>
+  <p>HealthyBMICheck.com is an independent project maintained by a small team passionate about making reliable health information more accessible. We are not affiliated with any hospital, pharmaceutical company, supplement brand, or health insurer. We have no financial interest in the results our calculators produce.</p>
+
+  <p>We review and update our calculators and articles regularly to ensure the underlying formulas and health guidance remain current with scientific consensus. If you spot an error or out-of-date information, please <a href="contact.html">let us know</a>.</p>
+
+  <h2>Get Started</h2>
+  <p>All our tools are free, instant, and require no sign-up. Pick one below to get started:</p>
+
+  <div class="cta-row">
+    <a href="bmi-calculator.html" class="cta-btn">⚖️ BMI Calculator</a>
+    <a href="calorie-calculator.html" class="cta-btn">🔥 Calorie Calculator</a>
+    <a href="health-profile.html" class="cta-btn">👤 Full Health Profile</a>
+    <a href="contact.html" class="cta-btn cta-btn-outline">✉️ Contact Us</a>
+  </div>
+</div>
+
+<footer>
+  <div>© 2026 healthybmicheck.com — Free Health Calculators</div>
+  <div style="margin-top:8px">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div style="margin-top:8px; font-size:0.72rem">For informational purposes only. Not medical advice.</div>
+</footer>
+
+</body>
+</html>

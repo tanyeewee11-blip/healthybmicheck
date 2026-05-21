@@ -335,6 +335,81 @@
     .faq-a { display: none; padding: 0 0 16px; color: var(--ink2); font-size: 0.9rem; line-height: 1.7; }
     .faq-a.open { display: block; }
 
+    /* ── Article section ── */
+    .article-section {
+      grid-column: 1 / -1;
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      padding: 36px 40px;
+    }
+    @media (max-width: 640px) { .article-section { padding: 24px 20px; } }
+    .article-section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.6rem;
+      letter-spacing: -0.02em;
+      margin: 32px 0 10px;
+    }
+    .article-section h2:first-child { margin-top: 0; }
+    .article-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 22px 0 8px;
+    }
+    .article-section p {
+      color: #3D3A36;
+      line-height: 1.8;
+      font-size: 0.975rem;
+      margin-bottom: 14px;
+    }
+    .article-section ul, .article-section ol {
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
+    .article-section li {
+      color: #3D3A36;
+      line-height: 1.8;
+      font-size: 0.975rem;
+      margin-bottom: 5px;
+    }
+    .article-section a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    .formula-box {
+      background: var(--ink);
+      color: #fff;
+      border-radius: 12px;
+      padding: 18px 24px;
+      margin: 16px 0;
+      font-family: monospace;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+    .formula-box span { color: #7EC8A4; }
+    .callout {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+      padding: 14px 18px;
+      margin: 18px 0;
+    }
+    .callout p { color: #1A3D2B; margin-bottom: 0; }
+    .warn-callout {
+      background: var(--warn-light);
+      border-left: 3px solid var(--warn);
+      border-radius: 0 12px 12px 0;
+      padding: 14px 18px;
+      margin: 18px 0;
+    }
+    .warn-callout p { color: #5A3A10; margin-bottom: 0; }
+    .sources {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--ink3);
+    }
+    .sources a { color: var(--ink3); }
+
     /* ── Ad slot bottom ── */
     .ad-bottom {
       grid-column: 1 / -1;
@@ -496,9 +571,88 @@
 
   <div class="faq-section" id="faq">
     <h2 class="section-title">Frequently Asked Questions</h2>
+
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">How is BMI calculated?</button>
-      <div class="faq-a">BMI is calculated by dividing your weight in kilograms by the square of your height in meters ($kg/m^2$).</div>
+      <div class="faq-a">BMI is calculated by dividing your weight in kilograms by the square of your height in metres (kg/m²). For example, if you weigh 70 kg and are 1.75 m tall: BMI = 70 ÷ (1.75 × 1.75) = 22.9. In imperial units, the formula is: BMI = (weight in pounds × 703) ÷ (height in inches)².</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What is a healthy BMI range for adults?</button>
+      <div class="faq-a">According to the World Health Organization (WHO), a healthy BMI for adults is between 18.5 and 24.9. A BMI below 18.5 is considered underweight, 25.0–29.9 is overweight, and 30.0 or above is classified as obese. Note that for people of Asian descent, health risks may begin at a lower threshold — some guidelines suggest overweight starts at BMI 23.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Is BMI accurate for everyone?</button>
+      <div class="faq-a">BMI is a useful screening tool but has known limitations. It does not directly measure body fat — it cannot distinguish between muscle mass and fat. Athletes and very muscular people may have a high BMI despite low body fat. Conversely, older adults may have a "normal" BMI but still carry excess fat due to muscle loss. For a more complete picture of body composition, consider pairing BMI with a <a href="body-fat.html">Body Fat Calculator</a>.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Does BMI apply to children?</button>
+      <div class="faq-a">This calculator is designed for adults aged 18 and over. For children and teenagers, BMI is interpreted differently — it is compared against age- and sex-specific growth charts rather than fixed ranges. If you need to assess a child's weight status, please consult a paediatrician or use a child-specific BMI tool.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How can I lower my BMI if it is too high?</button>
+      <div class="faq-a">Lowering BMI sustainably involves a combination of dietary changes and regular physical activity. The most evidence-based approach is a moderate calorie deficit (around 500 kcal/day below your maintenance level), combined with at least 150 minutes of moderate aerobic exercise per week. Strength training is also valuable as it preserves muscle mass during weight loss. See our guide on <a href="how-to-lower-bmi.html">how to lower your BMI</a> for detailed strategies, or use our <a href="calorie-calculator.html">Calorie Calculator</a> to find your daily target.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What should I do if my BMI is in the underweight range?</button>
+      <div class="faq-a">A BMI below 18.5 may indicate insufficient calorie or nutrient intake, though it can also reflect natural body composition in some individuals. If your BMI is underweight, it is advisable to consult a doctor or registered dietitian to rule out any underlying health conditions and to get personalised guidance on safely increasing calorie and nutrient intake. Focus on nutrient-dense foods — our <a href="high-protein-foods.html">high-protein foods guide</a> can help with meal planning.</div>
+    </div>
+  </div>
+
+  <!-- ── Article: How to use this calculator & understand your results ── -->
+  <div class="article-section">
+    <h2>How to Use This BMI Calculator</h2>
+    <p>Using this calculator takes less than 30 seconds. Simply select your preferred unit system — metric (kg and cm) or imperial (pounds, feet, and inches) — then enter your current weight and height. Click <strong>Calculate BMI</strong> and your result will appear instantly, along with your weight category, a visual scale, your healthy weight range for your height, and a personalised health tip.</p>
+    <p>No personal data is stored or transmitted. All calculations happen locally in your browser.</p>
+
+    <h2>Understanding Your BMI Result</h2>
+    <p>Your BMI result places you into one of four categories defined by the World Health Organization (WHO):</p>
+    <ul>
+      <li><strong>Underweight (below 18.5):</strong> May indicate inadequate nutrition or an underlying health condition. Consider speaking with a healthcare provider.</li>
+      <li><strong>Normal weight (18.5–24.9):</strong> Associated with the lowest risk of weight-related health conditions. Maintaining this range through balanced diet and regular activity is recommended.</li>
+      <li><strong>Overweight (25.0–29.9):</strong> Moderately elevated risk of conditions such as type 2 diabetes, high blood pressure, and cardiovascular disease. Lifestyle changes can help bring BMI back into the normal range.</li>
+      <li><strong>Obese (30.0 and above):</strong> Significantly higher risk of serious health conditions. Consultation with a healthcare professional is strongly advised.</li>
+    </ul>
+
+    <div class="callout"><p>💡 <strong>Tip:</strong> A single BMI reading is a starting point, not a diagnosis. Your doctor can assess your full health picture — including waist circumference, blood pressure, and blood tests — to give you accurate guidance.</p></div>
+
+    <h2>The BMI Formula Explained</h2>
+    <p>BMI uses a simple mathematical formula that relates weight to height:</p>
+    <div class="formula-box">
+      <span>Metric:</span>   BMI = weight (kg) ÷ height (m)²<br>
+      <span>Imperial:</span> BMI = [weight (lb) ÷ height (in)²] × 703
+    </div>
+    <p>For example, a person who is 170 cm tall and weighs 68 kg has a BMI of: 68 ÷ (1.70 × 1.70) = <strong>23.5</strong> — which falls in the Normal weight range.</p>
+
+    <h2>Limitations of BMI</h2>
+    <p>BMI is a population-level screening tool, and there are several situations where it may not accurately reflect individual health:</p>
+    <ul>
+      <li><strong>Athletes and very muscular people</strong> may have a high BMI because muscle is denser than fat, despite having very low body fat levels.</li>
+      <li><strong>Older adults</strong> may lose muscle mass over time (a process called sarcopenia), which can lower their BMI even as body fat increases.</li>
+      <li><strong>Ethnic differences:</strong> People of Asian, South Asian, and some other ethnicities tend to carry higher health risks at lower BMI values. The WHO has noted that a BMI of 23 may represent overweight, and 27.5 may represent obesity, for some Asian populations.</li>
+      <li><strong>Pregnant women</strong> should not use standard BMI ranges during pregnancy, as healthy weight gain is expected and normal.</li>
+    </ul>
+    <div class="warn-callout"><p>⚠️ BMI does not replace professional medical advice. If you have concerns about your weight or health, please consult a qualified healthcare provider.</p></div>
+
+    <h2>What to Do After Getting Your Result</h2>
+    <p>Once you have your BMI, here are some useful next steps depending on your result:</p>
+    <ul>
+      <li>Use the <a href="calorie-calculator.html">Calorie Calculator</a> to find your daily energy needs based on your goals.</li>
+      <li>Check your <a href="ideal-weight.html">Ideal Weight</a> to see the target weight range for your height.</li>
+      <li>Use the <a href="body-fat.html">Body Fat Calculator</a> for a more detailed breakdown of your body composition.</li>
+      <li>Read our article on <a href="how-to-lower-bmi.html">how to lower your BMI</a> for practical, evidence-based strategies.</li>
+      <li>Track your daily water needs with the <a href="water-intake.html">Water Intake Calculator</a>.</li>
+    </ul>
+
+    <div class="sources">
+      <strong>References:</strong><br>
+      World Health Organization. <a href="https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight" target="_blank" rel="noopener">Obesity and overweight fact sheet</a>. WHO, 2024.<br>
+      National Institutes of Health. <a href="https://www.nhlbi.nih.gov/health/educational/lose_wt/BMI/bmicalc.htm" target="_blank" rel="noopener">BMI calculator and guidelines</a>. NHLBI.<br>
+      WHO Expert Consultation. Appropriate body-mass index for Asian populations. <em>The Lancet</em>, 2004; 363(9403):157–163.
     </div>
   </div>
 
@@ -578,7 +732,13 @@
     // Category text
     let cat = bmi < 18.5 ? 'Underweight' : bmi < 25 ? 'Normal' : bmi < 30 ? 'Overweight' : 'Obese';
     document.getElementById('bmi-category').textContent = cat;
-    document.getElementById('bmi-category').className = 'bmi-category cat-' + cat.toLowerCase().replace(' ', '');
+    const tips = {
+      Underweight: "Your BMI suggests you may be underweight. Consider speaking with a healthcare provider or dietitian about safely increasing calorie and nutrient intake. Our <a href='high-protein-foods.html'>high-protein foods guide</a> may also help.",
+      Normal: "Great — your BMI is in the healthy range. Keep it up with a balanced diet and at least 150 minutes of moderate exercise per week. Check your <a href='calorie-calculator.html'>daily calorie needs</a> to stay on track.",
+      Overweight: "Your BMI is in the overweight range. A moderate calorie deficit and regular exercise can help. Try our <a href='calorie-calculator.html'>Calorie Calculator</a> to find your target, or read our guide on <a href='how-to-lower-bmi.html'>how to lower your BMI</a>.",
+      Obese: "Your BMI is in the obese range, which is associated with higher health risks. Speaking with a healthcare provider is strongly recommended. Our guide on <a href='how-to-lower-bmi.html'>how to lower your BMI</a> covers practical steps you can start with."
+    };
+    document.getElementById('health-tip').innerHTML = tips[cat] || "";
   }
 
   function toggleFaq(btn) {

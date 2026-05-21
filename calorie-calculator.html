@@ -164,6 +164,23 @@
 
     .ad-bottom { grid-column: 1 / -1; background: var(--surface); border-radius: var(--radius); border: 1px dashed var(--border); min-height: 90px; display: flex; align-items: center; justify-content: center; color: var(--ink3); font-size: 0.75rem; }
 
+    /* ── Article section ── */
+    .article-section { grid-column: 1 / -1; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--border); padding: 36px 40px; }
+    @media (max-width: 640px) { .article-section { padding: 24px 20px; } }
+    .article-section h2 { font-family: 'DM Serif Display', serif; font-size: 1.6rem; letter-spacing: -0.02em; margin: 32px 0 10px; }
+    .article-section h2:first-child { margin-top: 0; }
+    .article-section h3 { font-size: 1.05rem; font-weight: 600; margin: 22px 0 8px; }
+    .article-section p { color: #3D3A36; line-height: 1.8; font-size: 0.975rem; margin-bottom: 14px; }
+    .article-section ul, .article-section ol { padding-left: 20px; margin-bottom: 14px; }
+    .article-section li { color: #3D3A36; line-height: 1.8; font-size: 0.975rem; margin-bottom: 5px; }
+    .article-section a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    .formula-box { background: var(--ink); color: #fff; border-radius: 12px; padding: 18px 24px; margin: 16px 0; font-family: monospace; font-size: 1rem; line-height: 1.8; }
+    .formula-box span { color: #C17B2A; }
+    .callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0; padding: 14px 18px; margin: 18px 0; }
+    .callout p { color: #5A3A10; margin-bottom: 0; }
+    .sources { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--ink3); }
+    .sources a { color: var(--ink3); }
+
     footer { background: var(--ink); color: rgba(255,255,255,0.4); text-align: center; padding: 24px; font-size: 0.8rem; line-height: 1.8; }
     footer a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 8px; }
     footer a:hover { color: #fff; }
@@ -351,6 +368,58 @@
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">Should I eat back calories burned during exercise?</button>
       <div class="faq-a">This calculator already factors in your activity level, so you do not need to add extra calories for planned workouts. If you have an unexpectedly intense workout, eating back a portion of those calories is reasonable, but be aware that fitness trackers often overestimate calories burned.</div>
+    </div>
+  </div>
+
+  <div class="article-section">
+    <h2>How This Calorie Calculator Works</h2>
+    <p>This calculator uses the <strong>Mifflin-St Jeor equation</strong>, widely regarded as the most accurate formula for estimating Basal Metabolic Rate (BMR) in healthy adults. BMR is the number of calories your body needs to maintain basic functions at rest — breathing, circulation, cell repair, and temperature regulation.</p>
+    <p>Your BMR is then multiplied by an <strong>activity factor</strong> to produce your Total Daily Energy Expenditure (TDEE) — the actual number of calories you burn across the whole day, including movement and exercise.</p>
+    <div class="formula-box">
+      <span>Men:</span>   BMR = (10 × weight kg) + (6.25 × height cm) − (5 × age) + 5<br>
+      <span>Women:</span> BMR = (10 × weight kg) + (6.25 × height cm) − (5 × age) − 161<br><br>
+      <span>TDEE:</span>  BMR × Activity Factor
+    </div>
+
+    <h2>Understanding Your Result</h2>
+    <p>The main number shown is your <strong>maintenance calories</strong> — eating this amount keeps your weight stable over time. Below it, you will see adjusted targets for four common goals:</p>
+    <ul>
+      <li><strong>Mild weight loss (−250 cal/day):</strong> Gradual loss of roughly 0.25 kg per week. Easiest to sustain long-term.</li>
+      <li><strong>Weight loss (−500 cal/day):</strong> Loss of approximately 0.5 kg per week. The most commonly recommended deficit for safe, steady progress.</li>
+      <li><strong>Mild weight gain (+250 cal/day):</strong> Slow, lean muscle gain with minimal fat accumulation. Preferred by athletes and those building muscle gradually.</li>
+      <li><strong>Weight gain (+500 cal/day):</strong> Faster mass gain of around 0.5 kg per week, suitable for those who are underweight or in an active bulking phase.</li>
+    </ul>
+    <div class="callout"><p>💡 <strong>Tip:</strong> These are estimates based on averages. Individual metabolism varies. If your weight is not changing as expected after 2–3 weeks, adjust your intake by 100–150 calories and reassess.</p></div>
+
+    <h2>What Are Macros?</h2>
+    <p>Macronutrients — protein, carbohydrates, and fat — are the three categories of nutrients that provide calories. The calculator suggests a standard balanced split:</p>
+    <ul>
+      <li><strong>Protein (30% of calories):</strong> Essential for muscle maintenance and repair. Each gram provides 4 calories. Prioritising protein also helps with satiety — it keeps you feeling full longer.</li>
+      <li><strong>Carbohydrates (45% of calories):</strong> Your body's primary energy source, especially during exercise. Each gram provides 4 calories. Focus on whole grains, vegetables, and legumes rather than refined sugars.</li>
+      <li><strong>Fat (25% of calories):</strong> Vital for hormone production, brain function, and absorption of fat-soluble vitamins. Each gram provides 9 calories. Prioritise unsaturated fats from sources like olive oil, avocados, and nuts.</li>
+    </ul>
+    <p>These ratios can be adjusted based on your goals. Higher-protein diets (35–40%) are often recommended during weight loss to preserve muscle mass, while endurance athletes may benefit from a higher carbohydrate proportion.</p>
+
+    <h2>Choosing the Right Activity Level</h2>
+    <p>Activity level is the biggest variable in the calculation and the most common source of error. Most people underestimate how sedentary they actually are. As a guide:</p>
+    <ul>
+      <li><strong>Sedentary:</strong> You sit most of the day (desk job), do no structured exercise, and take fewer than 5,000 steps daily.</li>
+      <li><strong>Lightly active:</strong> You exercise 1–3 times per week (a walk, yoga session, or light gym visit) but are otherwise mostly sitting.</li>
+      <li><strong>Moderately active:</strong> You exercise 3–5 times per week at moderate intensity (brisk walking, cycling, gym workouts) and are on your feet for part of the day.</li>
+      <li><strong>Very active:</strong> Hard exercise 6–7 days per week, or a physically demanding job combined with regular workouts.</li>
+      <li><strong>Extra active:</strong> Athletes training twice a day, manual labourers, or those with both a physical job and regular structured training.</li>
+    </ul>
+    <p>If you are unsure, choosing one level lower than you think is often a safer starting point — it is easier to eat a little more if needed than to wonder why you are not losing weight.</p>
+
+    <h2>Limitations of Calorie Calculators</h2>
+    <p>Calorie formulas are estimates based on population averages. Individual variation can be significant — two people with identical stats may have metabolic rates that differ by 10–15%. Factors that affect actual calorie burn include gut microbiome composition, hormonal status (particularly thyroid function), sleep quality, medication use, and genetic factors.</p>
+    <p>Use your calculated TDEE as a starting point and adjust based on real-world results over 2–4 weeks. For personalised dietary guidance, consider consulting a registered dietitian.</p>
+
+    <div class="sources">
+      <strong>References:</strong><br>
+      Mifflin MD, et al. A new predictive equation for resting energy expenditure in healthy individuals. <em>Am J Clin Nutr.</em> 1990;51(2):241–247.<br>
+      National Institutes of Health. <a href="https://www.nhlbi.nih.gov/health/educational/lose_wt/eat/calories.htm" target="_blank" rel="noopener">Calories: How to count them</a>. NHLBI.<br>
+      Academy of Nutrition and Dietetics. <a href="https://www.eatright.org" target="_blank" rel="noopener">eatright.org</a> — Evidence-based nutrition information.
     </div>
   </div>
 
