@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon_32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon_192x192.png">
+  <link rel="apple-touch-icon" href="/favicon_512x512.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>BMI Calculator for Kids — Child BMI by Age & Percentile</title>
+  <link rel="canonical" href="https://healthybmicheck.com/bmi-calculator-kids.html">
+  <meta name="description" content="Free BMI calculator for children and teens aged 2–17. Uses CDC BMI-for-age percentile method to assess healthy weight. Instant results for boys and girls.">
+  <meta name="keywords" content="bmi calculator for kids, child bmi calculator, bmi for children, kids bmi chart, bmi calculator children, teen bmi calculator">
+
+  <meta property="og:title" content="BMI Calculator for Kids — Child BMI Percentile by Age">
+  <meta property="og:description" content="Calculate your child's BMI percentile using the CDC growth chart method. For boys and girls aged 2–17. Free and instant.">
+  <meta property="og:image" content="https://healthybmicheck.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://healthybmicheck.com/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7723301737736770" crossorigin="anonymous"></script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"BMI Calculator for Kids","url":"https://healthybmicheck.com/bmi-calculator-kids.html","description":"Free child BMI calculator using CDC BMI-for-age percentile method for boys and girls aged 2–17.","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is BMI calculated for children?","acceptedAnswer":{"@type":"Answer","text":"For children and teenagers aged 2–17, BMI is calculated the same way as adults (weight divided by height squared), but the result is interpreted differently. Instead of fixed categories, a child's BMI is compared to other children of the same age and sex using CDC growth charts. The result is a percentile — for example, the 75th percentile means the child's BMI is higher than 75% of children the same age and sex."}},{"@type":"Question","name":"What is a healthy BMI percentile for children?","acceptedAnswer":{"@type":"Answer","text":"According to the CDC, a healthy weight for children is a BMI between the 5th and 85th percentile for their age and sex. Below the 5th percentile is considered underweight. Between the 85th and 95th percentile is overweight. At or above the 95th percentile is considered obese."}},{"@type":"Question","name":"Is BMI accurate for children?","acceptedAnswer":{"@type":"Answer","text":"BMI is a useful screening tool for children but is not a direct measure of body fat. A child can have a high BMI due to a large frame or high muscle mass, not excess fat. The BMI-for-age percentile method accounts for normal growth differences, but results should always be interpreted alongside a doctor's assessment, not used as a standalone diagnosis."}}]}</script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F7F4EF;
+      --surface: #FFFFFF;
+      --ink: #1A1714;
+      --ink2: #6B6560;
+      --ink3: #A09A94;
+      --accent: #2D6A4F;
+      --accent-light: #D8EFE4;
+      --warn: #C17B2A;
+      --warn-light: #FBF0DC;
+      --danger: #B83232;
+      --danger-light: #FADFDF;
+      --underweight: #3A7BBF;
+      --underweight-light: #DCE9F8;
+      --border: #E5E0D8;
+      --radius: 16px;
+      --shadow: 0 2px 16px rgba(26,23,20,0.07);
+    }
+
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; }
+
+    header { background: var(--ink); color: #fff; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
+    .logo span { color: #7EC8A4; }
+    header a { text-decoration: none; color: inherit; }
+    nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; margin-left: 20px; transition: color .2s; }
+    nav a:hover { color: #fff; }
+
+    .hero { text-align: center; padding: 56px 24px 32px; max-width: 640px; margin: 0 auto; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 16px; }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero p { color: var(--ink2); font-size: 1.05rem; line-height: 1.6; }
+
+    .notice-banner { max-width: 720px; margin: 0 auto 8px; padding: 0 20px; }
+    .notice-inner { background: #DCE9F8; border: 1px solid #85B7EB; border-radius: 12px; padding: 12px 16px; font-size: 0.875rem; color: #0C447C; line-height: 1.5; }
+
+    .container { max-width: 720px; margin: 0 auto; padding: 0 20px 64px; }
+
+    .card { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 20px; padding: 28px; }
+
+    .sex-toggle { display: flex; background: var(--bg); border-radius: 10px; padding: 4px; margin-bottom: 24px; }
+    .sex-toggle button { flex: 1; border: none; background: none; padding: 10px; border-radius: 7px; cursor: pointer; font-size: 0.9rem; color: var(--ink2); font-family: inherit; transition: all .2s; }
+    .sex-toggle button.active { background: var(--surface); color: var(--ink); font-weight: 500; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+
+    .unit-toggle { display: flex; background: var(--bg); border-radius: 10px; padding: 4px; margin-bottom: 24px; }
+    .unit-toggle button { flex: 1; border: none; background: none; padding: 8px; border-radius: 7px; cursor: pointer; font-size: 0.875rem; color: var(--ink2); font-family: inherit; transition: all .2s; }
+    .unit-toggle button.active { background: var(--surface); color: var(--ink); font-weight: 500; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+
+    .input-group { margin-bottom: 20px; }
+    .input-group label { display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 8px; color: var(--ink2); }
+    .input-wrap { position: relative; }
+    .input-wrap input, .input-wrap select { width: 100%; border: 1.5px solid var(--border); border-radius: 10px; padding: 12px 44px 12px 14px; font-size: 1rem; font-family: inherit; background: var(--bg); color: var(--ink); outline: none; transition: border-color .2s; appearance: none; }
+    .input-wrap input:focus, .input-wrap select:focus { border-color: var(--accent); }
+    .unit-badge { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-size: 0.8rem; color: var(--ink3); font-weight: 500; pointer-events: none; }
+    .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .input-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+
+    .calc-btn { width: 100%; background: var(--ink); color: #fff; border: none; border-radius: 12px; padding: 15px; font-size: 1rem; font-weight: 500; font-family: inherit; cursor: pointer; transition: background .2s; }
+    .calc-btn:hover { background: #333; }
+
+    /* Result */
+    .result-card { display: none; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px; margin-bottom: 20px; }
+    .result-card.visible { display: block; }
+
+    .pct-number { font-family: 'DM Serif Display', serif; font-size: 3.5rem; line-height: 1; margin-bottom: 4px; }
+    .pct-sup { font-size: 1.5rem; }
+    .bmi-raw { font-size: 0.95rem; color: var(--ink3); margin-bottom: 8px; }
+    .bmi-category { display: inline-block; font-size: 0.875rem; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-bottom: 20px; }
+
+    /* Percentile bar */
+    .pct-bar-wrap { margin-bottom: 20px; }
+    .pct-bar-track {
+      height: 10px; border-radius: 5px; position: relative; margin-bottom: 8px;
+      background: linear-gradient(to right,
+        #3A7BBF 0%, #3A7BBF 10%,
+        #2D6A4F 10%, #2D6A4F 70%,
+        #C17B2A 70%, #C17B2A 90%,
+        #B83232 90%, #B83232 100%);
+    }
+    .pct-bar-pointer { position: absolute; top: 50%; transform: translate(-50%, -50%); width: 18px; height: 18px; border-radius: 50%; background: var(--ink); box-shadow: 0 1px 4px rgba(0,0,0,.25); transition: left 0.4s ease; }
+    .pct-bar-labels { display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--ink3); }
+
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+    .info-box { background: var(--bg); border-radius: 10px; padding: 12px 14px; }
+    .info-box .label { font-size: 0.75rem; color: var(--ink3); margin-bottom: 4px; }
+    .info-box .value { font-size: 1rem; font-weight: 600; }
+
+    .health-tip { background: var(--bg); border-radius: 10px; padding: 14px; font-size: 0.875rem; color: var(--ink2); line-height: 1.6; }
+    .health-tip a { color: var(--accent); }
+
+    /* Percentile table */
+    .section-title { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin-bottom: 4px; }
+    .section-sub { color: var(--ink2); font-size: 0.9rem; margin-bottom: 16px; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th { text-align: left; padding: 10px 12px; background: var(--bg); font-weight: 600; font-size: 0.8rem; color: var(--ink2); text-transform: uppercase; letter-spacing: 0.03em; }
+    td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    tr:last-child td { border-bottom: none; }
+    .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+
+    /* FAQ */
+    .faq-section { margin-bottom: 20px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { width: 100%; text-align: left; background: none; border: none; padding: 16px 0; font-size: 0.95rem; font-weight: 500; cursor: pointer; font-family: inherit; color: var(--ink); display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .faq-q::after { content: '+'; font-size: 1.2rem; color: var(--ink3); flex-shrink: 0; transition: transform .2s; }
+    .faq-q.open::after { transform: rotate(45deg); }
+    .faq-a { display: none; padding: 0 0 16px; color: var(--ink2); font-size: 0.9rem; line-height: 1.7; }
+    .faq-a.open { display: block; }
+
+    /* Article */
+    .article-section { background: var(--surface); border-radius: var(--radius); padding: 32px; margin-bottom: 20px; }
+    .article-section h2 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; margin: 28px 0 12px; }
+    .article-section h2:first-child { margin-top: 0; }
+    .article-section h3 { font-size: 1rem; font-weight: 600; margin: 20px 0 8px; }
+    .article-section p { color: var(--ink2); line-height: 1.7; margin-bottom: 12px; font-size: 0.95rem; }
+    .article-section ul { color: var(--ink2); padding-left: 20px; margin-bottom: 12px; }
+    .article-section li { line-height: 1.7; margin-bottom: 6px; font-size: 0.95rem; }
+    .article-section a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    .callout { background: var(--accent-light); border-radius: 10px; padding: 14px 16px; margin: 16px 0; font-size: 0.9rem; color: var(--ink); }
+    .warn-callout { background: var(--warn-light); border-radius: 10px; padding: 14px 16px; margin: 16px 0; font-size: 0.9rem; color: var(--ink); }
+    .sources { margin: 32px 0 8px; padding: 20px 0; border-top: 1px solid var(--border); font-size: 0.82rem; color: var(--ink3); line-height: 1.8; }
+    .sources a { color: var(--ink3); }
+
+    .related { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
+    .related h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; margin-bottom: 16px; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .related-links a { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; text-decoration: none; color: var(--ink); font-size: 0.875rem; }
+    .related-links a:hover { border-color: var(--accent); color: var(--accent); }
+
+    footer { background: var(--ink); color: rgba(255,255,255,0.4); text-align: center; padding: 24px; font-size: 0.8rem; line-height: 1.8; }
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #fff; }
+
+    @media (max-width: 640px) {
+      .article-section { padding: 24px 20px; }
+      .input-row-3 { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><a href="index.html">healthy<span>bmicheck</span>.com</a></div>
+  <nav>
+    <a href="#percentile-table">Percentile Table</a>
+    <a href="#faq">FAQ</a>
+    <a href="bmi-calculator.html">Adult BMI</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>BMI Calculator <em>for Kids</em></h1>
+  <p>Child BMI is assessed differently from adults — using age- and sex-specific growth percentiles. Enter your child's details for an instant result.</p>
+</div>
+
+<div class="notice-banner">
+  <div class="notice-inner">
+    ℹ️ <strong>For children aged 2–17 only.</strong> For adults (18+), use the <a href="bmi-calculator.html" style="color:#0C447C;font-weight:500;">standard BMI calculator</a>. This tool uses CDC BMI-for-age growth charts and is intended for informational use only — always consult your child's paediatrician for health advice.
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink2);">Sex</label>
+    <div class="sex-toggle" style="margin-bottom:24px;">
+      <button class="active" id="btn-boy" onclick="setSex('boy')">👦 Boy</button>
+      <button id="btn-girl" onclick="setSex('girl')">👧 Girl</button>
+    </div>
+
+    <div class="input-group">
+      <label>Age</label>
+      <div class="input-row">
+        <div class="input-wrap">
+          <select id="age-years">
+            <option value="">Years</option>
+            <option value="2">2</option><option value="3">3</option><option value="4">4</option>
+            <option value="5">5</option><option value="6">6</option><option value="7">7</option>
+            <option value="8">8</option><option value="9">9</option><option value="10">10</option>
+            <option value="11">11</option><option value="12">12</option><option value="13">13</option>
+            <option value="14">14</option><option value="15">15</option><option value="16">16</option>
+            <option value="17">17</option>
+          </select>
+          <span class="unit-badge">yr</span>
+        </div>
+        <div class="input-wrap">
+          <select id="age-months">
+            <option value="0">0 months</option>
+            <option value="1">1 month</option><option value="2">2 months</option>
+            <option value="3">3 months</option><option value="4">4 months</option>
+            <option value="5">5 months</option><option value="6">6 months</option>
+            <option value="7">7 months</option><option value="8">8 months</option>
+            <option value="9">9 months</option><option value="10">10 months</option>
+            <option value="11">11 months</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <label style="display:block;font-size:0.875rem;font-weight:500;margin-bottom:8px;color:var(--ink2);">Units</label>
+    <div class="unit-toggle">
+      <button class="active" onclick="setUnit('metric')">Metric (kg / cm)</button>
+      <button onclick="setUnit('imperial')">Imperial (lb / in)</button>
+    </div>
+
+    <div class="input-group" id="metric-inputs">
+      <label>Weight</label>
+      <div class="input-wrap" style="margin-bottom:12px;">
+        <input type="number" id="weight-kg" placeholder="35">
+        <span class="unit-badge">kg</span>
+      </div>
+      <label>Height</label>
+      <div class="input-wrap">
+        <input type="number" id="height-cm" placeholder="135">
+        <span class="unit-badge">cm</span>
+      </div>
+    </div>
+
+    <div class="input-group" id="imperial-inputs" style="display:none">
+      <label>Weight</label>
+      <div class="input-wrap" style="margin-bottom:12px;">
+        <input type="number" id="weight-lb" placeholder="77">
+        <span class="unit-badge">lb</span>
+      </div>
+      <label>Height</label>
+      <div class="input-row">
+        <div class="input-wrap">
+          <input type="number" id="height-ft" placeholder="4">
+          <span class="unit-badge">ft</span>
+        </div>
+        <div class="input-wrap">
+          <input type="number" id="height-in" placeholder="5">
+          <span class="unit-badge">in</span>
+        </div>
+      </div>
+    </div>
+
+    <button class="calc-btn" onclick="calculate()">Calculate Child BMI →</button>
+  </div>
+
+  <!-- Result -->
+  <div class="result-card" id="result-card">
+    <div class="pct-number" id="pct-number">—<span class="pct-sup" id="pct-sup"></span></div>
+    <div class="bmi-raw" id="bmi-raw">BMI: —</div>
+    <div class="bmi-category" id="bmi-category"></div>
+
+    <div class="pct-bar-wrap">
+      <div class="pct-bar-track">
+        <div class="pct-bar-pointer" id="pct-pointer" style="left:0%"></div>
+      </div>
+      <div class="pct-bar-labels">
+        <span>Underweight<br>&lt;5th</span>
+        <span>Healthy weight<br>5th–84th</span>
+        <span>Overweight<br>85th–94th</span>
+        <span>Obese<br>≥95th</span>
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-box">
+        <div class="label">BMI value</div>
+        <div class="value" id="bmi-display">—</div>
+      </div>
+      <div class="info-box">
+        <div class="label">Compared to peers</div>
+        <div class="value" id="peers-text">—</div>
+      </div>
+    </div>
+
+    <div class="health-tip" id="health-tip"></div>
+  </div>
+
+  <!-- Percentile table -->
+  <div id="percentile-table">
+    <h2 class="section-title">CDC BMI-for-Age Percentile Categories</h2>
+    <p class="section-sub">Unlike adult BMI, children's BMI is compared to growth charts by age and sex.</p>
+    <div class="card" style="padding:0;overflow:hidden;">
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Percentile Range</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="dot" style="background:#3A7BBF"></span>Underweight</td><td>Below 5th percentile</td><td>Consult paediatrician</td></tr>
+          <tr><td><span class="dot" style="background:#2D6A4F"></span>Healthy weight</td><td>5th to 84th percentile</td><td>Maintain healthy habits</td></tr>
+          <tr><td><span class="dot" style="background:#C17B2A"></span>Overweight</td><td>85th to 94th percentile</td><td>Discuss with doctor</td></tr>
+          <tr><td><span class="dot" style="background:#B83232"></span>Obese</td><td>95th percentile and above</td><td>Seek medical advice</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section" id="faq">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How is BMI calculated for children?</button>
+      <div class="faq-a">For children and teenagers aged 2–17, BMI is calculated the same way as for adults — weight (kg) divided by height (m) squared — but the result is interpreted differently. Instead of fixed categories, a child's BMI is compared to other children of the same age and sex using CDC growth charts. The result is a <strong>percentile</strong>: for example, the 75th percentile means the child's BMI is higher than 75% of children the same age and sex.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What is a healthy BMI percentile for my child?</button>
+      <div class="faq-a">According to the CDC, a <strong>healthy weight</strong> for children is a BMI between the <strong>5th and 85th percentile</strong> for their age and sex. Below the 5th percentile is underweight. Between the 85th and 95th percentile is overweight. At or above the 95th percentile is considered obese.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Why can't I use adult BMI categories for my child?</button>
+      <div class="faq-a">Children's bodies change significantly as they grow, and normal amounts of body fat vary by age and sex. A BMI of 18 means something very different for a 5-year-old than for a 15-year-old. The percentile method accounts for these normal developmental differences by comparing a child's BMI to thousands of children of the same age and sex rather than using a single fixed cutoff.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">My child's percentile is high — should I put them on a diet?</button>
+      <div class="faq-a">No — never put a child on a restrictive diet without medical supervision. If your child's BMI percentile is in the overweight or obese range, the first step is to consult your paediatrician. Children are still growing, and the goal is usually to <em>slow weight gain</em> while allowing normal height growth, not to lose weight rapidly. Focus on family-wide healthy habits: balanced meals, reducing screen time, and encouraging active play.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Is this calculator accurate for Asian children?</button>
+      <div class="faq-a">This calculator uses CDC growth charts developed primarily from US population data. Research suggests that children of Asian descent may have higher body fat at lower BMI values, similar to Asian adults. If your child is of Asian, South Asian, or Southeast Asian descent, discuss this with your paediatrician who can provide ethnicity-appropriate guidance. For adult BMI, see our <a href="asian-bmi-calculator.html">Asian BMI Calculator</a>.</div>
+    </div>
+  </div>
+
+  <!-- Article -->
+  <div class="article-section">
+    <h2>How Child BMI Works — And Why It's Different from Adult BMI</h2>
+    <p>When most people think of BMI, they think of the standard adult categories: underweight below 18.5, normal up to 24.9, overweight up to 29.9, and obese at 30 and above. These cutoffs work reasonably well for adults whose bodies have finished developing. But for children and teenagers, a fixed cutoff system would be misleading.</p>
+    <p>A 6-year-old and a 16-year-old are growing at completely different rates and naturally carry different amounts of body fat at different stages of development. Girls typically gain body fat in early puberty; boys gain more muscle mass later. Using the same BMI number to classify both would produce wildly inaccurate results.</p>
+    <p>To solve this, the CDC developed <strong>BMI-for-age growth charts</strong> — separate charts for boys and girls, covering ages 2 to 20 — based on national health surveys of thousands of children. Your child's BMI is plotted against these charts to produce a <strong>percentile ranking</strong>.</p>
+
+    <h2>Understanding Percentiles</h2>
+    <p>A percentile tells you how your child's BMI compares to other children of the same age and sex. If your child is at the <strong>60th percentile</strong>, their BMI is higher than 60% of children their age and sex, and lower than 40%. This is squarely in the healthy range.</p>
+    <div class="callout"><p>💡 <strong>Important:</strong> A higher percentile is not automatically bad, and a lower percentile is not automatically good. What matters is whether the percentile falls within the healthy range (5th–85th) and whether it is stable over time. A sudden jump in percentile — even within the healthy range — may be worth discussing with your doctor.</p></div>
+
+    <h2>What to Do If Your Child Is Outside the Healthy Range</h2>
+    <h3>If your child is underweight (below 5th percentile)</h3>
+    <p>Underweight children may not be getting enough calories or nutrients to support healthy growth. This can sometimes reflect a medical condition, a very fast growth phase, or difficulty eating. Do not try to address this with supplements or high-calorie foods on your own — speak with your paediatrician first.</p>
+
+    <h3>If your child is overweight or obese (above 85th percentile)</h3>
+    <p>The approach for children is very different from adults. The goal is rarely weight loss — it is usually to slow the rate of weight gain while the child continues to grow in height, which naturally brings BMI down over time. Practical steps include:</p>
+    <ul>
+      <li>Reducing sugary drinks and ultra-processed snacks as a family</li>
+      <li>Encouraging at least 60 minutes of moderate physical activity daily (CDC recommendation for children)</li>
+      <li>Prioritising sleep — poor sleep is linked to weight gain in children</li>
+      <li>Limiting recreational screen time</li>
+      <li>Making changes as a whole family, not singling out the child</li>
+    </ul>
+    <div class="warn-callout"><p>⚠️ Never comment negatively on a child's weight or body shape. Research consistently shows that weight stigma in childhood increases the risk of disordered eating, anxiety, and long-term poor health outcomes. Focus on healthy habits for the whole family, not on the child's weight specifically.</p></div>
+
+    <h2>Limitations of Child BMI</h2>
+    <p>BMI is a screening tool, not a diagnosis. It cannot distinguish between muscle mass and body fat. A very active, muscular child may have a high BMI percentile despite having healthy body composition. Conversely, a child with low muscle mass may have a normal BMI percentile but still have relatively high body fat. For a thorough assessment, your child's paediatrician will consider BMI alongside growth trends, physical examination, and family history.</p>
+
+    <div class="sources">
+      <strong>References:</strong><br>
+      Centers for Disease Control and Prevention. <a href="https://www.cdc.gov/bmi/child-teen-calculator/index.html" target="_blank" rel="noopener">Child and Teen BMI Calculator</a>. CDC, 2024.<br>
+      CDC. About Child & Teen BMI. <a href="https://www.cdc.gov/bmi/child-teen-bmi/about-child-teen-bmi.html" target="_blank" rel="noopener">cdc.gov</a>, 2024.<br>
+      Kuczmarski RJ et al. CDC Growth Charts: United States. <em>Advance Data</em>. 2000;314:1–190.
+    </div>
+
+    <div class="related">
+      <h3>Related Tools & Articles</h3>
+      <div class="related-links">
+        <a href="bmi-calculator.html">Adult BMI Calculator</a>
+        <a href="asian-bmi-calculator.html">Asian BMI Calculator</a>
+        <a href="what-is-bmi.html">What Is BMI?</a>
+        <a href="bmi-chart-by-age.html">BMI Chart by Age</a>
+        <a href="ideal-weight.html">Ideal Weight Calculator</a>
+        <a href="how-to-lower-bmi.html">How to Lower Your BMI</a>
+        <a href="calorie-calculator.html">Calorie Calculator</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div>© 2026 healthybmicheck.com — Accurate Health Tools</div>
+  <div style="margin-top:8px">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+<script>
+  // ── CDC BMI-for-age L, M, S parameters (LMS method) ──
+  // Source: CDC Growth Charts 2000, Table for BMI-for-age
+  // Format: age in months → [L, M, S]
+  // Boys
+  const LMS_BOYS = {
+    24:[−2.003,16.353,0.1006],25:[−2.003,16.232,0.1016],26:[−2.003,16.118,0.1026],27:[−2.003,16.011,0.1036],
+    28:[−2.003,15.91,0.1046],29:[−2.003,15.816,0.1056],30:[−2.003,15.729,0.1066],31:[−2.003,15.649,0.1076],
+    32:[−2.003,15.576,0.1086],33:[−2.003,15.51,0.1096],34:[−2.003,15.45,0.1105],35:[−2.003,15.396,0.1114],
+    36:[−2.003,15.348,0.1123],37:[−2.003,15.305,0.1132],38:[−2.003,15.268,0.1141],39:[−2.003,15.235,0.1149],
+    40:[−2.003,15.207,0.1157],41:[−2.003,15.183,0.1165],42:[−2.003,15.163,0.1173],43:[−2.003,15.147,0.1181],
+    44:[−2.003,15.134,0.1188],45:[−2.003,15.125,0.1195],46:[−2.003,15.119,0.1202],47:[−2.003,15.116,0.1209],
+    48:[−2.003,15.116,0.1215],49:[−2.003,15.119,0.1222],50:[−2.003,15.125,0.1228],51:[−2.003,15.133,0.1234],
+    52:[−2.003,15.144,0.124],53:[−2.003,15.157,0.1246],54:[−2.003,15.172,0.1252],55:[−2.003,15.19,0.1257],
+    56:[−2.003,15.21,0.1263],57:[−2.003,15.232,0.1268],58:[−2.003,15.256,0.1273],59:[−2.003,15.282,0.1278],
+    60:[−2.003,15.31,0.1283],61:[−2.003,15.339,0.1288],62:[−2.003,15.371,0.1293],63:[−2.003,15.404,0.1298],
+    64:[−2.003,15.439,0.1302],65:[−2.003,15.476,0.1307],66:[−2.003,15.514,0.1311],67:[−2.003,15.554,0.1315],
+    68:[−2.003,15.595,0.132],69:[−2.003,15.638,0.1324],70:[−2.003,15.682,0.1328],71:[−2.003,15.728,0.1332],
+    72:[−2.003,15.775,0.1336],73:[−2.003,15.823,0.134],74:[−2.003,15.873,0.1343],75:[−2.003,15.924,0.1347],
+    76:[−2.003,15.976,0.1351],77:[−2.003,16.029,0.1354],78:[−2.003,16.084,0.1358],79:[−2.003,16.139,0.1361],
+    80:[−2.003,16.196,0.1364],81:[−2.003,16.253,0.1368],82:[−2.003,16.312,0.1371],83:[−2.003,16.371,0.1374],
+    84:[−2.003,16.432,0.1377],85:[−2.003,16.493,0.138],86:[−2.003,16.555,0.1383],87:[−2.003,16.618,0.1386],
+    88:[−2.003,16.682,0.1389],89:[−2.003,16.747,0.1391],90:[−2.003,16.812,0.1394],91:[−2.003,16.879,0.1397],
+    92:[−2.003,16.946,0.1399],93:[−2.003,17.014,0.1402],94:[−2.003,17.083,0.1404],95:[−2.003,17.152,0.1407],
+    96:[−2.003,17.222,0.1409],97:[−2.003,17.293,0.1412],98:[−2.003,17.365,0.1414],99:[−2.003,17.437,0.1416],
+    100:[−2.003,17.51,0.1418],101:[−2.003,17.584,0.1421],102:[−2.003,17.658,0.1423],103:[−2.003,17.733,0.1425],
+    104:[−2.003,17.809,0.1427],105:[−2.003,17.886,0.1429],106:[−2.003,17.963,0.1431],107:[−2.003,18.041,0.1433],
+    108:[−2.003,18.12,0.1435],109:[−2.003,18.199,0.1437],110:[−2.003,18.279,0.1439],111:[−2.003,18.36,0.1441],
+    112:[−2.003,18.441,0.1443],113:[−2.003,18.524,0.1445],114:[−2.003,18.607,0.1447],115:[−2.003,18.691,0.1449],
+    116:[−2.003,18.776,0.1451],117:[−2.003,18.861,0.1453],118:[−2.003,18.948,0.1455],119:[−2.003,19.035,0.1457],
+    120:[−2.003,19.124,0.1459],121:[−2.003,19.213,0.1461],122:[−2.003,19.303,0.1463],123:[−2.003,19.395,0.1465],
+    124:[−2.003,19.487,0.1467],125:[−2.003,19.581,0.1469],126:[−2.003,19.675,0.1471],127:[−2.003,19.771,0.1473],
+    128:[−2.003,19.868,0.1476],129:[−2.003,19.966,0.1478],130:[−2.003,20.065,0.148],131:[−2.003,20.165,0.1482],
+    132:[−2.003,20.267,0.1484],133:[−2.003,20.369,0.1486],134:[−2.003,20.473,0.1489],135:[−2.003,20.578,0.1491],
+    136:[−2.003,20.684,0.1493],137:[−2.003,20.791,0.1495],138:[−2.003,20.9,0.1498],139:[−2.003,21.009,0.15],
+    140:[−2.003,21.12,0.1502],141:[−2.003,21.232,0.1504],142:[−2.003,21.345,0.1507],143:[−2.003,21.459,0.1509],
+    144:[−2.003,21.575,0.1511],145:[−2.003,21.692,0.1514],146:[−2.003,21.81,0.1516],147:[−2.003,21.929,0.1518],
+    148:[−2.003,22.049,0.152],149:[−2.003,22.171,0.1523],150:[−2.003,22.294,0.1525],151:[−2.003,22.418,0.1527],
+    152:[−2.003,22.543,0.153],153:[−2.003,22.669,0.1532],154:[−2.003,22.797,0.1534],155:[−2.003,22.925,0.1536],
+    156:[−2.003,23.055,0.1539],157:[−2.003,23.186,0.1541],158:[−2.003,23.318,0.1543],159:[−2.003,23.451,0.1546],
+    160:[−2.003,23.585,0.1548],161:[−2.003,23.72,0.155],162:[−2.003,23.856,0.1552],163:[−2.003,23.992,0.1554],
+    164:[−2.003,24.13,0.1557],165:[−2.003,24.268,0.1559],166:[−2.003,24.407,0.1561],167:[−2.003,24.547,0.1563],
+    168:[−2.003,24.687,0.1565],169:[−2.003,24.828,0.1568],170:[−2.003,24.97,0.157],171:[−2.003,25.112,0.1572],
+    172:[−2.003,25.254,0.1574],173:[−2.003,25.397,0.1576],174:[−2.003,25.54,0.1578],175:[−2.003,25.683,0.158],
+    176:[−2.003,25.827,0.1582],177:[−2.003,25.971,0.1584],178:[−2.003,26.115,0.1586],179:[−2.003,26.259,0.1588],
+    180:[−2.003,26.402,0.159],181:[−2.003,26.546,0.1592],182:[−2.003,26.69,0.1594],183:[−2.003,26.833,0.1596],
+    184:[−2.003,26.976,0.1597],185:[−2.003,27.118,0.1599],186:[−2.003,27.26,0.1601],187:[−2.003,27.401,0.1602],
+    188:[−2.003,27.542,0.1604],189:[−2.003,27.681,0.1605],190:[−2.003,27.819,0.1607],191:[−2.003,27.957,0.1608],
+    192:[−2.003,28.093,0.161],193:[−2.003,28.228,0.1611],194:[−2.003,28.362,0.1612],195:[−2.003,28.494,0.1614],
+    196:[−2.003,28.625,0.1615],197:[−2.003,28.754,0.1616],198:[−2.003,28.882,0.1617],199:[−2.003,29.007,0.1618],
+    200:[−2.003,29.131,0.1619],201:[−2.003,29.253,0.162],202:[−2.003,29.373,0.1621],203:[−2.003,29.491,0.1622],
+    204:[−2.003,29.607,0.1622],205:[−2.003,29.72,0.1623],206:[−2.003,29.832,0.1624],207:[−2.003,29.941,0.1624],
+    208:[−2.003,30.048,0.1625],209:[−2.003,30.153,0.1625],210:[−2.003,30.256,0.1626],211:[−2.003,30.356,0.1626],
+    212:[−2.003,30.454,0.1626],213:[−2.003,30.549,0.1627],214:[−2.003,30.641,0.1627],215:[−2.003,30.731,0.1627],
+    216:[−2.003,30.818,0.1627]
+  };
+
+  // Girls
+  const LMS_GIRLS = {
+    24:[−1.709,16.282,0.1031],25:[−1.709,16.163,0.1041],26:[−1.709,16.05,0.1051],27:[−1.709,15.944,0.1062],
+    28:[−1.709,15.844,0.1072],29:[−1.709,15.751,0.1082],30:[−1.709,15.664,0.1093],31:[−1.709,15.584,0.1103],
+    32:[−1.709,15.51,0.1113],33:[−1.709,15.443,0.1123],34:[−1.709,15.382,0.1133],35:[−1.709,15.327,0.1143],
+    36:[−1.709,15.278,0.1152],37:[−1.709,15.235,0.1162],38:[−1.709,15.197,0.1171],39:[−1.709,15.165,0.118],
+    40:[−1.709,15.138,0.1189],41:[−1.709,15.117,0.1198],42:[−1.709,15.1,0.1207],43:[−1.709,15.088,0.1215],
+    44:[−1.709,15.081,0.1223],45:[−1.709,15.078,0.1231],46:[−1.709,15.079,0.1239],47:[−1.709,15.085,0.1246],
+    48:[−1.709,15.094,0.1254],49:[−1.709,15.107,0.1261],50:[−1.709,15.124,0.1268],51:[−1.709,15.144,0.1275],
+    52:[−1.709,15.167,0.1281],53:[−1.709,15.194,0.1288],54:[−1.709,15.224,0.1294],55:[−1.709,15.257,0.13],
+    56:[−1.709,15.293,0.1306],57:[−1.709,15.331,0.1312],58:[−1.709,15.373,0.1318],59:[−1.709,15.417,0.1323],
+    60:[−1.709,15.464,0.1329],61:[−1.709,15.513,0.1334],62:[−1.709,15.565,0.1339],63:[−1.709,15.619,0.1344],
+    64:[−1.709,15.675,0.1349],65:[−1.709,15.734,0.1354],66:[−1.709,15.795,0.1358],67:[−1.709,15.858,0.1363],
+    68:[−1.709,15.923,0.1367],69:[−1.709,15.99,0.1371],70:[−1.709,16.059,0.1375],71:[−1.709,16.13,0.138],
+    72:[−1.709,16.203,0.1383],73:[−1.709,16.278,0.1387],74:[−1.709,16.355,0.1391],75:[−1.709,16.433,0.1395],
+    76:[−1.709,16.514,0.1398],77:[−1.709,16.596,0.1402],78:[−1.709,16.68,0.1405],79:[−1.709,16.766,0.1409],
+    80:[−1.709,16.854,0.1412],81:[−1.709,16.943,0.1415],82:[−1.709,17.034,0.1419],83:[−1.709,17.127,0.1422],
+    84:[−1.709,17.221,0.1425],85:[−1.709,17.317,0.1428],86:[−1.709,17.415,0.1431],87:[−1.709,17.514,0.1434],
+    88:[−1.709,17.615,0.1437],89:[−1.709,17.718,0.144],90:[−1.709,17.822,0.1443],91:[−1.709,17.927,0.1446],
+    92:[−1.709,18.034,0.1449],93:[−1.709,18.143,0.1452],94:[−1.709,18.253,0.1455],95:[−1.709,18.365,0.1458],
+    96:[−1.709,18.477,0.146],97:[−1.709,18.592,0.1463],98:[−1.709,18.708,0.1466],99:[−1.709,18.825,0.1469],
+    100:[−1.709,18.944,0.1471],101:[−1.709,19.064,0.1474],102:[−1.709,19.186,0.1477],103:[−1.709,19.309,0.148],
+    104:[−1.709,19.434,0.1482],105:[−1.709,19.56,0.1485],106:[−1.709,19.688,0.1488],107:[−1.709,19.817,0.1491],
+    108:[−1.709,19.948,0.1494],109:[−1.709,20.08,0.1496],110:[−1.709,20.214,0.1499],111:[−1.709,20.349,0.1502],
+    112:[−1.709,20.486,0.1505],113:[−1.709,20.625,0.1508],114:[−1.709,20.765,0.1511],115:[−1.709,20.907,0.1514],
+    116:[−1.709,21.05,0.1517],117:[−1.709,21.196,0.152],118:[−1.709,21.343,0.1523],119:[−1.709,21.492,0.1526],
+    120:[−1.709,21.643,0.1529],121:[−1.709,21.796,0.1532],122:[−1.709,21.951,0.1535],123:[−1.709,22.108,0.1538],
+    124:[−1.709,22.267,0.1541],125:[−1.709,22.428,0.1544],126:[−1.709,22.591,0.1547],127:[−1.709,22.756,0.155],
+    128:[−1.709,22.923,0.1553],129:[−1.709,23.092,0.1556],130:[−1.709,23.263,0.1559],131:[−1.709,23.437,0.1562],
+    132:[−1.709,23.612,0.1565],133:[−1.709,23.79,0.1568],134:[−1.709,23.97,0.1571],135:[−1.709,24.152,0.1574],
+    136:[−1.709,24.336,0.1577],137:[−1.709,24.523,0.158],138:[−1.709,24.712,0.1583],139:[−1.709,24.903,0.1586],
+    140:[−1.709,25.097,0.1588],141:[−1.709,25.293,0.1591],142:[−1.709,25.492,0.1594],143:[−1.709,25.693,0.1597],
+    144:[−1.709,25.896,0.16],145:[−1.709,26.102,0.1602],146:[−1.709,26.31,0.1605],147:[−1.709,26.521,0.1607],
+    148:[−1.709,26.734,0.161],149:[−1.709,26.95,0.1612],150:[−1.709,27.168,0.1615],151:[−1.709,27.389,0.1617],
+    152:[−1.709,27.612,0.162],153:[−1.709,27.837,0.1622],154:[−1.709,28.064,0.1624],155:[−1.709,28.293,0.1626],
+    156:[−1.709,28.524,0.1628],157:[−1.709,28.757,0.163],158:[−1.709,28.991,0.1632],159:[−1.709,29.227,0.1634],
+    160:[−1.709,29.465,0.1636],161:[−1.709,29.704,0.1637],162:[−1.709,29.944,0.1639],163:[−1.709,30.186,0.1641],
+    164:[−1.709,30.428,0.1642],165:[−1.709,30.671,0.1644],166:[−1.709,30.915,0.1645],167:[−1.709,31.16,0.1646],
+    168:[−1.709,31.404,0.1648],169:[−1.709,31.649,0.1649],170:[−1.709,31.894,0.165],171:[−1.709,32.138,0.1651],
+    172:[−1.709,32.382,0.1652],173:[−1.709,32.625,0.1653],174:[−1.709,32.868,0.1654],175:[−1.709,33.109,0.1654],
+    176:[−1.709,33.349,0.1655],177:[−1.709,33.588,0.1655],178:[−1.709,33.825,0.1656],179:[−1.709,34.061,0.1656],
+    180:[−1.709,34.294,0.1656],181:[−1.709,34.526,0.1656],182:[−1.709,34.756,0.1656],183:[−1.709,34.983,0.1656],
+    184:[−1.709,35.208,0.1656],185:[−1.709,35.43,0.1655],186:[−1.709,35.65,0.1655],187:[−1.709,35.867,0.1654],
+    188:[−1.709,36.081,0.1653],189:[−1.709,36.293,0.1652],190:[−1.709,36.501,0.1651],191:[−1.709,36.706,0.165],
+    192:[−1.709,36.908,0.1648],193:[−1.709,37.107,0.1647],194:[−1.709,37.302,0.1645],195:[−1.709,37.494,0.1643],
+    196:[−1.709,37.682,0.1641],197:[−1.709,37.867,0.1639],198:[−1.709,38.048,0.1637],199:[−1.709,38.225,0.1634],
+    200:[−1.709,38.398,0.1632],201:[−1.709,38.568,0.1629],202:[−1.709,38.733,0.1626],203:[−1.709,38.895,0.1623],
+    204:[−1.709,39.052,0.162],205:[−1.709,39.206,0.1617],206:[−1.709,39.355,0.1614],207:[−1.709,39.5,0.161],
+    208:[−1.709,39.641,0.1607],209:[−1.709,39.777,0.1603],210:[−1.709,39.909,0.1599],211:[−1.709,40.037,0.1595],
+    212:[−1.709,40.16,0.1591],213:[−1.709,40.278,0.1587],214:[−1.709,40.392,0.1583],215:[−1.709,40.501,0.1578],
+    216:[−1.709,40.606,0.1574]
+  };
+
+  // Normal distribution CDF approximation (Abramowitz & Stegun)
+  function normCDF(z) {
+    const t = 1 / (1 + 0.2316419 * Math.abs(z));
+    const d = 0.3989423 * Math.exp(-z * z / 2);
+    const p = d * t * (0.3193815 + t * (−0.3565638 + t * (1.7814779 + t * (−1.8212560 + t * 1.3302744))));
+    return z > 0 ? 1 - p : p;
+  }
+
+  // Convert BMI to percentile using LMS method
+  function bmiToPercentile(bmi, ageMonths, sex) {
+    const table = sex === 'boy' ? LMS_BOYS : LMS_GIRLS;
+    // Find closest age in table
+    const key = Math.round(ageMonths);
+    const clampedKey = Math.min(Math.max(key, 24), 216);
+    const lms = table[clampedKey];
+    if (!lms) return null;
+    const [L, M, S] = lms;
+    // LMS → Z-score
+    const z = (Math.pow(bmi / M, L) - 1) / (L * S);
+    const pct = normCDF(z) * 100;
+    return Math.min(Math.max(pct, 0.1), 99.9);
+  }
+
+  function ordinal(n) {
+    const r = Math.round(n);
+    if (r >= 11 && r <= 13) return r + 'th';
+    const s = ['th','st','nd','rd'];
+    const v = r % 10;
+    return r + (s[v] || s[0]);
+  }
+
+  let sex = 'boy';
+  let unit = 'metric';
+
+  function setSex(s) {
+    sex = s;
+    document.getElementById('btn-boy').classList.toggle('active', s === 'boy');
+    document.getElementById('btn-girl').classList.toggle('active', s === 'girl');
+  }
+
+  function setUnit(u) {
+    unit = u;
+    document.querySelectorAll('.unit-toggle button').forEach((b, i) => {
+      b.classList.toggle('active', (u === 'metric' && i === 0) || (u === 'imperial' && i === 1));
+    });
+    document.getElementById('metric-inputs').style.display = u === 'metric' ? '' : 'none';
+    document.getElementById('imperial-inputs').style.display = u === 'imperial' ? '' : 'none';
+  }
+
+  function calculate() {
+    const ageYears = parseInt(document.getElementById('age-years').value);
+    const ageMonths = parseInt(document.getElementById('age-months').value) || 0;
+
+    if (!ageYears || ageYears < 2 || ageYears > 17) {
+      alert('Please select an age between 2 and 17 years.');
+      return;
+    }
+
+    const totalMonths = ageYears * 12 + ageMonths;
+
+    let w, h;
+    if (unit === 'metric') {
+      w = parseFloat(document.getElementById('weight-kg').value);
+      h = parseFloat(document.getElementById('height-cm').value) / 100;
+    } else {
+      const lb = parseFloat(document.getElementById('weight-lb').value);
+      const ft = parseFloat(document.getElementById('height-ft').value) || 0;
+      const inch = parseFloat(document.getElementById('height-in').value) || 0;
+      w = lb * 0.453592;
+      h = (ft * 12 + inch) * 0.0254;
+    }
+
+    if (!w || !h || w <= 0 || h <= 0) {
+      alert('Please enter valid weight and height.');
+      return;
+    }
+
+    const bmi = w / (h * h);
+    const bmiRound = Math.round(bmi * 10) / 10;
+    const pct = bmiToPercentile(bmi, totalMonths, sex);
+
+    if (pct === null) {
+      alert('Could not calculate percentile for this age. Please check the inputs.');
+      return;
+    }
+
+    const pctRound = Math.round(pct * 10) / 10;
+
+    // Display
+    document.getElementById('pct-number').innerHTML = Math.round(pct) + '<span class="pct-sup">' + ordinal(Math.round(pct)).replace(Math.round(pct),'') + '</span>';
+    document.getElementById('bmi-raw').textContent = 'BMI: ' + bmiRound;
+    document.getElementById('bmi-display').textContent = bmiRound;
+    document.getElementById('result-card').classList.add('visible');
+
+    // Pointer on bar (0–100 → 0%–100%)
+    document.getElementById('pct-pointer').style.left = Math.min(Math.max(pct, 1), 99) + '%';
+
+    // Category
+    let cat, color, bg, peersText, tip;
+    if (pct < 5) {
+      cat = 'Underweight'; color = '#3A7BBF'; bg = '#DCE9F8';
+      peersText = 'Lower than 95% of peers';
+      tip = "Your child's BMI is below the 5th percentile, which is considered underweight for their age and sex. This doesn't necessarily mean there is a problem, but it's worth discussing with your paediatrician to rule out any underlying concerns and get personalised guidance on nutrition.";
+    } else if (pct < 85) {
+      cat = 'Healthy weight'; color = '#2D6A4F'; bg = '#D8EFE4';
+      peersText = 'Within healthy range';
+      tip = "Your child's BMI is in the healthy range for their age and sex. Keep up the great work! Encourage balanced meals, at least 60 minutes of active play daily, and plenty of sleep to support healthy growth.";
+    } else if (pct < 95) {
+      cat = 'Overweight'; color = '#C17B2A'; bg = '#FBF0DC';
+      peersText = 'Higher than ' + Math.round(pct) + '% of peers';
+      tip = "Your child's BMI is in the overweight range (85th–94th percentile). The best first step is to speak with your paediatrician — they can assess your child's full growth picture and give specific advice. Focus on family-wide habits: balanced meals, active play, and limiting screen time.";
+    } else {
+      cat = 'Obese'; color = '#B83232'; bg = '#FADFDF';
+      peersText = 'Higher than ' + Math.round(pct) + '% of peers';
+      tip = "Your child's BMI is at or above the 95th percentile. Please consult your paediatrician for a full assessment. Avoid putting your child on a diet without medical guidance. Focus on healthy family habits and support your child without drawing attention to their weight.";
+    }
+
+    const catEl = document.getElementById('bmi-category');
+    catEl.textContent = cat;
+    catEl.style.background = bg;
+    catEl.style.color = color;
+
+    document.getElementById('peers-text').textContent = peersText;
+    document.getElementById('health-tip').textContent = tip;
+  }
+
+  function toggleFaq(btn) {
+    btn.classList.toggle('open');
+    btn.nextElementSibling.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
