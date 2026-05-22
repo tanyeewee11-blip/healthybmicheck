@@ -1,0 +1,49 @@
+# Cloudflare Pages _headers
+# Fixes cache hit rate (currently 2.3% → target 85%+)
+
+# HTML pages — short cache, revalidate on CDN
+/*.html
+  Cache-Control: public, max-age=3600, s-maxage=86400, stale-while-revalidate=86400
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Root index
+/
+  Cache-Control: public, max-age=3600, s-maxage=86400, stale-while-revalidate=86400
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Images — long cache (content never changes once deployed)
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.ico
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fonts — long cache
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+
+# SEO files — moderate cache
+/sitemap.xml
+  Cache-Control: public, max-age=86400, s-maxage=86400
+
+/robots.txt
+  Cache-Control: public, max-age=86400
+
+/ads.txt
+  Cache-Control: public, max-age=86400
