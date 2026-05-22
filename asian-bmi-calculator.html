@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon_32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon_192x192.png">
+  <link rel="apple-touch-icon" href="/favicon_512x512.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Asian BMI Calculator — BMI Standards for Asian Adults</title>
+  <link rel="canonical" href="https://healthybmicheck.com/asian-bmi-calculator.html">
+  <meta name="description" content="Free Asian BMI Calculator using WHO Asian cutoffs: overweight at 23, obese at 27.5. More accurate health risk assessment for Asian adults. Instant results.">
+  <meta name="keywords" content="asian bmi calculator, bmi for asian, asian bmi chart, bmi asian standard, healthy bmi asian">
+
+  <meta property="og:title" content="Asian BMI Calculator — Accurate BMI for Asian Adults">
+  <meta property="og:description" content="Calculate your BMI using Asian-specific cutoffs. Overweight starts at 23, obese at 27.5 for Asian adults. Free and instant.">
+  <meta property="og:image" content="https://healthybmicheck.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://healthybmicheck.com/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7723301737736770" crossorigin="anonymous"></script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Asian BMI Calculator","url":"https://healthybmicheck.com/asian-bmi-calculator.html","description":"Free BMI calculator using WHO Asian-specific cutoffs: overweight at 23.0, obese at 27.5. More accurate for adults of Asian descent.","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a healthy BMI for Asian adults?","acceptedAnswer":{"@type":"Answer","text":"For Asian adults, the WHO recommends a healthy BMI range of 18.5 to 22.9. Overweight is defined as BMI 23.0–27.4, and obese as BMI 27.5 or above. These thresholds are lower than the standard Western cutoffs (25 for overweight, 30 for obese) because research shows Asian populations carry higher health risks — including type 2 diabetes and cardiovascular disease — at lower BMI values."}},{"@type":"Question","name":"Why are BMI cutoffs different for Asians?","acceptedAnswer":{"@type":"Answer","text":"Studies have shown that people of Asian descent tend to accumulate more visceral (organ-surrounding) fat at a given BMI compared to people of European descent. This hidden fat increases the risk of insulin resistance, type 2 diabetes, and cardiovascular disease even at BMI levels considered 'healthy' by standard Western guidelines. The WHO and many Asian health authorities therefore recommend lower BMI thresholds for Asian populations."}},{"@type":"Question","name":"Which Asian countries use these BMI standards?","acceptedAnswer":{"@type":"Answer","text":"The lower BMI cutoffs are used across most of Asia, including Malaysia, Singapore, China, Japan, South Korea, India, and Taiwan. The Health Promotion Board (Singapore), Japan Society for the Study of Obesity, and the Indian consensus guidelines all recommend overweight starting at BMI 23 and obesity at 27.5."}}]}</script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F7F4EF;
+      --surface: #FFFFFF;
+      --ink: #1A1714;
+      --ink2: #6B6560;
+      --ink3: #A09A94;
+      --accent: #2D6A4F;
+      --accent-light: #D8EFE4;
+      --warn: #C17B2A;
+      --warn-light: #FBF0DC;
+      --danger: #B83232;
+      --danger-light: #FADFDF;
+      --underweight: #3A7BBF;
+      --underweight-light: #DCE9F8;
+      --border: #E5E0D8;
+      --radius: 16px;
+      --shadow: 0 2px 16px rgba(26,23,20,0.07);
+    }
+
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; }
+
+    header {
+      background: var(--ink);
+      color: #fff;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
+    .logo span { color: #7EC8A4; }
+    header a { text-decoration: none; color: inherit; }
+    nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; margin-left: 20px; transition: color .2s; }
+    nav a:hover { color: #fff; }
+
+    .hero { text-align: center; padding: 56px 24px 32px; max-width: 640px; margin: 0 auto; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 16px; }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero p { color: var(--ink2); font-size: 1.05rem; line-height: 1.6; }
+
+    /* Asian-specific notice banner */
+    .notice-banner {
+      max-width: 720px;
+      margin: 0 auto 8px;
+      padding: 0 20px;
+    }
+    .notice-inner {
+      background: #EAF3DE;
+      border: 1px solid #C0DD97;
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-size: 0.875rem;
+      color: #27500A;
+      line-height: 1.5;
+    }
+
+    .container { max-width: 720px; margin: 0 auto; padding: 0 20px 64px; }
+
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+      padding: 28px;
+    }
+
+    .unit-toggle { display: flex; background: var(--bg); border-radius: 10px; padding: 4px; margin-bottom: 24px; }
+    .unit-toggle button { flex: 1; border: none; background: none; padding: 8px; border-radius: 7px; cursor: pointer; font-size: 0.875rem; color: var(--ink2); font-family: inherit; transition: all .2s; }
+    .unit-toggle button.active { background: var(--surface); color: var(--ink); font-weight: 500; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+
+    .input-group { margin-bottom: 20px; }
+    .input-group label { display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 8px; color: var(--ink2); }
+    .input-wrap { position: relative; }
+    .input-wrap input { width: 100%; border: 1.5px solid var(--border); border-radius: 10px; padding: 12px 44px 12px 14px; font-size: 1rem; font-family: inherit; background: var(--bg); color: var(--ink); outline: none; transition: border-color .2s; }
+    .input-wrap input:focus { border-color: var(--accent); }
+    .unit-badge { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-size: 0.8rem; color: var(--ink3); font-weight: 500; }
+    .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    .calc-btn { width: 100%; background: var(--ink); color: #fff; border: none; border-radius: 12px; padding: 15px; font-size: 1rem; font-weight: 500; font-family: inherit; cursor: pointer; transition: background .2s; }
+    .calc-btn:hover { background: #333; }
+
+    /* Result card */
+    .result-card { display: none; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px; margin-bottom: 20px; }
+    .result-card.visible { display: block; }
+
+    .bmi-number { font-family: 'DM Serif Display', serif; font-size: 4rem; line-height: 1; margin-bottom: 8px; }
+    .bmi-category { display: inline-block; font-size: 0.875rem; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-bottom: 20px; }
+
+    /* Scale — 4 zones for Asian: Underweight / Normal / At Risk / Overweight / Obese */
+    .scale-wrap { margin-bottom: 20px; }
+    .scale-bar {
+      height: 8px;
+      border-radius: 4px;
+      background: linear-gradient(to right,
+        var(--underweight) 0%, var(--underweight) 14%,
+        var(--accent) 14%, var(--accent) 40%,
+        var(--warn) 40%, var(--warn) 60%,
+        var(--danger) 60%, var(--danger) 100%);
+      position: relative;
+      margin-bottom: 8px;
+    }
+    .scale-pointer { position: absolute; top: 50%; transform: translate(-50%, -50%); width: 16px; height: 16px; border-radius: 50%; background: var(--ink); box-shadow: 0 1px 4px rgba(0,0,0,.2); transition: left 0.4s ease; }
+    .scale-labels { display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--ink3); }
+
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+    .info-box { background: var(--bg); border-radius: 10px; padding: 12px 14px; }
+    .info-box .label { font-size: 0.75rem; color: var(--ink3); margin-bottom: 4px; }
+    .info-box .value { font-size: 1rem; font-weight: 600; }
+
+    .health-tip { background: var(--bg); border-radius: 10px; padding: 14px; font-size: 0.875rem; color: var(--ink2); line-height: 1.6; }
+    .health-tip a { color: var(--accent); }
+
+    /* Comparison table */
+    .compare-section { margin-bottom: 20px; }
+    .section-title { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin-bottom: 4px; }
+    .section-sub { color: var(--ink2); font-size: 0.9rem; margin-bottom: 16px; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th { text-align: left; padding: 10px 12px; background: var(--bg); font-weight: 600; font-size: 0.8rem; color: var(--ink2); text-transform: uppercase; letter-spacing: 0.03em; }
+    td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    tr:last-child td { border-bottom: none; }
+    .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+    .tag { font-size: 0.7rem; font-weight: 600; padding: 2px 8px; border-radius: 20px; margin-left: 6px; vertical-align: middle; }
+    .tag-asian { background: #EAF3DE; color: #27500A; }
+    .tag-standard { background: #DCE9F8; color: #0C447C; }
+
+    /* FAQ */
+    .faq-section { margin-bottom: 20px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { width: 100%; text-align: left; background: none; border: none; padding: 16px 0; font-size: 0.95rem; font-weight: 500; cursor: pointer; font-family: inherit; color: var(--ink); display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .faq-q::after { content: '+'; font-size: 1.2rem; color: var(--ink3); transition: transform .2s; flex-shrink: 0; }
+    .faq-q.open::after { transform: rotate(45deg); }
+    .faq-a { display: none; padding: 0 0 16px; color: var(--ink2); font-size: 0.9rem; line-height: 1.7; }
+    .faq-a.open { display: block; }
+
+    /* Article */
+    .article-section { background: var(--surface); border-radius: var(--radius); padding: 32px; margin-bottom: 20px; }
+    .article-section h2 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; margin: 28px 0 12px; color: var(--ink); }
+    .article-section h2:first-child { margin-top: 0; }
+    .article-section h3 { font-size: 1rem; font-weight: 600; margin: 20px 0 8px; }
+    .article-section p { color: var(--ink2); line-height: 1.7; margin-bottom: 12px; font-size: 0.95rem; }
+    .article-section ul, .article-section ol { color: var(--ink2); padding-left: 20px; margin-bottom: 12px; }
+    .article-section li { line-height: 1.7; margin-bottom: 6px; font-size: 0.95rem; }
+    .article-section a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    .callout { background: var(--accent-light); border-radius: 10px; padding: 14px 16px; margin: 16px 0; font-size: 0.9rem; color: var(--ink); }
+    .warn-callout { background: var(--warn-light); border-radius: 10px; padding: 14px 16px; margin: 16px 0; font-size: 0.9rem; color: var(--ink); }
+    .formula-box { background: var(--bg); border-radius: 10px; padding: 14px 16px; font-family: monospace; font-size: 0.9rem; color: var(--ink); margin: 12px 0; line-height: 1.8; }
+    .formula-box span { color: var(--ink3); font-family: 'DM Sans', sans-serif; font-size: 0.8rem; display: inline-block; width: 70px; }
+    .sources { margin: 32px 0 8px; padding: 20px 0; border-top: 1px solid var(--border); font-size: 0.82rem; color: var(--ink3); line-height: 1.8; }
+    .sources a { color: var(--ink3); }
+
+    /* Country table */
+    .country-table td:nth-child(2), .country-table td:nth-child(3) { font-weight: 500; text-align: center; }
+    .country-table th:nth-child(2), .country-table th:nth-child(3) { text-align: center; }
+
+    .related { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
+    .related h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; margin-bottom: 16px; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .related-links a { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; text-decoration: none; color: var(--ink); font-size: 0.875rem; }
+    .related-links a:hover { border-color: var(--accent); color: var(--accent); }
+
+    footer { background: var(--ink); color: rgba(255,255,255,0.4); text-align: center; padding: 24px; font-size: 0.8rem; line-height: 1.8; }
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #fff; }
+
+    @media (max-width: 640px) {
+      .article-section { padding: 24px 20px; }
+      .info-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><a href="index.html">healthy<span>bmicheck</span>.com</a></div>
+  <nav>
+    <a href="#compare">Asian vs Standard</a>
+    <a href="#faq">FAQ</a>
+    <a href="bmi-calculator.html">Standard BMI</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Free <em>Asian BMI</em> Calculator</h1>
+  <p>BMI health thresholds differ for Asian adults. This calculator uses WHO Asian-specific cutoffs for a more accurate health risk assessment.</p>
+</div>
+
+<div class="notice-banner">
+  <div class="notice-inner">
+    🌏 <strong>Why a different calculator?</strong> Research shows Asian adults develop type 2 diabetes and cardiovascular disease at lower BMI values than Western populations. The WHO recommends overweight starts at <strong>23.0</strong> and obesity at <strong>27.5</strong> for people of Asian descent.
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <div class="unit-toggle">
+      <button class="active" onclick="setUnit('metric')">Metric (kg/cm)</button>
+      <button onclick="setUnit('imperial')">Imperial (lb/in)</button>
+    </div>
+
+    <div class="input-group" id="metric-inputs">
+      <label>Weight</label>
+      <div class="input-wrap">
+        <input type="number" id="weight-kg" placeholder="65">
+        <span class="unit-badge">kg</span>
+      </div>
+    </div>
+
+    <div class="input-group" id="imperial-inputs" style="display:none">
+      <label>Weight</label>
+      <div class="input-wrap">
+        <input type="number" id="weight-lb" placeholder="143">
+        <span class="unit-badge">lb</span>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label>Height</label>
+      <div id="metric-height">
+        <div class="input-wrap">
+          <input type="number" id="height-cm" placeholder="165">
+          <span class="unit-badge">cm</span>
+        </div>
+      </div>
+      <div id="imperial-height" style="display:none">
+        <div class="input-row">
+          <div class="input-wrap">
+            <input type="number" id="height-ft" placeholder="5">
+            <span class="unit-badge">ft</span>
+          </div>
+          <div class="input-wrap">
+            <input type="number" id="height-in" placeholder="5">
+            <span class="unit-badge">in</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="calc-btn" onclick="calculate()">Calculate Asian BMI →</button>
+  </div>
+
+  <div class="result-card" id="result-card">
+    <div class="bmi-number" id="bmi-number">—</div>
+    <div class="bmi-category" id="bmi-category"></div>
+
+    <div class="scale-wrap">
+      <div class="scale-bar">
+        <div class="scale-pointer" id="scale-pointer" style="left:0%"></div>
+      </div>
+      <div class="scale-labels">
+        <span>Underweight<br>&lt;18.5</span>
+        <span>Normal<br>18.5–22.9</span>
+        <span>Overweight<br>23–27.4</span>
+        <span>Obese<br>≥27.5</span>
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-box">
+        <div class="label">Healthy range (Asian)</div>
+        <div class="value" id="healthy-range">—</div>
+      </div>
+      <div class="info-box">
+        <div class="label">Standard BMI category</div>
+        <div class="value" id="standard-cat">—</div>
+      </div>
+    </div>
+
+    <div class="health-tip" id="health-tip"></div>
+  </div>
+
+  <!-- Comparison Table -->
+  <div class="compare-section" id="compare">
+    <h2 class="section-title">Asian vs Standard BMI Categories</h2>
+    <p class="section-sub">Asian cutoffs are lower because health risks emerge earlier in Asian populations.</p>
+    <div class="card" style="padding: 0; overflow: hidden;">
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Asian BMI <span class="tag tag-asian">Asian</span></th>
+            <th>Standard BMI <span class="tag tag-standard">WHO</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="dot" style="background:#3A7BBF"></span>Underweight</td><td style="text-align:center">&lt; 18.5</td><td style="text-align:center">&lt; 18.5</td></tr>
+          <tr><td><span class="dot" style="background:#2D6A4F"></span>Normal weight</td><td style="text-align:center">18.5 – 22.9</td><td style="text-align:center">18.5 – 24.9</td></tr>
+          <tr><td><span class="dot" style="background:#C17B2A"></span>Overweight</td><td style="text-align:center"><strong>23.0 – 27.4</strong></td><td style="text-align:center">25.0 – 29.9</td></tr>
+          <tr><td><span class="dot" style="background:#B83232"></span>Obese</td><td style="text-align:center"><strong>≥ 27.5</strong></td><td style="text-align:center">≥ 30.0</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Country-specific table -->
+  <div class="compare-section">
+    <h2 class="section-title">BMI Standards by Asian Country</h2>
+    <p class="section-sub">Most Asian health authorities use similar cutoffs, with some variation.</p>
+    <div class="card" style="padding: 0; overflow: hidden;">
+      <table class="country-table">
+        <thead>
+          <tr>
+            <th>Country / Region</th>
+            <th>Overweight starts at</th>
+            <th>Obese starts at</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>🇲🇾 Malaysia</td><td>23.0</td><td>27.5</td></tr>
+          <tr><td>🇸🇬 Singapore</td><td>23.0</td><td>27.5</td></tr>
+          <tr><td>🇨🇳 China</td><td>24.0</td><td>28.0</td></tr>
+          <tr><td>🇯🇵 Japan</td><td>25.0</td><td>30.0*</td></tr>
+          <tr><td>🇰🇷 South Korea</td><td>23.0</td><td>25.0</td></tr>
+          <tr><td>🇮🇳 India</td><td>23.0</td><td>25.0</td></tr>
+          <tr><td>🇹🇼 Taiwan</td><td>24.0</td><td>27.0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size: 0.8rem; color: var(--ink3); margin-top: 8px;">* Japan uses standard WHO cutoffs but defines obesity class II at BMI ≥ 25 for clinical purposes.</p>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section" id="faq">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What is a healthy BMI for Asian adults?</button>
+      <div class="faq-a">For Asian adults, the WHO recommends a healthy BMI range of <strong>18.5 to 22.9</strong>. Overweight is defined as BMI 23.0–27.4, and obese as BMI 27.5 or above. These thresholds are lower than the standard Western cutoffs (25 for overweight, 30 for obese) because research shows Asian populations carry higher health risks at lower BMI values.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Why are BMI cutoffs different for Asians?</button>
+      <div class="faq-a">People of Asian descent tend to accumulate more <strong>visceral fat</strong> — fat stored around internal organs — at a given BMI compared to people of European descent. This hidden fat increases the risk of insulin resistance, type 2 diabetes, and cardiovascular disease even at BMI levels considered "healthy" by standard guidelines. The WHO and many Asian health authorities therefore recommend lower BMI thresholds.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Should I use Asian or standard BMI?</button>
+      <div class="faq-a">If you are of Asian descent — including Chinese, Malay, Indian, Japanese, Korean, or Southeast Asian — the Asian BMI cutoffs are more appropriate for assessing your health risk. If you are of European, African, or Latin American descent, use the <a href="bmi-calculator.html">standard BMI calculator</a>. If you are of mixed ethnicity, consult your doctor about which guideline to follow.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Is BMI 23 overweight for Asians?</button>
+      <div class="faq-a">Yes — according to WHO Asian guidelines and recommendations from health authorities in Malaysia, Singapore, India, South Korea, and others, a BMI of 23.0 or above is classified as overweight for Asian adults. This does not mean you are unhealthy, but it does indicate a higher risk of metabolic conditions compared to an Asian person with a BMI below 23. Consider pairing your BMI result with a <a href="body-fat.html">body fat assessment</a>.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Does BMI apply to South Asian, Malay, and Indian adults?</button>
+      <div class="faq-a">Yes. Research shows that South Asian populations — including those of Indian, Pakistani, Bangladeshi, and Sri Lankan descent — and Malay populations have particularly high visceral fat levels at low BMI. The Asian cutoffs (overweight ≥ 23, obese ≥ 27.5) apply to all these groups. Some Indian medical bodies even suggest more aggressive intervention at BMI 25.</div>
+    </div>
+  </div>
+
+  <!-- Article -->
+  <div class="article-section">
+    <h2>Why Asian Adults Need Different BMI Thresholds</h2>
+    <p>For decades, the global BMI classification defined "overweight" as 25.0 and "obese" as 30.0 — thresholds based primarily on studies of European populations. However, doctors across Asia began noticing a troubling pattern: patients with BMI values in the "normal" range of 23–24 were developing type 2 diabetes, high blood pressure, and cardiovascular disease at rates seen in obese Western patients.</p>
+    <p>The explanation lies in body composition. For the same BMI, people of Asian descent carry significantly more <strong>visceral fat</strong> — fat that accumulates around the liver, pancreas, and intestines — compared to people of European descent. This metabolically active fat triggers insulin resistance and inflammation even when total body weight appears normal by standard measures.</p>
+
+    <h2>The Science Behind Asian BMI Cutoffs</h2>
+    <p>In 2004, a WHO Expert Consultation published its recommendations in <em>The Lancet</em>, acknowledging that Asian populations face higher health risks at lower BMI values. Key findings from this and subsequent research include:</p>
+    <ul>
+      <li>At BMI 23, Asian adults have the equivalent metabolic risk of a European adult at BMI 25</li>
+      <li>The risk of type 2 diabetes increases 3–5× for Asian populations once BMI exceeds 23</li>
+      <li>Cardiovascular risk rises meaningfully at BMI 22–23 in South Asian and Southeast Asian populations</li>
+      <li>Body fat percentage at a given BMI is approximately 3–5% higher in Asian adults compared to European adults</li>
+    </ul>
+    <div class="callout"><p>💡 <strong>Key insight:</strong> Two people with identical BMI values can have very different body fat percentages and health risks depending on their ethnicity. Asian-specific BMI cutoffs account for this difference.</p></div>
+
+    <h2>How to Use Your Asian BMI Result</h2>
+    <p>Your Asian BMI is a screening tool, not a diagnosis. Here is how to interpret it:</p>
+    <ul>
+      <li><strong>Below 18.5 (Underweight):</strong> May indicate inadequate nutrition. Speak with a healthcare provider.</li>
+      <li><strong>18.5–22.9 (Normal):</strong> Associated with the lowest health risk for Asian adults. Maintain through balanced diet and regular exercise.</li>
+      <li><strong>23.0–27.4 (Overweight):</strong> Elevated risk of metabolic conditions. Diet and exercise changes are recommended. Use our <a href="calorie-calculator.html">Calorie Calculator</a> to find your daily target.</li>
+      <li><strong>27.5 and above (Obese):</strong> Significantly elevated risk. Consult a healthcare provider for personalised guidance.</li>
+    </ul>
+    <div class="warn-callout"><p>⚠️ BMI is a useful starting point but does not account for muscle mass, bone density, or fat distribution. For a fuller picture, consider pairing it with a <a href="body-fat.html">Body Fat Calculator</a> or waist circumference measurement.</p></div>
+
+    <h2>Next Steps After Getting Your BMI</h2>
+    <ul>
+      <li>Calculate your daily calorie needs with the <a href="calorie-calculator.html">Calorie Calculator</a></li>
+      <li>Find your <a href="ideal-weight.html">Ideal Weight range</a> for your height</li>
+      <li>Estimate your <a href="body-fat.html">Body Fat Percentage</a> for a fuller body composition picture</li>
+      <li>Check your daily <a href="water-intake.html">Water Intake needs</a></li>
+      <li>Compare your result to the <a href="bmi-calculator.html">Standard BMI Calculator</a></li>
+    </ul>
+
+    <div class="sources">
+      <strong>References:</strong><br>
+      WHO Expert Consultation. Appropriate body-mass index for Asian populations and its implications for policy and intervention strategies. <em>The Lancet</em>. 2004;363(9403):157–163.<br>
+      Health Promotion Board Singapore. <a href="https://www.hpb.gov.sg" target="_blank" rel="noopener">BMI Guidelines for Asian Populations</a>. HPB, 2023.<br>
+      Wen CP et al. Are Asians at greater mortality risks for being overweight than Caucasians? <em>Asia Pacific Journal of Clinical Nutrition</em>. 2009.<br>
+      Misra A, Chowbey P et al. Consensus statement for diagnosis of obesity, abdominal obesity and the metabolic syndrome for Asian Indians. <em>JAPI</em>. 2009.
+    </div>
+
+    <div class="related">
+      <h3>Related Tools & Articles</h3>
+      <div class="related-links">
+        <a href="bmi-calculator.html">Standard BMI Calculator</a>
+        <a href="body-fat.html">Body Fat Calculator</a>
+        <a href="calorie-calculator.html">Calorie Calculator</a>
+        <a href="ideal-weight.html">Ideal Weight Calculator</a>
+        <a href="what-is-bmi.html">What Is BMI?</a>
+        <a href="healthy-bmi-for-women.html">Healthy BMI for Women</a>
+        <a href="normal-bmi-for-men.html">Normal BMI for Men</a>
+        <a href="how-to-lower-bmi.html">How to Lower Your BMI</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div>© 2026 healthybmicheck.com — Accurate Health Tools</div>
+  <div style="margin-top:8px">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+<script>
+  let unit = 'metric';
+
+  function setUnit(u) {
+    unit = u;
+    document.querySelectorAll('.unit-toggle button').forEach((b,i) => {
+      b.classList.toggle('active', (u === 'metric' && i === 0) || (u === 'imperial' && i === 1));
+    });
+    document.getElementById('metric-inputs').style.display = u === 'metric' ? '' : 'none';
+    document.getElementById('imperial-inputs').style.display = u === 'imperial' ? '' : 'none';
+    document.getElementById('metric-height').style.display = u === 'metric' ? '' : 'none';
+    document.getElementById('imperial-height').style.display = u === 'imperial' ? '' : 'none';
+  }
+
+  function calculate() {
+    let w, h;
+    if (unit === 'metric') {
+      w = parseFloat(document.getElementById('weight-kg').value);
+      h = parseFloat(document.getElementById('height-cm').value) / 100;
+    } else {
+      const lb = parseFloat(document.getElementById('weight-lb').value);
+      const ft = parseFloat(document.getElementById('height-ft').value) || 0;
+      const inch = parseFloat(document.getElementById('height-in').value) || 0;
+      w = lb * 0.453592;
+      h = (ft * 12 + inch) * 0.0254;
+    }
+
+    if (!w || !h || w <= 0 || h <= 0) {
+      alert('Please enter valid weight and height.');
+      return;
+    }
+
+    const bmi = w / (h * h);
+    const bmiRound = Math.round(bmi * 10) / 10;
+
+    document.getElementById('bmi-number').textContent = bmiRound;
+    document.getElementById('result-card').classList.add('visible');
+
+    // Scale: map BMI 15–40 to 0–100%
+    const pct = Math.min(Math.max((bmi - 15) / (40 - 15) * 100, 2), 98);
+    document.getElementById('scale-pointer').style.left = pct + '%';
+
+    // Asian categories
+    let asianCat, color, bg, tip, standardCat;
+
+    if (bmi < 18.5) {
+      asianCat = 'Underweight';
+      color = '#3A7BBF'; bg = '#DCE9F8';
+      tip = "Your BMI suggests you may be underweight. Consider speaking with a healthcare provider about safely increasing your calorie and nutrient intake. Our <a href='high-protein-foods.html'>high-protein foods guide</a> may help.";
+    } else if (bmi < 23) {
+      asianCat = 'Normal weight';
+      color = '#2D6A4F'; bg = '#D8EFE4';
+      tip = "Your BMI is in the healthy range for Asian adults. Keep it up with a balanced diet and at least 150 minutes of moderate exercise per week. Check your <a href='calorie-calculator.html'>daily calorie needs</a> to stay on track.";
+    } else if (bmi < 27.5) {
+      asianCat = 'Overweight (Asian standard)';
+      color = '#C17B2A'; bg = '#FBF0DC';
+      tip = "Your BMI is in the overweight range by Asian guidelines (≥ 23.0). A moderate calorie deficit and regular activity can help reduce health risk. Try our <a href='calorie-calculator.html'>Calorie Calculator</a> to find your daily target, or read our guide on <a href='how-to-lower-bmi.html'>how to lower your BMI</a>.";
+    } else {
+      asianCat = 'Obese (Asian standard)';
+      color = '#B83232'; bg = '#FADFDF';
+      tip = "Your BMI is in the obese range by Asian guidelines (≥ 27.5), which carries higher health risks. Speaking with a healthcare provider is recommended. Our <a href='how-to-lower-bmi.html'>guide to lowering BMI</a> covers practical first steps.";
+    }
+
+    // Standard category
+    if (bmi < 18.5) standardCat = 'Underweight';
+    else if (bmi < 25) standardCat = 'Normal weight';
+    else if (bmi < 30) standardCat = 'Overweight';
+    else standardCat = 'Obese';
+
+    const catEl = document.getElementById('bmi-category');
+    catEl.textContent = asianCat;
+    catEl.style.background = bg;
+    catEl.style.color = color;
+
+    // Healthy range for height
+    let heightM = h;
+    const lowKg = (18.5 * heightM * heightM).toFixed(1);
+    const highKg = (22.9 * heightM * heightM).toFixed(1);
+    const lowLb = (lowKg / 0.453592).toFixed(1);
+    const highLb = (highKg / 0.453592).toFixed(1);
+    const range = unit === 'metric'
+      ? `${lowKg}–${highKg} kg`
+      : `${lowLb}–${highLb} lb`;
+
+    document.getElementById('healthy-range').textContent = range;
+    document.getElementById('standard-cat').textContent = standardCat;
+    document.getElementById('health-tip').innerHTML = tip;
+  }
+
+  function toggleFaq(btn) {
+    btn.classList.toggle('open');
+    btn.nextElementSibling.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
