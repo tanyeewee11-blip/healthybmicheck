@@ -47,15 +47,12 @@
     .hero h1 em { font-style: italic; color: var(--accent); }
     .hero p { color: var(--ink2); font-size: 1rem; line-height: 1.6; max-width: 480px; margin: 0 auto; }
 
-    .container {
-      max-width: 960px; margin: 0 auto; padding: 0 20px 64px;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;
-    }
-    @media (max-width: 640px) { .container { grid-template-columns: 1fr; } }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 20px 64px; }
+    @media (max-width: 640px) { .container { max-width: 720px; margin: 0 auto; padding: 0 20px 64px; } }
 
     .card {
       background: var(--surface); border-radius: var(--radius);
-      box-shadow: var(--shadow); border: 1px solid var(--border); padding: 28px;
+      box-shadow: var(--shadow); padding: 28px;
     }
 
     .unit-toggle {
@@ -109,7 +106,7 @@
 
     .result-card {
       background: var(--surface); border-radius: var(--radius);
-      box-shadow: var(--shadow); border: 1px solid var(--border);
+      box-shadow: var(--shadow);
       padding: 28px; display: none;
     }
     .result-card.visible { display: block; }
@@ -141,17 +138,17 @@
       font-size: 0.875rem; line-height: 1.5; color: #5A3A10;
     }
 
-    .table-section { grid-column: 1 / -1; margin-top: 8px; }
+    .table-section { margin-top: 8px; }
     .section-title { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin-bottom: 4px; }
     .section-sub { color: var(--ink2); font-size: 0.9rem; margin-bottom: 16px; }
 
-    table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
     thead tr { background: var(--ink); color: #fff; }
     th { padding: 12px 16px; text-align: left; font-size: 0.8rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
     td { padding: 13px 16px; font-size: 0.9rem; border-bottom: 1px solid var(--border); }
     tbody tr:last-child td { border-bottom: none; }
 
-    .faq-section { grid-column: 1 / -1; }
+    .faq-section { }
     .faq-item { border-bottom: 1px solid var(--border); }
     .faq-q { width: 100%; background: none; border: none; text-align: left; padding: 16px 0; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--ink); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
     .faq-q::after { content: '+'; font-size: 1.2rem; color: var(--ink3); transition: transform .2s; }
@@ -160,7 +157,7 @@
     .faq-a.open { display: block; }
 
     /* ── Article section ── */
-    .article-section { grid-column: 1 / -1; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--border); padding: 36px 40px; }
+    .article-section { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 36px 40px; }
     @media (max-width: 640px) { .article-section { padding: 24px 20px; } }
     .article-section h2 { font-family: 'DM Serif Display', serif; font-size: 1.6rem; letter-spacing: -0.02em; margin: 32px 0 10px; }
     .article-section h2:first-child { margin-top: 0; }
@@ -182,7 +179,7 @@
     .related { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
     .related h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; margin-bottom: 16px; }
     .related-links { display: flex; flex-wrap: wrap; gap: 10px; }
-    .related-links a { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; text-decoration: none; color: var(--ink); font-size: 0.875rem; }
+    .related-links a { background: var(--surface); border-radius: 10px; padding: 10px 16px; text-decoration: none; color: var(--ink); font-size: 0.875rem; }
     .related-links a:hover { border-color: var(--accent); color: var(--accent); }
   </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is TDEE?", "acceptedAnswer": {"@type": "Answer", "text": "TDEE stands for Total Daily Energy Expenditure — the total number of calories your body burns in a day. It accounts for your basal metabolic rate (calories burned at rest) plus additional calories burned through physical activity. Eating at your TDEE keeps your weight stable."}}, {"@type": "Question", "name": "How many calories should I eat to lose weight?", "acceptedAnswer": {"@type": "Answer", "text": "A safe and sustainable calorie deficit for weight loss is 500 calories per day below your TDEE, which typically results in losing approximately 0.5 kg (1 lb) per week. Deficits larger than 1000 calories per day are generally not recommended without medical supervision."}}, {"@type": "Question", "name": "What formula does this calculator use?", "acceptedAnswer": {"@type": "Answer", "text": "This calculator uses the Mifflin-St Jeor equation, which is considered the most accurate formula for estimating Basal Metabolic Rate (BMR) for most people. The BMR is then multiplied by an activity factor to produce your TDEE."}}, {"@type": "Question", "name": "Why are my calorie needs different from a friend's?", "acceptedAnswer": {"@type": "Answer", "text": "Calorie needs vary significantly based on age, sex, height, weight, and activity level. Men generally burn more calories than women due to higher muscle mass. Younger people tend to have higher metabolic rates. Activity level is often the biggest variable between individuals."}}, {"@type": "Question", "name": "Should I eat back calories burned during exercise?", "acceptedAnswer": {"@type": "Answer", "text": "This calculator already factors in your activity level, so you do not need to add extra calories for planned workouts. If you have an unexpectedly intense workout, eating back a portion of those calories is reasonable, but be aware that fitness trackers often overestimate calories burned."}}]}</script>
@@ -203,7 +200,7 @@
     <a href="calorie-calculator.html">Calories</a>
     <a href="ideal-weight.html">Ideal Weight</a>
     <a href="what-is-bmi.html">Learn</a>
-    <a href="privacy.html">Privacy</a>
+    <a href="bmi-calculator.html">BMI Calculator</a>
   </nav>
 </header>
 
