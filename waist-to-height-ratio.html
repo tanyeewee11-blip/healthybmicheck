@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon_32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon_192x192.png">
+  <link rel="apple-touch-icon" href="/favicon_512x512.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Waist-to-Height Ratio Calculator — Better Than BMI?</title>
+  <link rel="canonical" href="https://healthybmicheck.com/waist-to-height-ratio.html">
+  <meta name="description" content="Free waist-to-height ratio calculator. WHtR is a more accurate predictor of metabolic health risk than BMI. Instant results with risk category and healthy waist range.">
+  <meta name="keywords" content="waist to height ratio calculator, waist height ratio, WHtR calculator, waist circumference health risk, belly fat calculator">
+
+  <meta property="og:title" content="Waist-to-Height Ratio Calculator — More Accurate Than BMI">
+  <meta property="og:description" content="Calculate your waist-to-height ratio (WHtR). A WHtR above 0.5 signals increased metabolic health risk. Free, instant, no sign-up.">
+  <meta property="og:image" content="https://healthybmicheck.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://healthybmicheck.com/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7723301737736770" crossorigin="anonymous"></script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Waist-to-Height Ratio Calculator","url":"https://healthybmicheck.com/waist-to-height-ratio.html","description":"Calculate your waist-to-height ratio (WHtR) to assess metabolic health risk. More accurate than BMI for predicting cardiovascular and diabetes risk.","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a healthy waist-to-height ratio?","acceptedAnswer":{"@type":"Answer","text":"A healthy waist-to-height ratio is below 0.5 for most adults. The simple rule: keep your waist circumference to less than half your height. A WHtR between 0.5 and 0.59 indicates increased health risk, and 0.6 or above indicates high risk. These thresholds apply to both men and women and do not vary significantly by age for adults."}},{"@type":"Question","name":"Is waist-to-height ratio better than BMI?","acceptedAnswer":{"@type":"Answer","text":"Research suggests waist-to-height ratio is a better predictor of cardiovascular disease, type 2 diabetes, and mortality risk than BMI. This is because WHtR directly measures central (abdominal) fat — the most metabolically dangerous type — whereas BMI cannot distinguish between fat and muscle, or between abdominal and peripheral fat. A 2012 meta-analysis of 300,000 people found WHtR outperformed BMI and waist circumference alone in predicting cardiometabolic risk."}},{"@type":"Question","name":"How do I measure my waist correctly?","acceptedAnswer":{"@type":"Answer","text":"Measure your waist at the midpoint between your lowest rib and the top of your hip bone (iliac crest). This is usually around the level of your belly button, but the exact position varies. Stand relaxed, breathe out gently, and measure without pulling the tape tight. Do not measure over clothing. Take two measurements and average them if they differ."}}]}</script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F7F4EF;
+      --surface: #FFFFFF;
+      --ink: #1A1714;
+      --ink2: #6B6560;
+      --ink3: #A09A94;
+      --accent: #2D6A4F;
+      --accent-light: #D8EFE4;
+      --warn: #C17B2A;
+      --warn-light: #FBF0DC;
+      --danger: #B83232;
+      --danger-light: #FADFDF;
+      --low: #3A7BBF;
+      --low-light: #DCE9F8;
+      --border: #E5E0D8;
+      --radius: 16px;
+      --shadow: 0 2px 16px rgba(26,23,20,0.07);
+    }
+
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; }
+
+    header { background: var(--ink); color: #fff; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
+    .logo span { color: #7EC8A4; }
+    header a { text-decoration: none; color: inherit; }
+    nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; margin-left: 20px; transition: color .2s; }
+    nav a:hover { color: #fff; }
+
+    .hero { text-align: center; padding: 56px 24px 32px; max-width: 640px; margin: 0 auto; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 16px; }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero p { color: var(--ink2); font-size: 1.05rem; line-height: 1.6; }
+
+    .container { max-width: 720px; margin: 0 auto; padding: 0 20px 64px; }
+
+    .card { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 20px; padding: 28px; }
+
+    .unit-toggle { display: flex; background: var(--bg); border-radius: 10px; padding: 4px; margin-bottom: 24px; }
+    .unit-toggle button { flex: 1; border: none; background: none; padding: 8px; border-radius: 7px; cursor: pointer; font-size: 0.875rem; color: var(--ink2); font-family: inherit; transition: all .2s; }
+    .unit-toggle button.active { background: var(--surface); color: var(--ink); font-weight: 500; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+
+    .input-group { margin-bottom: 20px; }
+    .input-group label { display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 8px; color: var(--ink2); }
+    .input-wrap { position: relative; }
+    .input-wrap input { width: 100%; border: 1.5px solid var(--border); border-radius: 10px; padding: 12px 52px 12px 14px; font-size: 1rem; font-family: inherit; background: var(--bg); color: var(--ink); outline: none; transition: border-color .2s; }
+    .input-wrap input:focus { border-color: var(--accent); }
+    .unit-badge { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-size: 0.8rem; color: var(--ink3); font-weight: 500; }
+    .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .input-hint { font-size: 0.78rem; color: var(--ink3); margin-top: 6px; line-height: 1.5; }
+
+    .calc-btn { width: 100%; background: var(--ink); color: #fff; border: none; border-radius: 12px; padding: 15px; font-size: 1rem; font-weight: 500; font-family: inherit; cursor: pointer; transition: background .2s; }
+    .calc-btn:hover { background: #333; }
+
+    /* Result */
+    .result-card { display: none; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px; margin-bottom: 20px; }
+    .result-card.visible { display: block; }
+
+    .whtr-number { font-family: 'DM Serif Display', serif; font-size: 4rem; line-height: 1; margin-bottom: 8px; }
+    .bmi-category { display: inline-block; font-size: 0.875rem; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-bottom: 20px; }
+
+    /* Risk gauge */
+    .gauge-wrap { margin-bottom: 20px; }
+    .gauge-bar {
+      height: 10px; border-radius: 5px; position: relative; margin-bottom: 8px;
+      background: linear-gradient(to right,
+        #3A7BBF 0%, #3A7BBF 18%,
+        #2D6A4F 18%, #2D6A4F 45%,
+        #C17B2A 45%, #C17B2A 73%,
+        #B83232 73%, #B83232 100%);
+    }
+    .gauge-pointer { position: absolute; top: 50%; transform: translate(-50%, -50%); width: 18px; height: 18px; border-radius: 50%; background: var(--ink); box-shadow: 0 1px 4px rgba(0,0,0,.25); transition: left 0.4s ease; }
+    .gauge-labels { display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--ink3); }
+
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+    .info-box { background: var(--bg); border-radius: 10px; padding: 12px 14px; }
+    .info-box .label { font-size: 0.75rem; color: var(--ink3); margin-bottom: 4px; }
+    .info-box .value { font-size: 1rem; font-weight: 600; }
+
+    .health-tip { background: var(--bg); border-radius: 10px; padding: 14px; font-size: 0.875rem; color: var(--ink2); line-height: 1.6; }
+    .health-tip a { color: var(--accent); }
+
+    /* How to measure diagram */
+    .measure-card { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px; margin-bottom: 20px; }
+    .measure-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+    .measure-step { text-align: center; }
+    .step-num { width: 32px; height: 32px; border-radius: 50%; background: var(--ink); color: #fff; font-size: 0.875rem; font-weight: 600; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; }
+    .step-text { font-size: 0.82rem; color: var(--ink2); line-height: 1.5; }
+
+    /* Comparison table */
+    .section-title { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin-bottom: 4px; }
+    .section-sub { color: var(--ink2); font-size: 0.9rem; margin-bottom: 16px; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th { text-align: left; padding: 10px 12px; background: var(--bg); font-weight: 600; font-size: 0.8rem; color: var(--ink2); text-transform: uppercase; letter-spacing: 0.03em; }
+    td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    tr:last-child td { border-bottom: none; }
+    .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+    .highlight-row td { background: var(--accent-light); font-weight: 500; }
+
+    /* FAQ */
+    .faq-section { margin-bottom: 20px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { width: 100%; text-align: left; background: none; border: none; padding: 16px 0; font-size: 0.95rem; font-weight: 500; cursor: pointer; font-family: inherit; color: var(--ink); display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .faq-q::after { content: '+'; font-size: 1.2rem; color: var(--ink3); flex-shrink: 0; transition: transform .2s; }
+    .faq-q.open::after { transform: rotate(45deg); }
+    .faq-a { display: none; padding: 0 0 16px; color: var(--ink2); font-size: 0.9rem; line-height: 1.7; }
+    .faq-a.open { display: block; }
+    .faq-a a { color: var(--accent); }
+
+    /* Article */
+    .article-section { background: var(--surface); border-radius: var(--radius); padding: 32px; margin-bottom: 20px; }
+    .article-section h2 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; margin: 28px 0 12px; }
+    .article-section h2:first-child { margin-top: 0; }
+    .article-section h3 { font-size: 1rem; font-weight: 600; margin: 20px 0 8px; }
+    .article-section p { color: var(--ink2); line-height: 1.7; margin-bottom: 12px; font-size: 0.95rem; }
+    .article-section ul { color: var(--ink2); padding-left: 20px; margin-bottom: 12px; }
+    .article-section li { line-height: 1.7; margin-bottom: 6px; font-size: 0.95rem; }
+    .article-section a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    .callout { background: var(--accent-light); border-radius: 10px; padding: 14px 16px; margin: 16px 0; font-size: 0.9rem; color: var(--ink); }
+    .warn-callout { background: var(--warn-light); border-radius: 10px; padding: 14px 16px; margin: 16px 0; font-size: 0.9rem; color: var(--ink); }
+    .formula-box { background: var(--bg); border-radius: 10px; padding: 14px 18px; font-family: monospace; font-size: 0.95rem; color: var(--ink); margin: 12px 0; }
+    .sources { margin: 32px 0 8px; padding: 20px 0; border-top: 1px solid var(--border); font-size: 0.82rem; color: var(--ink3); line-height: 1.8; }
+    .sources a { color: var(--ink3); }
+
+    .related { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
+    .related h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; margin-bottom: 16px; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .related-links a { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; text-decoration: none; color: var(--ink); font-size: 0.875rem; }
+    .related-links a:hover { border-color: var(--accent); color: var(--accent); }
+
+    footer { background: var(--ink); color: rgba(255,255,255,0.4); text-align: center; padding: 24px; font-size: 0.8rem; line-height: 1.8; }
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #fff; }
+
+    @media (max-width: 600px) {
+      .measure-steps { grid-template-columns: 1fr; gap: 12px; }
+      .article-section { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><a href="index.html">healthy<span>bmicheck</span>.com</a></div>
+  <nav>
+    <a href="#how-to-measure">How to Measure</a>
+    <a href="#faq">FAQ</a>
+    <a href="bmi-calculator.html">BMI Calculator</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Waist-to-Height<br><em>Ratio Calculator</em></h1>
+  <p>The simple rule: keep your waist to less than half your height. WHtR predicts metabolic health risk more accurately than BMI alone.</p>
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <div class="unit-toggle">
+      <button class="active" onclick="setUnit('metric')">Metric (cm)</button>
+      <button onclick="setUnit('imperial')">Imperial (inches)</button>
+    </div>
+
+    <div class="input-group">
+      <label>Waist Circumference</label>
+      <div class="input-wrap">
+        <input type="number" id="waist-cm" placeholder="80" min="40" max="200">
+        <span class="unit-badge" id="waist-unit">cm</span>
+      </div>
+      <div class="input-hint">Measure at the midpoint between your lowest rib and the top of your hip bone — roughly at navel level. <a href="#how-to-measure" style="color:var(--accent);">How to measure →</a></div>
+    </div>
+
+    <div class="input-group" id="metric-height-group">
+      <label>Height</label>
+      <div class="input-wrap">
+        <input type="number" id="height-cm" placeholder="170" min="100" max="250">
+        <span class="unit-badge">cm</span>
+      </div>
+    </div>
+
+    <div class="input-group" id="imperial-height-group" style="display:none">
+      <label>Height</label>
+      <div class="input-row">
+        <div class="input-wrap">
+          <input type="number" id="height-ft" placeholder="5" min="3" max="8">
+          <span class="unit-badge">ft</span>
+        </div>
+        <div class="input-wrap">
+          <input type="number" id="height-in" placeholder="7" min="0" max="11">
+          <span class="unit-badge">in</span>
+        </div>
+      </div>
+    </div>
+
+    <button class="calc-btn" onclick="calculate()">Calculate WHtR →</button>
+  </div>
+
+  <!-- Result -->
+  <div class="result-card" id="result-card">
+    <div class="whtr-number" id="whtr-number">—</div>
+    <div class="bmi-category" id="result-category"></div>
+
+    <div class="gauge-wrap">
+      <div class="gauge-bar">
+        <div class="gauge-pointer" id="gauge-pointer" style="left:0%"></div>
+      </div>
+      <div class="gauge-labels">
+        <span>Very low<br>&lt;0.34</span>
+        <span>Healthy<br>0.34–0.49</span>
+        <span>Increased risk<br>0.50–0.59</span>
+        <span>High risk<br>≥0.60</span>
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-box">
+        <div class="label">Healthy waist for your height</div>
+        <div class="value" id="healthy-waist">—</div>
+      </div>
+      <div class="info-box">
+        <div class="label">Waist to lose for healthy range</div>
+        <div class="value" id="waist-to-lose">—</div>
+      </div>
+    </div>
+
+    <div class="health-tip" id="health-tip"></div>
+  </div>
+
+  <!-- How to measure -->
+  <div class="measure-card" id="how-to-measure">
+    <h2 class="section-title">How to Measure Your Waist</h2>
+    <p style="color:var(--ink2);font-size:0.9rem;margin-top:8px;">Accurate measurement is key — a 2 cm error changes your result meaningfully.</p>
+    <div class="measure-steps">
+      <div class="measure-step">
+        <div class="step-num">1</div>
+        <div class="step-text">Find the midpoint between your lowest rib and the top of your hip bone (roughly navel level)</div>
+      </div>
+      <div class="measure-step">
+        <div class="step-num">2</div>
+        <div class="step-text">Stand relaxed, feet together. Breathe out gently — do not suck in your stomach</div>
+      </div>
+      <div class="measure-step">
+        <div class="step-num">3</div>
+        <div class="step-text">Wrap the tape snugly but not tight. Measure over bare skin, not clothing. Take two readings and average them</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHtR Reference Table -->
+  <div>
+    <h2 class="section-title">WHtR Risk Categories</h2>
+    <p class="section-sub">Thresholds apply to adult men and women equally.</p>
+    <div class="card" style="padding:0;overflow:hidden;">
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>WHtR Range</th>
+            <th>Health Implication</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="dot" style="background:#3A7BBF"></span>Very low (lean)</td><td>&lt; 0.34</td><td>May indicate underweight</td></tr>
+          <tr class="highlight-row"><td><span class="dot" style="background:#2D6A4F"></span>Healthy</td><td>0.34 – 0.49</td><td>Lowest metabolic risk</td></tr>
+          <tr><td><span class="dot" style="background:#C17B2A"></span>Increased risk</td><td>0.50 – 0.59</td><td>Elevated diabetes &amp; CVD risk</td></tr>
+          <tr><td><span class="dot" style="background:#B83232"></span>High risk</td><td>≥ 0.60</td><td>Significantly elevated risk</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.8rem;color:var(--ink3);margin-top:8px;">The 0.5 boundary applies universally across sex, age (adults), and ethnicity — making WHtR one of the simplest health screening tools available.</p>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section" id="faq" style="margin-top:20px;">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What is a healthy waist-to-height ratio?</button>
+      <div class="faq-a">A healthy waist-to-height ratio is <strong>below 0.5</strong> for most adults. The simple rule: keep your waist circumference to less than half your height. A WHtR between 0.5 and 0.59 indicates increased health risk, and 0.6 or above indicates high risk. These thresholds apply equally to men and women.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Is waist-to-height ratio better than BMI?</button>
+      <div class="faq-a">Research suggests WHtR is a better predictor of cardiovascular disease, type 2 diabetes, and mortality risk than BMI. This is because WHtR directly measures <strong>central (abdominal) fat</strong> — the most metabolically dangerous type — whereas BMI cannot distinguish between fat and muscle, or between abdominal and peripheral fat. For the most complete picture, use both alongside each other. Try our <a href="bmi-calculator.html">BMI calculator</a> and compare your results.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Does WHtR differ for men and women?</button>
+      <div class="faq-a">The universal threshold of 0.5 applies to both men and women. However, some researchers suggest women may be healthier at slightly higher WHtR values (up to 0.52–0.54) because women naturally carry more subcutaneous fat on the hips and thighs, which is less metabolically harmful. For practical screening purposes, 0.5 remains the recommended boundary for both sexes.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Does the 0.5 rule apply to Asian adults?</button>
+      <div class="faq-a">Yes — the 0.5 rule applies across ethnicities, including Asian adults. In fact, WHtR is particularly useful for Asian populations because it sidesteps the debate about Asian-specific BMI cutoffs entirely. A WHtR above 0.5 signals increased risk regardless of ethnicity. That said, some studies suggest Asian adults begin to see increased metabolic risk at WHtR values closer to 0.46–0.48. See also our <a href="asian-bmi-calculator.html">Asian BMI Calculator</a>.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How is WHtR calculated?</button>
+      <div class="faq-a">WHtR is simply your waist circumference divided by your height, both in the same unit (both in cm, or both in inches):<br><br><strong>WHtR = Waist (cm) ÷ Height (cm)</strong><br><br>For example, a person with a 80 cm waist and 170 cm height has a WHtR of 80 ÷ 170 = 0.47 — in the healthy range.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Can I reduce my waist-to-height ratio?</button>
+      <div class="faq-a">Yes. Reducing abdominal fat — which directly lowers your waist circumference — is achievable through a sustained calorie deficit, regular aerobic exercise (particularly moderate-intensity cardio), strength training to preserve muscle, and improving sleep quality. Check our guides on <a href="how-to-lose-belly-fat.html">how to lose belly fat</a> and <a href="calories-to-lose-weight.html">how many calories to lose weight</a> for practical steps.</div>
+    </div>
+  </div>
+
+  <!-- Article -->
+  <div class="article-section">
+    <h2>Why Waist-to-Height Ratio Matters More Than the Scale</h2>
+    <p>Your bathroom scale tells you how heavy you are. Your BMI tells you whether that weight is proportionate to your height. But neither of these measurements tells you where your body stores its fat — and location matters enormously for health.</p>
+    <p>Fat stored in the abdomen — wrapping around the liver, pancreas, and intestines — is called <strong>visceral fat</strong>. It is far more metabolically active than subcutaneous fat (the fat just under your skin), releasing inflammatory signals and fatty acids that disrupt insulin signalling and damage blood vessel walls. People with high visceral fat are at dramatically increased risk of type 2 diabetes, cardiovascular disease, fatty liver disease, and certain cancers — even when their overall body weight appears normal.</p>
+    <p>Waist-to-height ratio captures this risk directly. By measuring how much fat you carry around your midsection relative to your overall height, WHtR provides a more accurate metabolic risk signal than a scale weight or BMI value ever could.</p>
+
+    <h2>The Research Behind the 0.5 Rule</h2>
+    <p>The 0.5 threshold has been validated across multiple large studies and populations. A landmark 2012 systematic review and meta-analysis by Ashwell, Gunn, and Gibson, published in <em>Nutrition Research Reviews</em>, pooled data from over 300,000 adults across 31 countries. It found that WHtR outperformed both BMI and waist circumference alone in predicting cardiometabolic risk factors including hypertension, dyslipidaemia, diabetes, and cardiovascular events.</p>
+    <p>The "keep your waist to less than half your height" message was deliberately designed to be memorable and universally applicable — no age or sex adjustments needed, no complex calculations, no charts to look up.</p>
+
+    <div class="callout"><p>💡 <strong>Simple rule:</strong> WHtR &lt; 0.5 means your waist is less than half your height — this is the target for lowest metabolic risk at any age, for any ethnicity, for men and women.</p></div>
+
+    <h2>How to Lower Your WHtR</h2>
+    <p>Since WHtR is driven by waist circumference, the goal is to reduce abdominal fat. The most effective strategies are:</p>
+    <ul>
+      <li><strong>Calorie deficit:</strong> A consistent moderate deficit (300–500 kcal/day) leads to fat loss across the body, including the abdomen. Use our <a href="calorie-calculator.html">Calorie Calculator</a> to find your target.</li>
+      <li><strong>Aerobic exercise:</strong> 150–300 minutes of moderate-intensity cardio per week (brisk walking, cycling, swimming) is strongly associated with visceral fat reduction.</li>
+      <li><strong>Strength training:</strong> Preserving muscle mass boosts resting metabolism and improves insulin sensitivity, accelerating visceral fat loss.</li>
+      <li><strong>Sleep quality:</strong> Poor or insufficient sleep raises cortisol and hunger hormones, promoting abdominal fat storage. Aim for 7–9 hours.</li>
+      <li><strong>Reduce ultra-processed foods and added sugar:</strong> These are strongly linked to visceral fat accumulation regardless of total calorie intake.</li>
+    </ul>
+    <p>For a step-by-step guide, see our article on <a href="how-to-lose-belly-fat.html">how to lose belly fat</a>.</p>
+
+    <h2>WHtR vs BMI vs Waist Circumference</h2>
+    <p>Each metric has strengths and weaknesses. Using them together gives the most complete picture:</p>
+    <ul>
+      <li><strong>BMI</strong> is quick and easy but cannot distinguish fat from muscle, or abdominal fat from peripheral fat. A muscular athlete and an sedentary person with central obesity can have the same BMI.</li>
+      <li><strong>Waist circumference alone</strong> is better than BMI for predicting metabolic risk but varies by height — a 90 cm waist means something very different for a 5'2" person than a 6'2" person.</li>
+      <li><strong>WHtR</strong> solves the height problem by expressing waist size relative to height, making it comparable across people of different statures and ethnicities.</li>
+      <li><strong>Body fat percentage</strong> is the most direct measure but requires specialist equipment or complex calculations. Try our <a href="body-fat.html">Body Fat Calculator</a>.</li>
+    </ul>
+
+    <div class="sources">
+      <strong>References:</strong><br>
+      Ashwell M, Gunn P, Gibson S. Waist-to-height ratio is a better screening tool than waist circumference and BMI for adult cardiometabolic risk factors: systematic review and meta-analysis. <em>Obesity Reviews</em>. 2012;13(3):275–286.<br>
+      Browning LM, Hsieh SD, Ashwell M. A systematic review of waist-to-height ratio as a screening tool for the prediction of cardiovascular disease and diabetes. <em>Nutrition Research Reviews</em>. 2010;23(2):247–269.<br>
+      World Health Organization. Waist Circumference and Waist-Hip Ratio: Report of a WHO Expert Consultation. Geneva, 2011.
+    </div>
+
+    <div class="related">
+      <h3>Related Tools & Articles</h3>
+      <div class="related-links">
+        <a href="bmi-calculator.html">BMI Calculator</a>
+        <a href="asian-bmi-calculator.html">Asian BMI Calculator</a>
+        <a href="body-fat.html">Body Fat Calculator</a>
+        <a href="how-to-lose-belly-fat.html">How to Lose Belly Fat</a>
+        <a href="calorie-calculator.html">Calorie Calculator</a>
+        <a href="calories-to-lose-weight.html">Calories to Lose Weight</a>
+        <a href="ideal-weight.html">Ideal Weight Calculator</a>
+        <a href="what-is-bmi.html">What Is BMI?</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div>© 2026 healthybmicheck.com — Accurate Health Tools</div>
+  <div style="margin-top:8px">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+<script>
+  let unit = 'metric';
+
+  function setUnit(u) {
+    unit = u;
+    document.querySelectorAll('.unit-toggle button').forEach((b, i) => {
+      b.classList.toggle('active', (u === 'metric' && i === 0) || (u === 'imperial' && i === 1));
+    });
+    const isMetric = u === 'metric';
+    document.getElementById('metric-height-group').style.display = isMetric ? '' : 'none';
+    document.getElementById('imperial-height-group').style.display = isMetric ? '' : 'none';
+    document.getElementById('waist-unit').textContent = isMetric ? 'cm' : 'in';
+    // swap imperial height visibility correctly
+    document.getElementById('metric-height-group').style.display = isMetric ? '' : 'none';
+    document.getElementById('imperial-height-group').style.display = isMetric ? 'none' : '';
+  }
+
+  function calculate() {
+    let waist, height;
+
+    if (unit === 'metric') {
+      waist = parseFloat(document.getElementById('waist-cm').value);
+      height = parseFloat(document.getElementById('height-cm').value);
+    } else {
+      waist = parseFloat(document.getElementById('waist-cm').value); // reused for inches
+      const ft = parseFloat(document.getElementById('height-ft').value) || 0;
+      const inch = parseFloat(document.getElementById('height-in').value) || 0;
+      height = ft * 12 + inch;
+    }
+
+    if (!waist || !height || waist <= 0 || height <= 0) {
+      alert('Please enter valid waist and height measurements.');
+      return;
+    }
+
+    if (waist >= height) {
+      alert('Waist circumference cannot be larger than height. Please check your measurements.');
+      return;
+    }
+
+    const whtr = waist / height;
+    const whtrRound = Math.round(whtr * 1000) / 1000;
+
+    document.getElementById('whtr-number').textContent = whtrRound.toFixed(2);
+    document.getElementById('result-card').classList.add('visible');
+
+    // Pointer: map 0.25–0.75 → 0–100%
+    const pct = Math.min(Math.max((whtr - 0.25) / (0.75 - 0.25) * 100, 2), 98);
+    document.getElementById('gauge-pointer').style.left = pct + '%';
+
+    // Healthy waist for this height
+    const healthyMax = height * 0.5;
+    const healthyMin = height * 0.34;
+    const healthyWaistStr = unit === 'metric'
+      ? `${Math.round(healthyMin)}–${Math.round(healthyMax)} cm`
+      : `${Math.round(healthyMin)}–${Math.round(healthyMax)} in`;
+
+    document.getElementById('healthy-waist').textContent = healthyWaistStr;
+
+    // How much to lose
+    if (whtr >= 0.5) {
+      const excess = waist - healthyMax;
+      const excessStr = unit === 'metric'
+        ? `${excess.toFixed(1)} cm`
+        : `${excess.toFixed(1)} in`;
+      document.getElementById('waist-to-lose').textContent = excessStr;
+    } else {
+      document.getElementById('waist-to-lose').textContent = 'Already in healthy range';
+    }
+
+    // Category
+    let cat, color, bg, tip;
+    if (whtr < 0.34) {
+      cat = 'Very low — may be underweight';
+      color = '#3A7BBF'; bg = '#DCE9F8';
+      tip = "Your WHtR is very low. This can indicate low body weight or very lean body composition. If you are not an athlete, consider speaking with a healthcare provider. Our Ideal Weight Calculator can help you check if your weight is in a healthy range.";
+    } else if (whtr < 0.5) {
+      cat = 'Healthy range ✓';
+      color = '#2D6A4F'; bg = '#D8EFE4';
+      tip = "Your waist is well under half your height — you're in the healthy WHtR range. This is associated with the lowest risk of metabolic disease. Keep it up with balanced eating and regular activity.";
+    } else if (whtr < 0.6) {
+      cat = 'Increased metabolic risk';
+      color = '#C17B2A'; bg = '#FBF0DC';
+      tip = "Your WHtR is above 0.5, indicating increased risk of type 2 diabetes and cardiovascular disease. The good news: reducing your waist by even 5–10% can significantly lower this risk. Check out our guide on how to lose belly fat and use the Calorie Calculator to find your daily target.";
+    } else {
+      cat = 'High metabolic risk';
+      color = '#B83232'; bg = '#FADFDF';
+      tip = "Your WHtR is in the high-risk range (≥ 0.6). This is associated with significantly elevated risk of cardiovascular disease, type 2 diabetes, and other metabolic conditions. Speaking with a healthcare provider is recommended as a first step alongside lifestyle changes.";
+    }
+
+    const catEl = document.getElementById('result-category');
+    catEl.textContent = cat;
+    catEl.style.background = bg;
+    catEl.style.color = color;
+    document.getElementById('health-tip').textContent = tip;
+  }
+
+  function toggleFaq(btn) {
+    btn.classList.toggle('open');
+    btn.nextElementSibling.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
