@@ -90,7 +90,7 @@
     /* ── Hero ── */
     .hero {
       text-align: center;
-      padding: 64px 24px 48px;
+      padding: 40px 24px 28px;
       max-width: 640px;
       margin: 0 auto;
       animation: fadeUp 0.4s ease both;
@@ -130,7 +130,7 @@
     .featured-section {
       max-width: 1080px;
       margin: 0 auto;
-      padding: 0 24px 40px;
+      padding: 0 24px 20px;
       animation: fadeUp 0.5s ease both;
       animation-delay: 0.05s;
     }
@@ -138,7 +138,7 @@
     .featured-card {
       background: var(--accent);
       border-radius: 24px;
-      padding: 48px 56px;
+      padding: 28px 36px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -286,17 +286,18 @@
     .quiz-opt {
       background: var(--bg);
       border: 1.5px solid var(--border);
-      border-radius: 14px;
-      padding: 16px 14px;
+      border-radius: 10px;
+      padding: 10px 12px;
       cursor: pointer;
       font-family: inherit;
-      font-size: .9rem;
+      font-size: .875rem;
       color: var(--ink);
       text-align: center;
       transition: border-color .2s, background .2s;
+      font-weight: 500;
     }
     .quiz-opt:hover { border-color: var(--accent); background: var(--accent-light); }
-    .quiz-opt-wide { text-align: left; padding: 14px 18px; border-radius: 12px; }
+    .quiz-opt-wide { text-align: left; padding: 10px 14px; border-radius: 10px; font-weight: 400; }
     .quiz-result-tool {
       display: flex;
       align-items: center;
@@ -504,7 +505,7 @@
     @media (max-width: 720px) {
       .featured-card {
         flex-direction: column;
-        padding: 36px 28px;
+        padding: 24px 22px;
         gap: 28px;
       }
       .featured-right { display: none; }
@@ -580,64 +581,40 @@
 
   <!-- Goal Quiz -->
   <div class="featured-section" id="goal-quiz-section">
-    <div style="background:var(--surface);border-radius:24px;padding:36px 40px;box-shadow:var(--shadow);">
+    <div style="background:var(--surface);border-radius:20px;padding:22px 24px;box-shadow:var(--shadow);">
       <!-- Progress bar -->
-      <div style="height:3px;background:var(--border);border-radius:2px;margin-bottom:28px;overflow:hidden;">
+      <div style="height:3px;background:var(--border);border-radius:2px;margin-bottom:16px;overflow:hidden;">
         <div id="quiz-progress-bar" style="height:100%;background:var(--accent);border-radius:2px;width:0%;transition:width .4s ease;"></div>
       </div>
 
       <!-- Step 1 -->
       <div id="quiz-step-1">
-        <div style="font-size:.75rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;">Step 1 of 3</div>
-        <h2 style="font-family:'DM Serif Display',serif;font-size:1.6rem;margin-bottom:20px;line-height:1.2;">What's your main health goal?</h2>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-          <button class="quiz-opt" onclick="quizAnswer(1,'lose')" data-val="lose">
-            <span style="font-size:1.6rem;display:block;margin-bottom:6px;">📉</span>
-            <span style="font-weight:500;">Lose fat</span>
-            <span style="display:block;font-size:.78rem;color:var(--ink3);margin-top:2px;">Calorie deficit & weight loss</span>
-          </button>
-          <button class="quiz-opt" onclick="quizAnswer(1,'muscle')" data-val="muscle">
-            <span style="font-size:1.6rem;display:block;margin-bottom:6px;">💪</span>
-            <span style="font-weight:500;">Build muscle</span>
-            <span style="display:block;font-size:.78rem;color:var(--ink3);margin-top:2px;">Nutrition & ideal weight</span>
-          </button>
-          <button class="quiz-opt" onclick="quizAnswer(1,'health')" data-val="health">
-            <span style="font-size:1.6rem;display:block;margin-bottom:6px;">❤️</span>
-            <span style="font-weight:500;">Check my health</span>
-            <span style="display:block;font-size:.78rem;color:var(--ink3);margin-top:2px;">BMI, body fat & metrics</span>
-          </button>
-          <button class="quiz-opt" onclick="quizAnswer(1,'understand')" data-val="understand">
-            <span style="font-size:1.6rem;display:block;margin-bottom:6px;">📊</span>
-            <span style="font-weight:500;">Understand my body</span>
-            <span style="display:block;font-size:.78rem;color:var(--ink3);margin-top:2px;">Full health profile</span>
-          </button>
+        <div style="font-size:.75rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;">Step 1 of 3</div>
+        <h2 style="font-family:'DM Serif Display',serif;font-size:1.25rem;margin-bottom:12px;line-height:1.2;">What's your main health goal?</h2>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <button class="quiz-opt" onclick="quizAnswer(1,'lose')" data-val="lose">📉 Lose fat</button>
+          <button class="quiz-opt" onclick="quizAnswer(1,'muscle')" data-val="muscle">💪 Build muscle</button>
+          <button class="quiz-opt" onclick="quizAnswer(1,'health')" data-val="health">❤️ Check my health</button>
+          <button class="quiz-opt" onclick="quizAnswer(1,'understand')" data-val="understand">📊 Full profile</button>
         </div>
       </div>
 
       <!-- Step 2 -->
       <div id="quiz-step-2" style="display:none;">
-        <div style="font-size:.75rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;">Step 2 of 3</div>
-        <h2 style="font-family:'DM Serif Display',serif;font-size:1.6rem;margin-bottom:20px;line-height:1.2;" id="quiz-q2">Are you of Asian descent?</h2>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;" id="quiz-opts-2">
-          <button class="quiz-opt" onclick="quizAnswer(2,'asian')" data-val="asian">
-            <span style="font-size:1.6rem;display:block;margin-bottom:6px;">🌏</span>
-            <span style="font-weight:500;">Yes — Asian</span>
-            <span style="display:block;font-size:.78rem;color:var(--ink3);margin-top:2px;">Different BMI thresholds apply</span>
-          </button>
-          <button class="quiz-opt" onclick="quizAnswer(2,'other')" data-val="other">
-            <span style="font-size:1.6rem;display:block;margin-bottom:6px;">🌍</span>
-            <span style="font-weight:500;">No — Other</span>
-            <span style="display:block;font-size:.78rem;color:var(--ink3);margin-top:2px;">Standard BMI guidelines</span>
-          </button>
+        <div style="font-size:.75rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;">Step 2 of 3</div>
+        <h2 style="font-family:'DM Serif Display',serif;font-size:1.25rem;margin-bottom:12px;line-height:1.2;" id="quiz-q2">Are you of Asian descent?</h2>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;" id="quiz-opts-2">
+          <button class="quiz-opt" onclick="quizAnswer(2,'asian')" data-val="asian">🌏 Yes — Asian</button>
+          <button class="quiz-opt" onclick="quizAnswer(2,'other')" data-val="other">🌍 No — Other</button>
         </div>
       </div>
 
       <!-- Step 3 -->
       <div id="quiz-step-3" style="display:none;">
-        <div style="font-size:.75rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;">Step 3 of 3</div>
-        <h2 style="font-family:'DM Serif Display',serif;font-size:1.6rem;margin-bottom:20px;line-height:1.2;">How active are you?</h2>
+        <div style="font-size:.75rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;">Step 3 of 3</div>
+        <h2 style="font-family:'DM Serif Display',serif;font-size:1.25rem;margin-bottom:12px;line-height:1.2;">How active are you?</h2>
         <div style="display:flex;flex-direction:column;gap:8px;">
-          <button class="quiz-opt quiz-opt-wide" onclick="quizAnswer(3,'sedentary')">🪑 Mostly sedentary — desk job, little exercise</button>
+          <button class="quiz-opt quiz-opt-wide" onclick="quizAnswer(3,'sedentary')">🪑 Sedentary — desk job, little exercise</button>
           <button class="quiz-opt quiz-opt-wide" onclick="quizAnswer(3,'light')">🚶 Lightly active — exercise 1–3 days/week</button>
           <button class="quiz-opt quiz-opt-wide" onclick="quizAnswer(3,'moderate')">🏃 Moderately active — exercise 3–5 days/week</button>
           <button class="quiz-opt quiz-opt-wide" onclick="quizAnswer(3,'very')">⚡ Very active — daily training or physical job</button>
@@ -646,9 +623,9 @@
 
       <!-- Result -->
       <div id="quiz-result" style="display:none;">
-        <div style="font-size:.75rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;">Your recommended tools</div>
-        <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;margin-bottom:16px;line-height:1.2;" id="quiz-result-title">Here's where to start</h2>
-        <div id="quiz-result-tools" style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;"></div>
+        <div style="font-size:.75rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;">Your recommended tools</div>
+        <h2 style="font-family:'DM Serif Display',serif;font-size:1.15rem;margin-bottom:12px;line-height:1.2;" id="quiz-result-title">Here's where to start</h2>
+        <div id="quiz-result-tools" style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px;"></div>
         <button onclick="resetQuiz()" style="background:none;border:1px solid var(--border);border-radius:100px;padding:8px 18px;font-size:.85rem;font-family:inherit;color:var(--ink2);cursor:pointer;">Start over</button>
       </div>
     </div>
