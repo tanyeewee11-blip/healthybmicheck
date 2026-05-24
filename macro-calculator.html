@@ -691,6 +691,7 @@
     };
     document.getElementById('health-tip').textContent = goalTips[goal];
     document.getElementById('result-card').classList.add('visible');
+    localStorage.setItem('macro_result', 'P:' + proteinG + 'g C:' + carbsG + 'g F:' + fatG + 'g');
     document.getElementById('result-card').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 

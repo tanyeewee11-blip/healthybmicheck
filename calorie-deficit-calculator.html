@@ -604,6 +604,7 @@
     }
     document.getElementById('health-tip').textContent = tip;
     document.getElementById('result-card').classList.add('visible');
+    localStorage.setItem('deficit_result', targetCals.toLocaleString() + ' kcal/day');
     document.getElementById('result-card').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 

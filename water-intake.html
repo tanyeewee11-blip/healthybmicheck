@@ -282,6 +282,7 @@
     ];
     document.getElementById('tip-box').textContent = tips[Math.floor(Math.random()*tips.length)];
     document.getElementById('result-card').classList.add('visible');
+    localStorage.setItem('water_result', waterL.toFixed(1) + ' L/day');
     document.getElementById('result-card').scrollIntoView({behavior:'smooth',block:'nearest'});
   }
   function toggleFaq(btn) { btn.nextElementSibling.classList.toggle('open'); btn.classList.toggle('open'); }

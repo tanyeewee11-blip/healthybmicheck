@@ -523,6 +523,7 @@
     };
     document.getElementById('tip-box').textContent = tips[String(activity)];
     document.getElementById('result-card').classList.add('visible');
+    localStorage.setItem('calorie_result', tdee.toLocaleString() + ' kcal/day');
     document.getElementById('result-card').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 

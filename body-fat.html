@@ -425,6 +425,7 @@
     // Pointer: map 0–50% BF to 0–100% bar
     const pct = Math.min(Math.max(bf / 50 * 100, 2), 98);
     document.getElementById('result-card').classList.add('visible');
+    localStorage.setItem('bodyfat_result', bfRound + '%');
     setTimeout(() => { document.getElementById('scale-pointer').style.left = pct + '%'; }, 50);
     document.getElementById('result-card').scrollIntoView({behavior:'smooth', block:'nearest'});
   }

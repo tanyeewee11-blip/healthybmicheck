@@ -665,6 +665,7 @@
     // UI Update logic (Simplified for brevity)
     document.getElementById('bmi-number').textContent = bmiRound;
     document.getElementById('result-card').classList.add('visible');
+    localStorage.setItem('bmi_result', bmiRound + ' · ' + asianCat.split(' ')[0]);
     
     // Scale pointer logic
     const pct = Math.min(Math.max((bmi - 15) / (40 - 15) * 100, 2), 98);
