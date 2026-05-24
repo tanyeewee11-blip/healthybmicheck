@@ -160,7 +160,7 @@
       outline: none;
       transition: border-color .2s;
     }
-    .input-wrap input:focus { border-color: var(--accent); background: #fff; }
+    .input-wrap input:focus { border-color: var(--accent); background: var(--bg); }
     .unit-badge {
       position: absolute;
       right: 12px;
@@ -386,7 +386,7 @@
     .related { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
     .related h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; margin-bottom: 16px; }
     .related-links { display: flex; flex-wrap: wrap; gap: 10px; }
-    .related-links a { background: var(--surface); border-radius: 10px; padding: 10px 16px; text-decoration: none; color: var(--ink); font-size: 0.875rem; }
+    .related-links a { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; text-decoration: none; color: var(--ink); font-size: 0.875rem; }
     .related-links a:hover { border-color: var(--accent); color: var(--accent); }
   </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is BMI calculated?", "acceptedAnswer": {"@type": "Answer", "text": "BMI is calculated by dividing your weight in kilograms by the square of your height in meters (kg/m²). For example, a person weighing 70 kg at 1.75 m has a BMI of 70 ÷ (1.75 × 1.75) = 22.9."}}]}</script>
@@ -622,13 +622,7 @@
   </div>
 </div>
 
-<footer>
-  <div>© 2026 healthybmicheck.com — Accurate Health Tools</div>
-  <div style="margin-top:8px">
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</footer>
+
 
 <script>
   let unit = 'metric';
@@ -688,6 +682,14 @@
     btn.nextElementSibling.classList.toggle('open');
   }
 </script>
+
+<footer>
+  <div>© 2026 healthybmicheck.com — Accurate Health Tools</div>
+  <div style="margin-top:8px">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
 
 </body>
 </html>

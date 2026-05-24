@@ -107,7 +107,7 @@
     .related { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
     .related h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; margin-bottom: 16px; }
     .related-links { display: flex; flex-wrap: wrap; gap: 10px; }
-    .related-links a { background: var(--surface); border-radius: 10px; padding: 10px 16px; text-decoration: none; color: var(--ink); font-size: 0.875rem; }
+    .related-links a { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; text-decoration: none; color: var(--ink); font-size: 0.875rem; }
     .related-links a:hover { border-color: var(--accent); color: var(--accent); }
   </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the U.S. Navy method?", "acceptedAnswer": {"@type": "Answer", "text": "The U.S. Navy method estimates body fat percentage using simple circumference measurements — waist, neck, and hips (for women) — along with height. It was developed for practical use in military fitness assessments and is considered reasonably accurate for most adults, with a typical margin of error of 3–4%."}}, {"@type": "Question", "name": "How do I measure correctly?", "acceptedAnswer": {"@type": "Answer", "text": "Use a flexible tape measure and measure directly on skin, not over clothing. For the waist, measure at the level of your navel while relaxed (not sucked in). For the neck, measure just below the larynx (Adam's apple), sloping slightly downward at the front. For hips (women), measure at the widest point. Take each measurement twice and use the average."}}, {"@type": "Question", "name": "Is body fat percentage better than BMI?", "acceptedAnswer": {"@type": "Answer", "text": "Body fat percentage and BMI measure different things. BMI uses only height and weight, while body fat percentage directly estimates the proportion of fat in your body. Body fat percentage is generally more informative for athletes and those with high muscle mass, but BMI is easier to measure and useful for population-level screening. Using both together gives the most complete picture."}}, {"@type": "Question", "name": "What is a healthy body fat percentage?", "acceptedAnswer": {"@type": "Answer", "text": "For men, a healthy body fat range is generally considered to be 8–19%, with athletic individuals typically falling in the 6–13% range. For women, healthy ranges are approximately 21–33%, with athletes typically at 14–20%. These ranges vary with age — older adults tend to carry slightly more body fat as a natural part of ageing."}}, {"@type": "Question", "name": "How can I reduce body fat?", "acceptedAnswer": {"@type": "Answer", "text": "Reducing body fat requires a combination of a moderate calorie deficit (eating slightly less than you burn) and regular physical activity, particularly strength training to preserve muscle mass. Crash diets tend to cause muscle loss alongside fat loss, which can worsen body composition over time. Slow, consistent progress — around 0.5 kg per week — typically gives the best long-term results."}}]}</script>
@@ -334,16 +334,7 @@
         <a href="bmi-calculator-kids.html">Kids BMI Calculator</a>
       </div>
   </div>
-<footer>
-  <div>© 2025 HealthyBMICheck.com — Free Health Calculators</div>
-  <div style="margin-top:8px">
-    <a href="index.html">All Calculators</a>
-    <a href="bmi-calculator.html">BMI</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="contact.html">Contact</a>
-  </div>
-  <div style="margin-top:8px; font-size:0.72rem">For informational purposes only. Not medical advice.</div>
-</footer>
+
 
 <script>
   let unit = 'metric', gender = 'male';
@@ -433,5 +424,17 @@
   function toggleFaq(btn) { btn.nextElementSibling.classList.toggle('open'); btn.classList.toggle('open'); }
   document.addEventListener('keydown', e => { if(e.key==='Enter') calculate(); });
 </script>
+
+<footer>
+  <div>© 2026 HealthyBMICheck.com — Free Health Calculators</div>
+  <div style="margin-top:8px">
+    <a href="index.html">All Calculators</a>
+    <a href="bmi-calculator.html">BMI</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div style="margin-top:8px; font-size:0.72rem">For informational purposes only. Not medical advice.</div>
+</footer>
+
 </body>
 </html>

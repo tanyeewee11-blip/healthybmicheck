@@ -179,7 +179,7 @@
     .related { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
     .related h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; margin-bottom: 16px; }
     .related-links { display: flex; flex-wrap: wrap; gap: 10px; }
-    .related-links a { background: var(--surface); border-radius: 10px; padding: 10px 16px; text-decoration: none; color: var(--ink); font-size: 0.875rem; }
+    .related-links a { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; text-decoration: none; color: var(--ink); font-size: 0.875rem; }
     .related-links a:hover { border-color: var(--accent); color: var(--accent); }
   </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is TDEE?", "acceptedAnswer": {"@type": "Answer", "text": "TDEE stands for Total Daily Energy Expenditure — the total number of calories your body burns in a day. It accounts for your basal metabolic rate (calories burned at rest) plus additional calories burned through physical activity. Eating at your TDEE keeps your weight stable."}}, {"@type": "Question", "name": "How many calories should I eat to lose weight?", "acceptedAnswer": {"@type": "Answer", "text": "A safe and sustainable calorie deficit for weight loss is 500 calories per day below your TDEE, which typically results in losing approximately 0.5 kg (1 lb) per week. Deficits larger than 1000 calories per day are generally not recommended without medical supervision."}}, {"@type": "Question", "name": "What formula does this calculator use?", "acceptedAnswer": {"@type": "Answer", "text": "This calculator uses the Mifflin-St Jeor equation, which is considered the most accurate formula for estimating Basal Metabolic Rate (BMR) for most people. The BMR is then multiplied by an activity factor to produce your TDEE."}}, {"@type": "Question", "name": "Why are my calorie needs different from a friend's?", "acceptedAnswer": {"@type": "Answer", "text": "Calorie needs vary significantly based on age, sex, height, weight, and activity level. Men generally burn more calories than women due to higher muscle mass. Younger people tend to have higher metabolic rates. Activity level is often the biggest variable between individuals."}}, {"@type": "Question", "name": "Should I eat back calories burned during exercise?", "acceptedAnswer": {"@type": "Answer", "text": "This calculator already factors in your activity level, so you do not need to add extra calories for planned workouts. If you have an unexpectedly intense workout, eating back a portion of those calories is reasonable, but be aware that fitness trackers often overestimate calories burned."}}]}</script>
@@ -442,15 +442,7 @@
         <a href="calorie-deficit-calculator.html">Calorie Deficit Calculator</a>
       </div>
   </div>
-<footer>
-  <div>© 2025 HealthyBMICheck.com — Free Health Calculators</div>
-  <div style="margin-top:8px">
-    <a href="index.html">BMI Calculator</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="contact.html">Contact</a>
-  </div>
-  <div style="margin-top:8px; font-size:0.72rem">For informational purposes only. Not medical advice.</div>
-</footer>
+
 
 <script>
   let unit = 'metric';
@@ -534,5 +526,16 @@
 
   document.addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
 </script>
+
+<footer>
+  <div>© 2026 HealthyBMICheck.com — Free Health Calculators</div>
+  <div style="margin-top:8px">
+    <a href="index.html">BMI Calculator</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div style="margin-top:8px; font-size:0.72rem">For informational purposes only. Not medical advice.</div>
+</footer>
+
 </body>
 </html>

@@ -83,7 +83,7 @@
     .related { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
     .related h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; margin-bottom: 16px; }
     .related-links { display: flex; flex-wrap: wrap; gap: 10px; }
-    .related-links a { background: var(--surface); border-radius: 10px; padding: 10px 16px; text-decoration: none; color: var(--ink); font-size: 0.875rem; }
+    .related-links a { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; text-decoration: none; color: var(--ink); font-size: 0.875rem; }
     .related-links a:hover { border-color: var(--accent); color: var(--accent); }
   </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does the \"8 glasses a day\" rule apply to everyone?", "acceptedAnswer": {"@type": "Answer", "text": "The popular \"8 glasses a day\" rule is a rough guideline, not a universal requirement. Actual water needs vary significantly based on body weight, activity level, climate, diet, and health status. Larger individuals, athletes, and people in hot climates typically need considerably more than 8 glasses."}}, {"@type": "Question", "name": "Does coffee or tea count towards my daily water intake?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, to a degree. Coffee and tea do contribute to your daily fluid intake. While caffeine has a mild diuretic effect, research shows that moderate consumption of caffeinated beverages still results in a net positive fluid contribution. However, plain water remains the best source of hydration."}}, {"@type": "Question", "name": "How do I know if I am drinking enough water?", "acceptedAnswer": {"@type": "Answer", "text": "The simplest indicator is urine colour. Pale yellow (like lemonade) indicates good hydration. Dark yellow or amber suggests you need to drink more. Other signs of dehydration include dry mouth, fatigue, headaches, and reduced urine output."}}, {"@type": "Question", "name": "Should I drink more water in Malaysia's climate?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Malaysia's hot and humid tropical climate increases sweat loss significantly, raising your daily fluid requirements. People living in tropical climates typically need 0.5–1 litre more per day compared to those in cooler climates, especially if spending time outdoors."}}, {"@type": "Question", "name": "Can you drink too much water?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, though it is rare in healthy adults. Drinking extremely large amounts in a short period can cause hyponatraemia (low blood sodium), which is a medical emergency. This is most commonly seen in endurance athletes who over-hydrate. For most people, following the recommendations from this calculator is safe."}}]}</script>
@@ -224,17 +224,8 @@
       </div>
   </div>
 </div>
-<footer>
-  <div>© 2025 HealthyBMICheck.com — Free Health Calculators</div>
-  <div style="margin-top:8px">
-    <a href="index.html">BMI Calculator</a>
-    <a href="calorie-calculator.html">Calorie Calculator</a>
-    <a href="ideal-weight.html">Ideal Weight</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="contact.html">Contact</a>
-  </div>
-  <div style="margin-top:8px; font-size:0.72rem">For informational purposes only. Not medical advice.</div>
-</footer>
+
+
 <script>
   let unit = 'metric';
   function setUnit(u) {
@@ -288,5 +279,18 @@
   function toggleFaq(btn) { btn.nextElementSibling.classList.toggle('open'); btn.classList.toggle('open'); }
   document.addEventListener('keydown', e=>{ if(e.key==='Enter') calculate(); });
 </script>
+
+<footer>
+  <div>© 2026 HealthyBMICheck.com — Free Health Calculators</div>
+  <div style="margin-top:8px">
+    <a href="index.html">BMI Calculator</a>
+    <a href="calorie-calculator.html">Calorie Calculator</a>
+    <a href="ideal-weight.html">Ideal Weight</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div style="margin-top:8px; font-size:0.72rem">For informational purposes only. Not medical advice.</div>
+</footer>
+
 </body>
 </html>
