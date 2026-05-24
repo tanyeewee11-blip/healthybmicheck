@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon_32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon_192x192.png">
+  <link rel="apple-touch-icon" href="/favicon_512x512.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Calorie Deficit Calculator — How Much to Eat to Lose Weight</title>
+  <link rel="canonical" href="https://healthybmicheck.com/calorie-deficit-calculator.html">
+  <meta name="description" content="Free calorie deficit calculator. Enter your details and goal weight to find your daily calorie target and how long it will take. Based on Mifflin-St Jeor and 7,700 kcal/kg rule.">
+  <meta name="keywords" content="calorie deficit calculator, calorie deficit to lose weight, how many calories to lose weight, calorie calculator weight loss, calorie deficit per day">
+
+  <meta property="og:title" content="Calorie Deficit Calculator — Daily Calories to Lose Weight">
+  <meta property="og:description" content="Find your daily calorie deficit target and estimated time to reach your goal weight. Free, science-based, instant results.">
+  <meta property="og:image" content="https://healthybmicheck.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://healthybmicheck.com/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7723301737736770" crossorigin="anonymous"></script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calorie Deficit Calculator","url":"https://healthybmicheck.com/calorie-deficit-calculator.html","description":"Calculate your daily calorie deficit target and estimated time to reach your goal weight. Based on Mifflin-St Jeor TDEE and the 7,700 kcal per kg rule.","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What calorie deficit is needed to lose 1 kg per week?","acceptedAnswer":{"@type":"Answer","text":"To lose 1 kg of body fat per week, you need a total weekly deficit of approximately 7,700 kcal, which means a daily deficit of about 1,100 kcal. For most people this is too aggressive and risks muscle loss and metabolic adaptation. A more sustainable target is 0.5 kg per week, requiring a daily deficit of around 550 kcal."}},{"@type":"Question","name":"How do I calculate my calorie deficit?","acceptedAnswer":{"@type":"Answer","text":"First, calculate your Total Daily Energy Expenditure (TDEE) — the calories your body burns each day including activity. Then subtract the number of calories you want to cut. A 500 kcal daily deficit creates roughly 0.5 kg of fat loss per week. Use the Mifflin-St Jeor equation to estimate your TDEE based on age, sex, height, weight, and activity level."}},{"@type":"Question","name":"Is a 500 calorie deficit safe?","acceptedAnswer":{"@type":"Answer","text":"Yes — a 500 kcal daily deficit is generally considered safe for most healthy adults and is the most commonly recommended deficit for sustainable fat loss. It produces approximately 0.5 kg of weight loss per week, which is at the upper end of the 0.25–0.5 kg/week range recommended by most health authorities. Going beyond 1,000 kcal/day deficit increases the risk of muscle loss, nutritional deficiencies, and metabolic adaptation."}},{"@type":"Question","name":"Why am I not losing weight on a calorie deficit?","acceptedAnswer":{"@type":"Answer","text":"The most common reasons include: underestimating calorie intake (portion sizes are often larger than assumed), overestimating activity levels, metabolic adaptation over time, water retention masking fat loss on the scale, and inaccurate TDEE estimates. If weight has stalled for 2–3 weeks, try reducing intake by a further 100–150 kcal or increasing activity rather than making drastic cuts."}}]}</script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #F7F4EF; --surface: #FFFFFF; --ink: #1A1714; --ink2: #6B6560; --ink3: #A09A94;
+      --accent: #2D6A4F; --accent-light: #D8EFE4;
+      --warn: #C17B2A; --warn-light: #FBF0DC;
+      --danger: #B83232; --danger-light: #FADFDF;
+      --border: #E5E0D8; --radius: 16px; --shadow: 0 2px 16px rgba(26,23,20,.07);
+    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; }
+    header { background: var(--ink); color: #fff; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
+    .logo span { color: #7EC8A4; }
+    header a { text-decoration: none; color: inherit; }
+    nav a { color: rgba(255,255,255,.6); text-decoration: none; font-size: .85rem; margin-left: 20px; transition: color .2s; }
+    nav a:hover { color: #fff; }
+    .hero { text-align: center; padding: 56px 24px 32px; max-width: 640px; margin: 0 auto; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem,5vw,3rem); line-height: 1.1; letter-spacing: -.03em; margin-bottom: 16px; }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero p { color: var(--ink2); font-size: 1.05rem; line-height: 1.6; }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 20px 64px; }
+    .card { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 20px; padding: 28px; }
+
+    /* Unit/sex toggles */
+    .unit-toggle { display: flex; background: var(--bg); border-radius: 10px; padding: 4px; margin-bottom: 20px; }
+    .unit-toggle button { flex: 1; border: none; background: none; padding: 8px; border-radius: 7px; cursor: pointer; font-size: .875rem; color: var(--ink2); font-family: inherit; transition: all .2s; }
+    .unit-toggle button.active { background: var(--surface); color: var(--ink); font-weight: 500; box-shadow: 0 1px 4px rgba(0,0,0,.1); }
+
+    /* Speed selector */
+    .speed-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-bottom: 20px; }
+    .speed-btn { border: 1.5px solid var(--border); background: var(--bg); border-radius: 12px; padding: 12px 8px; cursor: pointer; text-align: center; font-family: inherit; transition: all .2s; }
+    .speed-btn .s-rate { font-size: .95rem; font-weight: 600; display: block; margin-bottom: 2px; color: var(--ink); }
+    .speed-btn .s-label { font-size: .75rem; color: var(--ink3); display: block; }
+    .speed-btn .s-deficit { font-size: .7rem; color: var(--ink3); display: block; margin-top: 2px; }
+    .speed-btn.active { border-color: var(--accent); background: var(--accent-light); }
+    .speed-btn.active .s-rate, .speed-btn.active .s-label { color: var(--accent); }
+
+    /* Inputs */
+    .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+    .input-group { margin-bottom: 16px; }
+    .input-group label { display: block; font-size: .875rem; font-weight: 500; margin-bottom: 8px; color: var(--ink2); }
+    .input-wrap { position: relative; }
+    .input-wrap input, .input-wrap select { width: 100%; border: 1.5px solid var(--border); border-radius: 10px; padding: 12px 52px 12px 14px; font-size: 1rem; font-family: inherit; background: var(--bg); color: var(--ink); outline: none; transition: border-color .2s; appearance: none; }
+    .input-wrap input:focus, .input-wrap select:focus { border-color: var(--accent); }
+    .unit-badge { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-size: .8rem; color: var(--ink3); font-weight: 500; pointer-events: none; }
+    .calc-btn { width: 100%; background: var(--ink); color: #fff; border: none; border-radius: 12px; padding: 15px; font-size: 1rem; font-weight: 500; font-family: inherit; cursor: pointer; transition: background .2s; margin-top: 4px; }
+    .calc-btn:hover { background: #333; }
+
+    /* Results */
+    .result-card { display: none; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px; margin-bottom: 20px; }
+    .result-card.visible { display: block; }
+
+    /* Key numbers */
+    .result-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+    .result-box { border-radius: 12px; padding: 18px; text-align: center; }
+    .result-box .r-label { font-size: .78rem; font-weight: 500; margin-bottom: 6px; text-transform: uppercase; letter-spacing: .04em; opacity: .7; }
+    .result-box .r-value { font-family: 'DM Serif Display', serif; font-size: 2.2rem; line-height: 1; margin-bottom: 2px; }
+    .result-box .r-unit { font-size: .8rem; opacity: .7; }
+    .box-green { background: var(--accent-light); color: var(--accent); }
+    .box-warn  { background: var(--warn-light);   color: var(--warn);   }
+
+    /* Timeline */
+    .timeline { background: var(--bg); border-radius: 12px; padding: 18px 20px; margin-bottom: 20px; }
+    .timeline-title { font-size: .8rem; font-weight: 500; color: var(--ink3); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 14px; }
+    .timeline-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .timeline-row:last-child { margin-bottom: 0; }
+    .t-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .t-dot-green { background: var(--accent); }
+    .t-dot-warn  { background: var(--warn); }
+    .t-dot-gray  { background: var(--ink3); }
+    .t-label { font-size: .875rem; color: var(--ink2); flex: 1; }
+    .t-value { font-size: .875rem; font-weight: 500; }
+
+    /* Progress bar */
+    .progress-wrap { margin-bottom: 20px; }
+    .progress-label { display: flex; justify-content: space-between; font-size: .8rem; color: var(--ink3); margin-bottom: 6px; }
+    .progress-track { height: 8px; background: var(--bg); border-radius: 4px; overflow: hidden; position: relative; }
+    .progress-fill { height: 100%; border-radius: 4px; background: var(--accent); transition: width .6s ease; }
+    .progress-marker { position: absolute; top: -3px; height: 14px; width: 2px; background: var(--danger); border-radius: 1px; }
+
+    .health-tip { background: var(--bg); border-radius: 10px; padding: 14px; font-size: .875rem; color: var(--ink2); line-height: 1.6; }
+    .health-tip a { color: var(--accent); }
+
+    /* Info grid */
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+    .info-box { background: var(--bg); border-radius: 10px; padding: 13px 14px; }
+    .info-box .lbl { font-size: .75rem; color: var(--ink3); margin-bottom: 3px; }
+    .info-box .val { font-size: 1rem; font-weight: 600; }
+
+    /* Section */
+    .section-title { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin-bottom: 4px; }
+    .section-sub { color: var(--ink2); font-size: .9rem; margin-bottom: 16px; }
+
+    /* Deficit reference table */
+    table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+    th { text-align: left; padding: 10px 12px; background: var(--bg); font-weight: 600; font-size: .8rem; color: var(--ink2); text-transform: uppercase; letter-spacing: .03em; }
+    td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    tr:last-child td { border-bottom: none; }
+    .highlight-row td { background: var(--accent-light); font-weight: 500; }
+    .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+
+    /* FAQ */
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { width: 100%; text-align: left; background: none; border: none; padding: 16px 0; font-size: .95rem; font-weight: 500; cursor: pointer; font-family: inherit; color: var(--ink); display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .faq-q::after { content: '+'; font-size: 1.2rem; color: var(--ink3); flex-shrink: 0; transition: transform .2s; }
+    .faq-q.open::after { transform: rotate(45deg); }
+    .faq-a { display: none; padding: 0 0 16px; color: var(--ink2); font-size: .9rem; line-height: 1.7; }
+    .faq-a.open { display: block; }
+    .faq-a a { color: var(--accent); }
+
+    /* Article */
+    .article-section { background: var(--surface); border-radius: var(--radius); padding: 32px; margin-bottom: 20px; }
+    .article-section h2 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; margin: 28px 0 12px; }
+    .article-section h2:first-child { margin-top: 0; }
+    .article-section p { color: var(--ink2); line-height: 1.7; margin-bottom: 12px; font-size: .95rem; }
+    .article-section ul { color: var(--ink2); padding-left: 20px; margin-bottom: 12px; }
+    .article-section li { line-height: 1.7; margin-bottom: 6px; font-size: .95rem; }
+    .article-section a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    .callout { background: var(--accent-light); border-radius: 10px; padding: 14px 16px; margin: 16px 0; font-size: .9rem; color: var(--ink); }
+    .warn-callout { background: var(--warn-light); border-radius: 10px; padding: 14px 16px; margin: 16px 0; font-size: .9rem; color: var(--ink); }
+    .danger-callout { background: var(--danger-light); border-radius: 10px; padding: 14px 16px; margin: 16px 0; font-size: .9rem; color: var(--ink); }
+    .sources { margin: 32px 0 8px; padding: 20px 0; border-top: 1px solid var(--border); font-size: .82rem; color: var(--ink3); line-height: 1.8; }
+
+    .related { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
+    .related h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; margin-bottom: 16px; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .related-links a { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; text-decoration: none; color: var(--ink); font-size: .875rem; }
+    .related-links a:hover { border-color: var(--accent); color: var(--accent); }
+
+    footer { background: var(--ink); color: rgba(255,255,255,.4); text-align: center; padding: 24px; font-size: .8rem; line-height: 1.8; }
+    footer a { color: rgba(255,255,255,.5); text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #fff; }
+
+    @media (max-width: 600px) {
+      .result-hero { grid-template-columns: 1fr 1fr; }
+      .info-grid { grid-template-columns: 1fr 1fr; }
+      .article-section { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><a href="index.html">healthy<span>bmicheck</span>.com</a></div>
+  <nav>
+    <a href="#deficit-table">Deficit Guide</a>
+    <a href="#faq">FAQ</a>
+    <a href="calorie-calculator.html">Calorie Calculator</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Calorie Deficit<br><em>Calculator</em></h1>
+  <p>Find your daily calorie target and how long it will take to reach your goal weight — based on your TDEE and chosen rate of loss.</p>
+</div>
+
+<div class="container">
+
+  <div class="card">
+
+    <!-- Sex -->
+    <div class="input-group">
+      <label>Sex</label>
+      <div class="unit-toggle">
+        <button class="active" id="btn-male" onclick="setSex('male')">Male</button>
+        <button id="btn-female" onclick="setSex('female')">Female</button>
+      </div>
+    </div>
+
+    <!-- Units -->
+    <label style="display:block;font-size:.875rem;font-weight:500;margin-bottom:8px;color:var(--ink2);">Units</label>
+    <div class="unit-toggle" id="units-toggle" style="margin-bottom:20px;">
+      <button class="active" onclick="setUnit('metric')">Metric (kg / cm)</button>
+      <button onclick="setUnit('imperial')">Imperial (lb / in)</button>
+    </div>
+
+    <!-- Body stats -->
+    <div class="input-row">
+      <div class="input-group" style="margin-bottom:0">
+        <label>Age</label>
+        <div class="input-wrap">
+          <input type="number" id="age" placeholder="30" min="15" max="80">
+          <span class="unit-badge">yrs</span>
+        </div>
+      </div>
+      <div class="input-group" style="margin-bottom:0">
+        <label>Current weight</label>
+        <div class="input-wrap">
+          <input type="number" id="weight" placeholder="75">
+          <span class="unit-badge" id="weight-unit">kg</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-group" id="metric-height-group" style="margin-bottom:16px;">
+      <label>Height</label>
+      <div class="input-wrap">
+        <input type="number" id="height-cm" placeholder="170">
+        <span class="unit-badge">cm</span>
+      </div>
+    </div>
+    <div class="input-group" id="imperial-height-group" style="display:none;margin-bottom:16px;">
+      <label>Height</label>
+      <div class="input-row" style="margin-bottom:0">
+        <div class="input-wrap">
+          <input type="number" id="height-ft" placeholder="5">
+          <span class="unit-badge">ft</span>
+        </div>
+        <div class="input-wrap">
+          <input type="number" id="height-in" placeholder="7">
+          <span class="unit-badge">in</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label>Goal weight</label>
+      <div class="input-wrap">
+        <input type="number" id="goal-weight" placeholder="65">
+        <span class="unit-badge" id="goal-unit">kg</span>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label>Activity level</label>
+      <div class="input-wrap">
+        <select id="activity">
+          <option value="1.2">Sedentary — desk job, little or no exercise</option>
+          <option value="1.375">Lightly active — light exercise 1–3 days/week</option>
+          <option value="1.55" selected>Moderately active — exercise 3–5 days/week</option>
+          <option value="1.725">Very active — hard exercise 6–7 days/week</option>
+          <option value="1.9">Extra active — physical job + daily training</option>
+        </select>
+        <span class="unit-badge">▾</span>
+      </div>
+    </div>
+
+    <!-- Rate of loss -->
+    <div class="input-group" style="margin-bottom:8px;">
+      <label>Rate of loss</label>
+      <div class="speed-grid">
+        <button class="speed-btn" id="speed-slow" onclick="setSpeed('slow')">
+          <span class="s-rate" id="slow-rate">0.25 kg/wk</span>
+          <span class="s-label">Slow & steady</span>
+          <span class="s-deficit" id="slow-deficit">~275 kcal/day deficit</span>
+        </button>
+        <button class="speed-btn active" id="speed-moderate" onclick="setSpeed('moderate')">
+          <span class="s-rate" id="mod-rate">0.5 kg/wk</span>
+          <span class="s-label">Recommended</span>
+          <span class="s-deficit" id="mod-deficit">~550 kcal/day deficit</span>
+        </button>
+        <button class="speed-btn" id="speed-fast" onclick="setSpeed('fast')">
+          <span class="s-rate" id="fast-rate">1 kg/wk</span>
+          <span class="s-label">Aggressive</span>
+          <span class="s-deficit" id="fast-deficit">~1,100 kcal/day deficit</span>
+        </button>
+      </div>
+    </div>
+
+    <button class="calc-btn" onclick="calculate()">Calculate My Deficit →</button>
+  </div>
+
+  <!-- Result -->
+  <div class="result-card" id="result-card">
+
+    <div class="result-hero">
+      <div class="result-box box-green">
+        <div class="r-label">Daily calorie target</div>
+        <div class="r-value" id="r-calories">—</div>
+        <div class="r-unit">kcal / day</div>
+      </div>
+      <div class="result-box box-warn">
+        <div class="r-label">Daily deficit</div>
+        <div class="r-value" id="r-deficit">—</div>
+        <div class="r-unit">kcal / day</div>
+      </div>
+    </div>
+
+    <!-- Info grid -->
+    <div class="info-grid">
+      <div class="info-box">
+        <div class="lbl">Your TDEE (maintenance)</div>
+        <div class="val" id="r-tdee">—</div>
+      </div>
+      <div class="info-box">
+        <div class="lbl">Weight to lose</div>
+        <div class="val" id="r-to-lose">—</div>
+      </div>
+      <div class="info-box">
+        <div class="lbl">Estimated time to goal</div>
+        <div class="val" id="r-weeks">—</div>
+      </div>
+      <div class="info-box">
+        <div class="lbl">Estimated goal date</div>
+        <div class="val" id="r-date">—</div>
+      </div>
+    </div>
+
+    <!-- Timeline milestones -->
+    <div class="timeline">
+      <div class="timeline-title">Milestones</div>
+      <div class="timeline-row">
+        <div class="t-dot t-dot-green"></div>
+        <span class="t-label">Starting weight</span>
+        <span class="t-value" id="m-start">—</span>
+      </div>
+      <div class="timeline-row">
+        <div class="t-dot t-dot-warn"></div>
+        <span class="t-label" id="m-25-label">25% to goal</span>
+        <span class="t-value" id="m-25">—</span>
+      </div>
+      <div class="timeline-row">
+        <div class="t-dot t-dot-warn"></div>
+        <span class="t-label" id="m-50-label">50% to goal</span>
+        <span class="t-value" id="m-50">—</span>
+      </div>
+      <div class="timeline-row">
+        <div class="t-dot t-dot-green"></div>
+        <span class="t-label">Goal weight</span>
+        <span class="t-value" id="m-goal">—</span>
+      </div>
+    </div>
+
+    <div class="health-tip" id="health-tip"></div>
+  </div>
+
+  <!-- Deficit reference table -->
+  <div id="deficit-table" style="margin-top:4px;">
+    <h2 class="section-title">Calorie Deficit Reference Guide</h2>
+    <p class="section-sub">How different deficit sizes translate to weight loss speed and weekly calorie targets.</p>
+    <div class="card" style="padding:0;overflow:hidden;">
+      <table>
+        <thead>
+          <tr><th>Daily deficit</th><th>Loss per week</th><th>Safety rating</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="dot" style="background:var(--accent)"></span>200–300 kcal</td><td>~0.2 kg / 0.5 lb</td><td>Very safe — slow</td></tr>
+          <tr class="highlight-row"><td><span class="dot" style="background:var(--accent)"></span>400–600 kcal</td><td>~0.5 kg / 1 lb</td><td>✓ Recommended range</td></tr>
+          <tr><td><span class="dot" style="background:var(--warn)"></span>700–1,000 kcal</td><td>~0.7–1 kg / 1.5–2 lb</td><td>Caution — muscle loss risk</td></tr>
+          <tr><td><span class="dot" style="background:var(--danger)"></span>&gt; 1,000 kcal</td><td>&gt; 1 kg / 2 lb</td><td>Not recommended long-term</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div style="margin-top:20px;">
+    <h2 class="section-title" id="faq">Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How do I calculate my calorie deficit?</button>
+      <div class="faq-a">First, find your Total Daily Energy Expenditure (TDEE) — how many calories you burn per day including all activity. Then subtract the deficit you want. This calculator does this automatically using the Mifflin–St Jeor equation. For example, if your TDEE is 2,200 kcal and you want to lose 0.5 kg/week, your daily calorie target is approximately 2,200 − 550 = 1,650 kcal.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Is a 500 calorie deficit safe?</button>
+      <div class="faq-a">Yes — a 500 kcal daily deficit is the most commonly recommended target for sustainable fat loss. It produces approximately 0.5 kg of weight loss per week, which is within the 0.25–0.5 kg/week range recommended by most health authorities. Beyond 1,000 kcal/day deficit, the risk of muscle loss, nutritional deficiencies, and metabolic adaptation increases significantly.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What calorie deficit is needed to lose 1 kg per week?</button>
+      <div class="faq-a">To lose 1 kg per week, you need a total weekly deficit of approximately <strong>7,700 kcal</strong>, which equals a daily deficit of around 1,100 kcal. For most people this is aggressive and sustainable only for short periods. It works best for people with higher body weight and TDEE who can sustain a large deficit without going below ~1,200–1,500 kcal/day.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Why am I not losing weight on a calorie deficit?</button>
+      <div class="faq-a">The most common reasons: underestimating calorie intake (restaurant and packaged food calories are often higher than expected), overestimating exercise calories burned, water retention masking fat loss on the scale (especially early on or around hormonal cycles), and metabolic adaptation — the body slightly reduces TDEE in response to prolonged deficit. If weight has stalled for 2–3 weeks, try reducing intake by a further 100–150 kcal or adding 20–30 minutes of walking rather than making large cuts.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Should I eat back exercise calories?</button>
+      <div class="faq-a">This depends on how you set up your deficit. If you calculated TDEE using a moderate activity multiplier that already accounts for your exercise (e.g. 1.55), then no — exercise calories are already included. If you used a sedentary multiplier (1.2) and exercise separately, eating back 50–75% of exercise calories is a reasonable approach. Avoid eating back 100% — calorie burn estimates from wearables and machines are often 20–30% too high.</div>
+    </div>
+  </div>
+
+  <!-- Article -->
+  <div class="article-section" style="margin-top:20px;">
+    <h2>How a Calorie Deficit Works</h2>
+    <p>Weight loss comes down to one core principle: consuming fewer calories than you expend. When your body is in a calorie deficit, it draws on stored energy — primarily fat — to make up the shortfall. The rate at which this happens depends on the size of the deficit and your individual metabolism.</p>
+    <p>The widely cited rule of thumb is that 1 kg of body fat contains approximately 7,700 kcal of energy. So a 550 kcal daily deficit creates a ~3,850 kcal weekly deficit, which equates to roughly 0.5 kg of fat loss per week. In practice, early weight loss may be faster due to water loss associated with glycogen depletion.</p>
+    <div class="callout"><p>💡 <strong>The 7,700 rule is an estimate.</strong> Actual fat loss per unit of deficit varies by individual, body composition, and how long you've been dieting. Use it as a planning tool, not a guarantee.</p></div>
+
+    <h2>How Big Should Your Deficit Be?</h2>
+    <p>The right deficit balances speed of loss against sustainability and muscle preservation. Most research supports a deficit of 400–600 kcal per day (about 0.5 kg/week) as the sweet spot for most people:</p>
+    <ul>
+      <li>It produces meaningful progress — roughly 2 kg per month</li>
+      <li>It is large enough to require dietary discipline but small enough to maintain long-term</li>
+      <li>It preserves muscle mass when paired with adequate protein (1.6–2.2 g/kg) and resistance training</li>
+      <li>It avoids the metabolic adaptation and fatigue that comes with very large deficits</li>
+    </ul>
+    <p>Larger deficits (700–1,000+ kcal/day) can work for people with higher body weight, but they increase the risk of muscle loss and are harder to maintain. If you go this route, use our <a href="macro-calculator.html">Macro Calculator</a> to ensure your protein target is met, and consider diet breaks every 6–8 weeks.</p>
+
+    <h2>What to Eat on a Calorie Deficit</h2>
+    <p>The source of your calories matters almost as much as the total. To feel full and maintain muscle while in a deficit:</p>
+    <ul>
+      <li><strong>Prioritise protein:</strong> Aim for 1.6–2.2 g per kg of body weight. Protein is the most satiating macronutrient and essential for muscle preservation. See our <a href="high-protein-foods.html">high protein foods guide</a>.</li>
+      <li><strong>Eat high-volume, low-calorie foods:</strong> Vegetables, fruit, and lean proteins give you more food per calorie, making the deficit easier to sustain.</li>
+      <li><strong>Keep fat intake adequate:</strong> Going below 20% of calories from fat can impair hormone function. Include avocado, olive oil, nuts, and fish.</li>
+      <li><strong>Limit ultra-processed foods:</strong> They are calorie-dense, less satiating, and easy to overeat. They also make accurate calorie tracking harder.</li>
+    </ul>
+
+    <h2>Pairing Your Deficit With Exercise</h2>
+    <p>Exercise accelerates fat loss and — critically — helps preserve muscle during a deficit. Even modest amounts of resistance training (2–3 sessions per week) significantly reduce the proportion of weight lost that comes from muscle versus fat. Cardio helps increase total calorie burn, but avoid using it as justification to eat significantly more — the burns are often overestimated. See our guide on the <a href="best-exercises-to-lose-weight.html">best exercises to lose weight</a>.</p>
+
+    <div class="warn-callout"><p>⚠️ Do not go below 1,200 kcal/day (women) or 1,500 kcal/day (men) without medical supervision. Very low calorie intakes risk nutritional deficiencies, muscle loss, and metabolic harm. If your calculated deficit would take you below these thresholds, reduce the target rate of loss instead.</p></div>
+
+    <div class="sources">
+      <strong>References:</strong><br>
+      Mifflin MD et al. A new predictive equation for resting energy expenditure. <em>American Journal of Clinical Nutrition</em>. 1990;51(2):241–247.<br>
+      Hall KD et al. Quantification of the effect of energy imbalance on bodyweight. <em>The Lancet</em>. 2011;378(9793):826–837.<br>
+      Helms ER et al. A systematic review of dietary protein during caloric restriction in resistance trained lean athletes. <em>International Journal of Sport Nutrition and Exercise Metabolism</em>. 2014;24(2):127–138.
+    </div>
+
+    <div class="related">
+      <h3>Related Tools & Articles</h3>
+      <div class="related-links">
+        <a href="calorie-calculator.html">Calorie Calculator</a>
+        <a href="macro-calculator.html">Macro Calculator</a>
+        <a href="bmi-calculator.html">BMI Calculator</a>
+        <a href="ideal-weight.html">Ideal Weight Calculator</a>
+        <a href="body-fat.html">Body Fat Calculator</a>
+        <a href="calories-to-lose-weight.html">Calories to Lose Weight</a>
+        <a href="high-protein-foods.html">High Protein Foods</a>
+        <a href="best-exercises-to-lose-weight.html">Best Exercises to Lose Weight</a>
+        <a href="how-to-lose-belly-fat.html">How to Lose Belly Fat</a>
+        <a href="waist-to-height-ratio.html">Waist-to-Height Ratio</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div>© 2026 healthybmicheck.com — Accurate Health Tools</div>
+  <div style="margin-top:8px"><a href="privacy.html">Privacy Policy</a><a href="contact.html">Contact</a></div>
+</footer>
+
+<script>
+  let sex = 'male', unit = 'metric', speed = 'moderate';
+
+  function setSex(s) {
+    sex = s;
+    document.getElementById('btn-male').classList.toggle('active', s === 'male');
+    document.getElementById('btn-female').classList.toggle('active', s === 'female');
+  }
+
+  function setUnit(u) {
+    unit = u;
+    document.getElementById('units-toggle').querySelectorAll('button').forEach((b,i) => {
+      b.classList.toggle('active', (u==='metric'&&i===0)||(u==='imperial'&&i===1));
+    });
+    const m = u === 'metric';
+    document.getElementById('weight-unit').textContent = m ? 'kg' : 'lb';
+    document.getElementById('goal-unit').textContent   = m ? 'kg' : 'lb';
+    document.getElementById('metric-height-group').style.display  = m ? '' : 'none';
+    document.getElementById('imperial-height-group').style.display = m ? 'none' : '';
+    // Update speed button labels
+    updateSpeedLabels();
+  }
+
+  function setSpeed(s) {
+    speed = s;
+    ['slow','moderate','fast'].forEach(id => {
+      document.getElementById('speed-' + id).classList.toggle('active', id === s);
+    });
+  }
+
+  function updateSpeedLabels() {
+    const isMetric = unit === 'metric';
+    document.getElementById('slow-rate').textContent   = isMetric ? '0.25 kg/wk' : '0.5 lb/wk';
+    document.getElementById('mod-rate').textContent    = isMetric ? '0.5 kg/wk'  : '1 lb/wk';
+    document.getElementById('fast-rate').textContent   = isMetric ? '1 kg/wk'    : '2 lb/wk';
+    document.getElementById('slow-deficit').textContent  = '~275 kcal/day deficit';
+    document.getElementById('mod-deficit').textContent   = '~550 kcal/day deficit';
+    document.getElementById('fast-deficit').textContent  = '~1,100 kcal/day deficit';
+  }
+
+  function addWeeks(date, weeks) {
+    const d = new Date(date);
+    d.setDate(d.getDate() + Math.round(weeks * 7));
+    return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  }
+
+  function calculate() {
+    const age = parseFloat(document.getElementById('age').value);
+    const actFactor = parseFloat(document.getElementById('activity').value);
+    let weightKg, goalKg, heightCm;
+
+    if (unit === 'metric') {
+      weightKg = parseFloat(document.getElementById('weight').value);
+      goalKg   = parseFloat(document.getElementById('goal-weight').value);
+      heightCm = parseFloat(document.getElementById('height-cm').value);
+    } else {
+      weightKg = parseFloat(document.getElementById('weight').value) * 0.453592;
+      goalKg   = parseFloat(document.getElementById('goal-weight').value) * 0.453592;
+      const ft = parseFloat(document.getElementById('height-ft').value) || 0;
+      const inch = parseFloat(document.getElementById('height-in').value) || 0;
+      heightCm = (ft * 12 + inch) * 2.54;
+    }
+
+    if (!age || !weightKg || !goalKg || !heightCm) {
+      alert('Please fill in all fields.');
+      return;
+    }
+    if (goalKg >= weightKg) {
+      alert('Goal weight must be less than your current weight for a deficit calculation.');
+      return;
+    }
+    if (weightKg - goalKg > 100) {
+      alert('Please check your weight values — the difference seems unusually large.');
+      return;
+    }
+
+    // Mifflin-St Jeor BMR
+    const bmr = sex === 'male'
+      ? 10 * weightKg + 6.25 * heightCm - 5 * age + 5
+      : 10 * weightKg + 6.25 * heightCm - 5 * age - 161;
+    const tdee = Math.round(bmr * actFactor);
+
+    // Deficit and calories
+    const deficits = { slow: 275, moderate: 550, fast: 1100 };
+    const deficit = deficits[speed];
+    const targetCals = Math.max(tdee - deficit, sex === 'male' ? 1200 : 1000);
+    const actualDeficit = tdee - targetCals;
+
+    // Time to goal (7700 kcal per kg fat)
+    const toLoseKg = weightKg - goalKg;
+    const weeksNeeded = (toLoseKg * 7700) / (actualDeficit * 7);
+    const weeksRounded = Math.ceil(weeksNeeded);
+
+    // Milestones
+    const m25kg  = weightKg - toLoseKg * 0.25;
+    const m50kg  = weightKg - toLoseKg * 0.50;
+    const w25    = Math.ceil(weeksNeeded * 0.25);
+    const w50    = Math.ceil(weeksNeeded * 0.50);
+
+    // Display
+    const fmt = (kg) => unit === 'metric'
+      ? kg.toFixed(1) + ' kg'
+      : (kg / 0.453592).toFixed(1) + ' lb';
+    const fmtWks = (w) => w >= 52
+      ? (w / 52).toFixed(1) + ' years'
+      : w + ' weeks';
+
+    document.getElementById('r-calories').textContent = targetCals.toLocaleString();
+    document.getElementById('r-deficit').textContent  = actualDeficit.toLocaleString();
+    document.getElementById('r-tdee').textContent     = tdee.toLocaleString() + ' kcal/day';
+    document.getElementById('r-to-lose').textContent  = fmt(toLoseKg);
+    document.getElementById('r-weeks').textContent    = fmtWks(weeksRounded);
+    document.getElementById('r-date').textContent     = addWeeks(new Date(), weeksRounded);
+
+    // Milestones
+    document.getElementById('m-start').textContent    = fmt(weightKg);
+    document.getElementById('m-25').textContent       = fmt(m25kg) + ' · ' + fmtWks(w25);
+    document.getElementById('m-50').textContent       = fmt(m50kg) + ' · ' + fmtWks(w50);
+    document.getElementById('m-goal').textContent     = fmt(goalKg) + ' · ' + fmtWks(weeksRounded);
+
+    // Warning if deficit is too aggressive
+    const minSafe = sex === 'male' ? 1500 : 1200;
+    let tip = '';
+    if (targetCals < minSafe) {
+      tip = `⚠️ Your calculated target (${targetCals} kcal) is below the minimum recommended intake of ${minSafe} kcal/day for ${sex === 'male' ? 'men' : 'women'}. Consider choosing a slower rate of loss to keep your intake safer and more sustainable.`;
+    } else if (speed === 'fast') {
+      tip = `At a 1,100 kcal/day deficit, progress will be fast but this rate is harder to sustain. Make sure you're hitting your protein target (${Math.round(weightKg * 2)}g/day) to minimise muscle loss. Consider using the slower rate after the first 4–6 weeks.`;
+    } else if (speed === 'slow') {
+      tip = `A slow deficit of ~275 kcal/day is very sustainable and reduces the risk of muscle loss and hunger. At ${fmt(0.25 / 0.453592 * (unit === 'imperial' ? 1 : 0.453592)).split(' ')[0]} per week, progress is steady. Pair with protein-rich foods and resistance training for the best body composition results.`;
+    } else {
+      tip = `A 550 kcal daily deficit is the recommended sweet spot — fast enough to see real progress (roughly ${unit === 'metric' ? '2 kg' : '4.4 lb'} per month) and sustainable long-term. Use the Macro Calculator to ensure you're hitting your daily protein target alongside this calorie goal.`;
+    }
+    document.getElementById('health-tip').textContent = tip;
+    document.getElementById('result-card').classList.add('visible');
+    document.getElementById('result-card').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function toggleFaq(btn) {
+    btn.classList.toggle('open');
+    btn.nextElementSibling.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
