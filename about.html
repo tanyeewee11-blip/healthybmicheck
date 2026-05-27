@@ -7,160 +7,287 @@
   <link rel="apple-touch-icon" href="/favicon_512x512.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — HealthyBMICheck.com</title>
+  <title>About HealthyBMICheck.com — Free Evidence-Based Health Calculators</title>
   <link rel="canonical" href="https://healthybmicheck.com/about.html">
-  <meta name="description" content="Learn about HealthyBMICheck.com — free, evidence-based health calculators built on peer-reviewed scientific formulas. No ads, no sign-up, no data collection.">
+  <meta name="description" content="HealthyBMICheck.com offers 11 free, evidence-based health calculators — BMI, calories, macros, body fat and more. No sign-up, no data collection, instant results.">
+  <meta property="og:title" content="About HealthyBMICheck.com">
+  <meta property="og:description" content="Free, science-based health calculators. No sign-up, no data collection, instant results.">
+  <meta property="og:image" content="https://healthybmicheck.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://healthybmicheck.com/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #F7F4EF; --surface: #FFFFFF; --ink: #1A1714; --ink2: #6B6560;
-      --ink3: #A09A94; --accent: #2D6A4F; --accent-light: #D8EFE4;
-      --border: #E5E0D8; --radius: 16px; --shadow: 0 2px 16px rgba(26,23,20,0.07);
-    }
-    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; }
-    header { background: var(--ink); color: #fff; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
-    .logo span { color: #7EC8A4; }
-    nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; margin-left: 20px; transition: color .2s; }
-    nav a:hover { color: #fff; }
-
-    .article-wrap { max-width: 720px; margin: 0 auto; padding: 56px 24px 80px; }
-    .breadcrumb { font-size: 0.8rem; color: var(--ink3); margin-bottom: 24px; }
-    .breadcrumb a { color: var(--accent); text-decoration: none; }
-
-    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 12px; }
-    .meta { color: var(--ink3); font-size: 0.85rem; margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
-
-    h2 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin: 40px 0 12px; letter-spacing: -0.02em; }
-    p { color: #3D3A36; line-height: 1.8; font-size: 1rem; margin-bottom: 16px; }
-    ul { padding-left: 20px; margin-bottom: 16px; }
-    li { color: #3D3A36; line-height: 1.8; font-size: 1rem; margin-bottom: 6px; }
-    a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
-
-    .principle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
-    @media (max-width: 560px) { .principle-grid { grid-template-columns: 1fr; } }
-    .principle-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 22px; box-shadow: var(--shadow); }
-    .principle-card .picon { font-size: 1.6rem; margin-bottom: 10px; }
-    .principle-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
-    .principle-card p { font-size: 0.875rem; color: var(--ink2); margin-bottom: 0; }
-
-    .formula-table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border); margin: 20px 0 32px; }
-    .formula-table thead tr { background: var(--ink); color: #fff; }
-    .formula-table th { padding: 12px 16px; text-align: left; font-size: 0.8rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
-    .formula-table td { padding: 13px 16px; font-size: 0.9rem; border-bottom: 1px solid var(--border); color: #3D3A36; }
-    .formula-table tbody tr:last-child td { border-bottom: none; }
-
-    .callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 24px 0; }
-    .callout p { color: #1A3D2B; margin-bottom: 0; }
-
-    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
-    .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--ink); color: #fff; text-decoration: none; font-weight: 600; font-size: 0.9rem; padding: 12px 22px; border-radius: 100px; transition: background .2s; }
-    .cta-btn:hover { background: #333; color: #fff; }
-    .cta-btn-outline { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
-    .cta-btn-outline:hover { background: var(--accent-light); color: var(--accent); }
-
-    footer { background: var(--ink); color: rgba(255,255,255,0.4); text-align: center; padding: 24px; font-size: 0.8rem; line-height: 1.8; }
-    footer a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 8px; }
-    footer a:hover { color: #fff; }
-  </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7723301737736770" crossorigin="anonymous"></script>
-  <meta property="og:image" content="https://healthybmicheck.com/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://healthybmicheck.com/og-image.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"About HealthyBMICheck.com","url":"https://healthybmicheck.com/about.html","description":"HealthyBMICheck.com offers 11 free, evidence-based health calculators built on peer-reviewed scientific formulas. No sign-up, no data collection.","publisher":{"@type":"Organization","name":"HealthyBMICheck","url":"https://healthybmicheck.com"}}</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#F7F4EF;--surface:#fff;--ink:#1A1714;--ink2:#6B6560;--ink3:#A09A94;
+      --accent:#2D6A4F;--accent-light:#D8EFE4;--border:#E5E0D8;
+      --radius:16px;--shadow:0 2px 16px rgba(26,23,20,.07);
+    }
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh}
+    header{background:var(--ink);color:#fff;padding:18px 24px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-family:'DM Serif Display',serif;font-size:1.25rem}.logo span{color:#7EC8A4}
+    header a{text-decoration:none;color:inherit}
+    nav a{color:rgba(255,255,255,.6);text-decoration:none;font-size:.85rem;margin-left:20px;transition:color .2s}
+    nav a:hover{color:#fff}
 
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "AboutPage", "name": "About HealthyBMICheck", "url": "https://healthybmicheck.com/about.html", "description": "Learn about HealthyBMICheck — free, evidence-based health calculators built on established scientific formulas."}</script>
+    /* Hero */
+    .about-hero{background:var(--ink);color:#fff;padding:64px 24px;text-align:center}
+    .about-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,5vw,3rem);line-height:1.1;letter-spacing:-.03em;margin-bottom:16px}
+    .about-hero h1 em{font-style:italic;color:#7EC8A4}
+    .about-hero p{color:rgba(255,255,255,.7);font-size:1.05rem;line-height:1.7;max-width:540px;margin:0 auto 32px}
+    .trust-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+    .trust-chip{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:7px 14px;font-size:.83rem;color:rgba(255,255,255,.85)}
+
+    .container{max-width:720px;margin:0 auto;padding:0 20px 64px}
+
+    /* Stats */
+    .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:40px 0}
+    .stat-box{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;text-align:center}
+    .stat-box .num{font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--accent);line-height:1}
+    .stat-box .lbl{font-size:.8rem;color:var(--ink3);margin-top:4px}
+
+    /* Principles */
+    .section-title{font-family:'DM Serif Display',serif;font-size:1.6rem;margin-bottom:6px}
+    .section-sub{color:var(--ink2);font-size:.9rem;margin-bottom:20px}
+    .principle-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px}
+    .principle-card{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 22px}
+    .principle-card .picon{font-size:1.5rem;margin-bottom:10px}
+    .principle-card h3{font-size:.95rem;font-weight:600;margin-bottom:6px}
+    .principle-card p{font-size:.875rem;color:var(--ink2);line-height:1.6;margin:0}
+
+    /* Tools grid */
+    .tools-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:32px}
+    .tool-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--ink);transition:border-color .2s,transform .15s}
+    .tool-item:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .tool-item .t-icon{font-size:1.2rem;margin-bottom:4px}
+    .tool-item .t-name{font-size:.83rem;font-weight:500}
+    .tool-item .t-desc{font-size:.75rem;color:var(--ink3);margin-top:2px}
+
+    /* Formula table */
+    .formula-table{width:100%;border-collapse:collapse;background:var(--surface);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--border);margin-bottom:32px}
+    .formula-table thead tr{background:var(--ink);color:#fff}
+    .formula-table th{padding:11px 14px;text-align:left;font-size:.78rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+    .formula-table td{padding:11px 14px;font-size:.875rem;border-bottom:1px solid var(--border);color:var(--ink2)}
+    .formula-table td:first-child{color:var(--ink)}
+    .formula-table td a{color:var(--accent);text-decoration:none}
+    .formula-table td a:hover{text-decoration:underline}
+    .formula-table tbody tr:last-child td{border-bottom:none}
+
+    /* Callout */
+    .callout{background:var(--accent-light);border-radius:12px;padding:16px 20px;margin-bottom:24px;font-size:.9rem;color:var(--ink);line-height:1.7}
+    .warn-callout{background:#FBF0DC;border-radius:12px;padding:16px 20px;margin-bottom:24px;font-size:.9rem;color:var(--ink);line-height:1.7}
+
+    /* Mission */
+    .mission-block{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px 32px;margin-bottom:20px}
+    .mission-block p{color:var(--ink2);line-height:1.8;font-size:.95rem;margin-bottom:12px}
+    .mission-block p:last-child{margin-bottom:0}
+
+    /* CTA */
+    .cta-block{background:var(--ink);border-radius:20px;padding:32px 28px;text-align:center;margin-bottom:20px}
+    .cta-block h2{font-family:'DM Serif Display',serif;font-size:1.5rem;color:#fff;margin-bottom:8px}
+    .cta-block p{font-size:.9rem;color:rgba(255,255,255,.6);margin-bottom:20px}
+    .cta-buttons{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+    .cta-btn{display:inline-flex;align-items:center;gap:7px;background:#2D6A4F;color:#fff;text-decoration:none;font-weight:500;font-size:.9rem;padding:11px 20px;border-radius:100px;font-family:'DM Sans',sans-serif}
+    .cta-btn-ghost{background:rgba(255,255,255,.1);color:#fff}
+
+    footer{background:var(--ink);color:rgba(255,255,255,.4);text-align:center;padding:24px;font-size:.8rem;line-height:1.8}
+    footer a{color:rgba(255,255,255,.5);text-decoration:none;margin:0 8px}
+    footer a:hover{color:#fff}
+
+    @media(max-width:600px){
+      .stats-row{grid-template-columns:1fr 1fr 1fr}
+      .principle-grid{grid-template-columns:1fr}
+      .tools-grid{grid-template-columns:1fr 1fr}
+      .mission-block{padding:22px 20px}
+    }
+  </style>
 </head>
 <body>
 
 <header>
-  <div class="logo"><a href="index.html" style="color:#fff;text-decoration:none">healthy<span>bmicheck</span>.com</a></div>
+  <div class="logo"><a href="index.html">healthy<span>bmicheck</span>.com</a></div>
   <nav>
     <a href="bmi-calculator.html">BMI</a>
     <a href="calorie-calculator.html">Calories</a>
-    <a href="about.html">About</a>
-    <a href="privacy.html">Privacy</a>
+    <a href="index.html">All Tools</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
-<div class="article-wrap">
-  <div class="breadcrumb"><a href="index.html">Home</a> › About</div>
+<!-- Hero -->
+<div class="about-hero">
+  <h1>Free health tools,<br><em>built on real science</em></h1>
+  <p>HealthyBMICheck.com gives everyone access to accurate, evidence-based health calculators — no sign-up, no data collection, no cost.</p>
+  <div class="trust-chips">
+    <span class="trust-chip">🔬 Peer-reviewed formulas</span>
+    <span class="trust-chip">🔒 No data collected</span>
+    <span class="trust-chip">⚡ Instant results</span>
+    <span class="trust-chip">🌏 Free forever</span>
+  </div>
+</div>
 
-  <h1>About HealthyBMICheck.com</h1>
-  <p class="meta">Free health calculators built on peer-reviewed science</p>
+<div class="container">
 
-  <p>HealthyBMICheck.com is a free, independent health tools website. Our goal is simple: give everyone access to accurate, evidence-based health calculators without requiring a sign-up, subscription, or personal data.</p>
+  <!-- Stats -->
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="num">11</div>
+      <div class="lbl">Free calculators</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">0</div>
+      <div class="lbl">Data collected</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">100%</div>
+      <div class="lbl">Browser-side calculations</div>
+    </div>
+  </div>
 
-  <p>We built this site because too many online health calculators use outdated or unverified formulas, show intrusive advertising around sensitive health results, or demand personal information to deliver a number that should be freely available. We wanted to do better.</p>
+  <!-- Mission -->
+  <div class="mission-block">
+    <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;margin-bottom:14px;">Why we built this</h2>
+    <p>Too many online health calculators use outdated formulas, bury results behind sign-up walls, or show intrusive advertising around sensitive health information. We wanted to do better.</p>
+    <p>HealthyBMICheck.com is an independent project. We're not affiliated with any hospital, pharmaceutical company, supplement brand, or health insurer. We have no financial interest in the results our calculators produce — only in making them as accurate and useful as possible.</p>
+    <p>Every tool on this site uses a formula from peer-reviewed research or established clinical guidelines. We cite our sources, explain the limitations, and tell you what to do with your result.</p>
+  </div>
 
-  <h2>Our Principles</h2>
+  <!-- Principles -->
+  <h2 class="section-title">Our principles</h2>
+  <p class="section-sub">Four commitments we hold ourselves to on every page.</p>
   <div class="principle-grid">
     <div class="principle-card">
       <div class="picon">🔬</div>
       <h3>Evidence-based formulas</h3>
-      <p>Every calculator on this site uses a formula from peer-reviewed research or established clinical guidelines. We cite our sources.</p>
+      <p>Every calculator uses a formula from peer-reviewed research or established clinical guidelines. We cite our sources on every page.</p>
     </div>
     <div class="principle-card">
       <div class="picon">🔒</div>
       <h3>No data collection</h3>
-      <p>All calculations run in your browser. Nothing you enter is sent to our servers, stored, or shared with third parties.</p>
+      <p>All calculations run entirely in your browser. Nothing you enter is sent to our servers, stored, or shared with anyone.</p>
     </div>
     <div class="principle-card">
       <div class="picon">⚡</div>
-      <h3>Instant results</h3>
-      <p>No sign-up, no email confirmation, no waiting. Enter your numbers and get your result in under a second.</p>
+      <h3>Instant, no friction</h3>
+      <p>No sign-up, no email confirmation, no paywall. Enter your numbers and get your result in under a second.</p>
     </div>
     <div class="principle-card">
       <div class="picon">📖</div>
       <h3>Explained, not just calculated</h3>
-      <p>We explain what your result means, what its limitations are, and what to do next — not just a bare number.</p>
+      <p>We tell you what your result means, what its limitations are, and what to do next — not just a bare number.</p>
     </div>
   </div>
 
-  <h2>The Science Behind Our Calculators</h2>
-  <p>Each calculator uses a specific formula or methodology validated in scientific literature. Here is a summary:</p>
+  <!-- Tools -->
+  <h2 class="section-title">Our calculators</h2>
+  <p class="section-sub">11 free tools covering the most important health metrics.</p>
+  <div class="tools-grid">
+    <a href="bmi-calculator.html" class="tool-item">
+      <div class="t-icon">⚖️</div>
+      <div class="t-name">BMI Calculator</div>
+      <div class="t-desc">Body Mass Index</div>
+    </a>
+    <a href="asian-bmi-calculator.html" class="tool-item">
+      <div class="t-icon">🌏</div>
+      <div class="t-name">Asian BMI</div>
+      <div class="t-desc">Asian-specific thresholds</div>
+    </a>
+    <a href="bmi-calculator-kids.html" class="tool-item">
+      <div class="t-icon">👶</div>
+      <div class="t-name">Kids BMI</div>
+      <div class="t-desc">CDC percentile method</div>
+    </a>
+    <a href="calorie-calculator.html" class="tool-item">
+      <div class="t-icon">🔥</div>
+      <div class="t-name">Calorie Calculator</div>
+      <div class="t-desc">Daily energy needs</div>
+    </a>
+    <a href="calorie-deficit-calculator.html" class="tool-item">
+      <div class="t-icon">📉</div>
+      <div class="t-name">Calorie Deficit</div>
+      <div class="t-desc">Weight loss timeline</div>
+    </a>
+    <a href="macro-calculator.html" class="tool-item">
+      <div class="t-icon">🥗</div>
+      <div class="t-name">Macro Calculator</div>
+      <div class="t-desc">Protein, carbs & fat</div>
+    </a>
+    <a href="ideal-weight.html" class="tool-item">
+      <div class="t-icon">🎯</div>
+      <div class="t-name">Ideal Weight</div>
+      <div class="t-desc">4 formula average</div>
+    </a>
+    <a href="body-fat.html" class="tool-item">
+      <div class="t-icon">📊</div>
+      <div class="t-name">Body Fat</div>
+      <div class="t-desc">Navy circumference method</div>
+    </a>
+    <a href="water-intake.html" class="tool-item">
+      <div class="t-icon">💧</div>
+      <div class="t-name">Water Intake</div>
+      <div class="t-desc">Daily hydration needs</div>
+    </a>
+    <a href="waist-to-height-ratio.html" class="tool-item">
+      <div class="t-icon">📏</div>
+      <div class="t-name">Waist-to-Height</div>
+      <div class="t-desc">Metabolic risk indicator</div>
+    </a>
+    <a href="health-profile.html" class="tool-item">
+      <div class="t-icon">👤</div>
+      <div class="t-name">Health Profile</div>
+      <div class="t-desc">All metrics in one place</div>
+    </a>
+  </div>
 
+  <!-- Science table -->
+  <h2 class="section-title">The science behind our tools</h2>
+  <p class="section-sub">Each calculator uses a specific formula validated in peer-reviewed research.</p>
   <table class="formula-table">
     <thead>
       <tr><th>Calculator</th><th>Formula / Method</th><th>Source</th></tr>
     </thead>
     <tbody>
       <tr><td><a href="bmi-calculator.html">BMI Calculator</a></td><td>Weight ÷ Height² (kg/m²)</td><td>World Health Organization (WHO)</td></tr>
-      <tr><td><a href="calorie-calculator.html">Calorie Calculator</a></td><td>Mifflin-St Jeor equation × activity factor</td><td>Mifflin et al., Am J Clin Nutr, 1990</td></tr>
+      <tr><td><a href="asian-bmi-calculator.html">Asian BMI Calculator</a></td><td>WHO Asian cutoffs (≥23 overweight, ≥27.5 obese)</td><td>WHO Expert Consultation, The Lancet, 2004</td></tr>
+      <tr><td><a href="bmi-calculator-kids.html">Kids BMI Calculator</a></td><td>CDC BMI-for-age LMS percentile method</td><td>CDC Growth Charts, Kuczmarski et al., 2000</td></tr>
+      <tr><td><a href="calorie-calculator.html">Calorie Calculator</a></td><td>Mifflin–St Jeor equation × activity factor</td><td>Mifflin et al., Am J Clin Nutr, 1990</td></tr>
+      <tr><td><a href="calorie-deficit-calculator.html">Calorie Deficit</a></td><td>TDEE − deficit; 7,700 kcal/kg fat rule</td><td>Hall et al., The Lancet, 2011</td></tr>
+      <tr><td><a href="macro-calculator.html">Macro Calculator</a></td><td>Mifflin–St Jeor + protein 1.6–2.2 g/kg</td><td>Morton et al., Br J Sports Med, 2018</td></tr>
+      <tr><td><a href="ideal-weight.html">Ideal Weight</a></td><td>Devine, Robinson, Miller, Hamwi formulas</td><td>Multiple peer-reviewed sources, 1964–1983</td></tr>
       <tr><td><a href="body-fat.html">Body Fat Calculator</a></td><td>U.S. Navy circumference method</td><td>Hodgdon & Beckett, NHRC, 1984</td></tr>
-      <tr><td><a href="ideal-weight.html">Ideal Weight Calculator</a></td><td>Devine, Robinson, Miller, Hamwi formulas</td><td>Multiple peer-reviewed sources, 1964–1983</td></tr>
-      <tr><td><a href="water-intake.html">Water Intake Calculator</a></td><td>Weight-based hydration guidelines</td><td>National Academies of Sciences, 2005</td></tr>
+      <tr><td><a href="water-intake.html">Water Intake</a></td><td>Weight-based hydration guidelines</td><td>National Academies of Sciences, 2005</td></tr>
+      <tr><td><a href="waist-to-height-ratio.html">Waist-to-Height Ratio</a></td><td>WHtR &lt; 0.5 healthy threshold</td><td>Ashwell et al., Obesity Reviews, 2012</td></tr>
     </tbody>
   </table>
 
-  <h2>Important Limitations</h2>
-  <p>Health calculators — even well-validated ones — are population-level estimates. They are useful starting points, not medical diagnoses. Individual factors such as genetics, medications, hormonal status, body composition, and medical history can all cause your true values to differ from what a formula predicts.</p>
-
-  <div class="callout">
-    <p>⚕️ <strong>Not medical advice.</strong> The results from our calculators are for general informational purposes only. If you have health concerns, are pregnant, have a chronic illness, or are planning significant dietary or exercise changes, please consult a qualified healthcare professional.</p>
+  <!-- Disclaimer -->
+  <div class="warn-callout">
+    ⚕️ <strong>Not medical advice.</strong> Our calculators are population-level estimates for general informational purposes only. Individual results may vary due to genetics, medications, body composition, and medical history. If you have health concerns or are planning significant lifestyle changes, consult a qualified healthcare professional.
   </div>
 
-  <h2>Who Maintains This Site?</h2>
-  <p>HealthyBMICheck.com is an independent project maintained by a small team passionate about making reliable health information more accessible. We are not affiliated with any hospital, pharmaceutical company, supplement brand, or health insurer. We have no financial interest in the results our calculators produce.</p>
-
-  <p>We review and update our calculators and articles regularly to ensure the underlying formulas and health guidance remain current with scientific consensus. If you spot an error or out-of-date information, please <a href="contact.html">let us know</a>.</p>
-
-  <h2>Get Started</h2>
-  <p>All our tools are free, instant, and require no sign-up. Pick one below to get started:</p>
-
-  <div class="cta-row">
-    <a href="bmi-calculator.html" class="cta-btn">⚖️ BMI Calculator</a>
-    <a href="calorie-calculator.html" class="cta-btn">🔥 Calorie Calculator</a>
-    <a href="health-profile.html" class="cta-btn">👤 Full Health Profile</a>
-    <a href="contact.html" class="cta-btn cta-btn-outline">✉️ Contact Us</a>
+  <!-- Contact CTA -->
+  <div class="cta-block">
+    <h2>Start using our free tools</h2>
+    <p>All calculators are free, instant, and require no sign-up.</p>
+    <div class="cta-buttons">
+      <a href="bmi-calculator.html" class="cta-btn">⚖️ BMI Calculator</a>
+      <a href="calorie-calculator.html" class="cta-btn cta-btn-ghost">🔥 Calorie Calculator</a>
+      <a href="health-profile.html" class="cta-btn cta-btn-ghost">👤 Full Health Profile</a>
+    </div>
   </div>
+
+  <div style="text-align:center;margin-top:16px;">
+    <p style="font-size:.875rem;color:var(--ink3);">Questions or feedback? <a href="contact.html" style="color:var(--accent);">Contact us →</a></p>
+  </div>
+
 </div>
 
-<div style="padding-bottom: 20px;"></div>
 <footer>
   <div>© 2026 healthybmicheck.com — Free Health Calculators</div>
   <div style="margin-top:8px">
@@ -169,7 +296,7 @@
     <a href="privacy.html">Privacy Policy</a>
     <a href="contact.html">Contact</a>
   </div>
-  <div style="margin-top:8px; font-size:0.75rem; opacity:0.6;">For informational purposes only. Not medical advice.</div>
+  <div style="margin-top:8px;font-size:.75rem;opacity:.6;">For informational purposes only. Not medical advice.</div>
 </footer>
 
 </body>
