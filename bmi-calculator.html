@@ -20,6 +20,28 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
 
   <style>
+    header {
+      background: var(--ink);
+      color: #fff;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2.5px solid #2D6A4F;
+    }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
+    .logo span { color: #7EC8A4; }
+    header a { text-decoration: none; color: inherit; }
+    nav { display: flex; align-items: center; gap: 4px; }
+    nav a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: .85rem;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: color .2s, background .2s;
+    }
+    nav a:hover { color: #fff; background: rgba(255,255,255,0.08); }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -44,30 +66,6 @@
     /* ── 核心：广告占位符暴力隐藏逻辑 ── */
 
     /* ── Header ── */
-    header {
-      background: var(--ink);
-      color: #fff;
-      padding: 18px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.25rem;
-      letter-spacing: -0.02em;
-    }
-    .logo span { color: #7EC8A4; }
-    header a { text-decoration: none; color: inherit; }
-    nav a {
-      color: rgba(255,255,255,0.6);
-      text-decoration: none;
-      font-size: 0.85rem;
-      margin-left: 20px;
-      transition: color .2s;
-    }
-    nav a:hover { color: #fff; }
-
     /* ── Ad slot top ── */
 
     /* ── Hero ── */
@@ -373,21 +371,27 @@
     /* ── Ad slot bottom ── */
 
     /* ── Footer ── */
-    footer {
-      background: var(--ink);
-      color: rgba(255,255,255,0.4);
-      text-align: center;
-      padding: 24px;
-      font-size: 0.8rem;
-      line-height: 1.8;
-    }
-    footer a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 8px; }
-    footer a:hover { color: #fff; }
     .related { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
     .related h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; margin-bottom: 16px; }
     .related-links { display: flex; flex-wrap: wrap; gap: 10px; }
     .related-links a { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; text-decoration: none; color: var(--ink); font-size: 0.875rem; }
     .related-links a:hover { border-color: var(--accent); color: var(--accent); }
+      footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.8rem;
+      line-height: 1.9;
+      border-top: 2.5px solid #2D6A4F;
+    }
+    footer a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      margin: 0 8px;
+      transition: color .2s;
+    }
+    footer a:hover { color: #7EC8A4; }
   </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is BMI calculated?", "acceptedAnswer": {"@type": "Answer", "text": "BMI is calculated by dividing your weight in kilograms by the square of your height in meters (kg/m²). For example, a person weighing 70 kg at 1.75 m has a BMI of 70 ÷ (1.75 × 1.75) = 22.9."}}]}</script>
   <meta property="og:image" content="https://healthybmicheck.com/og-image.png">
@@ -403,9 +407,10 @@
 <header>
   <div class="logo"><a href="index.html">healthy<span>bmicheck</span>.com</a></div>
   <nav>
-    <a href="#table">BMI Table</a>
-    <a href="#faq">FAQ</a>
-    <a href="asian-bmi-calculator.html">Asian BMI</a>
+    <a href="bmi-calculator.html">BMI</a>
+    <a href="calorie-calculator.html">Calories</a>
+    <a href="index.html">All Tools</a>
+    <a href="about.html">About</a>
   </nav>
 </header>
 
@@ -703,6 +708,7 @@
   <div style="margin-top:8px">
     <a href="index.html">All Calculators</a>
     <a href="bmi-calculator.html">BMI Calculator</a>
+    <a href="about.html">About</a>
     <a href="privacy.html">Privacy Policy</a>
     <a href="contact.html">Contact</a>
   </div>

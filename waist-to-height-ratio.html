@@ -34,6 +34,28 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a healthy waist-to-height ratio?","acceptedAnswer":{"@type":"Answer","text":"A healthy waist-to-height ratio is below 0.5 for most adults. The simple rule: keep your waist circumference to less than half your height. A WHtR between 0.5 and 0.59 indicates increased health risk, and 0.6 or above indicates high risk. These thresholds apply to both men and women and do not vary significantly by age for adults."}},{"@type":"Question","name":"Is waist-to-height ratio better than BMI?","acceptedAnswer":{"@type":"Answer","text":"Research suggests waist-to-height ratio is a better predictor of cardiovascular disease, type 2 diabetes, and mortality risk than BMI. This is because WHtR directly measures central (abdominal) fat — the most metabolically dangerous type — whereas BMI cannot distinguish between fat and muscle, or between abdominal and peripheral fat. A 2012 meta-analysis of 300,000 people found WHtR outperformed BMI and waist circumference alone in predicting cardiometabolic risk."}},{"@type":"Question","name":"How do I measure my waist correctly?","acceptedAnswer":{"@type":"Answer","text":"Measure your waist at the midpoint between your lowest rib and the top of your hip bone (iliac crest). This is usually around the level of your belly button, but the exact position varies. Stand relaxed, breathe out gently, and measure without pulling the tape tight. Do not measure over clothing. Take two measurements and average them if they differ."}}]}</script>
 
   <style>
+    header {
+      background: var(--ink);
+      color: #fff;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2.5px solid #2D6A4F;
+    }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
+    .logo span { color: #7EC8A4; }
+    header a { text-decoration: none; color: inherit; }
+    nav { display: flex; align-items: center; gap: 4px; }
+    nav a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: .85rem;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: color .2s, background .2s;
+    }
+    nav a:hover { color: #fff; background: rgba(255,255,255,0.08); }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -56,13 +78,6 @@
     }
 
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; }
-
-    header { background: var(--ink); color: #fff; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
-    .logo span { color: #7EC8A4; }
-    header a { text-decoration: none; color: inherit; }
-    nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; margin-left: 20px; transition: color .2s; }
-    nav a:hover { color: #fff; }
 
     .hero { text-align: center; padding: 56px 24px 32px; max-width: 640px; margin: 0 auto; }
     .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 16px; }
@@ -166,14 +181,26 @@
     .related-links a { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; text-decoration: none; color: var(--ink); font-size: 0.875rem; }
     .related-links a:hover { border-color: var(--accent); color: var(--accent); }
 
-    footer { background: var(--ink); color: rgba(255,255,255,0.4); text-align: center; padding: 24px; font-size: 0.8rem; line-height: 1.8; }
-    footer a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 8px; }
-    footer a:hover { color: #fff; }
-
     @media (max-width: 600px) {
       .measure-steps { grid-template-columns: 1fr; gap: 12px; }
       .article-section { padding: 24px 20px; }
     }
+      footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.8rem;
+      line-height: 1.9;
+      border-top: 2.5px solid #2D6A4F;
+    }
+    footer a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      margin: 0 8px;
+      transition: color .2s;
+    }
+    footer a:hover { color: #7EC8A4; }
   </style>
 </head>
 <body>
@@ -181,9 +208,10 @@
 <header>
   <div class="logo"><a href="index.html">healthy<span>bmicheck</span>.com</a></div>
   <nav>
-    <a href="#how-to-measure">How to Measure</a>
-    <a href="#faq">FAQ</a>
-    <a href="bmi-calculator.html">BMI Calculator</a>
+    <a href="bmi-calculator.html">BMI</a>
+    <a href="calorie-calculator.html">Calories</a>
+    <a href="index.html">All Tools</a>
+    <a href="about.html">About</a>
   </nav>
 </header>
 
@@ -424,6 +452,7 @@
   <div style="margin-top:8px">
     <a href="index.html">All Calculators</a>
     <a href="bmi-calculator.html">BMI Calculator</a>
+    <a href="about.html">About</a>
     <a href="privacy.html">Privacy Policy</a>
     <a href="contact.html">Contact</a>
   </div>

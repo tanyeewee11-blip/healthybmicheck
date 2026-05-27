@@ -17,6 +17,28 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
   <style>
+    header {
+      background: var(--ink);
+      color: #fff;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2.5px solid #2D6A4F;
+    }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
+    .logo span { color: #7EC8A4; }
+    header a { text-decoration: none; color: inherit; }
+    nav { display: flex; align-items: center; gap: 4px; }
+    nav a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: .85rem;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: color .2s, background .2s;
+    }
+    nav a:hover { color: #fff; background: rgba(255,255,255,0.08); }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --bg: #F7F4EF; --surface: #FFFFFF; --ink: #1A1714; --ink2: #6B6560; --ink3: #A09A94;
@@ -24,11 +46,6 @@
       --shadow: 0 2px 16px rgba(26,23,20,0.07);
     }
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; }
-    header { background: var(--ink); color: #fff; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
-    .logo span { color: #7EC8A4; }
-    nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; margin-left: 20px; transition: color .2s; }
-    nav a:hover { color: #fff; }
     .hero { text-align: center; padding: 56px 24px 32px; max-width: 680px; margin: 0 auto; }
     .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 12px; }
     .hero h1 em { font-style: italic; color: var(--accent); }
@@ -90,14 +107,27 @@
     .callout p { color: #1A3570; margin-bottom: 0; }
     .sources { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--ink3); }
     .sources a { color: var(--ink3); }
-    footer { background: var(--ink); color: rgba(255,255,255,0.4); text-align: center; padding: 24px; font-size: 0.8rem; line-height: 1.8; }
-    footer a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 8px; }
-    footer a:hover { color: #fff; }
     .related { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
     .related h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; margin-bottom: 16px; }
     .related-links { display: flex; flex-wrap: wrap; gap: 10px; }
     .related-links a { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; text-decoration: none; color: var(--ink); font-size: 0.875rem; }
     .related-links a:hover { border-color: var(--accent); color: var(--accent); }
+      footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.8rem;
+      line-height: 1.9;
+      border-top: 2.5px solid #2D6A4F;
+    }
+    footer a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      margin: 0 8px;
+      transition: color .2s;
+    }
+    footer a:hover { color: #7EC8A4; }
   </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why are there four different formulas?", "acceptedAnswer": {"@type": "Answer", "text": "Different researchers developed different formulas over the decades. The Devine formula (1974) was originally created for drug dosing. Robinson, Miller, and Hamwi developed their own versions based on different population studies. No single formula is universally accepted, which is why showing all four gives a more balanced range."}}, {"@type": "Question", "name": "Is ideal weight the same as healthy weight?", "acceptedAnswer": {"@type": "Answer", "text": "They are related but not identical. Ideal weight formulas give a single target number based on height and sex. Healthy weight is a range based on BMI (18.5–24.9). Most people's ideal weight falls within their healthy BMI range, but the BMI range is generally considered a more complete indicator."}}, {"@type": "Question", "name": "Do these formulas apply to athletes?", "acceptedAnswer": {"@type": "Answer", "text": "Not perfectly. Athletes with high muscle mass may weigh significantly more than the ideal weight estimate while still being very healthy. These formulas are best used as a general guideline for the average adult, not for athletes or those with unusually high or low muscle mass."}}, {"@type": "Question", "name": "What if my weight is far from the ideal range?", "acceptedAnswer": {"@type": "Answer", "text": "The ideal weight range is a guide, not a strict target. A more useful next step is to calculate your BMI and daily calorie needs to understand where you currently stand and what adjustments — if any — might benefit your health. Always consult a healthcare professional before making significant changes to your diet or exercise habits."}}]}</script>
   <meta property="og:image" content="https://healthybmicheck.com/og-image.png">
@@ -110,13 +140,12 @@
 </head>
 <body>
 <header>
-  <div class="logo"><a href="index.html" style="color:#fff;text-decoration:none">healthy<span>bmicheck</span>.com</a></div>
+  <div class="logo"><a href="index.html">healthy<span>bmicheck</span>.com</a></div>
   <nav>
     <a href="bmi-calculator.html">BMI</a>
     <a href="calorie-calculator.html">Calories</a>
-    <a href="ideal-weight.html">Ideal Weight</a>
-    <a href="what-is-bmi.html">Learn</a>
-    <a href="bmi-calculator.html">BMI Calculator</a>
+    <a href="index.html">All Tools</a>
+    <a href="about.html">About</a>
   </nav>
 </header>
 <div class="hero">
@@ -376,6 +405,7 @@
   <div style="margin-top:8px">
     <a href="index.html">All Calculators</a>
     <a href="bmi-calculator.html">BMI Calculator</a>
+    <a href="about.html">About</a>
     <a href="privacy.html">Privacy Policy</a>
     <a href="contact.html">Contact</a>
   </div>

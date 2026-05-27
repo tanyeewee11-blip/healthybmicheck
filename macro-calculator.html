@@ -34,6 +34,28 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many grams of protein do I need per day?","acceptedAnswer":{"@type":"Answer","text":"For most active adults, a daily protein intake of 1.6–2.2 g per kg of body weight (0.7–1.0 g per lb) is recommended to support muscle maintenance and growth. For weight loss, staying at the higher end (2.0–2.2 g/kg) helps preserve lean muscle while in a calorie deficit. Sedentary adults can maintain health at lower intakes of around 0.8 g/kg, but this is insufficient for anyone exercising regularly."}},{"@type":"Question","name":"What are macros and why do they matter?","acceptedAnswer":{"@type":"Answer","text":"Macros (macronutrients) are the three main nutrients that provide calories: protein (4 kcal/g), carbohydrates (4 kcal/g), and fat (9 kcal/g). Getting the right balance of macros matters because each plays a distinct role — protein builds and repairs muscle, carbohydrates fuel exercise and brain function, and fat supports hormones and absorbs fat-soluble vitamins. Tracking macros is more precise than tracking calories alone, especially for body composition goals."}},{"@type":"Question","name":"How many carbs should I eat per day?","acceptedAnswer":{"@type":"Answer","text":"Carbohydrate needs depend on your activity level and goals. For most active adults, 45–55% of total calories from carbohydrates is a good starting point. Athletes and those doing high-intensity exercise may need 55–65%. For weight loss on a moderate deficit, 35–45% of calories from carbs (prioritising complex carbs and fibre) works well for most people. Very low-carb diets (below 20–50g/day) are a separate approach and should be discussed with a healthcare provider."}},{"@type":"Question","name":"Is it better to track macros or calories?","acceptedAnswer":{"@type":"Answer","text":"Tracking both gives the best results. Total calories determine whether you lose, maintain, or gain weight. But the macro split determines body composition — specifically, how much of the weight change comes from fat versus muscle. Two people eating the same calories but different macro splits can have very different body composition outcomes. Start with calories, then layer in macro tracking once you're comfortable."}}]}</script>
 
   <style>
+    header {
+      background: var(--ink);
+      color: #fff;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2.5px solid #2D6A4F;
+    }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
+    .logo span { color: #7EC8A4; }
+    header a { text-decoration: none; color: inherit; }
+    nav { display: flex; align-items: center; gap: 4px; }
+    nav a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: .85rem;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: color .2s, background .2s;
+    }
+    nav a:hover { color: #fff; background: rgba(255,255,255,0.08); }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -58,13 +80,6 @@
     }
 
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; }
-
-    header { background: var(--ink); color: #fff; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
-    .logo span { color: #7EC8A4; }
-    header a { text-decoration: none; color: inherit; }
-    nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: .85rem; margin-left: 20px; transition: color .2s; }
-    nav a:hover { color: #fff; }
 
     .hero { text-align: center; padding: 56px 24px 32px; max-width: 640px; margin: 0 auto; }
     .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 16px; }
@@ -184,16 +199,28 @@
     .related-links a { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; text-decoration: none; color: var(--ink); font-size: .875rem; }
     .related-links a:hover { border-color: var(--accent); color: var(--accent); }
 
-    footer { background: var(--ink); color: rgba(255,255,255,.4); text-align: center; padding: 24px; font-size: .8rem; line-height: 1.8; }
-    footer a { color: rgba(255,255,255,.5); text-decoration: none; margin: 0 8px; }
-    footer a:hover { color: #fff; }
-
     @media (max-width: 600px) {
       .goal-grid { grid-template-columns: repeat(3,1fr); }
       .macro-grid { grid-template-columns: repeat(3,1fr); }
       .preset-grid { grid-template-columns: 1fr; }
       .article-section { padding: 24px 20px; }
     }
+      footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.8rem;
+      line-height: 1.9;
+      border-top: 2.5px solid #2D6A4F;
+    }
+    footer a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      margin: 0 8px;
+      transition: color .2s;
+    }
+    footer a:hover { color: #7EC8A4; }
   </style>
 </head>
 <body>
@@ -201,9 +228,10 @@
 <header>
   <div class="logo"><a href="index.html">healthy<span>bmicheck</span>.com</a></div>
   <nav>
-    <a href="#presets">Macro Presets</a>
-    <a href="#faq">FAQ</a>
+    <a href="bmi-calculator.html">BMI</a>
     <a href="calorie-calculator.html">Calories</a>
+    <a href="index.html">All Tools</a>
+    <a href="about.html">About</a>
   </nav>
 </header>
 
@@ -565,6 +593,7 @@
   <div style="margin-top:8px">
     <a href="index.html">All Calculators</a>
     <a href="bmi-calculator.html">BMI Calculator</a>
+    <a href="about.html">About</a>
     <a href="privacy.html">Privacy Policy</a>
     <a href="contact.html">Contact</a>
   </div>

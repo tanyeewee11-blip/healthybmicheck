@@ -34,6 +34,28 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is BMI calculated for children?","acceptedAnswer":{"@type":"Answer","text":"For children and teenagers aged 2–17, BMI is calculated the same way as adults (weight divided by height squared), but the result is interpreted differently. Instead of fixed categories, a child's BMI is compared to other children of the same age and sex using CDC growth charts. The result is a percentile — for example, the 75th percentile means the child's BMI is higher than 75% of children the same age and sex."}},{"@type":"Question","name":"What is a healthy BMI percentile for children?","acceptedAnswer":{"@type":"Answer","text":"According to the CDC, a healthy weight for children is a BMI between the 5th and 85th percentile for their age and sex. Below the 5th percentile is considered underweight. Between the 85th and 95th percentile is overweight. At or above the 95th percentile is considered obese."}},{"@type":"Question","name":"Is BMI accurate for children?","acceptedAnswer":{"@type":"Answer","text":"BMI is a useful screening tool for children but is not a direct measure of body fat. A child can have a high BMI due to a large frame or high muscle mass, not excess fat. The BMI-for-age percentile method accounts for normal growth differences, but results should always be interpreted alongside a doctor's assessment, not used as a standalone diagnosis."}}]}</script>
 
   <style>
+    header {
+      background: var(--ink);
+      color: #fff;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2.5px solid #2D6A4F;
+    }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
+    .logo span { color: #7EC8A4; }
+    header a { text-decoration: none; color: inherit; }
+    nav { display: flex; align-items: center; gap: 4px; }
+    nav a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: .85rem;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: color .2s, background .2s;
+    }
+    nav a:hover { color: #fff; background: rgba(255,255,255,0.08); }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -56,13 +78,6 @@
     }
 
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; }
-
-    header { background: var(--ink); color: #fff; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
-    .logo span { color: #7EC8A4; }
-    header a { text-decoration: none; color: inherit; }
-    nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; margin-left: 20px; transition: color .2s; }
-    nav a:hover { color: #fff; }
 
     .hero { text-align: center; padding: 56px 24px 32px; max-width: 640px; margin: 0 auto; }
     .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 16px; }
@@ -165,14 +180,26 @@
     .related-links a { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; text-decoration: none; color: var(--ink); font-size: 0.875rem; }
     .related-links a:hover { border-color: var(--accent); color: var(--accent); }
 
-    footer { background: var(--ink); color: rgba(255,255,255,0.4); text-align: center; padding: 24px; font-size: 0.8rem; line-height: 1.8; }
-    footer a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 8px; }
-    footer a:hover { color: #fff; }
-
     @media (max-width: 640px) {
       .article-section { padding: 24px 20px; }
       .input-row-3 { grid-template-columns: 1fr 1fr; }
     }
+      footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.8rem;
+      line-height: 1.9;
+      border-top: 2.5px solid #2D6A4F;
+    }
+    footer a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      margin: 0 8px;
+      transition: color .2s;
+    }
+    footer a:hover { color: #7EC8A4; }
   </style>
 </head>
 <body>
@@ -180,9 +207,10 @@
 <header>
   <div class="logo"><a href="index.html">healthy<span>bmicheck</span>.com</a></div>
   <nav>
-    <a href="#percentile-table">Percentile Table</a>
-    <a href="#faq">FAQ</a>
-    <a href="bmi-calculator.html">Adult BMI</a>
+    <a href="bmi-calculator.html">BMI</a>
+    <a href="calorie-calculator.html">Calories</a>
+    <a href="index.html">All Tools</a>
+    <a href="about.html">About</a>
   </nav>
 </header>
 
@@ -437,6 +465,7 @@
   <div style="margin-top:8px">
     <a href="index.html">All Calculators</a>
     <a href="bmi-calculator.html">BMI Calculator</a>
+    <a href="about.html">About</a>
     <a href="privacy.html">Privacy Policy</a>
     <a href="contact.html">Contact</a>
   </div>

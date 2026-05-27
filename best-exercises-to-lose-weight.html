@@ -17,14 +17,31 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
   <style>
+    header {
+      background: var(--ink);
+      color: #fff;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2.5px solid #2D6A4F;
+    }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
+    .logo span { color: #7EC8A4; }
+    header a { text-decoration: none; color: inherit; }
+    nav { display: flex; align-items: center; gap: 4px; }
+    nav a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: .85rem;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: color .2s, background .2s;
+    }
+    nav a:hover { color: #fff; background: rgba(255,255,255,0.08); }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --bg: #F7F4EF; --surface: #FFFFFF; --ink: #1A1714; --ink2: #6B6560; --ink3: #A09A94; --accent: #2D6A4F; --accent-light: #D8EFE4; --border: #E5E0D8; --radius: 16px; }
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); }
-    header { background: var(--ink); color: #fff; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
-    .logo span { color: #7EC8A4; }
-    nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; margin-left: 20px; }
-    nav a:hover { color: #fff; }
     .article-wrap { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
     .breadcrumb { font-size: 0.8rem; color: var(--ink3); margin-bottom: 24px; }
     .breadcrumb a { color: var(--accent); text-decoration: none; }
@@ -64,8 +81,22 @@
     .related-links { display: flex; flex-wrap: wrap; gap: 10px; }
     .related-links a { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; text-decoration: none; color: var(--ink); font-size: 0.875rem; }
     .related-links a:hover { border-color: var(--accent); color: var(--accent); }
-    footer { background: var(--ink); color: rgba(255,255,255,0.4); text-align: center; padding: 24px; font-size: 0.8rem; line-height: 1.8; }
-    footer a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 8px; }
+        footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.8rem;
+      line-height: 1.9;
+      border-top: 2.5px solid #2D6A4F;
+    }
+    footer a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      margin: 0 8px;
+      transition: color .2s;
+    }
+    footer a:hover { color: #7EC8A4; }
   </style>
   <meta property="og:image" content="https://healthybmicheck.com/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -80,13 +111,12 @@
 </head>
 <body>
 <header>
-  <div class="logo"><a href="index.html" style="color:#fff;text-decoration:none">healthy<span>bmicheck</span>.com</a></div>
+  <div class="logo"><a href="index.html">healthy<span>bmicheck</span>.com</a></div>
   <nav>
-    <a href="health-profile.html">Health Profile</a>
     <a href="bmi-calculator.html">BMI</a>
     <a href="calorie-calculator.html">Calories</a>
     <a href="index.html">All Tools</a>
-    <a href="privacy.html">Privacy</a>
+    <a href="about.html">About</a>
   </nav>
 </header>
 <div class="article-wrap">
@@ -286,6 +316,7 @@
   <div style="margin-top:8px">
     <a href="index.html">All Calculators</a>
     <a href="bmi-calculator.html">BMI Calculator</a>
+    <a href="about.html">About</a>
     <a href="privacy.html">Privacy Policy</a>
     <a href="contact.html">Contact</a>
   </div>
