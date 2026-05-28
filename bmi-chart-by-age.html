@@ -86,6 +86,38 @@
       transition: color .2s;
     }
     footer a:hover { color: #7EC8A4; }
+  
+    /* Table of Contents */
+    .toc {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 28px;
+    }
+    .toc-title {
+      font-size: .8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .toc ol {
+      padding-left: 18px;
+      margin: 0;
+    }
+    .toc li {
+      margin-bottom: 5px;
+      font-size: .875rem;
+      line-height: 1.5;
+    }
+    .toc a {
+      color: var(--ink2);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .toc a:hover { color: var(--accent); }
   </style>
   <meta property="og:image" content="https://healthybmicheck.com/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -115,7 +147,20 @@
 
   <p>While the standard WHO BMI categories apply to all adults, research increasingly suggests that the health implications of a given BMI value shift as we age. A BMI of 27 carries different health risks for a 25-year-old than for a 70-year-old. This guide explains how BMI relates to age and what ranges are generally considered healthy across different life stages.</p>
 
-  <h2>Standard WHO BMI Categories (All Adults)</h2>
+    <div class="toc">
+      <div class="toc-title">📋 In This Article</div>
+      <ol>
+        <li><a href="#standard-who-bmi-categories-all-adults">Standard WHO BMI Categories (All Adults)</a></li>
+        <li><a href="#how-age-affects-healthy-bmi-ranges">How Age Affects Healthy BMI Ranges</a></li>
+        <li><a href="#bmi-reference-chart-by-age-group">BMI Reference Chart by Age Group</a></li>
+        <li><a href="#bmi-differences-between-men-and-women">BMI Differences Between Men and Women</a></li>
+        <li><a href="#bmi-and-ethnicity-important-adjustments">BMI and Ethnicity — Important Adjustments</a></li>
+        <li><a href="#when-bmi-is-less-useful">When BMI Is Less Useful</a></li>
+      </ol>
+    </div>
+
+
+  <h2 id="standard-who-bmi-categories-all-adults">Standard WHO BMI Categories (All Adults)</h2>
   <p>The World Health Organization's standard classification applies to adults aged 18 and over, regardless of age or sex:</p>
 
   <table>
@@ -130,7 +175,7 @@
     </tbody>
   </table>
 
-<h2>How Age Affects Healthy BMI Ranges</h2>
+<h2 id="how-age-affects-healthy-bmi-ranges">How Age Affects Healthy BMI Ranges</h2>
   <p>The standard BMI categories were developed primarily from studies of younger and middle-aged adults. As research on older populations has grown, several important patterns have emerged.</p>
 
   <h3>Young adults (18–35)</h3>
@@ -144,7 +189,7 @@
 
   <div class="callout"><p><strong>For older adults:</strong> If your BMI is in the 22–27 range and you are over 65, this is generally not a cause for concern. Muscle mass, physical strength, and functional fitness are arguably more important health indicators than BMI at this life stage.</p></div>
 
-  <h2>BMI Reference Chart by Age Group</h2>
+  <h2 id="bmi-reference-chart-by-age-group">BMI Reference Chart by Age Group</h2>
   <p>The following table shows generally recommended BMI ranges by age group, reflecting current research on optimal ranges across the lifespan. These are broader than the strict WHO categories and account for age-related changes in body composition.</p>
 
   <table>
@@ -159,10 +204,10 @@
     </tbody>
   </table>
 
-  <h2>BMI Differences Between Men and Women</h2>
+  <h2 id="bmi-differences-between-men-and-women">BMI Differences Between Men and Women</h2>
   <p>The BMI formula is the same for men and women, and the standard WHO categories apply to both. However, at the same BMI, women typically have a higher body fat percentage than men due to physiological differences in fat distribution and muscle mass. This means that a woman with a BMI of 24 may carry proportionally more body fat than a man with the same BMI, though both are within a healthy range by WHO standards.</p>
 
-  <h2>BMI and Ethnicity — Important Adjustments</h2>
+  <h2 id="bmi-and-ethnicity-important-adjustments">BMI and Ethnicity — Important Adjustments</h2>
   <p>Standard WHO BMI categories were developed from predominantly European population data. Research has since shown that people of East and South Asian descent tend to have higher body fat percentages at lower BMI values compared to people of European descent. As a result, several health organisations recommend lower BMI thresholds for Asian populations:</p>
   <ul>
     <li>Overweight: BMI ≥ 23 (instead of 25)</li>
@@ -170,7 +215,7 @@
   </ul>
   <p>This is particularly relevant in Malaysia, Singapore, and other parts of Southeast and East Asia, where the standard BMI categories may underestimate health risks in the local population.</p>
 
-  <h2>When BMI Is Less Useful</h2>
+  <h2 id="when-bmi-is-less-useful">When BMI Is Less Useful</h2>
   <p>BMI becomes a less reliable indicator in several situations:</p>
   <ul>
     <li><strong>Athletes and highly muscular individuals</strong> — high muscle mass can push BMI into the overweight range despite excellent health and low body fat.</li>

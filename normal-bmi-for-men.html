@@ -86,6 +86,38 @@
       transition: color .2s;
     }
     footer a:hover { color: #7EC8A4; }
+  
+    /* Table of Contents */
+    .toc {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 28px;
+    }
+    .toc-title {
+      font-size: .8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .toc ol {
+      padding-left: 18px;
+      margin: 0;
+    }
+    .toc li {
+      margin-bottom: 5px;
+      font-size: .875rem;
+      line-height: 1.5;
+    }
+    .toc a {
+      color: var(--ink2);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .toc a:hover { color: var(--accent); }
   </style>
   <meta property="og:image" content="https://healthybmicheck.com/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -115,7 +147,20 @@
 
   <p>BMI (Body Mass Index) is calculated the same way for men and women, but what constitutes a healthy or normal BMI for men has some important nuances — particularly around muscle mass, age, and ethnicity. This guide explains what a normal BMI means for men and how to interpret your result accurately.</p>
 
-  <h2>What Is a Normal BMI for Men?</h2>
+    <div class="toc">
+      <div class="toc-title">📋 In This Article</div>
+      <ol>
+        <li><a href="#what-is-a-normal-bmi-for-men">What Is a Normal BMI for Men?</a></li>
+        <li><a href="#normal-bmi-for-men-by-age">Normal BMI for Men by Age</a></li>
+        <li><a href="#why-bmi-can-be-misleading-for-men">Why BMI Can Be Misleading for Men</a></li>
+        <li><a href="#average-bmi-for-men-by-country">Average BMI for Men by Country</a></li>
+        <li><a href="#waist-circumference-for-men-an-important-companion-metric">Waist Circumference for Men — An Important Companion Metric</a></li>
+        <li><a href="#how-to-get-to-a-normal-bmi">How to Get to a Normal BMI</a></li>
+      </ol>
+    </div>
+
+
+  <h2 id="what-is-a-normal-bmi-for-men">What Is a Normal BMI for Men?</h2>
   <p>According to the World Health Organization, the standard healthy BMI range for adult men — as for women — is 18.5 to 24.9. A BMI in this range is associated with the lowest overall health risk for most adult men.</p>
 
   <table>
@@ -130,7 +175,7 @@
 
   <div class="callout"><p><strong>For Asian men:</strong> Research suggests that men of East and South Asian descent face higher health risks at lower BMI values. Many health organisations recommend using a lower overweight threshold of BMI 23 for Asian men, rather than the standard 25.</p></div>
 
-<h2>Normal BMI for Men by Age</h2>
+<h2 id="normal-bmi-for-men-by-age">Normal BMI for Men by Age</h2>
   <p>While the standard WHO categories apply to all adult men, research suggests that the optimal BMI range shifts slightly as men age. Older men with slightly higher BMI values often have better health outcomes than those at the lower end of the normal range, partly because lower BMI in older men frequently reflects muscle loss.</p>
 
   <table>
@@ -145,7 +190,7 @@
     </tbody>
   </table>
 
-  <h2>Why BMI Can Be Misleading for Men</h2>
+  <h2 id="why-bmi-can-be-misleading-for-men">Why BMI Can Be Misleading for Men</h2>
 
   <h3>Muscular men</h3>
   <p>BMI does not distinguish between muscle and fat. A man who trains regularly and has significant muscle mass may have a BMI in the overweight range (25–29.9) while having low body fat and excellent cardiovascular health. This is the most common reason BMI is considered a limited tool for athletic or muscular individuals.</p>
@@ -154,7 +199,7 @@
   <h3>Men with low muscle mass</h3>
   <p>Conversely, a man with a "normal" BMI but very little muscle mass — common in older or sedentary men — may have a higher body fat percentage than their BMI suggests. This pattern, sometimes called "skinny fat" or normal weight obesity, can still carry significant metabolic health risks.</p>
 
-  <h2>Average BMI for Men by Country</h2>
+  <h2 id="average-bmi-for-men-by-country">Average BMI for Men by Country</h2>
   <p>For context, the average BMI for adult men varies significantly around the world:</p>
   <table>
     <thead><tr><th>Country / Region</th><th>Average Male BMI</th></tr></thead>
@@ -169,7 +214,7 @@
   </table>
   <p>Most Western countries have average male BMI values in the overweight range, reflecting high rates of overweight and obesity in these populations.</p>
 
-  <h2>Waist Circumference for Men — An Important Companion Metric</h2>
+  <h2 id="waist-circumference-for-men-an-important-companion-metric">Waist Circumference for Men — An Important Companion Metric</h2>
   <p>Waist circumference is particularly useful for men because men tend to store excess fat in the abdominal area (visceral fat), which carries higher health risks than fat stored elsewhere. For men:</p>
   <ul>
     <li><strong>Below 94cm (37 inches)</strong> — low risk</li>
@@ -178,7 +223,7 @@
   </ul>
   <p>A man with a BMI of 27 and a waist circumference under 90cm is likely in a much better metabolic position than a man with the same BMI and a 105cm waist. Measuring both gives a more complete picture.</p>
 
-  <h2>How to Get to a Normal BMI</h2>
+  <h2 id="how-to-get-to-a-normal-bmi">How to Get to a Normal BMI</h2>
   <p>If your BMI is currently above the healthy range, the most effective approach combines:</p>
   <ul>
     <li>A moderate calorie deficit of 300–500 calories per day</li>

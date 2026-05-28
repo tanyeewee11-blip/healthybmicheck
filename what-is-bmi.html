@@ -209,6 +209,38 @@
       transition: color .2s;
     }
     footer a:hover { color: #7EC8A4; }
+  
+    /* Table of Contents */
+    .toc {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 28px;
+    }
+    .toc-title {
+      font-size: .8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .toc ol {
+      padding-left: 18px;
+      margin: 0;
+    }
+    .toc li {
+      margin-bottom: 5px;
+      font-size: .875rem;
+      line-height: 1.5;
+    }
+    .toc a {
+      color: var(--ink2);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .toc a:hover { color: var(--accent); }
   </style>
   <meta property="og:image" content="https://healthybmicheck.com/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -244,13 +276,27 @@
 
   <p>BMI, or Body Mass Index, is one of the most widely used tools in the world for assessing whether a person has a healthy body weight relative to their height. Doctors, health organisations, and researchers use it daily — yet many people are unsure exactly what it measures and what its limitations are.</p>
 
+    <div class="toc">
+      <div class="toc-title">📋 In This Article</div>
+      <ol>
+        <li><a href="#what-does-bmi-measure">What Does BMI Measure?</a></li>
+        <li><a href="#how-is-bmi-calculated">How is BMI Calculated?</a></li>
+        <li><a href="#bmi-categories-who-standard">BMI Categories (WHO Standard)</a></li>
+        <li><a href="#what-health-risks-are-associated-with-high-bmi">What Health Risks Are Associated with High BMI?</a></li>
+        <li><a href="#what-are-the-limitations-of-bmi">What Are the Limitations of BMI?</a></li>
+        <li><a href="#is-a-normal-bmi-always-healthy">Is a Normal BMI Always Healthy?</a></li>
+        <li><a href="#how-to-improve-your-bmi">How to Improve Your BMI</a></li>
+      </ol>
+    </div>
+
+
   <p>This guide explains what BMI is, how it is calculated, what the different ranges mean, and when BMI may not tell the full picture. You can also jump straight to our <a href="bmi-calculator.html">free BMI Calculator</a> to check your own number instantly.</p>
 
-  <h2>What Does BMI Measure?</h2>
+  <h2 id="what-does-bmi-measure">What Does BMI Measure?</h2>
   <p>BMI is a simple numerical value derived from a person's weight and height. It does not directly measure body fat, but it serves as a useful screening indicator to identify individuals who may be underweight, at a healthy weight, overweight, or obese. For a more detailed breakdown of body composition, our <a href="body-fat.html">Body Fat Calculator</a> can provide a more complete picture.</p>
   <p>The concept was developed in the 1830s by Belgian mathematician Adolphe Quetelet and later adopted by the World Health Organization (WHO) as a standard population health metric. Today, it remains one of the most practical tools available for initial weight assessment because it requires only two easily measured values: weight and height.</p>
 
-<h2>How is BMI Calculated?</h2>
+<h2 id="how-is-bmi-calculated">How is BMI Calculated?</h2>
   <p>The formula is straightforward and the same for both men and women:</p>
 
   <div class="formula-box">
@@ -267,7 +313,7 @@
   </div>
   <p>A BMI of 22.9 falls within the normal weight range. Want to skip the maths? Use our <a href="bmi-calculator.html">BMI Calculator</a> to get your result in seconds.</p>
 
-  <h2>BMI Categories (WHO Standard)</h2>
+  <h2 id="bmi-categories-who-standard">BMI Categories (WHO Standard)</h2>
   <p>The World Health Organization classifies BMI into the following categories for adults aged 18 and over. For a visual breakdown by age group, see our <a href="bmi-chart-by-age.html">BMI Chart by Age</a>.</p>
 
   <table class="bmi-table">
@@ -316,7 +362,7 @@
     <p><strong>Note:</strong> These ranges apply to adults aged 18 and over. Children and teenagers use age- and sex-specific BMI percentile charts, as body composition changes significantly during growth.</p>
   </div>
 
-  <h2>What Health Risks Are Associated with High BMI?</h2>
+  <h2 id="what-health-risks-are-associated-with-high-bmi">What Health Risks Are Associated with High BMI?</h2>
   <p>A higher BMI, particularly in the overweight and obese ranges, is associated with an increased risk of several serious health conditions, including:</p>
   <ul>
     <li>Type 2 diabetes</li>
@@ -329,7 +375,7 @@
   </ul>
   <p>It is important to understand that BMI is a risk indicator, not a diagnosis. Many other factors — such as diet, physical activity, genetics, and where body fat is stored — also influence health outcomes.</p>
 
-  <h2>What Are the Limitations of BMI?</h2>
+  <h2 id="what-are-the-limitations-of-bmi">What Are the Limitations of BMI?</h2>
   <p>While BMI is a useful population-level screening tool, it has well-recognised limitations when applied to individuals:</p>
 
   <h3>It does not distinguish between muscle and fat</h3>
@@ -348,12 +394,12 @@
     <p><strong>Important:</strong> BMI is a screening tool, not a diagnostic instrument. Always consult a qualified healthcare professional for a complete and personalised health assessment.</p>
   </div>
 
-  <h2>Is a Normal BMI Always Healthy?</h2>
+  <h2 id="is-a-normal-bmi-always-healthy">Is a Normal BMI Always Healthy?</h2>
   <p>Not necessarily. A person can have a BMI within the normal range and still have metabolic risk factors such as high blood pressure, elevated blood sugar, or unfavourable cholesterol levels. This is sometimes referred to as "metabolically obese, normal weight" (MONW).</p>
   <p>On the other hand, some people with a BMI slightly above the normal range may have excellent metabolic health, particularly if they are physically active and have healthy blood markers.</p>
   <p>BMI works best as one data point among many, not as a standalone measure of health. Our <a href="health-profile.html">Health Profile</a> tool combines BMI with several other key metrics to give you a more complete picture.</p>
 
-  <h2>How to Improve Your BMI</h2>
+  <h2 id="how-to-improve-your-bmi">How to Improve Your BMI</h2>
   <p>If your BMI falls outside the healthy range, there are evidence-based strategies that can help. You may also find it useful to check our guide on <a href="how-to-lower-bmi.html">how to lower your BMI</a> for a step-by-step approach.</p>
 
   <h3>For those who are overweight or obese</h3>

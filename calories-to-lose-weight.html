@@ -86,6 +86,38 @@
       transition: color .2s;
     }
     footer a:hover { color: #7EC8A4; }
+  
+    /* Table of Contents */
+    .toc {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 28px;
+    }
+    .toc-title {
+      font-size: .8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .toc ol {
+      padding-left: 18px;
+      margin: 0;
+    }
+    .toc li {
+      margin-bottom: 5px;
+      font-size: .875rem;
+      line-height: 1.5;
+    }
+    .toc a {
+      color: var(--ink2);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .toc a:hover { color: var(--accent); }
   </style>
   <meta property="og:image" content="https://healthybmicheck.com/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -115,7 +147,20 @@
 
   <p>Calories are the foundation of weight management. Whether you want to lose a few kilograms or make a significant lifestyle change, understanding how many calories you need is the most important first step. This guide explains the science clearly and gives you a practical framework you can use today.</p>
 
-  <h2>The Basic Principle: Calorie Deficit</h2>
+    <div class="toc">
+      <div class="toc-title">📋 In This Article</div>
+      <ol>
+        <li><a href="#the-basic-principle-calorie-deficit">The Basic Principle: Calorie Deficit</a></li>
+        <li><a href="#step-2-set-your-calorie-target">Step 2 — Set Your Calorie Target</a></li>
+        <li><a href="#why-calorie-counts-are-estimates">Why Calorie Counts Are Estimates</a></li>
+        <li><a href="#protein-the-most-important-macronutrient-for-weight-loss">Protein: The Most Important Macronutrient for Weight Loss</a></li>
+        <li><a href="#does-exercise-change-the-equation">Does Exercise Change the Equation?</a></li>
+        <li><a href="#realistic-expectations">Realistic Expectations</a></li>
+      </ol>
+    </div>
+
+
+  <h2 id="the-basic-principle-calorie-deficit">The Basic Principle: Calorie Deficit</h2>
   <p>Weight loss happens when you consistently consume fewer calories than your body uses. This is called a calorie deficit. Your body then draws on stored fat to make up the difference, which over time reduces your body weight and BMI.</p>
 
   <div class="formula-box">
@@ -139,7 +184,7 @@
     </tbody>
   </table>
 
-  <h2>Step 2 — Set Your Calorie Target</h2>
+  <h2 id="step-2-set-your-calorie-target">Step 2 — Set Your Calorie Target</h2>
   <p>Once you know your TDEE, subtract your desired daily deficit to get your weight loss calorie target.</p>
 
   <table>
@@ -154,21 +199,21 @@
 
   <div class="callout"><p><strong>Important:</strong> Never eat below 1,200 calories per day (women) or 1,500 calories per day (men) without medical supervision. Very low calorie intake causes muscle loss, nutritional deficiencies, and metabolic adaptation that makes long-term weight maintenance harder.</p></div>
 
-  <h2>Why Calorie Counts Are Estimates</h2>
+  <h2 id="why-calorie-counts-are-estimates">Why Calorie Counts Are Estimates</h2>
   <p>No calorie calculator — including ours — gives a perfectly precise figure. TDEE estimates can vary by 10–15% from actual values due to individual differences in metabolism, gut bacteria, and how accurately activity levels are reported. Use your calculated TDEE as a starting point and adjust based on real-world results after 2–3 weeks.</p>
 
   <h3>The 2-week adjustment rule</h3>
   <p>If you are eating at your calculated deficit and not losing weight after two weeks, reduce your daily intake by a further 100–150 calories and reassess. If you are losing weight faster than expected and feeling fatigued, increase your intake slightly.</p>
 
-  <h2>Protein: The Most Important Macronutrient for Weight Loss</h2>
+  <h2 id="protein-the-most-important-macronutrient-for-weight-loss">Protein: The Most Important Macronutrient for Weight Loss</h2>
   <p>Of all the dietary factors that influence weight loss outcomes, protein intake has the strongest evidence. High protein diets support weight loss by reducing hunger, preserving muscle mass during a calorie deficit, and increasing the thermic effect of food (the calories burned digesting it).</p>
   <p>For weight loss, aim for 1.6–2.2g of protein per kilogram of body weight per day. Good sources include chicken, fish, eggs, Greek yoghurt, tofu, legumes, and cottage cheese.</p>
 
-  <h2>Does Exercise Change the Equation?</h2>
+  <h2 id="does-exercise-change-the-equation">Does Exercise Change the Equation?</h2>
   <p>Our calorie calculator already factors in your activity level, so you should not need to "eat back" calories burned during planned workouts. However, if you add significant new exercise on top of your usual routine, you may need to eat slightly more to avoid an overly aggressive deficit.</p>
   <p>Exercise is valuable for weight loss not just because it burns calories, but because it preserves muscle mass, improves insulin sensitivity, and supports the metabolic adaptations that help maintain weight loss long term.</p>
 
-  <h2>Realistic Expectations</h2>
+  <h2 id="realistic-expectations">Realistic Expectations</h2>
   <p>Weight loss is rarely linear. You may lose 1.5 kg one week and nothing the next, due to water retention, hormonal fluctuations, and digestive factors. Judge your progress over 3–4 week periods rather than day to day.</p>
   <p>A sustainable rate of 0.5 kg per week means losing 6 kg over three months — a meaningful and health-improving change that is achievable without extreme restriction.</p>
 

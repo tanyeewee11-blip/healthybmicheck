@@ -85,6 +85,38 @@
       transition: color .2s;
     }
     footer a:hover { color: #7EC8A4; }
+  
+    /* Table of Contents */
+    .toc {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 28px;
+    }
+    .toc-title {
+      font-size: .8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .toc ol {
+      padding-left: 18px;
+      margin: 0;
+    }
+    .toc li {
+      margin-bottom: 5px;
+      font-size: .875rem;
+      line-height: 1.5;
+    }
+    .toc a {
+      color: var(--ink2);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .toc a:hover { color: var(--accent); }
   </style>
   <meta property="og:image" content="https://healthybmicheck.com/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -114,7 +146,20 @@
 
   <p>The number of calories you should eat each day depends on several personal factors — your age, sex, height, weight, and how active you are. There is no single answer that works for everyone. However, understanding how to calculate your personal calorie needs is one of the most useful things you can do for your health and weight management.</p>
 
-  <h2>General Calorie Guidelines</h2>
+    <div class="toc">
+      <div class="toc-title">📋 In This Article</div>
+      <ol>
+        <li><a href="#general-calorie-guidelines">General Calorie Guidelines</a></li>
+        <li><a href="#how-calorie-needs-change-with-age">How Calorie Needs Change with Age</a></li>
+        <li><a href="#calories-by-goal">Calories by Goal</a></li>
+        <li><a href="#why-2000-calories-a-day-is-not-right-for-everyone">Why "2,000 Calories a Day" Is Not Right for Everyone</a></li>
+        <li><a href="#what-affects-how-many-calories-you-burn">What Affects How Many Calories You Burn</a></li>
+        <li><a href="#how-to-track-whether-you-are-eating-the-right-amount">How to Track Whether You Are Eating the Right Amount</a></li>
+      </ol>
+    </div>
+
+
+  <h2 id="general-calorie-guidelines">General Calorie Guidelines</h2>
   <p>As a rough starting point, general daily calorie guidelines by sex are:</p>
 
   <table>
@@ -127,7 +172,7 @@
 
   <div class="callout"><p><strong>Important:</strong> These are averages. Your actual needs depend on your specific height, weight, age, and activity level. Use our calorie calculator below for a personalised figure.</p></div>
 
-<h2>How Calorie Needs Change with Age</h2>
+<h2 id="how-calorie-needs-change-with-age">How Calorie Needs Change with Age</h2>
   <p>Calorie needs generally decrease with age, primarily because muscle mass tends to decline and physical activity often reduces. Here are approximate daily calorie needs for moderately active adults by age group:</p>
 
   <table>
@@ -141,7 +186,7 @@
     </tbody>
   </table>
 
-  <h2>Calories by Goal</h2>
+  <h2 id="calories-by-goal">Calories by Goal</h2>
 
   <h3>To maintain your current weight</h3>
   <p>Eat at your TDEE (Total Daily Energy Expenditure) — the total calories your body burns in a day including all activity. Our calorie calculator computes this for you based on your personal details.</p>
@@ -152,7 +197,7 @@
   <h3>To gain muscle</h3>
   <p>Eat 200–300 calories above your TDEE per day, combined with consistent strength training. This modest surplus supports muscle growth while minimising unnecessary fat gain.</p>
 
-  <h2>Why "2,000 Calories a Day" Is Not Right for Everyone</h2>
+  <h2 id="why-2000-calories-a-day-is-not-right-for-everyone">Why "2,000 Calories a Day" Is Not Right for Everyone</h2>
   <p>The 2,000 calorie figure you see on food labels was chosen as a round number for labelling purposes and represents an average for a moderately active adult. In reality, calorie needs vary dramatically:</p>
   <ul>
     <li>A sedentary 55-year-old woman at 55kg may need only 1,500 calories to maintain weight</li>
@@ -161,7 +206,7 @@
   </ul>
   <p>Using your personal details to calculate your needs gives a far more useful starting point than a generic recommendation.</p>
 
-  <h2>What Affects How Many Calories You Burn</h2>
+  <h2 id="what-affects-how-many-calories-you-burn">What Affects How Many Calories You Burn</h2>
 
   <h3>Basal Metabolic Rate (BMR)</h3>
   <p>Your BMR is the calories your body burns at complete rest — just to keep your heart beating, lungs breathing, and cells functioning. It accounts for roughly 60–70% of total daily calorie burn and is largely determined by your body size and composition.</p>
@@ -172,7 +217,7 @@
   <h3>Thermic effect of food</h3>
   <p>Digesting food burns calories — typically 5–10% of total daily expenditure. Protein has the highest thermic effect (20–30%), which is one reason high-protein diets are effective for weight management.</p>
 
-  <h2>How to Track Whether You Are Eating the Right Amount</h2>
+  <h2 id="how-to-track-whether-you-are-eating-the-right-amount">How to Track Whether You Are Eating the Right Amount</h2>
   <p>The most reliable feedback is your weight trend over 2–4 weeks:</p>
   <ul>
     <li>If your weight is stable, you are eating at approximately your TDEE</li>
