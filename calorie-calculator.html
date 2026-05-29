@@ -7,6 +7,16 @@
   <link rel="apple-touch-icon" href="/favicon_512x512.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-adsense-account" content="ca-pub-7723301737736770">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HNT40MVZPK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HNT40MVZPK');
+  </script>
+
   <title>Calorie Calculator — Free Daily Calorie Needs Calculator</title>
   <link rel="canonical" href="https://healthybmicheck.com/calorie-calculator.html">
   <meta name="description" content="Calculate your daily calorie needs instantly. Based on your age, weight, height, and activity level. Find your TDEE and calories for weight loss or gain.">
@@ -206,8 +216,17 @@
       transition: color .2s;
     }
     footer a:hover { color: #7EC8A4; }
-  </style>
+      .breadcrumb { font-size: 0.8rem; color: var(--ink3); margin-bottom: 20px; }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is TDEE?", "acceptedAnswer": {"@type": "Answer", "text": "TDEE stands for Total Daily Energy Expenditure — the total number of calories your body burns in a day. It accounts for your basal metabolic rate (calories burned at rest) plus additional calories burned through physical activity. Eating at your TDEE keeps your weight stable."}}, {"@type": "Question", "name": "How many calories should I eat to lose weight?", "acceptedAnswer": {"@type": "Answer", "text": "A safe and sustainable calorie deficit for weight loss is 500 calories per day below your TDEE, which typically results in losing approximately 0.5 kg (1 lb) per week. Deficits larger than 1000 calories per day are generally not recommended without medical supervision."}}, {"@type": "Question", "name": "What formula does this calculator use?", "acceptedAnswer": {"@type": "Answer", "text": "This calculator uses the Mifflin-St Jeor equation, which is considered the most accurate formula for estimating Basal Metabolic Rate (BMR) for most people. The BMR is then multiplied by an activity factor to produce your TDEE."}}, {"@type": "Question", "name": "Why are my calorie needs different from a friend's?", "acceptedAnswer": {"@type": "Answer", "text": "Calorie needs vary significantly based on age, sex, height, weight, and activity level. Men generally burn more calories than women due to higher muscle mass. Younger people tend to have higher metabolic rates. Activity level is often the biggest variable between individuals."}}, {"@type": "Question", "name": "Should I eat back calories burned during exercise?", "acceptedAnswer": {"@type": "Answer", "text": "This calculator already factors in your activity level, so you do not need to add extra calories for planned workouts. If you have an unexpectedly intense workout, eating back a portion of those calories is reasonable, but be aware that fitness trackers often overestimate calories burned."}}]}</script>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://healthybmicheck.com/calorie-calculator.html">
+  <meta property="og:title" content="Calorie Calculator — Free Daily Calorie Needs Calculator">
+  <meta property="og:description" content="Calculate your daily calorie needs instantly. Based on your age, weight, height, and activity level. Find your TDEE and calories for weight loss or gain.">
+  <meta name="twitter:title" content="Calorie Calculator — Free Daily Calorie Needs Calculator">
+  <meta name="twitter:description" content="Calculate your daily calorie needs instantly. Based on your age, weight, height, and activity level. Find your TDEE and calories for weight loss or gain.">
   <meta property="og:image" content="https://healthybmicheck.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -215,6 +234,14 @@
   <meta name="twitter:image" content="https://healthybmicheck.com/og-image.png">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7723301737736770"
        crossorigin="anonymous"></script>
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://healthybmicheck.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Calorie Calculator", "item": "https://healthybmicheck.com/calorie-calculator.html"}
+    ]
+  }</script>
 </head>
 <body>
 
@@ -229,6 +256,7 @@
 </header>
 
 <div class="hero">
+    <div class="breadcrumb"><a href="index.html">Home</a> › Calorie Calculator</div>
   <h1>Free <em>Calorie</em> Calculator</h1>
   <p>Find out exactly how many calories your body needs daily — and how to adjust for your health goals.</p>
 </div>
@@ -252,7 +280,7 @@
     <div class="input-group">
       <label>Age</label>
       <div class="input-wrap">
-        <input type="number" id="age" placeholder="25" min="15" max="100">
+        <input type="number" id="age" aria-label="Age" placeholder="25" min="15" max="100">
         <span class="unit-badge">yrs</span>
       </div>
     </div>
@@ -260,14 +288,14 @@
     <div class="input-group" id="metric-weight-wrap">
       <label>Weight</label>
       <div class="input-wrap">
-        <input type="number" id="weight-kg" placeholder="70" min="1" max="500">
+        <input type="number" id="weight-kg" aria-label="Weight (kg)" placeholder="70" min="1" max="500">
         <span class="unit-badge">kg</span>
       </div>
     </div>
     <div class="input-group" id="imperial-weight-wrap" style="display:none">
       <label>Weight</label>
       <div class="input-wrap">
-        <input type="number" id="weight-lb" placeholder="154" min="1" max="1100">
+        <input type="number" id="weight-lb" aria-label="Weight (lb)" placeholder="154" min="1" max="1100">
         <span class="unit-badge">lb</span>
       </div>
     </div>
@@ -275,7 +303,7 @@
     <div class="input-group" id="metric-height-wrap">
       <label>Height</label>
       <div class="input-wrap">
-        <input type="number" id="height-cm" placeholder="170" min="1" max="300">
+        <input type="number" id="height-cm" aria-label="Height (cm)" placeholder="170" min="1" max="300">
         <span class="unit-badge">cm</span>
       </div>
     </div>
@@ -283,11 +311,11 @@
       <label>Height</label>
       <div class="input-row">
         <div class="input-wrap">
-          <input type="number" id="height-ft" placeholder="5" min="1" max="9">
+          <input type="number" id="height-ft" aria-label="Height (feet)" placeholder="5" min="1" max="9">
           <span class="unit-badge">ft</span>
         </div>
         <div class="input-wrap">
-          <input type="number" id="height-in" placeholder="7" min="0" max="11">
+          <input type="number" id="height-in" aria-label="Height (inches)" placeholder="7" min="0" max="11">
           <span class="unit-badge">in</span>
         </div>
       </div>

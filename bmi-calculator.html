@@ -7,10 +7,20 @@
   <link rel="apple-touch-icon" href="/favicon_512x512.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-adsense-account" content="ca-pub-7723301737736770">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HNT40MVZPK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HNT40MVZPK');
+  </script>
+
 
   <title>BMI Calculator — Free Body Mass Index Calculator</title>
   <link rel="canonical" href="https://healthybmicheck.com/bmi-calculator.html">
-  <meta name="description" content="Calculate your BMI instantly. Free Body Mass Index calculator with weight category, ideal weight range, and health tips. Supports both Metric and Imperial units.">
+  <meta name="description" content="Calculate your BMI instantly. Free Body Mass Index calculator with weight category, ideal weight range, and health tips. Supports both Metric and Imperial.">
   <meta name="keywords" content="BMI calculator, body mass index, ideal weight, healthy weight, BMI chart">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -392,8 +402,17 @@
       transition: color .2s;
     }
     footer a:hover { color: #7EC8A4; }
-  </style>
+      .breadcrumb { font-size: 0.8rem; color: var(--ink3); margin-bottom: 20px; }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is BMI calculated?", "acceptedAnswer": {"@type": "Answer", "text": "BMI is calculated by dividing your weight in kilograms by the square of your height in meters (kg/m²). For example, a person weighing 70 kg at 1.75 m has a BMI of 70 ÷ (1.75 × 1.75) = 22.9."}}]}</script>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://healthybmicheck.com/bmi-calculator.html">
+  <meta property="og:title" content="BMI Calculator — Free Body Mass Index Calculator">
+  <meta property="og:description" content="Calculate your BMI instantly. Free Body Mass Index calculator with weight category, ideal weight range, and health tips. Supports both Metric and Imperial.">
+  <meta name="twitter:title" content="BMI Calculator — Free Body Mass Index Calculator">
+  <meta name="twitter:description" content="Calculate your BMI instantly. Free Body Mass Index calculator with weight category, ideal weight range, and health tips. Supports both Metric and Imperial units.">
   <meta property="og:image" content="https://healthybmicheck.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -401,6 +420,14 @@
   <meta name="twitter:image" content="https://healthybmicheck.com/og-image.png">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7723301737736770"
        crossorigin="anonymous"></script>
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://healthybmicheck.com/"},
+      {"@type": "ListItem", "position": 2, "name": "BMI Calculator", "item": "https://healthybmicheck.com/bmi-calculator.html"}
+    ]
+  }</script>
 </head>
 <body>
 
@@ -418,6 +445,7 @@
 </div>
 
 <div class="hero">
+    <div class="breadcrumb"><a href="index.html">Home</a> › BMI Calculator</div>
   <h1>Free <em>BMI</em> Calculator</h1>
   <p>Find out your Body Mass Index in seconds. Supports metric and imperial units with instant health insights.</p>
 </div>
@@ -433,7 +461,7 @@
     <div class="input-group" id="metric-inputs">
       <label>Weight</label>
       <div class="input-wrap">
-        <input type="number" id="weight-kg" placeholder="70">
+        <input type="number" id="weight-kg" aria-label="Weight (kg)" placeholder="70">
         <span class="unit-badge">kg</span>
       </div>
     </div>
@@ -441,7 +469,7 @@
     <div class="input-group" id="imperial-inputs" style="display:none">
       <label>Weight</label>
       <div class="input-wrap">
-        <input type="number" id="weight-lb" placeholder="154">
+        <input type="number" id="weight-lb" aria-label="Weight (lb)" placeholder="154">
         <span class="unit-badge">lb</span>
       </div>
     </div>
@@ -450,18 +478,18 @@
       <label>Height</label>
       <div id="metric-height">
         <div class="input-wrap">
-          <input type="number" id="height-cm" placeholder="170">
+          <input type="number" id="height-cm" aria-label="Height (cm)" placeholder="170">
           <span class="unit-badge">cm</span>
         </div>
       </div>
       <div id="imperial-height" style="display:none">
         <div class="input-row">
           <div class="input-wrap">
-            <input type="number" id="height-ft" placeholder="5">
+            <input type="number" id="height-ft" aria-label="Height (feet)" placeholder="5">
             <span class="unit-badge">ft</span>
           </div>
           <div class="input-wrap">
-            <input type="number" id="height-in" placeholder="7">
+            <input type="number" id="height-in" aria-label="Height (inches)" placeholder="7">
             <span class="unit-badge">in</span>
           </div>
         </div>
@@ -664,7 +692,6 @@
     // UI Update logic (Simplified for brevity)
     document.getElementById('bmi-number').textContent = bmiRound;
     document.getElementById('result-card').classList.add('visible');
-    localStorage.setItem('bmi_result', bmiRound + ' · ' + cat);
     
     // Scale pointer logic
     const pct = Math.min(Math.max((bmi - 15) / (40 - 15) * 100, 2), 98);
@@ -672,6 +699,7 @@
     
     // Category text
     let cat = bmi < 18.5 ? 'Underweight' : bmi < 25 ? 'Normal' : bmi < 30 ? 'Overweight' : 'Obese';
+    localStorage.setItem('bmi_result', bmiRound + ' · ' + cat);
     document.getElementById('bmi-category').textContent = cat;
     const tips = {
       Underweight: "Your BMI suggests you may be underweight. Consider speaking with a healthcare provider or dietitian about safely increasing calorie and nutrient intake. Our <a href='high-protein-foods.html'>high-protein foods guide</a> may also help.",
