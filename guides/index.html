@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon_32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon_192x192.png">
+  <link rel="apple-touch-icon" href="/favicon_512x512.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="google-adsense-account" content="ca-pub-7723301737736770">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HNT40MVZPK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HNT40MVZPK');
+  </script>
+
+  <title>Health Guides — BMI, Calories, Nutrition & Weight Loss | Healthy BMI Check</title>
+  <link rel="canonical" href="https://healthybmicheck.com/guides/">
+  <meta name="description" content="Evidence-based health guides covering BMI, calorie needs, weight loss, nutrition, and exercise. Free, research-backed articles to help you reach your health goals.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Health Guides",
+    "url": "https://healthybmicheck.com/guides/",
+    "description": "Evidence-based health guides covering BMI, calorie needs, weight loss, nutrition, and exercise.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Healthy BMI Check",
+      "url": "https://healthybmicheck.com"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #F7F4EF;
+      --surface: #FFFFFF;
+      --ink: #1A1714;
+      --ink2: #6B6560;
+      --ink3: #A09A94;
+      --accent: #2D6A4F;
+      --accent-light: #D8EFE4;
+      --border: #E5E0D8;
+      --radius: 16px;
+      --shadow: 0 2px 16px rgba(26,23,20,0.07);
+    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; }
+
+    /* Header */
+    header { background: var(--ink); color: #fff; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2.5px solid #2D6A4F; }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; }
+    .logo span { color: #7EC8A4; }
+    header a { text-decoration: none; color: inherit; }
+    nav { display: flex; align-items: center; gap: 4px; }
+    nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: .85rem; padding: 6px 12px; border-radius: 8px; transition: color .2s, background .2s; }
+    nav a:hover, nav a.active { color: #fff; background: rgba(255,255,255,0.08); }
+    nav a.active { color: #7EC8A4; }
+
+    /* Hero */
+    .hero { text-align: center; padding: 48px 24px 36px; max-width: 640px; margin: 0 auto; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 16px; }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero p { color: var(--ink2); font-size: 1.05rem; line-height: 1.65; }
+
+    /* Filter tabs */
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; padding: 0 24px 32px; max-width: 800px; margin: 0 auto; }
+    .filter-btn { background: var(--surface); border: 1.5px solid var(--border); border-radius: 100px; padding: 7px 18px; font-size: .85rem; font-family: inherit; cursor: pointer; color: var(--ink2); transition: all .2s; }
+    .filter-btn:hover, .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    /* Grid */
+    .guides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; max-width: 1080px; margin: 0 auto; padding: 0 24px 64px; }
+    .guide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 10px; box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s, border-color .2s; }
+    .guide-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,23,20,.10); border-color: var(--accent-light); }
+    .card-top { display: flex; align-items: center; gap: 12px; }
+    .card-icon { width: 44px; height: 44px; background: var(--bg); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+    .card-tag { font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+    .guide-card h2 { font-family: 'DM Serif Display', serif; font-size: 1.15rem; line-height: 1.3; }
+    .guide-card p { font-size: .875rem; color: var(--ink2); line-height: 1.6; flex: 1; }
+    .card-arrow { font-size: .8rem; color: var(--ink3); margin-top: 4px; }
+    .guide-card:hover .card-arrow { color: var(--accent); }
+
+    /* Section label */
+    .section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; max-width: 1080px; margin: 0 auto 8px; padding: 0 24px; }
+    .section-title { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--ink); max-width: 1080px; margin: 0 auto 20px; padding: 0 24px; }
+
+    /* CTA strip */
+    .cta-strip { background: var(--ink); color: #fff; text-align: center; padding: 40px 24px; margin-top: 16px; }
+    .cta-strip h2 { font-family: 'DM Serif Display', serif; font-size: 1.6rem; margin-bottom: 12px; }
+    .cta-strip p { color: rgba(255,255,255,0.65); margin-bottom: 24px; font-size: .95rem; }
+    .cta-btn { display: inline-block; background: #7EC8A4; color: var(--ink); font-weight: 600; padding: 12px 28px; border-radius: 100px; text-decoration: none; font-size: .95rem; transition: background .2s; }
+    .cta-btn:hover { background: #5DB88A; }
+
+    /* Footer */
+    footer { background: var(--ink); color: rgba(255,255,255,0.55); text-align: center; padding: 24px; font-size: .85rem; }
+    footer a { color: rgba(255,255,255,0.55); text-decoration: none; margin: 0 10px; }
+    footer a:hover { color: #fff; }
+
+    /* Hidden card for filter */
+    .guide-card.hidden { display: none; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    .guide-card { animation: fadeUp 0.4s ease both; }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="../index.html" class="logo">Healthy<span>BMI</span>Check</a>
+  <nav>
+    <a href="../bmi-calculator.html">BMI</a>
+    <a href="../calorie-calculator.html">Calories</a>
+    <a href="../index.html">All Tools</a>
+    <a href="index.html" class="active">Guides</a>
+    <a href="../about.html">About</a>
+  </nav>
+</header>
+
+<main>
+
+  <div class="hero">
+    <h1>Health <em>Guides</em></h1>
+    <p>Evidence-based articles on BMI, weight loss, nutrition, and exercise — written to help you understand your health, not just track numbers.</p>
+  </div>
+
+  <!-- Filter tabs -->
+  <div class="filters">
+    <button class="filter-btn active" onclick="filterCards('all')">All</button>
+    <button class="filter-btn" onclick="filterCards('BMI')">BMI</button>
+    <button class="filter-btn" onclick="filterCards('Calories')">Calories</button>
+    <button class="filter-btn" onclick="filterCards('Nutrition')">Nutrition</button>
+    <button class="filter-btn" onclick="filterCards('Exercise')">Exercise</button>
+    <button class="filter-btn" onclick="filterCards('Hydration')">Hydration</button>
+    <button class="filter-btn" onclick="filterCards('By Height')">By Height</button>
+    <button class="filter-btn" onclick="filterCards('By Age')">By Age</button>
+  </div>
+
+  <!-- All Guides Grid -->
+  <div class="guides-grid" id="guides-grid">
+
+    <!-- BMI -->
+    <a class="guide-card" href="../what-is-bmi.html" data-tag="BMI">
+      <div class="card-top"><div class="card-icon">📖</div><div><div class="card-tag">BMI</div></div></div>
+      <h2>What Is BMI?</h2>
+      <p>A complete explanation of Body Mass Index — how it's calculated, what it measures, and its limitations as a health indicator.</p>
+      <div class="card-arrow">Read guide →</div>
+    </a>
+
+    <a class="guide-card" href="../healthy-bmi-for-women.html" data-tag="BMI">
+      <div class="card-top"><div class="card-icon">👩</div><div><div class="card-tag">BMI</div></div></div>
+      <h2>Healthy BMI for Women</h2>
+      <p>What a healthy BMI range looks like for women at different life stages, including pregnancy and menopause considerations.</p>
+      <div class="card-arrow">Read guide →</div>
+    </a>
+
+    <a class="guide-card" href="../normal-bmi-for-men.html" data-tag="BMI">
+      <div class="card-top"><div class="card-icon">👨</div><div><div class="card-tag">BMI</div></div></div>
+      <h2>Normal BMI for Men</h2>
+      <p>BMI ranges, body composition differences, and health risk thresholds specific to men across different age groups.</p>
+      <div class="card-arrow">Read guide →</div>
+    </a>
+
+    <a class="guide-card" href="../bmi-chart-by-age.html" data-tag="BMI">
+      <div class="card-top"><div class="card-icon">📈</div><div><div class="card-tag">BMI</div></div></div>
+      <h2>BMI Chart by Age</h2>
+      <p>Visual BMI reference charts broken down by age group — see how healthy ranges shift as you get older.</p>
+      <div class="card-arrow">Read guide →</div>
+    </a>
+
+    <a class="guide-card" href="../how-to-lower-bmi.html" data-tag="BMI">
+      <div class="card-top"><div class="card-icon">⬇️</div><div><div class="card-tag">BMI</div></div></div>
+      <h2>How to Lower Your BMI</h2>
+      <p>Practical, evidence-based strategies for reducing BMI through sustainable changes to diet, exercise, and lifestyle.</p>
+      <div class="card-arrow">Read guide →</div>
+    </a>
+
+    <!-- Calories -->
+    <a class="guide-card" href="../how-many-calories-per-day.html" data-tag="Calories">
+      <div class="card-top"><div class="card-icon">🔢</div><div><div class="card-tag">Calories</div></div></div>
+      <h2>How Many Calories Per Day?</h2>
+      <p>How to calculate your daily calorie needs based on your age, sex, height, weight, and activity level using validated formulas.</p>
+      <div class="card-arrow">Read guide →</div>
+    </a>
+
+    <a class="guide-card" href="../calories-to-lose-weight.html" data-tag="Calories">
+      <div class="card-top"><div class="card-icon">⚖️</div><div><div class="card-tag">Calories</div></div></div>
+      <h2>Calories to Lose Weight</h2>
+      <p>How calorie deficits work, how large a deficit is safe, and how to set a realistic calorie target for steady weight loss.</p>
+      <div class="card-arrow">Read guide →</div>
+    </a>
+
+    <!-- Nutrition -->
+    <a class="guide-card" href="../high-protein-foods.html" data-tag="Nutrition">
+      <div class="card-top"><div class="card-icon">🥩</div><div><div class="card-tag">Nutrition</div></div></div>
+      <h2>High Protein Foods List</h2>
+      <p>A comprehensive list of the best dietary protein sources ranked by protein content per 100 g, with serving suggestions.</p>
+      <div class="card-arrow">Read guide →</div>
+    </a>
+
+    <!-- Hydration -->
+    <a class="guide-card" href="../how-much-water-per-day.html" data-tag="Hydration">
+      <div class="card-top"><div class="card-icon">💧</div><div><div class="card-tag">Hydration</div></div></div>
+      <h2>How Much Water Per Day?</h2>
+      <p>Daily water intake recommendations based on body weight, activity, and climate — plus signs of dehydration to watch for.</p>
+      <div class="card-arrow">Read guide →</div>
+    </a>
+
+    <!-- Exercise -->
+    <a class="guide-card" href="../best-exercises-to-lose-weight.html" data-tag="Exercise">
+      <div class="card-top"><div class="card-icon">🏃</div><div><div class="card-tag">Exercise</div></div></div>
+      <h2>Best Exercises to Lose Weight</h2>
+      <p>The most effective exercise types for weight loss ranked by calorie burn, accessibility, and long-term adherence.</p>
+      <div class="card-arrow">Read guide →</div>
+    </a>
+
+    <a class="guide-card" href="../how-to-lose-belly-fat.html" data-tag="Exercise">
+      <div class="card-top"><div class="card-icon">💪</div><div><div class="card-tag">Exercise</div></div></div>
+      <h2>How to Lose Belly Fat</h2>
+      <p>Evidence-based strategies for reducing visceral and subcutaneous abdominal fat — including what actually works and what doesn't.</p>
+      <div class="card-arrow">Read guide →</div>
+    </a>
+
+    <!-- By Height -->
+    <a class="guide-card" href="../healthy-weight-160cm-female.html" data-tag="By Height">
+      <div class="card-top"><div class="card-icon">📏</div><div><div class="card-tag">By Height</div></div></div>
+      <h2>Healthy Weight: 160 cm Women</h2>
+      <p>Healthy weight range, calorie needs, and height-specific health tips for women at 160 cm.</p>
+      <div class="card-arrow">Read guide →</div>
+    </a>
+
+    <a class="guide-card" href="../healthy-weight-165cm-female.html" data-tag="By Height">
+      <div class="card-top"><div class="card-icon">📏</div><div><div class="card-tag">By Height</div></div></div>
+      <h2>Healthy Weight: 165 cm Women</h2>
+      <p>Healthy weight range, calorie needs, and height-specific health tips for women at 165 cm.</p>
+      <div class="card-arrow">Read guide →</div>
+    </a>
+
+    <a class="guide-card" href="../healthy-weight-170cm-female.html" data-tag="By Height">
+      <div class="card-top"><div class="card-icon">📏</div><div><div class="card-tag">By Height</div></div></div>
+      <h2>Healthy Weight: 170 cm Women</h2>
+      <p>Healthy weight range, calorie needs, and height-specific health tips for women at 170 cm.</p>
+      <div class="card-arrow">Read guide →</div>
+    </a>
+
+    <a class="guide-card" href="../healthy-weight-170cm-male.html" data-tag="By Height">
+      <div class="card-top"><div class="card-icon">📏</div><div><div class="card-tag">By Height</div></div></div>
+      <h2>Healthy Weight: 170 cm Men</h2>
+      <p>Healthy weight range, calorie needs, and height-specific health tips for men at 170 cm.</p>
+      <div class="card-arrow">Read guide →</div>
+    </a>
+
+    <a class="guide-card" href="../healthy-weight-175cm-male.html" data-tag="By Height">
+      <div class="card-top"><div class="card-icon">📏</div><div><div class="card-tag">By Height</div></div></div>
+      <h2>Healthy Weight: 175 cm Men</h2>
+      <p>Healthy weight range, calorie needs, and height-specific health tips for men at 175 cm.</p>
+      <div class="card-arrow">Read guide →</div>
+    </a>
+
+    <a class="guide-card" href="../healthy-weight-5ft4in-female.html" data-tag="By Height">
+      <div class="card-top"><div class="card-icon">📏</div><div><div class="card-tag">By Height</div></div></div>
+      <h2>Healthy Weight: 5'4" Women</h2>
+      <p>Healthy weight range, calorie needs, and height-specific health tips for women at 5 feet 4 inches.</p>
+      <div class="card-arrow">Read guide →</div>
+    </a>
+
+    <a class="guide-card" href="../healthy-weight-5ft9in-male.html" data-tag="By Height">
+      <div class="card-top"><div class="card-icon">📏</div><div><div class="card-tag">By Height</div></div></div>
+      <h2>Healthy Weight: 5'9" Men</h2>
+      <p>Healthy weight range, calorie needs, and height-specific health tips for men at 5 feet 9 inches.</p>
+      <div class="card-arrow">Read guide →</div>
+    </a>
+
+    <!-- By Age -->
+    <a class="guide-card" href="../healthy-bmi-20-year-old-female.html" data-tag="By Age">
+      <div class="card-top"><div class="card-icon">🗓️</div><div><div class="card-tag">By Age</div></div></div>
+      <h2>Healthy BMI: Age 20 (Women)</h2>
+      <p>Body composition, muscle mass, and key health considerations for women in their 20s.</p>
+      <div class="card-arrow">Read guide →</div>
+    </a>
+
+    <a class="guide-card" href="../healthy-bmi-30-year-old-female.html" data-tag="By Age">
+      <div class="card-top"><div class="card-icon">🗓️</div><div><div class="card-tag">By Age</div></div></div>
+      <h2>Healthy BMI: Age 30 (Women)</h2>
+      <p>How body composition changes in your 30s and what to prioritise to maintain a healthy BMI.</p>
+      <div class="card-arrow">Read guide →</div>
+    </a>
+
+    <a class="guide-card" href="../healthy-bmi-40-year-old-female.html" data-tag="By Age">
+      <div class="card-top"><div class="card-icon">🗓️</div><div><div class="card-tag">By Age</div></div></div>
+      <h2>Healthy BMI: Age 40 (Women)</h2>
+      <p>Perimenopause, body recomposition, and evidence-based strategies for women in their 40s.</p>
+      <div class="card-arrow">Read guide →</div>
+    </a>
+
+    <a class="guide-card" href="../healthy-bmi-30-year-old-male.html" data-tag="By Age">
+      <div class="card-top"><div class="card-icon">🗓️</div><div><div class="card-tag">By Age</div></div></div>
+      <h2>Healthy BMI: Age 30 (Men)</h2>
+      <p>Metabolic slowdown, muscle preservation, and cardiovascular risk for men entering their 30s.</p>
+      <div class="card-arrow">Read guide →</div>
+    </a>
+
+    <a class="guide-card" href="../healthy-bmi-40-year-old-male.html" data-tag="By Age">
+      <div class="card-top"><div class="card-icon">🗓️</div><div><div class="card-tag">By Age</div></div></div>
+      <h2>Healthy BMI: Age 40 (Men)</h2>
+      <p>Testosterone decline, visceral fat risk, and the most impactful habits for men in their 40s.</p>
+      <div class="card-arrow">Read guide →</div>
+    </a>
+
+    <a class="guide-card" href="../healthy-bmi-50-year-old-male.html" data-tag="By Age">
+      <div class="card-top"><div class="card-icon">🗓️</div><div><div class="card-tag">By Age</div></div></div>
+      <h2>Healthy BMI: Age 50 (Men)</h2>
+      <p>Sarcopenia, andropause, and evidence-based strategies for maintaining a healthy BMI after 50.</p>
+      <div class="card-arrow">Read guide →</div>
+    </a>
+
+  </div>
+
+  <!-- CTA strip -->
+  <div class="cta-strip">
+    <h2>Check Your Numbers</h2>
+    <p>Use our free calculators to get personalised results based on your height, weight, age, and activity level.</p>
+    <a href="../index.html" class="cta-btn">Open All Tools →</a>
+  </div>
+
+</main>
+
+<footer>
+  <div>© 2026 healthybmicheck.com — Free Health Calculators</div>
+  <div style="margin-top:8px;">
+    <a href="../index.html">All Calculators</a>
+    <a href="../bmi-calculator.html">BMI Calculator</a>
+    <a href="../about.html">About</a>
+    <a href="../privacy.html">Privacy Policy</a>
+    <a href="../contact.html">Contact</a>
+  </div>
+  <div style="margin-top:12px; font-size:0.75rem; opacity:0.7; line-height:1.7;">For informational purposes only. Not a substitute for professional medical advice, diagnosis, or treatment.<br>Formulas sourced from WHO, CDC, and peer-reviewed research. Always consult a qualified healthcare provider for personalised guidance.</div>
+</footer>
+
+<script>
+function filterCards(tag) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.guide-card').forEach(card => {
+    if (tag === 'all' || card.dataset.tag === tag) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+}
+</script>
+
+</body>
+</html>
