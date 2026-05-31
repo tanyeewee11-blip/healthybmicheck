@@ -422,19 +422,21 @@
     /* ── Article Cards ── */
     .articles-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
+    @media (max-width: 768px) { .articles-grid { grid-template-columns: 1fr; } }
+    @media (min-width: 769px) and (max-width: 1024px) { .articles-grid { grid-template-columns: repeat(2, 1fr); } }
     .article-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 20px 22px;
+      padding: 24px;
       text-decoration: none;
       color: inherit;
       display: flex;
-      align-items: flex-start;
-      gap: 16px;
+      flex-direction: column;
+      gap: 0;
       box-shadow: var(--shadow);
       transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
       animation: fadeUp 0.5s ease both;
@@ -785,95 +787,70 @@
   <!-- Articles -->
   <section class="section" id="articles">
     <p class="section-label">Health Guides</p>
-    <h2 class="section-title">Learn & Understand</h2>
+    <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
+      <h2 class="section-title" style="margin-bottom:0;">Learn & Understand</h2>
+      <a href="guides/index.html" style="font-size:.85rem;color:var(--accent);text-decoration:none;font-weight:500;white-space:nowrap;">View all guides →</a>
+    </div>
     <div class="articles-grid">
 
       <a class="article-card" href="what-is-bmi.html">
-        <div class="article-icon">📖</div>
-        <div class="article-content">
-          <p class="article-tag">BMI</p>
-          <h3>What Is BMI?</h3>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+          <div class="article-icon" style="flex-shrink:0;">📖</div>
+          <p class="article-tag" style="margin:0;">BMI</p>
         </div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;line-height:1.3;">What Is BMI?</h3>
+        <p style="font-size:.85rem;color:var(--ink2);line-height:1.6;flex:1;margin-bottom:16px;">A complete explanation of Body Mass Index — how it's calculated, what it measures, and its limitations.</p>
+        <span style="font-size:.8rem;color:var(--accent);font-weight:500;">Read guide →</span>
       </a>
 
-      <a class="article-card" href="healthy-bmi-for-women.html">
-        <div class="article-icon">👩</div>
-        <div class="article-content">
-          <p class="article-tag">BMI</p>
-          <h3>Healthy BMI for Women</h3>
+      <a class="article-card" href="bmi-vs-body-fat.html">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+          <div class="article-icon" style="flex-shrink:0;">⚖️</div>
+          <p class="article-tag" style="margin:0;">BMI</p>
         </div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;line-height:1.3;">BMI vs Body Fat %</h3>
+        <p style="font-size:.85rem;color:var(--ink2);line-height:1.6;flex:1;margin-bottom:16px;">Which metric matters more for your health? When BMI misleads and when body fat % is essential.</p>
+        <span style="font-size:.8rem;color:var(--accent);font-weight:500;">Read guide →</span>
       </a>
 
-      <a class="article-card" href="normal-bmi-for-men.html">
-        <div class="article-icon">👨</div>
-        <div class="article-content">
-          <p class="article-tag">BMI</p>
-          <h3>Normal BMI for Men</h3>
+      <a class="article-card" href="healthy-bmi-asian-women.html">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+          <div class="article-icon" style="flex-shrink:0;">🌏</div>
+          <p class="article-tag" style="margin:0;">BMI</p>
         </div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;line-height:1.3;">BMI for Asian Women</h3>
+        <p style="font-size:.85rem;color:var(--ink2);line-height:1.6;flex:1;margin-bottom:16px;">Why standard BMI ranges don't apply to Asian women — and what thresholds to use instead.</p>
+        <span style="font-size:.8rem;color:var(--accent);font-weight:500;">Read guide →</span>
       </a>
 
-      <a class="article-card" href="bmi-chart-by-age.html">
-        <div class="article-icon">📈</div>
-        <div class="article-content">
-          <p class="article-tag">BMI</p>
-          <h3>BMI Chart by Age</h3>
+      <a class="article-card" href="how-to-lose-5kg.html">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+          <div class="article-icon" style="flex-shrink:0;">📉</div>
+          <p class="article-tag" style="margin:0;">Weight Loss</p>
         </div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;line-height:1.3;">How to Lose 5kg Safely</h3>
+        <p style="font-size:.85rem;color:var(--ink2);line-height:1.6;flex:1;margin-bottom:16px;">A realistic, science-based plan — the right calorie deficit, protein targets, and timeline to expect.</p>
+        <span style="font-size:.8rem;color:var(--accent);font-weight:500;">Read guide →</span>
       </a>
 
-      <a class="article-card" href="how-to-lower-bmi.html">
-        <div class="article-icon">⬇️</div>
-        <div class="article-content">
-          <p class="article-tag">BMI</p>
-          <h3>How to Lower Your BMI</h3>
+      <a class="article-card" href="what-to-eat-to-lose-weight.html">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+          <div class="article-icon" style="flex-shrink:0;">🥗</div>
+          <p class="article-tag" style="margin:0;">Nutrition</p>
         </div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;line-height:1.3;">What to Eat to Lose Weight</h3>
+        <p style="font-size:.85rem;color:var(--ink2);line-height:1.6;flex:1;margin-bottom:16px;">No fad diets. The evidence-based foods that make a calorie deficit easier to sustain.</p>
+        <span style="font-size:.8rem;color:var(--accent);font-weight:500;">Read guide →</span>
       </a>
 
-      <a class="article-card" href="how-many-calories-per-day.html">
-        <div class="article-icon">🍽️</div>
-        <div class="article-content">
-          <p class="article-tag">Calories</p>
-          <h3>How Many Calories Per Day?</h3>
+      <a class="article-card" href="cardio-vs-weights.html">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+          <div class="article-icon" style="flex-shrink:0;">🏋️</div>
+          <p class="article-tag" style="margin:0;">Exercise</p>
         </div>
-      </a>
-
-      <a class="article-card" href="calories-to-lose-weight.html">
-        <div class="article-icon">🔥</div>
-        <div class="article-content">
-          <p class="article-tag">Calories</p>
-          <h3>Calories to Lose Weight</h3>
-        </div>
-      </a>
-
-      <a class="article-card" href="how-much-water-per-day.html">
-        <div class="article-icon">💧</div>
-        <div class="article-content">
-          <p class="article-tag">Hydration</p>
-          <h3>How Much Water Per Day?</h3>
-        </div>
-      </a>
-
-      <a class="article-card" href="best-exercises-to-lose-weight.html">
-        <div class="article-icon">🏃</div>
-        <div class="article-content">
-          <p class="article-tag">Exercise</p>
-          <h3>Best Exercises to Lose Weight</h3>
-        </div>
-      </a>
-
-      <a class="article-card" href="how-to-lose-belly-fat.html">
-        <div class="article-icon">💪</div>
-        <div class="article-content">
-          <p class="article-tag">Exercise</p>
-          <h3>How to Lose Belly Fat</h3>
-        </div>
-      </a>
-
-      <a class="article-card" href="high-protein-foods.html">
-        <div class="article-icon">🥩</div>
-        <div class="article-content">
-          <p class="article-tag">Nutrition</p>
-          <h3>High Protein Foods List</h3>
-        </div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:8px;line-height:1.3;">Cardio vs Weights for Fat Loss</h3>
+        <p style="font-size:.85rem;color:var(--ink2);line-height:1.6;flex:1;margin-bottom:16px;">Which burns more fat — cardio or resistance training? The science-based answer might surprise you.</p>
+        <span style="font-size:.8rem;color:var(--accent);font-weight:500;">Read guide →</span>
       </a>
 
     </div>
