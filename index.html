@@ -692,14 +692,79 @@
 
     <!-- Tab buttons -->
     <div class="calc-tabs">
-      <button class="calc-tab active" onclick="showTab('bmi',this)">⚖️ BMI</button>
+      <button class="calc-tab active" onclick="showTab('all',this)">All Tools</button>
+      <button class="calc-tab" onclick="showTab('bmi',this)">⚖️ BMI</button>
       <button class="calc-tab" onclick="showTab('calories',this)">🔥 Calories</button>
       <button class="calc-tab" onclick="showTab('body',this)">📊 Body</button>
       <button class="calc-tab" onclick="showTab('hydration',this)">💧 Hydration</button>
     </div>
 
     <!-- BMI Panel -->
-    <div class="calc-panel active" id="tab-bmi">
+    <!-- All Tools Panel (default) -->
+    <div class="calc-panel active" id="tab-all">
+      <a class="tool-card" href="bmi-calculator.html">
+        <div class="tool-icon">⚖️</div>
+        <h2>BMI Calculator</h2>
+        <p>Find out if your weight is in a healthy range for your height. Instant results, metric &amp; imperial.</p>
+        <span class="tool-link">Calculate BMI <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="tool-card" href="calorie-calculator.html">
+        <div class="tool-icon">🔥</div>
+        <h2>Calorie Calculator</h2>
+        <p>Estimate your daily calorie needs based on your age, weight, height, and activity level.</p>
+        <span class="tool-link">Calculate Calories <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="tool-card" href="calorie-deficit-calculator.html">
+        <div class="tool-icon">📉</div>
+        <h2>Calorie Deficit Calculator</h2>
+        <p>Set your goal weight and rate of loss — get your daily calorie target and time to reach it.</p>
+        <span class="tool-link">Calculate Deficit <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="tool-card" href="ideal-weight.html">
+        <div class="tool-icon">🎯</div>
+        <h2>Ideal Weight Calculator</h2>
+        <p>Discover your ideal weight range based on your height and body frame using multiple formulas.</p>
+        <span class="tool-link">Find Ideal Weight <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="tool-card" href="body-fat.html">
+        <div class="tool-icon">📊</div>
+        <h2>Body Fat Calculator</h2>
+        <p>Estimate your body fat percentage using body measurements. Understand lean mass vs. fat mass.</p>
+        <span class="tool-link">Calculate Body Fat <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="tool-card" href="water-intake.html">
+        <div class="tool-icon">💧</div>
+        <h2>Water Intake Calculator</h2>
+        <p>Find out how much water to drink daily based on your weight, activity, and climate.</p>
+        <span class="tool-link">Calculate Water Intake <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="tool-card" href="macro-calculator.html">
+        <div class="tool-icon">🥗</div>
+        <h2>Macro Calculator</h2>
+        <p>Daily protein, carbs, and fat targets based on your goal — fat loss, maintenance, or muscle gain.</p>
+        <span class="tool-link">Calculate Macros <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="tool-card" href="asian-bmi-calculator.html">
+        <div class="tool-icon">🌏</div>
+        <h2>Asian BMI Calculator</h2>
+        <p>BMI thresholds adjusted for Asian adults — overweight at 23, obese at 27.5.</p>
+        <span class="tool-link">Calculate Asian BMI <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="tool-card" href="bmi-calculator-kids.html">
+        <div class="tool-icon">👶</div>
+        <h2>Kids BMI Calculator</h2>
+        <p>Child BMI using CDC percentile charts for boys and girls aged 2–17.</p>
+        <span class="tool-link">Calculate Child BMI <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="tool-card" href="waist-to-height-ratio.html">
+        <div class="tool-icon">📏</div>
+        <h2>Waist-to-Height Ratio</h2>
+        <p>A more accurate predictor of metabolic risk than BMI. Keep your waist under half your height.</p>
+        <span class="tool-link">Calculate WHtR <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+
+        <div class="calc-panel" id="tab-bmi">
       <a class="tool-card" href="bmi-calculator.html">
         <div class="tool-icon">⚖️</div>
         <h2>BMI Calculator</h2>
