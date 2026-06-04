@@ -44,6 +44,15 @@
     .logo span { color: #7EC8A4; }
     header a { text-decoration: none; color: inherit; }
     nav { display: flex; align-items: center; gap: 4px; }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+    .nav-toggle span { display: block; width: 20px; height: 2px; background: #fff; margin: 4px 0; border-radius: 2px; transition: all .25s; }
+    @media (max-width: 640px) {
+      .nav-toggle { display: block; }
+      nav { position: absolute; top: 56px; right: 0; left: 0; background: var(--ink); flex-direction: column; align-items: flex-start; gap: 0; padding: 8px 16px 16px; display: none; border-bottom: 2px solid #2D6A4F; z-index: 100; }
+      nav.open { display: flex; }
+      nav a { width: 100%; padding: 10px 8px; font-size: .9rem; border-radius: 8px; }
+      header { position: relative; }
+    }
     nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: .85rem; padding: 6px 12px; border-radius: 8px; transition: color .2s, background .2s; }
     nav a:hover { color: #fff; background: rgba(255,255,255,0.08); }
     .article-wrap { max-width: 720px; margin: 0 auto; padding: 40px 24px 32px; }
@@ -75,6 +84,7 @@
     footer a { color: rgba(255,255,255,0.55); text-decoration: none; margin: 0 8px; }
     footer a:hover { color: #7EC8A4; }
   </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Which is more important, BMI or body fat percentage?',"acceptedAnswer":{"@type":"Answer","text":'Neither is universally more important — they measure different things. BMI is faster, free, and useful for population-level screening. Body fat percentage is more direct but harder to measure accurately. For most people, BMI plus waist circumference gives 80% of the health information needed. Body fat percentage is most valuable for athletes, older adults, and anyone whose BMI seems inconsistent with their appearance.'}},{"@type":"Question","name":'What is a healthy body fat percentage for women?',"acceptedAnswer":{"@type":"Answer","text":'Healthy body fat for women is generally 20–31%. Athletes typically fall between 14–20%, while below 10–13% is considered essential fat (dangerously low). Above 32% is classified as obese by most clinical guidelines. These ranges shift slightly with age — older women naturally carry slightly more fat at equivalent fitness levels.'}},{"@type":"Question","name":'What is a healthy body fat percentage for men?',"acceptedAnswer":{"@type":"Answer","text":'Healthy body fat for men is generally 8–19%. Athletes typically fall between 6–13%, while essential fat is 2–5%. Above 25% is classified as obese. Men naturally carry less fat than women at equivalent health levels due to hormonal differences.'}},{"@type":"Question","name":'Can I have a healthy BMI but high body fat?',"acceptedAnswer":{"@type":"Answer","text":"Yes — this is called 'normal weight obesity' or 'skinny fat.' A person with a BMI of 22 can have 30%+ body fat with very little muscle, carrying many of the same metabolic risks as clinical obesity. This is most common in sedentary individuals who have never done resistance training. Waist circumference measurement helps identify this pattern without expensive equipment."}}]}</script>
 </head>
 <body>
 
@@ -87,6 +97,8 @@
     <a href="guides/index.html">Guides</a>
     <a href="about.html">About</a>
   </nav>
+
+  <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
 </header>
 
 <div class="article-wrap">
@@ -203,6 +215,31 @@
 
 </div>
 
+  <h2 style="font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:4px;">Frequently Asked Questions</h2>
+
+  <h3>Which is more important, BMI or body fat percentage?</h3>
+  <p>Neither is universally more important — they measure different things. BMI is faster, free, and useful for population-level screening. Body fat percentage is more direct but harder to measure accurately. For most people, BMI plus waist circumference gives 80% of the health information needed. Body fat percentage is most valuable for athletes, older adults, and anyone whose BMI seems inconsistent with their appearance.</p>
+  <h3>What is a healthy body fat percentage for women?</h3>
+  <p>Healthy body fat for women is generally 20–31%. Athletes typically fall between 14–20%, while below 10–13% is considered essential fat (dangerously low). Above 32% is classified as obese by most clinical guidelines. These ranges shift slightly with age — older women naturally carry slightly more fat at equivalent fitness levels.</p>
+  <h3>What is a healthy body fat percentage for men?</h3>
+  <p>Healthy body fat for men is generally 8–19%. Athletes typically fall between 6–13%, while essential fat is 2–5%. Above 25% is classified as obese. Men naturally carry less fat than women at equivalent health levels due to hormonal differences.</p>
+  <h3>Can I have a healthy BMI but high body fat?</h3>
+  <p>Yes — this is called 'normal weight obesity' or 'skinny fat.' A person with a BMI of 22 can have 30%+ body fat with very little muscle, carrying many of the same metabolic risks as clinical obesity. This is most common in sedentary individuals who have never done resistance training. Waist circumference measurement helps identify this pattern without expensive equipment.</p>
+
+<!-- CTA Block -->
+  <div style="max-width:720px;margin:0 auto;padding:0 20px 16px;">
+    <div style="background:#1A1714;border-radius:20px;padding:32px 28px;text-align:center;">
+      <p style="font-size:.78rem;font-weight:600;color:#7EC8A4;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;">Next step</p>
+      <h2 style="font-family:'DM Serif Display',serif;font-size:1.5rem;color:#fff;margin-bottom:8px;line-height:1.2;">Use our free calculators</h2>
+      <p style="font-size:.875rem;color:rgba(255,255,255,.6);margin-bottom:20px;max-width:400px;margin-left:auto;margin-right:auto;">Get personalised results based on your own numbers — instant, no sign-up required.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+      <a href="body-fat.html" style="display:inline-flex;align-items:center;gap:8px;background:#2D6A4F;color:#fff;text-decoration:none;border-radius:100px;padding:11px 20px;font-size:.875rem;font-weight:500;font-family:'DM Sans',sans-serif;">📊 Body Fat Calculator →</a>
+      <a href="bmi-calculator.html" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);color:#fff;text-decoration:none;border-radius:100px;padding:11px 20px;font-size:.875rem;font-weight:500;font-family:'DM Sans',sans-serif;">⚖️ BMI Calculator →</a>
+      </div>
+    </div>
+  </div>
+
+
 <!-- E-E-A-T: Sources & Medical Review -->
 <div style="max-width:720px;margin:0 auto 0;padding:0 20px 40px;">
   <div style="background:#F0F7F4;border:1px solid #B7DDD0;border-radius:12px;padding:20px 24px;font-size:0.82rem;color:#2D4A3E;line-height:1.8;">
@@ -230,5 +267,20 @@
   <div style="margin-top:12px; font-size:0.75rem; opacity:0.7; line-height:1.7;">For informational purposes only. Not a substitute for professional medical advice, diagnosis, or treatment.<br>Formulas sourced from WHO, CDC, and peer-reviewed research. Always consult a qualified healthcare provider for personalised guidance.</div>
 </footer>
 
+<script>
+  // Mobile nav toggle
+  (function() {
+    var btn = document.querySelector('.nav-toggle');
+    var nav = document.querySelector('nav');
+    if (btn && nav) {
+      btn.addEventListener('click', function() {
+        nav.classList.toggle('open');
+      });
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('header')) nav.classList.remove('open');
+      });
+    }
+  })();
+</script>
 </body>
 </html>

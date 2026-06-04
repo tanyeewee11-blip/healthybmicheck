@@ -40,6 +40,15 @@
     .logo span { color: #7EC8A4; }
     header a { text-decoration: none; color: inherit; }
     nav { display: flex; align-items: center; gap: 4px; }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+    .nav-toggle span { display: block; width: 20px; height: 2px; background: #fff; margin: 4px 0; border-radius: 2px; transition: all .25s; }
+    @media (max-width: 640px) {
+      .nav-toggle { display: block; }
+      nav { position: absolute; top: 56px; right: 0; left: 0; background: var(--ink); flex-direction: column; align-items: flex-start; gap: 0; padding: 8px 16px 16px; display: none; border-bottom: 2px solid #2D6A4F; z-index: 100; }
+      nav.open { display: flex; }
+      nav a { width: 100%; padding: 10px 8px; font-size: .9rem; border-radius: 8px; }
+      header { position: relative; }
+    }
     nav a {
       color: rgba(255,255,255,0.6);
       text-decoration: none;
@@ -164,6 +173,8 @@
     <a href="guides/index.html">Guides</a>
     <a href="about.html">About</a>
   </nav>
+
+  <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
 </header>
 <div class="article-wrap">
   <div class="breadcrumb"><a href="index.html">Home</a> › How Many Calories to Lose Weight</div>
@@ -306,5 +317,20 @@
   <div style="margin-top:12px; font-size:0.75rem; opacity:0.7; line-height:1.7;">For informational purposes only. Not a substitute for professional medical advice, diagnosis, or treatment.<br>Formulas sourced from WHO, CDC, and peer-reviewed research. Always consult a qualified healthcare provider for personalised guidance.</div>
 </footer>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "fdc6f5b34010483da2f8b396d0c4cb4d"}'></script><!-- End Cloudflare Web Analytics -->
+<script>
+  // Mobile nav toggle
+  (function() {
+    var btn = document.querySelector('.nav-toggle');
+    var nav = document.querySelector('nav');
+    if (btn && nav) {
+      btn.addEventListener('click', function() {
+        nav.classList.toggle('open');
+      });
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('header')) nav.classList.remove('open');
+      });
+    }
+  })();
+</script>
 </body>
 </html>

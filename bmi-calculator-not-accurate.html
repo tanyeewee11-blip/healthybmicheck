@@ -43,6 +43,15 @@
     .logo span { color: #7EC8A4; }
     header a { text-decoration: none; color: inherit; }
     nav { display: flex; align-items: center; gap: 4px; }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+    .nav-toggle span { display: block; width: 20px; height: 2px; background: #fff; margin: 4px 0; border-radius: 2px; transition: all .25s; }
+    @media (max-width: 640px) {
+      .nav-toggle { display: block; }
+      nav { position: absolute; top: 56px; right: 0; left: 0; background: var(--ink); flex-direction: column; align-items: flex-start; gap: 0; padding: 8px 16px 16px; display: none; border-bottom: 2px solid #2D6A4F; z-index: 100; }
+      nav.open { display: flex; }
+      nav a { width: 100%; padding: 10px 8px; font-size: .9rem; border-radius: 8px; }
+      header { position: relative; }
+    }
     nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: .85rem; padding: 6px 12px; border-radius: 8px; transition: color .2s; }
     nav a:hover { color: #fff; background: rgba(255,255,255,0.08); }
     .article-wrap { max-width: 720px; margin: 0 auto; padding: 40px 24px 32px; }
@@ -79,6 +88,7 @@
     footer a { color: rgba(255,255,255,0.55); text-decoration: none; margin: 0 8px; }
     footer a:hover { color: #7EC8A4; }
   </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'How accurate is BMI as a health measure?',"acceptedAnswer":{"@type":"Answer","text":'BMI is reasonably accurate at the population level, with strong correlations between BMI and health outcomes across large studies. At the individual level, accuracy decreases for athletes, older adults, and Asian populations. For most sedentary adults of average build, BMI is a reliable screening tool.'}},{"@type":"Question","name":'What should I use instead of BMI?',"acceptedAnswer":{"@type":"Answer","text":'The most practical supplement to BMI is waist circumference (aim for women under 80 cm, men under 94 cm) — it captures abdominal fat accumulation that BMI misses. Waist-to-height ratio (below 0.5 for all adults) is another simple option. Body fat percentage is more precise but requires equipment or professional assessment.'}},{"@type":"Question","name":'Is BMI accurate for people who exercise regularly?',"acceptedAnswer":{"@type":"Answer","text":"BMI is less reliable for people who do regular resistance training. A well-trained person may have a BMI in the 'overweight' range despite having low body fat and excellent cardiovascular health. For people who lift weights, body fat percentage is a more meaningful metric."}},{"@type":"Question","name":'At what BMI is health risk significantly increased?',"acceptedAnswer":{"@type":"Answer","text":'Health risk increases meaningfully above BMI 25 for most adults, and above BMI 23 for Asian adults. Risk increases substantially above BMI 30. Risk also increases below BMI 18.5. The lowest risk is generally in the 20–24.9 range for most populations.'}}]}</script>
 </head>
 <body>
 
@@ -91,6 +101,8 @@
     <a href="guides/index.html">Guides</a>
     <a href="about.html">About</a>
   </nav>
+
+  <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
 </header>
 
 <div class="article-wrap">
@@ -191,6 +203,31 @@
 
 </div>
 
+  <h2 style="font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:4px;">Frequently Asked Questions</h2>
+
+  <h3>How accurate is BMI as a health measure?</h3>
+  <p>BMI is reasonably accurate at the population level, with strong correlations between BMI and health outcomes across large studies. At the individual level, accuracy decreases for athletes, older adults, and Asian populations. For most sedentary adults of average build, BMI is a reliable screening tool.</p>
+  <h3>What should I use instead of BMI?</h3>
+  <p>The most practical supplement to BMI is waist circumference (aim for women under 80 cm, men under 94 cm) — it captures abdominal fat accumulation that BMI misses. Waist-to-height ratio (below 0.5 for all adults) is another simple option. Body fat percentage is more precise but requires equipment or professional assessment.</p>
+  <h3>Is BMI accurate for people who exercise regularly?</h3>
+  <p>BMI is less reliable for people who do regular resistance training. A well-trained person may have a BMI in the 'overweight' range despite having low body fat and excellent cardiovascular health. For people who lift weights, body fat percentage is a more meaningful metric.</p>
+  <h3>At what BMI is health risk significantly increased?</h3>
+  <p>Health risk increases meaningfully above BMI 25 for most adults, and above BMI 23 for Asian adults. Risk increases substantially above BMI 30. Risk also increases below BMI 18.5. The lowest risk is generally in the 20–24.9 range for most populations.</p>
+
+<!-- CTA Block -->
+  <div style="max-width:720px;margin:0 auto;padding:0 20px 16px;">
+    <div style="background:#1A1714;border-radius:20px;padding:32px 28px;text-align:center;">
+      <p style="font-size:.78rem;font-weight:600;color:#7EC8A4;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;">Next step</p>
+      <h2 style="font-family:'DM Serif Display',serif;font-size:1.5rem;color:#fff;margin-bottom:8px;line-height:1.2;">Use our free calculators</h2>
+      <p style="font-size:.875rem;color:rgba(255,255,255,.6);margin-bottom:20px;max-width:400px;margin-left:auto;margin-right:auto;">Get personalised results based on your own numbers — instant, no sign-up required.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+      <a href="bmi-calculator.html" style="display:inline-flex;align-items:center;gap:8px;background:#2D6A4F;color:#fff;text-decoration:none;border-radius:100px;padding:11px 20px;font-size:.875rem;font-weight:500;">⚖️ Check Your BMI →</a>
+      <a href="body-fat.html" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);color:#fff;text-decoration:none;border-radius:100px;padding:11px 20px;font-size:.875rem;font-weight:500;">📊 Body Fat Calculator →</a>
+      </div>
+    </div>
+  </div>
+
+
 <!-- E-E-A-T Sources -->
 <div style="max-width:720px;margin:0 auto 0;padding:0 20px 40px;">
   <div style="background:#F0F7F4;border:1px solid #B7DDD0;border-radius:12px;padding:20px 24px;font-size:0.82rem;color:#2D4A3E;line-height:1.8;">
@@ -218,5 +255,20 @@
   <div style="margin-top:12px; font-size:0.75rem; opacity:0.7; line-height:1.7;">For informational purposes only. Not a substitute for professional medical advice, diagnosis, or treatment.<br>Formulas sourced from WHO, CDC, and peer-reviewed research. Always consult a qualified healthcare provider for personalised guidance.</div>
 </footer>
 
+<script>
+  // Mobile nav toggle
+  (function() {
+    var btn = document.querySelector('.nav-toggle');
+    var nav = document.querySelector('nav');
+    if (btn && nav) {
+      btn.addEventListener('click', function() {
+        nav.classList.toggle('open');
+      });
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('header')) nav.classList.remove('open');
+      });
+    }
+  })();
+</script>
 </body>
 </html>

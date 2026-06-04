@@ -43,6 +43,15 @@
     .logo span { color: #7EC8A4; }
     header a { text-decoration: none; color: inherit; }
     nav { display: flex; align-items: center; gap: 4px; }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+    .nav-toggle span { display: block; width: 20px; height: 2px; background: #fff; margin: 4px 0; border-radius: 2px; transition: all .25s; }
+    @media (max-width: 640px) {
+      .nav-toggle { display: block; }
+      nav { position: absolute; top: 56px; right: 0; left: 0; background: var(--ink); flex-direction: column; align-items: flex-start; gap: 0; padding: 8px 16px 16px; display: none; border-bottom: 2px solid #2D6A4F; z-index: 100; }
+      nav.open { display: flex; }
+      nav a { width: 100%; padding: 10px 8px; font-size: .9rem; border-radius: 8px; }
+      header { position: relative; }
+    }
     nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: .85rem; padding: 6px 12px; border-radius: 8px; transition: color .2s, background .2s; }
     nav a:hover { color: #fff; background: rgba(255,255,255,0.08); }
     .article-wrap { max-width: 720px; margin: 0 auto; padding: 40px 24px 32px; }
@@ -78,6 +87,7 @@
     footer a { color: rgba(255,255,255,0.55); text-decoration: none; margin: 0 8px; }
     footer a:hover { color: #7EC8A4; }
   </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'How long does it take to lose 5kg safely?',"acceptedAnswer":{"@type":"Answer","text":'At a sustainable calorie deficit of 400–500 kcal per day, losing 5kg of actual fat takes approximately 10–13 weeks. Accounting for normal weight fluctuations, a realistic timeframe is 3–4 months. Approaches that promise 5kg in 2–4 weeks primarily lose water weight and muscle, which returns rapidly.'}},{"@type":"Question","name":'How many calories should I eat to lose 5kg?',"acceptedAnswer":{"@type":"Answer","text":'Calculate your Total Daily Energy Expenditure (TDEE) then subtract 400–500 kcal. For most adults, this results in a daily target of 1,400–1,800 kcal. Targets below 1,200 kcal for women or 1,500 kcal for men are generally not recommended without medical supervision.'}},{"@type":"Question","name":'Will I lose muscle when losing 5kg?',"acceptedAnswer":{"@type":"Answer","text":'Some muscle loss is common during any calorie deficit, but it can be minimised. The two most effective strategies are eating adequate protein (1.6–2.2g per kg of body weight daily) and doing regular resistance training (2–3 sessions per week).'}},{"@type":"Question","name":'Is it possible to lose 5kg in one month?',"acceptedAnswer":{"@type":"Answer","text":'Losing 5kg in one month would require a daily deficit of approximately 1,200 kcal — larger than recommended for most people and likely to cause muscle loss and metabolic adaptation. A more realistic and sustainable monthly target is 1.5–2kg of fat loss.'}}]}</script>
 </head>
 <body>
 
@@ -90,6 +100,8 @@
     <a href="guides/index.html">Guides</a>
     <a href="about.html">About</a>
   </nav>
+
+  <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
 </header>
 
 <div class="article-wrap">
@@ -234,6 +246,31 @@
 
 </div>
 
+  <h2 style="font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:4px;">Frequently Asked Questions</h2>
+
+  <h3>How long does it take to lose 5kg safely?</h3>
+  <p>At a sustainable calorie deficit of 400–500 kcal per day, losing 5kg of actual fat takes approximately 10–13 weeks. Accounting for normal weight fluctuations, a realistic timeframe is 3–4 months. Approaches that promise 5kg in 2–4 weeks primarily lose water weight and muscle, which returns rapidly.</p>
+  <h3>How many calories should I eat to lose 5kg?</h3>
+  <p>Calculate your Total Daily Energy Expenditure (TDEE) then subtract 400–500 kcal. For most adults, this results in a daily target of 1,400–1,800 kcal. Targets below 1,200 kcal for women or 1,500 kcal for men are generally not recommended without medical supervision.</p>
+  <h3>Will I lose muscle when losing 5kg?</h3>
+  <p>Some muscle loss is common during any calorie deficit, but it can be minimised. The two most effective strategies are eating adequate protein (1.6–2.2g per kg of body weight daily) and doing regular resistance training (2–3 sessions per week).</p>
+  <h3>Is it possible to lose 5kg in one month?</h3>
+  <p>Losing 5kg in one month would require a daily deficit of approximately 1,200 kcal — larger than recommended for most people and likely to cause muscle loss and metabolic adaptation. A more realistic and sustainable monthly target is 1.5–2kg of fat loss.</p>
+
+<!-- CTA Block -->
+  <div style="max-width:720px;margin:0 auto;padding:0 20px 16px;">
+    <div style="background:#1A1714;border-radius:20px;padding:32px 28px;text-align:center;">
+      <p style="font-size:.78rem;font-weight:600;color:#7EC8A4;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;">Next step</p>
+      <h2 style="font-family:'DM Serif Display',serif;font-size:1.5rem;color:#fff;margin-bottom:8px;line-height:1.2;">Use our free calculators</h2>
+      <p style="font-size:.875rem;color:rgba(255,255,255,.6);margin-bottom:20px;max-width:400px;margin-left:auto;margin-right:auto;">Get personalised results based on your own numbers — instant, no sign-up required.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+      <a href="calorie-calculator.html" style="display:inline-flex;align-items:center;gap:8px;background:#2D6A4F;color:#fff;text-decoration:none;border-radius:100px;padding:11px 20px;font-size:.875rem;font-weight:500;">🔥 Calorie Calculator →</a>
+      <a href="calorie-deficit-calculator.html" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);color:#fff;text-decoration:none;border-radius:100px;padding:11px 20px;font-size:.875rem;font-weight:500;">📉 Deficit Calculator →</a>
+      </div>
+    </div>
+  </div>
+
+
 <!-- E-E-A-T Sources -->
 <div style="max-width:720px;margin:0 auto 0;padding:0 20px 40px;">
   <div style="background:#F0F7F4;border:1px solid #B7DDD0;border-radius:12px;padding:20px 24px;font-size:0.82rem;color:#2D4A3E;line-height:1.8;">
@@ -261,5 +298,20 @@
   <div style="margin-top:12px; font-size:0.75rem; opacity:0.7; line-height:1.7;">For informational purposes only. Not a substitute for professional medical advice, diagnosis, or treatment.<br>Formulas sourced from WHO, CDC, and peer-reviewed research. Always consult a qualified healthcare provider for personalised guidance.</div>
 </footer>
 
+<script>
+  // Mobile nav toggle
+  (function() {
+    var btn = document.querySelector('.nav-toggle');
+    var nav = document.querySelector('nav');
+    if (btn && nav) {
+      btn.addEventListener('click', function() {
+        nav.classList.toggle('open');
+      });
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('header')) nav.classList.remove('open');
+      });
+    }
+  })();
+</script>
 </body>
 </html>

@@ -40,6 +40,15 @@
     .logo span { color: #7EC8A4; }
     header a { text-decoration: none; color: inherit; }
     nav { display: flex; align-items: center; gap: 4px; }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+    .nav-toggle span { display: block; width: 20px; height: 2px; background: #fff; margin: 4px 0; border-radius: 2px; transition: all .25s; }
+    @media (max-width: 640px) {
+      .nav-toggle { display: block; }
+      nav { position: absolute; top: 56px; right: 0; left: 0; background: var(--ink); flex-direction: column; align-items: flex-start; gap: 0; padding: 8px 16px 16px; display: none; border-bottom: 2px solid #2D6A4F; z-index: 100; }
+      nav.open { display: flex; }
+      nav a { width: 100%; padding: 10px 8px; font-size: .9rem; border-radius: 8px; }
+      header { position: relative; }
+    }
     nav a {
       color: rgba(255,255,255,0.6);
       text-decoration: none;
@@ -165,6 +174,8 @@
     <a href="guides/index.html">Guides</a>
     <a href="about.html">About</a>
   </nav>
+
+  <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
 </header>
 <div class="article-wrap">
   <div class="breadcrumb"><a href="index.html">Home</a> › How to Lower Your BMI</div>
@@ -243,12 +254,39 @@
   <p>Alcohol is calorie-dense (7 kcal per gram), provides no nutritional value, and lowers inhibitions around food choices. Reducing alcohol consumption often leads to noticeable changes in weight without any other dietary changes.</p>
 
   <h2 id="how-long-does-it-take-to-lower-bmi">How Long Does It Take to Lower BMI?</h2>
-  <p>At a safe rate of 0.5 kg per week, dropping one BMI point (which requires losing roughly 3 kg for an average-height adult) takes approximately 6 weeks. Moving from "overweight" to "normal weight" might take 3–6 months for most people — which is a realistic and achievable timeframe.</p>
+  <p>At a safe rate of 0.5 kg per week, dropping one BMI point takes approximately 6 weeks for an average-height adult. The table below shows realistic timelines based on starting BMI and target:</p>
+
+  <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:.875rem;">
+    <thead><tr style="background:#2D6A4F;color:#fff;">
+      <th style="padding:10px 14px;text-align:left;">Starting BMI</th>
+      <th style="padding:10px 14px;text-align:left;">Target BMI</th>
+      <th style="padding:10px 14px;text-align:left;">Weight to Lose</th>
+      <th style="padding:10px 14px;text-align:left;">Realistic Timeline</th>
+    </tr></thead>
+    <tbody>
+      <tr><td style="padding:10px 14px;border-bottom:1px solid #E5E0D8;color:#6B6560;">27 (overweight)</td><td style="padding:10px 14px;border-bottom:1px solid #E5E0D8;color:#6B6560;">25 (healthy)</td><td style="padding:10px 14px;border-bottom:1px solid #E5E0D8;color:#6B6560;">~5–6 kg</td><td style="padding:10px 14px;border-bottom:1px solid #E5E0D8;color:#6B6560;">10–14 weeks</td></tr>
+      <tr style="background:#F7F4EF;"><td style="padding:10px 14px;border-bottom:1px solid #E5E0D8;color:#6B6560;">30 (obese I)</td><td style="padding:10px 14px;border-bottom:1px solid #E5E0D8;color:#6B6560;">25 (healthy)</td><td style="padding:10px 14px;border-bottom:1px solid #E5E0D8;color:#6B6560;">~13–15 kg</td><td style="padding:10px 14px;border-bottom:1px solid #E5E0D8;color:#6B6560;">6–9 months</td></tr>
+      <tr><td style="padding:10px 14px;border-bottom:1px solid #E5E0D8;color:#6B6560;">35 (obese II)</td><td style="padding:10px 14px;border-bottom:1px solid #E5E0D8;color:#6B6560;">30 (obese I)</td><td style="padding:10px 14px;border-bottom:1px solid #E5E0D8;color:#6B6560;">~13–15 kg</td><td style="padding:10px 14px;border-bottom:1px solid #E5E0D8;color:#6B6560;">6–9 months</td></tr>
+      <tr style="background:#F7F4EF;"><td style="padding:10px 14px;color:#6B6560;">Any</td><td style="padding:10px 14px;color:#6B6560;">–1 BMI point</td><td style="padding:10px 14px;color:#6B6560;">~3 kg</td><td style="padding:10px 14px;color:#6B6560;">~6 weeks</td></tr>
+    </tbody>
+  </table>
 
   <div class="warning-callout"><p><strong>Important:</strong> Avoid programmes promising very rapid BMI reduction. Losing more than 1 kg per week on a sustained basis typically involves significant muscle loss, nutritional deficiencies, and is associated with higher rates of weight regain.</p></div>
 
   <h2 id="when-to-seek-professional-help">When to Seek Professional Help</h2>
   <p>If your BMI is above 35, or if you have related health conditions such as type 2 diabetes or high blood pressure, working with a doctor or registered dietitian is strongly recommended. Medical supervision may also open up additional options such as medication or, in some cases, bariatric surgery.</p>
+
+
+  <h2 style="font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:16px;">Frequently Asked Questions</h2>
+
+  <h3>How quickly can I lower my BMI?</h3>
+  <p>BMI changes at the same rate as your weight. A sustainable rate of fat loss is 0.25–0.5 kg per week, which requires a daily calorie deficit of roughly 275–550 kcal. At 0.5 kg per week, a person who is 10 kg overweight could reach a healthy BMI in approximately 20 weeks. Faster rates are possible but increase the risk of muscle loss and are harder to sustain.</p>
+  <h3>What is the most effective way to lower BMI?</h3>
+  <p>The most effective approach combines a moderate calorie deficit (300–500 kcal below your TDEE) with adequate protein intake (1.6–2.2 g per kg of body weight) and regular exercise. The calorie deficit drives weight loss; protein and resistance training preserve muscle so that most of the weight lost comes from fat rather than lean tissue.</p>
+  <h3>Can exercise alone lower my BMI without dieting?</h3>
+  <p>Exercise alone is generally insufficient to lower BMI significantly, because calorie burns from exercise are relatively small and often partially offset by increased appetite. Research consistently shows that diet (calorie restriction) produces greater weight loss than exercise alone. However, exercise is critical for maintaining weight loss, improving body composition, and reducing health risks independently of BMI.</p>
+  <h3>How long does it take to see BMI changes?</h3>
+  <p>BMI reflects your weight, which changes continuously. Visible scale changes typically appear within 1–2 weeks of a consistent calorie deficit, though early changes include water loss from glycogen depletion rather than fat. Meaningful BMI reduction (0.5–1.0 points) typically takes 4–8 weeks of consistent effort. Focus on trends over weeks rather than day-to-day fluctuations.</p>
 
 <div class="sources" style="margin: 32px 0 8px; padding: 20px 0; border-top: 1px solid #E5E0D8; font-size: 0.82rem; color: #A09A94; line-height: 1.8;">
     <strong style="color:#6B6560">References:</strong><br>
@@ -314,5 +352,20 @@
   <div style="margin-top:12px; font-size:0.75rem; opacity:0.7; line-height:1.7;">For informational purposes only. Not a substitute for professional medical advice, diagnosis, or treatment.<br>Formulas sourced from WHO, CDC, and peer-reviewed research. Always consult a qualified healthcare provider for personalised guidance.</div>
 </footer>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "fdc6f5b34010483da2f8b396d0c4cb4d"}'></script><!-- End Cloudflare Web Analytics -->
+<script>
+  // Mobile nav toggle
+  (function() {
+    var btn = document.querySelector('.nav-toggle');
+    var nav = document.querySelector('nav');
+    if (btn && nav) {
+      btn.addEventListener('click', function() {
+        nav.classList.toggle('open');
+      });
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('header')) nav.classList.remove('open');
+      });
+    }
+  })();
+</script>
 </body>
 </html>

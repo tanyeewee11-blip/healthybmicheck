@@ -40,6 +40,15 @@
     .logo span { color: #7EC8A4; }
     header a { text-decoration: none; color: inherit; }
     nav { display: flex; align-items: center; gap: 4px; }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+    .nav-toggle span { display: block; width: 20px; height: 2px; background: #fff; margin: 4px 0; border-radius: 2px; transition: all .25s; }
+    @media (max-width: 640px) {
+      .nav-toggle { display: block; }
+      nav { position: absolute; top: 56px; right: 0; left: 0; background: var(--ink); flex-direction: column; align-items: flex-start; gap: 0; padding: 8px 16px 16px; display: none; border-bottom: 2px solid #2D6A4F; z-index: 100; }
+      nav.open { display: flex; }
+      nav a { width: 100%; padding: 10px 8px; font-size: .9rem; border-radius: 8px; }
+      header { position: relative; }
+    }
     nav a {
       color: rgba(255,255,255,0.6);
       text-decoration: none;
@@ -165,6 +174,8 @@
     <a href="guides/index.html">Guides</a>
     <a href="about.html">About</a>
   </nav>
+
+  <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
 </header>
 <div class="article-wrap">
   <div class="breadcrumb"><a href="index.html">Home</a> › How to Lose Belly Fat</div>
@@ -242,7 +253,22 @@
   <p>Planks, crunches, and leg raises strengthen the abdominal muscles but do not specifically burn belly fat. They are worth doing for posture and functional strength, but should not be your primary strategy for reducing belly size.</p>
 
   <h2 id="how-long-does-it-take-to-lose-belly-fat">How Long Does It Take to Lose Belly Fat?</h2>
-  <p>With a consistent calorie deficit of 500 calories per day combined with regular exercise, most people begin to notice visible changes in the abdominal area within 4–8 weeks. Visceral fat (the dangerous internal fat) tends to respond faster than subcutaneous fat (the pinchable fat just under the skin).</p>
+  <p>Visceral fat responds well to calorie deficit and exercise — often faster than subcutaneous fat. Here is what to realistically expect at a sustainable 400–500 kcal daily deficit:</p>
+
+  <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:.875rem;">
+    <thead><tr style="background:#2D6A4F;color:#fff;">
+      <th style="padding:10px 14px;text-align:left;">Timeframe</th>
+      <th style="padding:10px 14px;text-align:left;">What to Expect</th>
+      <th style="padding:10px 14px;text-align:left;">Waist Change (approx.)</th>
+    </tr></thead>
+    <tbody>
+      <tr><td style="padding:10px 14px;border-bottom:1px solid #E5E0D8;color:#6B6560;">2 weeks</td><td style="padding:10px 14px;border-bottom:1px solid #E5E0D8;color:#6B6560;">Reduced bloating, early water weight loss</td><td style="padding:10px 14px;border-bottom:1px solid #E5E0D8;color:#6B6560;">1–2 cm</td></tr>
+      <tr style="background:#F7F4EF;"><td style="padding:10px 14px;border-bottom:1px solid #E5E0D8;color:#6B6560;">4–6 weeks</td><td style="padding:10px 14px;border-bottom:1px solid #E5E0D8;color:#6B6560;">Visible reduction; clothes feel looser</td><td style="padding:10px 14px;border-bottom:1px solid #E5E0D8;color:#6B6560;">2–4 cm</td></tr>
+      <tr><td style="padding:10px 14px;border-bottom:1px solid #E5E0D8;color:#6B6560;">3 months</td><td style="padding:10px 14px;border-bottom:1px solid #E5E0D8;color:#6B6560;">Significant fat loss; metabolic improvements</td><td style="padding:10px 14px;border-bottom:1px solid #E5E0D8;color:#6B6560;">4–8 cm</td></tr>
+      <tr style="background:#F7F4EF;"><td style="padding:10px 14px;color:#6B6560;">6 months</td><td style="padding:10px 14px;color:#6B6560;">Major body recomposition if training included</td><td style="padding:10px 14px;color:#6B6560;">6–12 cm</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:.85rem;color:#A09A94;margin-top:8px;">Results vary based on starting weight, age, hormones, and adherence. Waist measurements are estimates for someone with a significant calorie deficit and regular exercise.</p>
   <p>Realistic expectations: losing 0.5 kg of fat per week, which means losing approximately 2 kg per month. After 3 months, a 6 kg fat loss will produce noticeable changes in waist size and belly appearance.</p>
 
   <h2 id="waist-circumference-a-better-measure-than-appearance">Waist Circumference: A Better Measure Than Appearance</h2>
@@ -253,6 +279,18 @@
 
   <h2 id="the-role-of-hormones">The Role of Hormones</h2>
   <p>Hormones play a significant role in where the body stores fat. Cortisol (the stress hormone) promotes visceral fat accumulation. Insulin resistance causes the body to store more fat around the abdomen. Getting enough sleep, managing stress, reducing sugar intake, and regular exercise all help regulate these hormones in ways that reduce belly fat accumulation over time.</p>
+
+
+  <h2 style="font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:16px;">Frequently Asked Questions</h2>
+
+  <h3>What causes belly fat?</h3>
+  <p>Belly fat accumulates primarily due to a calorie surplus — consuming more energy than the body burns. However, the distribution of fat is influenced by hormones (particularly cortisol and insulin), genetics, sleep quality, and age. High stress, poor sleep, and high intake of refined carbohydrates and alcohol are specifically linked to increased visceral (deep abdominal) fat accumulation, independent of total calorie intake.</p>
+  <h3>How long does it take to lose belly fat?</h3>
+  <p>Visceral (abdominal) fat is actually more metabolically active than subcutaneous fat and responds relatively quickly to a calorie deficit — often faster than fat in other areas. Most people notice measurable waist reduction within 4–8 weeks of a consistent deficit and exercise programme. However, the rate of loss depends on the size of the deficit, protein intake, exercise type, and individual genetics, which determine where fat is lost from first.</p>
+  <h3>Do ab exercises reduce belly fat?</h3>
+  <p>Spot reduction — losing fat from a specific body part through targeted exercise — is a myth. Ab exercises like crunches and planks strengthen and tone the abdominal muscles but do not preferentially burn belly fat. Fat loss is systemic: it occurs across the whole body in a pattern largely determined by genetics. To reduce belly fat, a calorie deficit through diet and total-body exercise is necessary, and ab exercises play a supporting role.</p>
+  <h3>What foods help reduce belly fat?</h3>
+  <p>No single food burns belly fat, but certain dietary patterns are strongly associated with reduced abdominal fat: high protein intake (1.6–2.2 g/kg) which reduces hunger and preserves muscle; high fibre from vegetables, legumes, and whole grains which improves satiety; and reduced intake of ultra-processed foods, added sugar, and alcohol which are specifically linked to visceral fat accumulation. Overall calorie balance remains the primary driver.</p>
 
 <div class="sources" style="margin: 32px 0 8px; padding: 20px 0; border-top: 1px solid #E5E0D8; font-size: 0.82rem; color: #A09A94; line-height: 1.8;">
     <strong style="color:#6B6560">References:</strong><br>
@@ -319,5 +357,20 @@
   <div style="margin-top:12px; font-size:0.75rem; opacity:0.7; line-height:1.7;">For informational purposes only. Not a substitute for professional medical advice, diagnosis, or treatment.<br>Formulas sourced from WHO, CDC, and peer-reviewed research. Always consult a qualified healthcare provider for personalised guidance.</div>
 </footer>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "fdc6f5b34010483da2f8b396d0c4cb4d"}'></script><!-- End Cloudflare Web Analytics -->
+<script>
+  // Mobile nav toggle
+  (function() {
+    var btn = document.querySelector('.nav-toggle');
+    var nav = document.querySelector('nav');
+    if (btn && nav) {
+      btn.addEventListener('click', function() {
+        nav.classList.toggle('open');
+      });
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('header')) nav.classList.remove('open');
+      });
+    }
+  })();
+</script>
 </body>
 </html>
