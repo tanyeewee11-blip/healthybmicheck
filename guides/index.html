@@ -146,16 +146,26 @@
     <p>Evidence-based articles on BMI, weight loss, nutrition, and exercise — written to help you understand your health, not just track numbers.</p>
   </div>
 
+  <!-- Search box -->
+  <div style="max-width:480px;margin:0 auto 24px;padding:0 24px;">
+    <div style="position:relative;">
+      <input id="guide-search" type="text" placeholder="Search guides… e.g. protein, BMI, sleep"
+        style="width:100%;padding:11px 16px 11px 44px;border:1.5px solid var(--border);border-radius:100px;font-family:inherit;font-size:.9rem;background:var(--surface);color:var(--ink);outline:none;transition:border-color .2s;"
+        oninput="searchGuides(this.value)" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+      <span style="position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:1rem;pointer-events:none;">🔍</span>
+    </div>
+  </div>
+
   <!-- Filter tabs -->
   <div class="filters">
-    <button class="filter-btn active" onclick="filterCards('all')">All</button>
-    <button class="filter-btn" onclick="filterCards('BMI')">BMI</button>
-    <button class="filter-btn" onclick="filterCards('Calories')">Calories</button>
-    <button class="filter-btn" onclick="filterCards('Nutrition')">Nutrition</button>
-    <button class="filter-btn" onclick="filterCards('Exercise')">Exercise</button>
-    <button class="filter-btn" onclick="filterCards('Hydration')">Hydration</button>
-    <button class="filter-btn" onclick="filterCards('By Height')">By Height</button>
-    <button class="filter-btn" onclick="filterCards('By Age')">By Age</button>
+    <button class="filter-btn active" onclick="filterCards('all',this)" id="tab-all">All <span style="background:rgba(255,255,255,0.25);border-radius:100px;padding:1px 7px;font-size:.75rem;margin-left:4px;">65</span></button>
+    <button class="filter-btn" onclick="filterCards('BMI',this)">BMI <span style="background:rgba(45,106,79,0.15);border-radius:100px;padding:1px 7px;font-size:.75rem;margin-left:4px;color:var(--accent);">14</span></button>
+    <button class="filter-btn" onclick="filterCards('Calories',this)">Calories <span style="background:rgba(45,106,79,0.15);border-radius:100px;padding:1px 7px;font-size:.75rem;margin-left:4px;color:var(--accent);">14</span></button>
+    <button class="filter-btn" onclick="filterCards('Nutrition',this)">Nutrition <span style="background:rgba(45,106,79,0.15);border-radius:100px;padding:1px 7px;font-size:.75rem;margin-left:4px;color:var(--accent);">11</span></button>
+    <button class="filter-btn" onclick="filterCards('Exercise',this)">Exercise <span style="background:rgba(45,106,79,0.15);border-radius:100px;padding:1px 7px;font-size:.75rem;margin-left:4px;color:var(--accent);">7</span></button>
+    <button class="filter-btn" onclick="filterCards('Hydration',this)">Hydration <span style="background:rgba(45,106,79,0.15);border-radius:100px;padding:1px 7px;font-size:.75rem;margin-left:4px;color:var(--accent);">4</span></button>
+    <button class="filter-btn" onclick="filterCards('By Height',this)">By Height <span style="background:rgba(45,106,79,0.15);border-radius:100px;padding:1px 7px;font-size:.75rem;margin-left:4px;color:var(--accent);">8</span></button>
+    <button class="filter-btn" onclick="filterCards('By Age',this)">By Age <span style="background:rgba(45,106,79,0.15);border-radius:100px;padding:1px 7px;font-size:.75rem;margin-left:4px;color:var(--accent);">7</span></button>
   </div>
 
   <!-- All Guides Grid -->
@@ -604,6 +614,17 @@
 
   </div>
 
+  <!-- Load More -->
+  <div id="load-more-wrap" style="text-align:center;padding:8px 0 40px;">
+    <button id="load-more-btn" onclick="loadMore()"
+      style="background:var(--surface);border:1.5px solid var(--border);border-radius:100px;padding:10px 28px;font-family:inherit;font-size:.875rem;color:var(--ink2);cursor:pointer;transition:all .2s;"
+      onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'"
+      onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--ink2)'">
+      Load more guides
+    </button>
+    <p id="load-more-count" style="font-size:.78rem;color:var(--ink3);margin-top:8px;"></p>
+  </div>
+
   <!-- CTA strip -->
   <div class="cta-strip">
     <h2>Check Your Numbers</h2>
@@ -627,17 +648,83 @@
 </footer>
 
 <script>
-function filterCards(tag) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  event.target.classList.add('active');
-  document.querySelectorAll('.guide-card').forEach(card => {
-    if (tag === 'all' || card.dataset.tag === tag) {
-      card.classList.remove('hidden');
-    } else {
-      card.classList.add('hidden');
-    }
+const PAGE_SIZE = 12;
+let currentTag = 'all';
+let currentSearch = '';
+let visibleCount = PAGE_SIZE;
+
+function getFilteredCards() {
+  return Array.from(document.querySelectorAll('.guide-card')).filter(card => {
+    const tagMatch = currentTag === 'all' || card.dataset.tag === currentTag;
+    const searchMatch = currentSearch === '' ||
+      card.querySelector('h2').textContent.toLowerCase().includes(currentSearch) ||
+      (card.querySelector('p') && card.querySelector('p').textContent.toLowerCase().includes(currentSearch));
+    return tagMatch && searchMatch;
   });
 }
+
+function renderCards() {
+  const allCards = document.querySelectorAll('.guide-card');
+  allCards.forEach(c => c.classList.add('hidden'));
+
+  const filtered = getFilteredCards();
+  filtered.slice(0, visibleCount).forEach(c => c.classList.remove('hidden'));
+
+  const btn = document.getElementById('load-more-btn');
+  const wrap = document.getElementById('load-more-wrap');
+  const counter = document.getElementById('load-more-count');
+
+  if (filtered.length > visibleCount) {
+    wrap.style.display = 'block';
+    btn.style.display = 'inline-block';
+    counter.textContent = `Showing ${Math.min(visibleCount, filtered.length)} of ${filtered.length} guides`;
+  } else {
+    btn.style.display = 'none';
+    counter.textContent = filtered.length > 0 ? `All ${filtered.length} guides shown` : '';
+  }
+
+  if (filtered.length === 0) {
+    counter.textContent = 'No guides found. Try a different search term.';
+    counter.style.color = 'var(--ink2)';
+  }
+}
+
+function filterCards(tag, btn) {
+  currentTag = tag;
+  currentSearch = '';
+  visibleCount = PAGE_SIZE;
+  document.getElementById('guide-search').value = '';
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  renderCards();
+}
+
+function searchGuides(query) {
+  currentSearch = query.toLowerCase().trim();
+  visibleCount = PAGE_SIZE;
+  // Clear tab selection when searching
+  if (currentSearch !== '') {
+    currentTag = 'all';
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-all').classList.add('active');
+  }
+  renderCards();
+}
+
+function loadMore() {
+  visibleCount += PAGE_SIZE;
+  renderCards();
+  // Smooth scroll to newly visible cards
+  const filtered = getFilteredCards();
+  if (filtered[visibleCount - PAGE_SIZE]) {
+    filtered[visibleCount - PAGE_SIZE].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+}
+
+// Init: show first 12 on page load
+document.addEventListener('DOMContentLoaded', function() {
+  renderCards();
+});
 </script>
 
 <script>
