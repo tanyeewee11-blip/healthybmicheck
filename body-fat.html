@@ -19,7 +19,7 @@
 
   <title>Body Fat Calculator — Estimate Your Body Fat Percentage</title>
   <link rel="canonical" href="https://healthybmicheck.com/body-fat.html">
-  <meta name="description" content="Estimate your body fat percentage using the U.S. Navy method. Free body fat calculator for men and women based on simple body measurements.">
+  <meta name="description" content="Estimate your body fat percentage using the U.S. Navy method. Free calculator for men and women — just a tape measure, no gym equipment needed.">
   <meta name="keywords" content="body fat calculator, body fat percentage, how to calculate body fat, navy method body fat, body fat chart">
   <noscript></noscript>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the U.S. Navy method?", "acceptedAnswer": {"@type": "Answer", "text": "The U.S. Navy method estimates body fat percentage using simple circumference measurements — waist, neck, and hips (for women) — along with height. It was developed for practical use in military fitness assessments and is considered reasonably accurate for most adults, with a typical margin of error of 3–4%."}}, {"@type": "Question", "name": "How do I measure correctly?", "acceptedAnswer": {"@type": "Answer", "text": "Use a flexible tape measure and measure directly on skin, not over clothing. For the waist, measure at the level of your navel while relaxed (not sucked in). For the neck, measure just below the larynx (Adam's apple), sloping slightly downward at the front. For hips (women), measure at the widest point. Take each measurement twice and use the average."}}, {"@type": "Question", "name": "Is body fat percentage better than BMI?", "acceptedAnswer": {"@type": "Answer", "text": "Body fat percentage and BMI measure different things. BMI uses only height and weight, while body fat percentage directly estimates the proportion of fat in your body. Body fat percentage is generally more informative for athletes and those with high muscle mass, but BMI is easier to measure and useful for population-level screening. Using both together gives the most complete picture."}}, {"@type": "Question", "name": "What is a healthy body fat percentage?", "acceptedAnswer": {"@type": "Answer", "text": "For men, a healthy body fat range is generally considered to be 8–19%, with athletic individuals typically falling in the 6–13% range. For women, healthy ranges are approximately 21–33%, with athletes typically at 14–20%. These ranges vary with age — older adults tend to carry slightly more body fat as a natural part of ageing."}}, {"@type": "Question", "name": "How can I reduce body fat?", "acceptedAnswer": {"@type": "Answer", "text": "Reducing body fat requires a combination of a moderate calorie deficit (eating slightly less than you burn) and regular physical activity, particularly strength training to preserve muscle mass. Crash diets tend to cause muscle loss alongside fat loss, which can worsen body composition over time. Slow, consistent progress — around 0.5 kg per week — typically gives the best long-term results."}}]}</script>
@@ -63,7 +63,7 @@
   <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
 </header>
 <div class="hero">
-    <div class="breadcrumb"><a href="index.html">Home</a> › Body Fat Calculator — Estimate Your Body Fat Percentage</div>
+    <div class="breadcrumb" style="font-size:.8rem;color:var(--ink3);margin-bottom:16px;"><a href="index.html" style="color:var(--ink3);text-decoration:none;">Home</a> › Body Fat Calculator</div>
   <h1>Body Fat <em>Percentage</em> Calculator</h1>
   <p>Estimate your body fat percentage using the U.S. Navy method — just a tape measure, no gym equipment needed.</p>
 </div>
@@ -78,6 +78,22 @@
       <div class="gender-toggle">
         <button class="gender-btn active" onclick="setGender('male',this)">Male</button>
         <button class="gender-btn" onclick="setGender('female',this)">Female</button>
+      </div>
+    </div>
+
+    <!-- Weight (needed for fat/lean mass in kg) -->
+    <div class="input-group" id="metric-weight-wrap">
+      <label>Weight <span class="label-hint">used to calculate fat & lean mass</span></label>
+      <div class="input-wrap">
+        <input type="number" id="weight-kg" placeholder="70" min="20" max="300">
+        <span class="unit-badge">kg</span>
+      </div>
+    </div>
+    <div class="input-group" id="imperial-weight-wrap" style="display:none">
+      <label>Weight <span class="label-hint">optional — for fat & lean mass in lb</span></label>
+      <div class="input-wrap">
+        <input type="number" id="weight-lb" placeholder="154" min="44" max="660">
+        <span class="unit-badge">lb</span>
       </div>
     </div>
 
@@ -149,11 +165,11 @@
     </div>
     <div class="info-grid">
       <div class="info-box">
-        <div class="ilabel">Fat mass</div>
+        <div class="ilabel">Fat mass (enter weight)</div>
         <div class="ivalue" id="fat-mass">—</div>
       </div>
       <div class="info-box">
-        <div class="ilabel">Lean mass</div>
+        <div class="ilabel">Lean mass (enter weight)</div>
         <div class="ivalue" id="lean-mass">—</div>
       </div>
     </div>
@@ -275,6 +291,8 @@
     document.querySelectorAll('.unit-toggle button').forEach((b,i) => b.classList.toggle('active',(u==='metric'&&i===0)||(u==='imperial'&&i===1)));
     document.getElementById('metric-height').style.display = u==='metric'?'':'none';
     document.getElementById('imperial-height').style.display = u==='imperial'?'':'none';
+    document.getElementById('metric-weight-wrap').style.display = u==='metric'?'':'none';
+    document.getElementById('imperial-weight-wrap').style.display = u==='imperial'?'':'none';
     const badge = u==='metric'?'cm':'in';
     ['waist-unit','neck-unit','hip-unit'].forEach(id => document.getElementById(id).textContent = badge);
   }
@@ -306,6 +324,7 @@
     const neckIn  = toInches(parseFloat(document.getElementById('neck').value));
 
     if(!waistIn || !neckIn || !heightIn) { alert('Please fill in all measurements.'); return; }
+    if(gender === 'male' && waistIn <= neckIn) { alert('Waist measurement must be larger than neck. Please check your measurements.'); return; }
 
     let bf;
     if(gender==='male') {
@@ -313,6 +332,7 @@
     } else {
       const hipIn = toInches(parseFloat(document.getElementById('hip').value));
       if(!hipIn) { alert('Please enter your hip measurement.'); return; }
+      if((waistIn + hipIn) <= neckIn) { alert('Measurement error: waist + hip must be larger than neck.'); return; }
       bf = 163.205 * Math.log10(waistIn + hipIn - neckIn) - 97.684 * Math.log10(heightIn) - 78.387;
     }
     bf = Math.max(2, Math.min(60, bf));
@@ -334,20 +354,33 @@
       else             { cat='Obese';         catClass='cat-veryhigh'; tip='Your body fat percentage suggests a higher health risk. Consulting a dietitian or healthcare professional can help you create a safe, sustainable plan.'; }
     }
 
-    // Estimate weight for fat/lean mass (use height to approximate)
-    const heightCm = heightIn * 2.54;
-    // We don't have weight input, so show % and category only
     document.getElementById('bf-number').textContent = bfRound.toFixed(1) + '%';
     const catEl = document.getElementById('bf-category');
     catEl.textContent = cat; catEl.className = 'bf-category ' + catClass;
-    document.getElementById('fat-mass').textContent = cat;
-    document.getElementById('lean-mass').textContent = (100 - bfRound).toFixed(1) + '% lean';
+
+    // Fat / lean mass in kg or lb if weight entered
+    let weightKg = unit === 'metric'
+      ? parseFloat(document.getElementById('weight-kg').value)
+      : (parseFloat(document.getElementById('weight-lb').value) || 0) * 0.453592;
+    if (weightKg > 0) {
+      const fatKg  = (bf / 100 * weightKg).toFixed(1);
+      const leanKg = (weightKg - fatKg).toFixed(1);
+      if (unit === 'metric') {
+        document.getElementById('fat-mass').textContent  = fatKg + ' kg fat';
+        document.getElementById('lean-mass').textContent = leanKg + ' kg lean';
+      } else {
+        document.getElementById('fat-mass').textContent  = (fatKg / 0.453592).toFixed(1) + ' lb fat';
+        document.getElementById('lean-mass').textContent = (leanKg / 0.453592).toFixed(1) + ' lb lean';
+      }
+    } else {
+      document.getElementById('fat-mass').textContent  = '—';
+      document.getElementById('lean-mass').textContent = '—';
+    }
     document.getElementById('tip-box').textContent = tip;
 
     // Pointer: map 0–50% BF to 0–100% bar
     const pct = Math.min(Math.max(bf / 50 * 100, 2), 98);
     document.getElementById('result-card').classList.add('visible');
-    localStorage.setItem('bodyfat_result', bfRound + '%');
     setTimeout(() => { document.getElementById('scale-pointer').style.left = pct + '%'; }, 50);
     document.getElementById('result-card').scrollIntoView({behavior:'smooth', block:'nearest'});
   }
