@@ -21,7 +21,6 @@
   <link rel="canonical" href="https://healthybmicheck.com/ideal-weight.html">
   <meta name="description" content="Calculate your ideal body weight instantly based on your height and sex. Uses multiple scientific formulas including Devine, Robinson, and Miller methods.">
   <meta name="keywords" content="ideal weight calculator, healthy weight calculator, ideal body weight, weight for height, ideal weight chart">
-  <noscript></noscript>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why are there four different formulas?", "acceptedAnswer": {"@type": "Answer", "text": "Different researchers developed different formulas over the decades. The Devine formula (1974) was originally created for drug dosing. Robinson, Miller, and Hamwi developed their own versions based on different population studies. No single formula is universally accepted, which is why showing all four gives a more balanced range."}}, {"@type": "Question", "name": "Is ideal weight the same as healthy weight?", "acceptedAnswer": {"@type": "Answer", "text": "They are related but not identical. Ideal weight formulas give a single target number based on height and sex. Healthy weight is a range based on BMI (18.5–24.9). Most people's ideal weight falls within their healthy BMI range, but the BMI range is generally considered a more complete indicator."}}, {"@type": "Question", "name": "Do these formulas apply to athletes?", "acceptedAnswer": {"@type": "Answer", "text": "Not perfectly. Athletes with high muscle mass may weigh significantly more than the ideal weight estimate while still being very healthy. These formulas are best used as a general guideline for the average adult, not for athletes or those with unusually high or low muscle mass."}}, {"@type": "Question", "name": "What if my weight is far from the ideal range?", "acceptedAnswer": {"@type": "Answer", "text": "The ideal weight range is a guide, not a strict target. A more useful next step is to calculate your BMI and daily calorie needs to understand where you currently stand and what adjustments — if any — might benefit your health. Always consult a healthcare professional before making significant changes to your diet or exercise habits."}}]}</script>
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://healthybmicheck.com/ideal-weight.html">
@@ -41,7 +40,7 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://healthybmicheck.com/"},
-      {"@type": "ListItem", "position": 2, "name": "Ideal Weight Calculator — Find Your Healthy Weight R...", "item": "https://healthybmicheck.com/ideal-weight.html"}
+      {"@type": "ListItem", "position": 2, "name": "Ideal Weight Calculator", "item": "https://healthybmicheck.com/ideal-weight.html"}
     ]
   }</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,7 +62,7 @@
   <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
 </header>
 <div class="hero">
-    <div class="breadcrumb"><a href="index.html">Home</a> › Ideal Weight Calculator — Find Your Healthy Weight R...</div>
+    <div class="breadcrumb" style="font-size:.8rem;color:var(--ink3);margin-bottom:16px;"><a href="index.html" style="color:var(--ink3);text-decoration:none;">Home</a> › Ideal Weight Calculator</div>
   <h1>Ideal <em>Weight</em> Calculator</h1>
   <p>Find your ideal body weight range based on your height and sex, using four leading scientific formulas.</p>
 </div>
@@ -112,6 +111,16 @@
       <div class="formula-box"><div class="fname">Miller Formula</div><div class="fvalue" id="miller">—</div></div>
       <div class="formula-box"><div class="fname">Hamwi Formula</div><div class="fvalue" id="hamwi">—</div></div>
     </div>
+    <div class="formula-grid" style="margin-bottom:12px;">
+      <div class="formula-box">
+        <div class="fname">BMI healthy range (18.5–24.9)</div>
+        <div class="fvalue" id="bmi-range">—</div>
+      </div>
+      <div class="formula-box">
+        <div class="fname">Asian BMI range (18.5–22.9)</div>
+        <div class="fvalue" id="bmi-range-asian">—</div>
+      </div>
+    </div>
     <div class="bmi-link-box">These formulas estimate a healthy weight for your height. For a complete picture, also check your <a href="bmi-calculator.html">BMI</a> and <a href="calorie-calculator.html">daily calorie needs</a>.</div>
   </div>
 
@@ -121,12 +130,28 @@
     <table>
       <thead><tr><th>Height</th><th>Ideal Weight Range</th><th>BMI Range</th></tr></thead>
       <tbody>
-        <tr><td>160 cm (5'3")</td><td>52 – 65 kg</td><td>18.5 – 25</td></tr>
-        <tr><td>165 cm (5'5")</td><td>55 – 68 kg</td><td>18.5 – 25</td></tr>
-        <tr><td>170 cm (5'7")</td><td>57 – 72 kg</td><td>18.5 – 25</td></tr>
-        <tr><td>175 cm (5'9")</td><td>60 – 76 kg</td><td>18.5 – 25</td></tr>
-        <tr><td>180 cm (5'11")</td><td>63 – 81 kg</td><td>18.5 – 25</td></tr>
-        <tr><td>185 cm (6'1")</td><td>67 – 85 kg</td><td>18.5 – 25</td></tr>
+        <tr><td>160 cm (5'3")</td><td>56 – 60 kg</td><td>18.5 – 25</td></tr>
+        <tr><td>165 cm (5'5")</td><td>61 – 63 kg</td><td>18.5 – 25</td></tr>
+        <tr><td>170 cm (5'7")</td><td>65 – 67 kg</td><td>18.5 – 25</td></tr>
+        <tr><td>175 cm (5'9")</td><td>69 – 72 kg</td><td>18.5 – 25</td></tr>
+        <tr><td>180 cm (5'11")</td><td>72 – 77 kg</td><td>18.5 – 25</td></tr>
+        <tr><td>185 cm (6'1")</td><td>74 – 83 kg</td><td>18.5 – 25</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-section">
+    <h2 class="section-title">Ideal Weight by Height (Female)</h2>
+    <p class="section-sub">Average ideal weight range for adult females using the Devine formula.</p>
+    <table>
+      <thead><tr><th>Height</th><th>Ideal Weight Range</th><th>BMI Range</th></tr></thead>
+      <tbody>
+        <tr><td>152 cm (5'0")</td><td>45 – 53 kg</td><td>18.5 – 25</td></tr>
+        <tr><td>155 cm (5'1")</td><td>48 – 55 kg</td><td>18.5 – 25</td></tr>
+        <tr><td>160 cm (5'3")</td><td>52 – 57 kg</td><td>18.5 – 25</td></tr>
+        <tr><td>165 cm (5'5")</td><td>56 – 60 kg</td><td>18.5 – 25</td></tr>
+        <tr><td>170 cm (5'7")</td><td>61 – 63 kg</td><td>18.5 – 25</td></tr>
+        <tr><td>175 cm (5'9")</td><td>64 – 66 kg</td><td>18.5 – 25</td></tr>
       </tbody>
     </table>
   </div>
@@ -234,6 +259,7 @@
       heightCm = (ft*12+ins)*2.54;
     }
     if(!heightCm||heightCm<100) { alert('Please enter a valid height.'); return; }
+    if(heightCm < 152) { alert('These formulas are designed for adults 152 cm (5\u00b90\u2033) and taller. For shorter heights, please consult a healthcare provider.'); return; }
     const inchesOver5ft = (heightCm/2.54) - 60;
     let devine, robinson, miller, hamwi;
     if(gender==='male') {
@@ -254,6 +280,16 @@
     document.getElementById('robinson').textContent = fmt(robinson);
     document.getElementById('miller').textContent   = fmt(miller);
     document.getElementById('hamwi').textContent    = fmt(hamwi);
+    // BMI healthy weight range
+    const bmiLow  = (18.5 * (heightCm/100) ** 2).toFixed(1);
+    const bmiHigh = (24.9 * (heightCm/100) ** 2).toFixed(1);
+    const asianHigh = (22.9 * (heightCm/100) ** 2).toFixed(1);
+    const fmtRange = (lo, hi) => unit === 'metric'
+      ? `${lo}–${hi} kg`
+      : `${(lo/0.453592).toFixed(1)}–${(hi/0.453592).toFixed(1)} lb`;
+    document.getElementById('bmi-range').textContent = fmtRange(bmiLow, bmiHigh);
+    document.getElementById('bmi-range-asian').textContent = fmtRange(bmiLow, asianHigh);
+
     document.getElementById('result-card').classList.add('visible');
     document.getElementById('result-card').scrollIntoView({behavior:'smooth',block:'nearest'});
   }

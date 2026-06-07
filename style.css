@@ -377,3 +377,89 @@ tr:nth-child(even) td { background: var(--bg); }
   display: flex; justify-content: space-between;
   font-size: .7rem; color: var(--ink3); font-weight: 500;
 }
+
+/* ============================================================
+   calorie-deficit-calculator.html — Page-specific styles
+   ============================================================ */
+.result-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+@media (max-width: 480px) { .result-hero { grid-template-columns: 1fr; } }
+.result-box { border-radius: 14px; padding: 18px; text-align: center; }
+.box-green { background: var(--ink); }
+.box-warn  { background: var(--warn-light); border: 1.5px solid #F5D9A8; }
+.r-label { font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: rgba(255,255,255,.55); margin-bottom: 4px; }
+.box-warn .r-label { color: var(--warn); }
+.r-value { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 7vw, 2.8rem); color: #fff; line-height: 1; }
+.box-warn .r-value { color: var(--warn); }
+.r-unit  { font-size: .75rem; color: rgba(255,255,255,.5); margin-top: 4px; }
+.box-warn .r-unit { color: var(--ink3); }
+
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+@media (max-width: 480px) { .info-grid { grid-template-columns: 1fr; } }
+.info-box { background: var(--bg); border-radius: 10px; padding: 12px 14px; }
+.lbl { font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--ink3); margin-bottom: 4px; }
+.val { font-size: 1rem; font-weight: 600; color: var(--ink); }
+
+.timeline { background: var(--bg); border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+.timeline-title { font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--ink3); margin-bottom: 12px; }
+.timeline-row { display: flex; align-items: center; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--border); }
+.timeline-row:last-child { border-bottom: none; }
+.t-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.t-dot-green { background: var(--accent); }
+.t-dot-warn  { background: var(--warn); }
+.t-label { font-size: .85rem; color: var(--ink2); flex: 1; }
+.t-value { font-size: .85rem; font-weight: 600; color: var(--ink); }
+
+.health-tip {
+  background: var(--accent-light); border-left: 4px solid var(--accent);
+  border-radius: 0 10px 10px 0; padding: 12px 16px;
+  font-size: .875rem; color: var(--ink); line-height: 1.7;
+}
+
+.speed-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+@media (max-width: 480px) { .speed-grid { grid-template-columns: 1fr; } }
+.speed-btn {
+  border: 1.5px solid var(--border); background: var(--bg); border-radius: 12px;
+  padding: 12px 10px; text-align: center; cursor: pointer;
+  font-family: 'DM Sans', sans-serif; transition: all .2s;
+  display: flex; flex-direction: column; gap: 2px;
+}
+.speed-btn.active { border-color: var(--accent); background: var(--accent-light); }
+.s-rate   { font-size: .9rem; font-weight: 700; color: var(--ink); }
+.s-label  { font-size: .75rem; font-weight: 600; color: var(--ink2); }
+.s-deficit { font-size: .7rem; color: var(--ink3); }
+.speed-btn.active .s-rate  { color: var(--accent); }
+.speed-btn.active .s-label { color: var(--accent); }
+
+.highlight-row td { background: var(--accent-light) !important; font-weight: 600; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+
+select {
+  width: 100%; border: 1.5px solid var(--border); border-radius: 10px;
+  padding: 12px 36px 12px 14px; font-family: 'DM Sans', sans-serif;
+  font-size: .95rem; color: var(--ink); background: var(--bg);
+  outline: none; appearance: none; cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6560' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 14px center;
+}
+select:focus { border-color: var(--accent); }
+
+/* ============================================================
+   ideal-weight.html — Page-specific styles
+   ============================================================ */
+.ideal-range {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 8vw, 3.2rem);
+  color: var(--ink); line-height: 1; margin-bottom: 4px;
+}
+.ideal-label { font-size: .8rem; color: var(--ink3); margin-bottom: 20px; }
+.formula-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+@media (max-width: 480px) { .formula-grid { grid-template-columns: 1fr; } }
+.formula-box { background: var(--bg); border-radius: 10px; padding: 12px 14px; }
+.fname  { font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--ink3); margin-bottom: 4px; }
+.fvalue { font-size: 1.1rem; font-weight: 600; color: var(--ink); }
+.bmi-link-box {
+  background: var(--accent-light); border-left: 4px solid var(--accent);
+  border-radius: 0 10px 10px 0; padding: 12px 16px;
+  font-size: .875rem; color: var(--ink); line-height: 1.7;
+}
+.bmi-link-box a { color: var(--accent); }
