@@ -21,7 +21,6 @@
   <link rel="canonical" href="https://healthybmicheck.com/water-intake.html">
   <meta name="description" content="Find out exactly how much water you should drink per day based on your weight, activity level, and climate. Free daily water intake calculator.">
   <meta name="keywords" content="water intake calculator, how much water should I drink, daily water intake, hydration calculator, water calculator">
-  <noscript></noscript>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does the \"8 glasses a day\" rule apply to everyone?", "acceptedAnswer": {"@type": "Answer", "text": "The popular \"8 glasses a day\" rule is a rough guideline, not a universal requirement. Actual water needs vary significantly based on body weight, activity level, climate, diet, and health status. Larger individuals, athletes, and people in hot climates typically need considerably more than 8 glasses."}}, {"@type": "Question", "name": "Does coffee or tea count towards my daily water intake?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, to a degree. Coffee and tea do contribute to your daily fluid intake. While caffeine has a mild diuretic effect, research shows that moderate consumption of caffeinated beverages still results in a net positive fluid contribution. However, plain water remains the best source of hydration."}}, {"@type": "Question", "name": "How do I know if I am drinking enough water?", "acceptedAnswer": {"@type": "Answer", "text": "The simplest indicator is urine colour. Pale yellow (like lemonade) indicates good hydration. Dark yellow or amber suggests you need to drink more. Other signs of dehydration include dry mouth, fatigue, headaches, and reduced urine output."}}, {"@type": "Question", "name": "Should I drink more water in Malaysia's climate?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Malaysia's hot and humid tropical climate increases sweat loss significantly, raising your daily fluid requirements. People living in tropical climates typically need 0.5–1 litre more per day compared to those in cooler climates, especially if spending time outdoors."}}, {"@type": "Question", "name": "Can you drink too much water?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, though it is rare in healthy adults. Drinking extremely large amounts in a short period can cause hyponatraemia (low blood sodium), which is a medical emergency. This is most commonly seen in endurance athletes who over-hydrate. For most people, following the recommendations from this calculator is safe."}}]}</script>
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://healthybmicheck.com/water-intake.html">
@@ -41,7 +40,7 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://healthybmicheck.com/"},
-      {"@type": "ListItem", "position": 2, "name": "Water Intake Calculator — How Much Water Per Day?", "item": "https://healthybmicheck.com/water-intake.html"}
+      {"@type": "ListItem", "position": 2, "name": "Water Intake Calculator", "item": "https://healthybmicheck.com/water-intake.html"}
     ]
   }</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,7 +62,7 @@
   <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
 </header>
 <div class="hero">
-    <div class="breadcrumb"><a href="index.html">Home</a> › Water Intake Calculator — How Much Water Per Day?</div>
+    <div class="breadcrumb" style="font-size:.8rem;color:var(--ink3);margin-bottom:16px;"><a href="index.html" style="color:var(--ink3);text-decoration:none;">Home</a> › Water Intake Calculator</div>
   <h1>Daily <em>Water</em> Intake Calculator</h1>
   <p>Find out exactly how much water you should drink every day based on your weight, activity, and climate.</p>
 </div>
@@ -229,7 +228,7 @@
     ];
     document.getElementById('tip-box').textContent = tips[Math.floor(Math.random()*tips.length)];
     document.getElementById('result-card').classList.add('visible');
-    localStorage.setItem('water_result', waterL.toFixed(1) + ' L/day');
+    
     document.getElementById('result-card').scrollIntoView({behavior:'smooth',block:'nearest'});
   }
   function toggleFaq(btn) { btn.nextElementSibling.classList.toggle('open'); btn.classList.toggle('open'); }

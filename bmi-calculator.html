@@ -23,8 +23,6 @@
   <meta name="description" content="Calculate your BMI instantly. Free Body Mass Index calculator with weight category, ideal weight range, and health tips. Supports both Metric and Imperial.">
   <meta name="keywords" content="BMI calculator, body mass index, ideal weight, healthy weight, BMI chart">
   
-  <noscript></noscript>
-
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is BMI calculated?", "acceptedAnswer": {"@type": "Answer", "text": "BMI is calculated by dividing your weight in kilograms by the square of your height in meters (kg/m²). For example, a person weighing 70 kg at 1.75 m has a BMI of 70 ÷ (1.75 × 1.75) = 22.9."}}]}</script>
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://healthybmicheck.com/bmi-calculator.html">
@@ -68,7 +66,6 @@
 </header>
 
 
-</div>
 
 <div class="hero">
     <div class="breadcrumb"><a href="index.html">Home</a> › BMI Calculator</div>
@@ -320,7 +317,6 @@
     
     // Category text
     let cat = bmi < 18.5 ? 'Underweight' : bmi < 25 ? 'Normal' : bmi < 30 ? 'Overweight' : 'Obese';
-    localStorage.setItem('bmi_result', bmiRound + ' · ' + cat);
     document.getElementById('bmi-category').textContent = cat;
     const tips = {
       Underweight: "Your BMI suggests you may be underweight. Consider speaking with a healthcare provider or dietitian about safely increasing calorie and nutrient intake. Our <a href='high-protein-foods.html'>high-protein foods guide</a> may also help.",
@@ -329,6 +325,17 @@
       Obese: "Your BMI is in the obese range, which is associated with higher health risks. Speaking with a healthcare provider is strongly recommended. Our guide on <a href='how-to-lower-bmi.html'>how to lower your BMI</a> covers practical steps you can start with."
     };
     document.getElementById('health-tip').innerHTML = tips[cat] || "";
+    // Healthy weight range
+    const lo = (18.5 * h * h).toFixed(1), hi = (24.9 * h * h).toFixed(1);
+    document.getElementById('healthy-range').textContent = unit === 'metric'
+      ? lo + '–' + hi + ' kg'
+      : (lo/0.453592).toFixed(1) + '–' + (hi/0.453592).toFixed(1) + ' lb';
+    // Ideal weight (Devine)
+    const inOver = (h / 0.0254) - 60;
+    const devine = gender === 'male' ? 50 + 2.3 * inOver : 45.5 + 2.3 * inOver;
+    document.getElementById('ideal-weight').textContent = unit === 'metric'
+      ? devine.toFixed(1) + ' kg (Devine)'
+      : (devine / 0.453592).toFixed(1) + ' lb (Devine)';
   }
 
   function toggleFaq(btn) {
