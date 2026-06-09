@@ -46,7 +46,7 @@
     ]
   }</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","datePublished":"2026-01-01","dateModified":"2026-06-01"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'What is the highest protein food per 100g?',"acceptedAnswer":{"@type":"Answer","text":'Dried egg white powder and isolated protein powders are technically highest (80–90g protein/100g), but from whole foods: chicken breast provides 31g/100g, canned tuna 26g/100g, and tempeh 19g/100g. For vegetarians, tofu (firm) provides 17g/100g. Among legumes, cooked lentils and black beans provide 8–9g/100g.'}},{"@type":"Question","name":'How much protein can the body absorb in one meal?',"acceptedAnswer":{"@type":"Answer","text":"The body can absorb and use more protein than the old '30g per meal' myth suggested. Research shows muscle protein synthesis is stimulated by approximately 0.4g/kg per meal, with diminishing but not zero returns above this. Spreading protein across 3–4 meals (rather than one large serving) maximises total daily muscle protein synthesis — but all dietary protein is absorbed regardless of meal size."}},{"@type":"Question","name":'Are plant proteins as good as animal proteins for muscle building?',"acceptedAnswer":{"@type":"Answer","text":'Plant proteins are slightly less effective per gram due to lower leucine content and amino acid profiles, but the difference is largely overcome by eating slightly higher total protein. Studies show that plant-based diets with adequate total protein (1.6–2.2g/kg) produce equivalent muscle gains to animal protein-based diets. Combining complementary plant sources (rice + beans, for example) provides a complete amino acid profile.'}},{"@type":"Question","name":'Do protein foods help with weight loss beyond muscle preservation?',"acceptedAnswer":{"@type":"Answer","text":'Yes — protein has the highest satiety per calorie of all macronutrients, significantly reducing hunger and spontaneous calorie intake. It also has a thermic effect of 20–30% (your body burns 20–30 kcal digesting every 100 kcal of protein). High-protein diets consistently reduce total calorie intake in ad libitum (eat until full) studies, without requiring calorie counting.'}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much protein do I need per day for weight loss?", "acceptedAnswer": {"@type": "Answer", "text": "For weight loss with muscle preservation, aim for 1.6–2.2g of protein per kg of body weight per day. This is significantly higher than the basic recommended dietary allowance (0.8g/kg) which is a minimum for preventing deficiency, not an optimal level for body composition goals."}}, {"@type": "Question", "name": "What are the highest protein foods per 100g?", "acceptedAnswer": {"@type": "Answer", "text": "Dried egg whites (82g protein/100g), seitan (75g), casein/whey protein powder (70–80g), Parmesan cheese (35g), canned tuna (30g), chicken breast cooked (31g), and edamame (11g) are among the highest. For whole foods, lean meats, fish, eggs, and legumes consistently top the charts."}}, {"@type": "Question", "name": "Can I get enough protein from plant sources alone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — but it requires more planning than omnivore diets. Key plant protein sources include legumes (lentils, chickpeas, black beans), tofu, tempeh, edamame, seitan, and protein-fortified plant milks. Combining different plant proteins throughout the day ensures adequate essential amino acid intake."}}, {"@type": "Question", "name": "Does protein timing matter for muscle building?", "acceptedAnswer": {"@type": "Answer", "text": "Distributing protein intake across 3–5 meals per day (20–40g per meal) maximises muscle protein synthesis compared to eating the same total in fewer meals. Having protein within 2 hours after resistance training is beneficial. However, total daily protein intake is more important than precise timing for most people."}}, {"@type": "Question", "name": "Do high protein diets damage kidneys?", "acceptedAnswer": {"@type": "Answer", "text": "In healthy individuals with normal kidney function, there is no evidence that high protein diets (up to 3g/kg/day) cause kidney damage. This concern is relevant only for people with pre-existing kidney disease, for whom protein restriction may be recommended. If you have kidney issues, consult your doctor before significantly increasing protein intake."}}]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -165,7 +165,31 @@
     USDA FoodData Central. <a href="https://fdc.nal.usda.gov" target="_blank" rel="noopener" style="color:#A09A94">fdc.nal.usda.gov</a> — Nutritional data source.
   </div>
 
-  <div class="related">
+  <div class="faq-section">
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">How much protein do I need per day for weight loss?</button>
+    <div class="faq-a">For weight loss with muscle preservation, aim for 1.6–2.2g of protein per kg of body weight per day. This is significantly higher than the basic recommended dietary allowance (0.8g/kg) which is a minimum for preventing deficiency, not an optimal level for body composition goals.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">What are the highest protein foods per 100g?</button>
+    <div class="faq-a">Dried egg whites (82g protein/100g), seitan (75g), casein/whey protein powder (70–80g), Parmesan cheese (35g), canned tuna (30g), chicken breast cooked (31g), and edamame (11g) are among the highest. For whole foods, lean meats, fish, eggs, and legumes consistently top the charts.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Can I get enough protein from plant sources alone?</button>
+    <div class="faq-a">Yes — but it requires more planning than omnivore diets. Key plant protein sources include legumes (lentils, chickpeas, black beans), tofu, tempeh, edamame, seitan, and protein-fortified plant milks. Combining different plant proteins throughout the day ensures adequate essential amino acid intake.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Does protein timing matter for muscle building?</button>
+    <div class="faq-a">Distributing protein intake across 3–5 meals per day (20–40g per meal) maximises muscle protein synthesis compared to eating the same total in fewer meals. Having protein within 2 hours after resistance training is beneficial. However, total daily protein intake is more important than precise timing for most people.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Do high protein diets damage kidneys?</button>
+    <div class="faq-a">In healthy individuals with normal kidney function, there is no evidence that high protein diets (up to 3g/kg/day) cause kidney damage. This concern is relevant only for people with pre-existing kidney disease, for whom protein restriction may be recommended. If you have kidney issues, consult your doctor before significantly increasing protein intake.</div>
+  </div>
+</div>
+
+<div class="related">
     <h3>Related Articles & Tools</h3>
     <div class="related-links">
       <a href="protein-for-weight-loss.html">Protein for Weight Loss</a>
@@ -193,32 +217,7 @@
 
 
 <!-- E-E-A-T: Sources & Medical Review -->
-  <h2 style="font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:16px;">Frequently Asked Questions</h2>
-
-  <h3>What is the highest protein food per 100g?</h3>
-  <p>Dried egg white powder and isolated protein powders are technically highest (80–90g protein/100g), but from whole foods: chicken breast provides 31g/100g, canned tuna 26g/100g, and tempeh 19g/100g. For vegetarians, tofu (firm) provides 17g/100g. Among legumes, cooked lentils and black beans provide 8–9g/100g.</p>
-  <h3>How much protein can the body absorb in one meal?</h3>
-  <p>The body can absorb and use more protein than the old '30g per meal' myth suggested. Research shows muscle protein synthesis is stimulated by approximately 0.4g/kg per meal, with diminishing but not zero returns above this. Spreading protein across 3–4 meals (rather than one large serving) maximises total daily muscle protein synthesis — but all dietary protein is absorbed regardless of meal size.</p>
-  <h3>Are plant proteins as good as animal proteins for muscle building?</h3>
-  <p>Plant proteins are slightly less effective per gram due to lower leucine content and amino acid profiles, but the difference is largely overcome by eating slightly higher total protein. Studies show that plant-based diets with adequate total protein (1.6–2.2g/kg) produce equivalent muscle gains to animal protein-based diets. Combining complementary plant sources (rice + beans, for example) provides a complete amino acid profile.</p>
-  <h3>Do protein foods help with weight loss beyond muscle preservation?</h3>
-  <p>Yes — protein has the highest satiety per calorie of all macronutrients, significantly reducing hunger and spontaneous calorie intake. It also has a thermic effect of 20–30% (your body burns 20–30 kcal digesting every 100 kcal of protein). High-protein diets consistently reduce total calorie intake in ad libitum (eat until full) studies, without requiring calorie counting.</p>
-
-
-<div style="max-width:720px;margin:0 auto 0;padding:0 20px 40px;">
-  <div style="background:#F0F7F4;border:1px solid #B7DDD0;border-radius:12px;padding:20px 24px;font-size:0.82rem;color:#2D4A3E;line-height:1.8;">
-    <strong style="display:block;margin-bottom:8px;font-size:0.85rem;">📚 Sources &amp; Editorial Standards</strong>
-    This page is based on guidelines and research from peer-reviewed sources including:
-    <ul style="margin:8px 0 8px 18px;padding:0;">
-      <li>World Health Organization (WHO) — <em>BMI Classification and Obesity Guidelines</em></li>
-      <li>Centers for Disease Control and Prevention (CDC) — <em>Healthy Weight, Nutrition, and Physical Activity</em></li>
-      <li>National Institutes of Health (NIH) — <em>Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity</em></li>
-    </ul>
-    Content is reviewed for accuracy and updated regularly. This page is for informational purposes only and does not constitute medical advice. Consult a qualified healthcare professional before making health decisions.
-  </div>
-</div>
-
-<footer>
+  <footer>
   <div>© 2026 healthybmicheck.com — Free Health Calculators</div>
   <div style="margin-top:8px">
     <a href="index.html">All Calculators</a>

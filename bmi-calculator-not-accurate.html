@@ -35,7 +35,7 @@
   </script>
 
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'How accurate is BMI as a health measure?',"acceptedAnswer":{"@type":"Answer","text":'BMI is reasonably accurate at the population level, with strong correlations between BMI and health outcomes across large studies. At the individual level, accuracy decreases for athletes, older adults, and Asian populations. For most sedentary adults of average build, BMI is a reliable screening tool.'}},{"@type":"Question","name":'What should I use instead of BMI?',"acceptedAnswer":{"@type":"Answer","text":'The most practical supplement to BMI is waist circumference (aim for women under 80 cm, men under 94 cm) — it captures abdominal fat accumulation that BMI misses. Waist-to-height ratio (below 0.5 for all adults) is another simple option. Body fat percentage is more precise but requires equipment or professional assessment.'}},{"@type":"Question","name":'Is BMI accurate for people who exercise regularly?',"acceptedAnswer":{"@type":"Answer","text":"BMI is less reliable for people who do regular resistance training. A well-trained person may have a BMI in the 'overweight' range despite having low body fat and excellent cardiovascular health. For people who lift weights, body fat percentage is a more meaningful metric."}},{"@type":"Question","name":'At what BMI is health risk significantly increased?',"acceptedAnswer":{"@type":"Answer","text":'Health risk increases meaningfully above BMI 25 for most adults, and above BMI 23 for Asian adults. Risk increases substantially above BMI 30. Risk also increases below BMI 18.5. The lowest risk is generally in the 20–24.9 range for most populations.'}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why do doctors still use BMI if it's not accurate?", "acceptedAnswer": {"@type": "Answer", "text": "BMI remains useful as a quick, free, population-level screening tool that requires no special equipment. Its limitations are well understood by clinicians, who use it as one data point alongside other assessments. The alternative — body fat measurement tools like DEXA — are expensive and impractical for routine screening."}}, {"@type": "Question", "name": "Can you have a healthy BMI but be unhealthy?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — this is called 'metabolically obese normal weight' (MONW). A person can have normal BMI but carry excess visceral fat, have insulin resistance, high triglycerides, or other metabolic risk factors. Waist circumference measurement helps identify this pattern in normal-weight individuals."}}, {"@type": "Question", "name": "Is BMI accurate for women?", "acceptedAnswer": {"@type": "Answer", "text": "BMI uses the same formula and ranges for both sexes, but women naturally carry more body fat than men at the same BMI value. This means the same BMI may represent higher body fat in women than men, which is worth noting but does not fundamentally undermine BMI's usefulness as a screening tool."}}, {"@type": "Question", "name": "How should I use BMI given its limitations?", "acceptedAnswer": {"@type": "Answer", "text": "Use BMI as a starting point, not a verdict. If your BMI is in the normal range and your waist circumference is healthy, you are likely at low metabolic risk. If your BMI is high, combine it with a body fat measurement and waist circumference for a complete picture before drawing conclusions."}}, {"@type": "Question", "name": "Is BMI accurate for Asian populations?", "acceptedAnswer": {"@type": "Answer", "text": "Standard BMI cutoffs underestimate health risk for Asian populations. Research shows Asian adults develop metabolic disease at lower BMI values — the WHO Asian guideline sets overweight at BMI 23 (vs 25 globally) and obese at 27.5 (vs 30). Use our Asian BMI Calculator for more accurate categorisation."}}]}</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
   {"@type":"ListItem","position":1,"name":"Home","item":"https://healthybmicheck.com"},
@@ -146,7 +146,31 @@
     </div>
   </div>
 
-  <div class="related">
+  <div class="faq-section">
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Why do doctors still use BMI if it's not accurate?</button>
+    <div class="faq-a">BMI remains useful as a quick, free, population-level screening tool that requires no special equipment. Its limitations are well understood by clinicians, who use it as one data point alongside other assessments. The alternative — body fat measurement tools like DEXA — are expensive and impractical for routine screening.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Can you have a healthy BMI but be unhealthy?</button>
+    <div class="faq-a">Yes — this is called 'metabolically obese normal weight' (MONW). A person can have normal BMI but carry excess visceral fat, have insulin resistance, high triglycerides, or other metabolic risk factors. Waist circumference measurement helps identify this pattern in normal-weight individuals.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Is BMI accurate for women?</button>
+    <div class="faq-a">BMI uses the same formula and ranges for both sexes, but women naturally carry more body fat than men at the same BMI value. This means the same BMI may represent higher body fat in women than men, which is worth noting but does not fundamentally undermine BMI's usefulness as a screening tool.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">How should I use BMI given its limitations?</button>
+    <div class="faq-a">Use BMI as a starting point, not a verdict. If your BMI is in the normal range and your waist circumference is healthy, you are likely at low metabolic risk. If your BMI is high, combine it with a body fat measurement and waist circumference for a complete picture before drawing conclusions.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Is BMI accurate for Asian populations?</button>
+    <div class="faq-a">Standard BMI cutoffs underestimate health risk for Asian populations. Research shows Asian adults develop metabolic disease at lower BMI values — the WHO Asian guideline sets overweight at BMI 23 (vs 25 globally) and obese at 27.5 (vs 30). Use our Asian BMI Calculator for more accurate categorisation.</div>
+  </div>
+</div>
+
+<div class="related">
     <h3>Related Articles & Tools</h3>
     <div class="related-links">
       <a href="bmi-calculator.html">BMI Calculator</a>
@@ -160,18 +184,7 @@
 
 </div>
 
-  <h2 style="font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:4px;">Frequently Asked Questions</h2>
-
-  <h3>How accurate is BMI as a health measure?</h3>
-  <p>BMI is reasonably accurate at the population level, with strong correlations between BMI and health outcomes across large studies. At the individual level, accuracy decreases for athletes, older adults, and Asian populations. For most sedentary adults of average build, BMI is a reliable screening tool.</p>
-  <h3>What should I use instead of BMI?</h3>
-  <p>The most practical supplement to BMI is waist circumference (aim for women under 80 cm, men under 94 cm) — it captures abdominal fat accumulation that BMI misses. Waist-to-height ratio (below 0.5 for all adults) is another simple option. Body fat percentage is more precise but requires equipment or professional assessment.</p>
-  <h3>Is BMI accurate for people who exercise regularly?</h3>
-  <p>BMI is less reliable for people who do regular resistance training. A well-trained person may have a BMI in the 'overweight' range despite having low body fat and excellent cardiovascular health. For people who lift weights, body fat percentage is a more meaningful metric.</p>
-  <h3>At what BMI is health risk significantly increased?</h3>
-  <p>Health risk increases meaningfully above BMI 25 for most adults, and above BMI 23 for Asian adults. Risk increases substantially above BMI 30. Risk also increases below BMI 18.5. The lowest risk is generally in the 20–24.9 range for most populations.</p>
-
-<!-- CTA Block -->
+  <!-- CTA Block -->
   <div style="max-width:720px;margin:0 auto;padding:0 20px 16px;">
     <div style="background:#1A1714;border-radius:20px;padding:32px 28px;text-align:center;">
       <p style="font-size:.78rem;font-weight:600;color:#7EC8A4;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;">Next step</p>

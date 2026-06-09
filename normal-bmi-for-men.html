@@ -46,7 +46,7 @@
     ]
   }</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","datePublished":"2026-01-01","dateModified":"2026-06-01"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'What is a healthy BMI for men?',"acceptedAnswer":{"@type":"Answer","text":'For most adult men, a BMI of 18.5–24.9 is considered healthy by WHO standards. For Asian men, a slightly lower range (18.5–22.9) is recommended, with overweight beginning at 23.0. However, muscular men may have a BMI in the 25–28 range despite low body fat — waist circumference under 94cm and healthy metabolic markers are more meaningful indicators for active men.'}},{"@type":"Question","name":'At what BMI are men at risk for heart disease?',"acceptedAnswer":{"@type":"Answer","text":'Cardiovascular risk increases meaningfully above BMI 25, and substantially above BMI 30. However, waist circumference above 94cm (or 102cm for high risk) is an equally important predictor of cardiovascular risk — particularly because it captures visceral fat accumulation that BMI cannot. Men with normal BMI but elevated waist circumference face similar risk to those with modestly elevated BMI.'}},{"@type":"Question","name":'How does BMI differ between men and women?',"acceptedAnswer":{"@type":"Answer","text":'BMI is calculated identically for men and women — the same height-weight formula applies. However, at the same BMI, women naturally carry approximately 5–8% more body fat than men, due to hormonal differences and reproductive physiology. This means the health risk at a given BMI is slightly different between sexes — men tend to accumulate visceral fat earlier, while women have more subcutaneous fat distribution.'}},{"@type":"Question","name":'Why do men lose weight faster than women?',"acceptedAnswer":{"@type":"Answer","text":'Men typically lose weight faster than women at the same calorie deficit for several reasons: higher muscle mass (raising resting metabolic rate by 5–10%), lower baseline body fat percentage, and higher average TDEE due to greater lean mass. Hormonal differences also play a role — testosterone supports muscle maintenance during a deficit. These differences narrow significantly when body size and composition are accounted for.'}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a normal BMI for men?", "acceptedAnswer": {"@type": "Answer", "text": "For adult men, the WHO defines normal BMI as 18.5 to 24.9. Below 18.5 is underweight; 25.0–29.9 is overweight; 30.0 or above is obese. For men of Asian descent, the threshold adjusts: overweight starts at BMI 23.0, as Asian men accumulate more visceral fat and metabolic risk at lower BMI values than Western men."}}, {"@type": "Question", "name": "At what BMI do men have the lowest health risk?", "acceptedAnswer": {"@type": "Answer", "text": "Research suggests the lowest all-cause mortality risk for men corresponds to a BMI of approximately 22–24. Above 27–28, risk increases noticeably for cardiovascular disease and type 2 diabetes. Below 18.5, risk also increases due to potential malnutrition and frailty."}}, {"@type": "Question", "name": "Why do muscular men often have high BMI?", "acceptedAnswer": {"@type": "Answer", "text": "BMI cannot distinguish between muscle and fat. A man with 90 kg of lean mass at 180 cm would have a BMI of 27.8 (classified overweight) despite very low body fat. This limitation is most pronounced in men who engage in resistance training, as men build muscle more readily than women due to higher testosterone levels."}}, {"@type": "Question", "name": "Is BMI 27 unhealthy for a man?", "acceptedAnswer": {"@type": "Answer", "text": "Not necessarily. A BMI of 27 in a man with good muscle mass, normal waist circumference (below 94 cm for Asian men, 102 cm for Western men), and healthy metabolic markers (blood pressure, cholesterol, blood sugar) carries modest health risk. Body composition context is essential for interpreting a BMI in this range."}}, {"@type": "Question", "name": "What waist measurement is healthy for men?", "acceptedAnswer": {"@type": "Answer", "text": "A waist circumference below 94 cm is low risk for men (most Western guidelines); 94–102 cm is increased risk; above 102 cm is high risk. For men of Asian descent, the thresholds are lower: below 90 cm is recommended. Waist circumference is a better predictor of visceral fat and metabolic disease than BMI for most men."}}]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -166,7 +166,31 @@
     Romero-Corral A, et al. Accuracy of body mass index in diagnosing obesity in the adult general population. <em>Int J Obes.</em> 2008;32(6):959–966.
   </div>
 
-  <div class="related">
+  <div class="faq-section">
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">What is a normal BMI for men?</button>
+    <div class="faq-a">For adult men, the WHO defines normal BMI as 18.5 to 24.9. Below 18.5 is underweight; 25.0–29.9 is overweight; 30.0 or above is obese. For men of Asian descent, the threshold adjusts: overweight starts at BMI 23.0, as Asian men accumulate more visceral fat and metabolic risk at lower BMI values than Western men.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">At what BMI do men have the lowest health risk?</button>
+    <div class="faq-a">Research suggests the lowest all-cause mortality risk for men corresponds to a BMI of approximately 22–24. Above 27–28, risk increases noticeably for cardiovascular disease and type 2 diabetes. Below 18.5, risk also increases due to potential malnutrition and frailty.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Why do muscular men often have high BMI?</button>
+    <div class="faq-a">BMI cannot distinguish between muscle and fat. A man with 90 kg of lean mass at 180 cm would have a BMI of 27.8 (classified overweight) despite very low body fat. This limitation is most pronounced in men who engage in resistance training, as men build muscle more readily than women due to higher testosterone levels.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Is BMI 27 unhealthy for a man?</button>
+    <div class="faq-a">Not necessarily. A BMI of 27 in a man with good muscle mass, normal waist circumference (below 94 cm for Asian men, 102 cm for Western men), and healthy metabolic markers (blood pressure, cholesterol, blood sugar) carries modest health risk. Body composition context is essential for interpreting a BMI in this range.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">What waist measurement is healthy for men?</button>
+    <div class="faq-a">A waist circumference below 94 cm is low risk for men (most Western guidelines); 94–102 cm is increased risk; above 102 cm is high risk. For men of Asian descent, the thresholds are lower: below 90 cm is recommended. Waist circumference is a better predictor of visceral fat and metabolic disease than BMI for most men.</div>
+  </div>
+</div>
+
+<div class="related">
     <h3>Related Articles & Tools</h3>
     <div class="related-links">
       <a href="what-is-bmi.html">What is BMI?</a>
@@ -197,32 +221,7 @@
 
 
 <!-- E-E-A-T: Sources & Medical Review -->
-  <h2 style="font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:16px;">Frequently Asked Questions</h2>
-
-  <h3>What is a healthy BMI for men?</h3>
-  <p>For most adult men, a BMI of 18.5–24.9 is considered healthy by WHO standards. For Asian men, a slightly lower range (18.5–22.9) is recommended, with overweight beginning at 23.0. However, muscular men may have a BMI in the 25–28 range despite low body fat — waist circumference under 94cm and healthy metabolic markers are more meaningful indicators for active men.</p>
-  <h3>At what BMI are men at risk for heart disease?</h3>
-  <p>Cardiovascular risk increases meaningfully above BMI 25, and substantially above BMI 30. However, waist circumference above 94cm (or 102cm for high risk) is an equally important predictor of cardiovascular risk — particularly because it captures visceral fat accumulation that BMI cannot. Men with normal BMI but elevated waist circumference face similar risk to those with modestly elevated BMI.</p>
-  <h3>How does BMI differ between men and women?</h3>
-  <p>BMI is calculated identically for men and women — the same height-weight formula applies. However, at the same BMI, women naturally carry approximately 5–8% more body fat than men, due to hormonal differences and reproductive physiology. This means the health risk at a given BMI is slightly different between sexes — men tend to accumulate visceral fat earlier, while women have more subcutaneous fat distribution.</p>
-  <h3>Why do men lose weight faster than women?</h3>
-  <p>Men typically lose weight faster than women at the same calorie deficit for several reasons: higher muscle mass (raising resting metabolic rate by 5–10%), lower baseline body fat percentage, and higher average TDEE due to greater lean mass. Hormonal differences also play a role — testosterone supports muscle maintenance during a deficit. These differences narrow significantly when body size and composition are accounted for.</p>
-
-
-<div style="max-width:720px;margin:0 auto 0;padding:0 20px 40px;">
-  <div style="background:#F0F7F4;border:1px solid #B7DDD0;border-radius:12px;padding:20px 24px;font-size:0.82rem;color:#2D4A3E;line-height:1.8;">
-    <strong style="display:block;margin-bottom:8px;font-size:0.85rem;">📚 Sources &amp; Editorial Standards</strong>
-    This page is based on guidelines and research from peer-reviewed sources including:
-    <ul style="margin:8px 0 8px 18px;padding:0;">
-      <li>World Health Organization (WHO) — <em>BMI Classification and Obesity Guidelines</em></li>
-      <li>Centers for Disease Control and Prevention (CDC) — <em>Healthy Weight, Nutrition, and Physical Activity</em></li>
-      <li>National Institutes of Health (NIH) — <em>Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity</em></li>
-    </ul>
-    Content is reviewed for accuracy and updated regularly. This page is for informational purposes only and does not constitute medical advice. Consult a qualified healthcare professional before making health decisions.
-  </div>
-</div>
-
-<footer>
+  <footer>
   <div>© 2026 healthybmicheck.com — Free Health Calculators</div>
   <div style="margin-top:8px">
     <a href="index.html">All Calculators</a>
