@@ -49,6 +49,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does the Health Profile calculator measure?", "acceptedAnswer": {"@type": "Answer", "text": "The Health Profile calculator gives you six key metrics in one place: BMI (with both standard and Asian cutoffs), daily calorie needs (TDEE and BMR), ideal weight range using four clinical formulas, body fat estimate, daily water requirement, and calorie targets for weight loss or gain. It replaces running six separate calculators."}}, {"@type": "Question", "name": "How accurate is the Health Profile calculator?", "acceptedAnswer": {"@type": "Answer", "text": "Each metric uses the most validated formula available: Mifflin-St Jeor for calories (±10% for most adults), Devine/Robinson/Miller/Hamwi for ideal weight, and the U.S. Navy method for body fat (±3–4%). These are the same formulas used in clinical settings. Treat results as a precise starting point, not a medical diagnosis."}}, {"@type": "Question", "name": "Should I use standard BMI or Asian BMI for my result?", "acceptedAnswer": {"@type": "Answer", "text": "If you are of East Asian, Southeast Asian, or South Asian descent, the Asian BMI cutoffs (overweight ≥23, obese ≥27.5) are more appropriate — research shows Asian populations carry higher metabolic risk at lower BMI values. The calculator shows both so you can compare. Malaysia, Singapore, and most Asian health authorities follow the Asian standard."}}, {"@type": "Question", "name": "How often should I recalculate my health profile?", "acceptedAnswer": {"@type": "Answer", "text": "Recalculate whenever your weight changes by 5 kg or more, when you significantly change your activity level, or every 8–12 weeks during an active weight loss or gain phase. Your TDEE changes as your body weight changes — using outdated numbers is one of the most common reasons progress stalls."}}, {"@type": "Question", "name": "Why does my ideal weight range span several kilograms?", "acceptedAnswer": {"@type": "Answer", "text": "The ideal weight range reflects four different clinical formulas (Devine, Robinson, Miller, Hamwi) that each define 'ideal' slightly differently based on height and sex. The range represents the consensus across these formulas. Research shows body composition (muscle-to-fat ratio) matters more than hitting a specific weight within this range."}}, {"@type": "Question", "name": "Can I use this calculator if I am pregnant or breastfeeding?", "acceptedAnswer": {"@type": "Answer", "text": "No — pregnancy and breastfeeding significantly alter calorie needs, body composition, and appropriate weight ranges. BMI and TDEE calculations are not appropriate during pregnancy. Consult your midwife or doctor for personalised guidance on nutrition and weight management during and after pregnancy."}}]}</script>
 </head>
 <body>
 
@@ -528,6 +529,61 @@
         <a href="metabolism-facts.html">Metabolism Facts</a>
   </div>
 </div>
+
+<div style="max-width:820px;margin:32px auto 0;padding:0 20px;">
+  
+<div class="card" style="padding:20px;margin:20px 0;overflow-x:auto;">
+  <p style="font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:14px;">What your Health Profile calculates</p>
+  <svg viewBox="0 0 620 80" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:620px;display:block;font-family:'DM Sans',sans-serif;">
+    <rect x="10" y="15" width="90" height="45" rx="8" fill="#D8EFE4" stroke="#A8D5BE" stroke-width="1"/>
+    <text x="55" y="36" text-anchor="middle" font-size="9" font-weight="700" fill="#2D6A4F">⚖ BMI</text>
+    <text x="55" y="52" text-anchor="middle" font-size="8" fill="#2D6A4F">Standard + Asian</text>
+    <rect x="110" y="15" width="90" height="45" rx="8" fill="#FBF0DC" stroke="#F5D9A8" stroke-width="1"/>
+    <text x="155" y="36" text-anchor="middle" font-size="9" font-weight="700" fill="#C17B2A">🔥 Calories</text>
+    <text x="155" y="52" text-anchor="middle" font-size="8" fill="#C17B2A">TDEE + BMR</text>
+    <rect x="210" y="15" width="100" height="45" rx="8" fill="#EBF3FA" stroke="#C7DCEE" stroke-width="1"/>
+    <text x="260" y="36" text-anchor="middle" font-size="9" font-weight="700" fill="#3A7BBF">📊 Body Fat</text>
+    <text x="260" y="52" text-anchor="middle" font-size="8" fill="#3A7BBF">Navy method</text>
+    <rect x="320" y="15" width="100" height="45" rx="8" fill="#D8EFE4" stroke="#A8D5BE" stroke-width="1"/>
+    <text x="370" y="36" text-anchor="middle" font-size="9" font-weight="700" fill="#2D6A4F">🎯 Ideal Wt</text>
+    <text x="370" y="52" text-anchor="middle" font-size="8" fill="#2D6A4F">4 formulas</text>
+    <rect x="430" y="15" width="80" height="45" rx="8" fill="#EBF3FA" stroke="#C7DCEE" stroke-width="1"/>
+    <text x="470" y="36" text-anchor="middle" font-size="9" font-weight="700" fill="#3A7BBF">💧 Water</text>
+    <text x="470" y="52" text-anchor="middle" font-size="8" fill="#3A7BBF">Daily needs</text>
+    <rect x="520" y="15" width="90" height="45" rx="8" fill="#FBF0DC" stroke="#F5D9A8" stroke-width="1"/>
+    <text x="565" y="36" text-anchor="middle" font-size="9" font-weight="700" fill="#C17B2A">📉 Goals</text>
+    <text x="565" y="52" text-anchor="middle" font-size="8" fill="#C17B2A">Loss + gain</text>
+  </svg>
+</div>
+<div class="faq-section">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">What does the Health Profile calculator measure?</button>
+    <div class="faq-a">The Health Profile calculator gives you six key metrics in one place: BMI (with both standard and Asian cutoffs), daily calorie needs (TDEE and BMR), ideal weight range using four clinical formulas, body fat estimate, daily water requirement, and calorie targets for weight loss or gain. It replaces running six separate calculators.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">How accurate is the Health Profile calculator?</button>
+    <div class="faq-a">Each metric uses the most validated formula available: Mifflin-St Jeor for calories (±10% for most adults), Devine/Robinson/Miller/Hamwi for ideal weight, and the U.S. Navy method for body fat (±3–4%). These are the same formulas used in clinical settings. Treat results as a precise starting point, not a medical diagnosis.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Should I use standard BMI or Asian BMI for my result?</button>
+    <div class="faq-a">If you are of East Asian, Southeast Asian, or South Asian descent, the Asian BMI cutoffs (overweight ≥23, obese ≥27.5) are more appropriate — research shows Asian populations carry higher metabolic risk at lower BMI values. The calculator shows both so you can compare. Malaysia, Singapore, and most Asian health authorities follow the Asian standard.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">How often should I recalculate my health profile?</button>
+    <div class="faq-a">Recalculate whenever your weight changes by 5 kg or more, when you significantly change your activity level, or every 8–12 weeks during an active weight loss or gain phase. Your TDEE changes as your body weight changes — using outdated numbers is one of the most common reasons progress stalls.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Why does my ideal weight range span several kilograms?</button>
+    <div class="faq-a">The ideal weight range reflects four different clinical formulas (Devine, Robinson, Miller, Hamwi) that each define 'ideal' slightly differently based on height and sex. The range represents the consensus across these formulas. Research shows body composition (muscle-to-fat ratio) matters more than hitting a specific weight within this range.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Can I use this calculator if I am pregnant or breastfeeding?</button>
+    <div class="faq-a">No — pregnancy and breastfeeding significantly alter calorie needs, body composition, and appropriate weight ranges. BMI and TDEE calculations are not appropriate during pregnancy. Consult your midwife or doctor for personalised guidance on nutrition and weight management during and after pregnancy.</div>
+  </div>
+  </div>
+</div>
+
 <footer>
   <div>© 2026 healthybmicheck.com — Free Health Calculators</div>
   <div style="margin-top:8px">
